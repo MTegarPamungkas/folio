@@ -32,8 +32,8 @@ class DeveloperAvatar extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: colors.shadow,
-            blurRadius: 12,
-            offset: const Offset(0, 4),
+            blurRadius: 8,
+            offset: const Offset(0, 3),
           ),
         ],
       ),

@@ -29,20 +29,22 @@ class PhoneMockup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scale = width / _phoneDesignWidth;
-    return ExcludeSemantics(
-      child: SizedBox(
-        width: width,
-        height: _phoneDesignHeight * scale,
-        child: FittedBox(
-          fit: BoxFit.fill,
-          child: MediaQuery(
-            data: MediaQuery.of(
-              context,
-            ).copyWith(textScaler: TextScaler.noScaling),
-            child: SizedBox(
-              width: _phoneDesignWidth,
-              height: _phoneDesignHeight,
-              child: _PhoneFrame(project: project, variant: variant),
+    return RepaintBoundary(
+      child: ExcludeSemantics(
+        child: SizedBox(
+          width: width,
+          height: _phoneDesignHeight * scale,
+          child: FittedBox(
+            fit: BoxFit.fill,
+            child: MediaQuery(
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: TextScaler.noScaling),
+              child: SizedBox(
+                width: _phoneDesignWidth,
+                height: _phoneDesignHeight,
+                child: _PhoneFrame(project: project, variant: variant),
+              ),
             ),
           ),
         ),
@@ -67,9 +69,9 @@ class _PhoneFrame extends StatelessWidget {
         border: Border.all(color: const Color(0xFF34322E), width: 1.2),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.16),
-            blurRadius: 24,
-            offset: const Offset(0, 12),
+            color: Colors.black.withValues(alpha: 0.12),
+            blurRadius: 14,
+            offset: const Offset(0, 8),
           ),
         ],
       ),

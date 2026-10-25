@@ -158,7 +158,9 @@ Chrome di Android membatasi rendering halaman ke 60 fps pada layar 120 Hz, semen
 - Untuk menguji jalur Android di desktop Chromium: buka `?shim-desktop`, misalnya dengan flag Chrome `--enable-features=ThrottleMainFrameTo60Hz,UrgentMainFrameForInput`.
 - Jika Chrome mengubah perilaku worker, shim otomatis kembali ke 60 fps.
 - Shim ini eksperimental dan memakai perilaku Chrome yang tidak terdokumentasi. Animasi yang berat tetap bisa drop frame; frame yang memakan lebih dari 8,3 ms akan melewatkan satu refresh.
-- Untuk menonaktifkan, hapus tag `flutter_shim.js` dari `web/index.html` lalu deploy ulang.
+- Jika 120 Hz terasa lebih berat di perangkat mid-range, gunakan `?shim=off` atau refresh rate 60 Hz; frame rate yang lebih tinggi bukan selalu lebih nyaman.
+- Untuk membandingkan tanpa shim, buka `?shim=off`. Untuk menonaktifkan permanen, hapus pemuatan `flutter_shim.js` dari `web/index.html` lalu deploy ulang.
+- Di perangkat kelas menengah, batasi efek berat jika targetnya 120 fps; `RepaintBoundary` dipakai di kartu, mockup ponsel, browser preview, dan section utama untuk mengurangi repaint.
 - Lisensi MIT, copyright Mathiew Abbas: [flutter_shim.LICENSE](web/flutter_shim.LICENSE). Sumber: [aumb/flutter_shim](https://github.com/aumb/flutter_shim).
 
 Build web default memakai CanvasKit/JavaScript. Jika nanti memakai skwasm, gunakan single-threaded skwasm karena multi-threaded skwasm memiliki bug yang bisa memicu crash pada 120 Hz.

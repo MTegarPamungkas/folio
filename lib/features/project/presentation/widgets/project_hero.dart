@@ -261,8 +261,8 @@ class _HeroPoster extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: colors.shadow,
-              blurRadius: 28,
-              offset: const Offset(0, 14),
+              blurRadius: 18,
+              offset: const Offset(0, 10),
             ),
           ],
         ),

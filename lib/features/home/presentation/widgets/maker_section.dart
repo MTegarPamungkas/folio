@@ -235,8 +235,8 @@ class _FloatingPill extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.15),
-              blurRadius: 16,
-              offset: const Offset(0, 6),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
           ],
         ),

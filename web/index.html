@@ -64,9 +64,11 @@
       if (params.has('shim-desktop')) {
         window.flutterShimConfig = { anyPlatform: true };
       }
+      if (params.get('shim') !== 'off') {
+        document.write('<script src="flutter_shim.js"><\/script>');
+      }
     })();
   </script>
-  <script src="flutter_shim.js"></script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

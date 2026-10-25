@@ -33,8 +33,8 @@ class ProjectIcon extends StatelessWidget {
             ? [
                 BoxShadow(
                   color: p.start.withValues(alpha: 0.24),
-                  blurRadius: size * 0.3,
-                  offset: Offset(0, size * 0.12),
+                  blurRadius: size * 0.2,
+                  offset: Offset(0, size * 0.08),
                 ),
               ]
             : null,
