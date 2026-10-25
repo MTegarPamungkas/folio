@@ -50,13 +50,15 @@
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <!--
-    Optional high-refresh-rate renderer for Chrome on Android (120 Hz).
+    High-refresh-rate renderer for Chrome on Android (120 Hz). Loaded by
+    default there and skipped on desktop, Safari, and other browsers.
     Vendored from https://github.com/aumb/flutter_shim (MIT).
-    On desktop and Safari the shim is a no-op unless explicitly enabled.
 
-    Append ?shim-desktop to test the Android/Chrome path on a desktop
-    Chromium build (for example with Chrome's ThrottleMainFrameTo60Hz
-    feature enabled).
+    ?shim=off    keep the stable 60 fps path
+    ?shim=on     force the shim even if platform detection fails
+    ?shim-desktop test the Android/Chrome path on a desktop Chromium build
+                  (for example with Chrome's ThrottleMainFrameTo60Hz
+                  feature enabled)
   -->
   <script>
     (() => {
@@ -64,8 +66,16 @@
       if (params.has('shim-desktop')) {
         window.flutterShimConfig = { anyPlatform: true };
       }
+      const ua = navigator.userAgent;
+      const isAndroidChrome =
+        /Android/.test(ua) &&
+        /(Chrome|Chromium)\//.test(ua) &&
+        !/(EdgA|OPR|SamsungBrowser|Firefox|UCBrowser|YaBrowser)\//.test(ua);
+      const choice = params.get('shim');
       const wantsHighRefresh =
-        params.get('shim') === 'on' || params.has('shim-desktop');
+        choice === 'on' ||
+        params.has('shim-desktop') ||
+        (choice !== 'off' && isAndroidChrome);
       if (wantsHighRefresh) {
         document.write('<script src="flutter_shim.js"><\/script>');
       }

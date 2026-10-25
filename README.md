@@ -151,19 +151,17 @@ Tidak ada perhitungan kolom yang diulang di setiap halaman. Komponennya ada di [
 
 ### High refresh rate di Android Chrome
 
-Chrome di Android membatasi rendering halaman ke 60 fps pada layar 120 Hz, sementara Flutter menggambar sendiri di main thread. [`flutter_shim.js`](web/flutter_shim.js) bisa memindahkan canvas Flutter ke `OffscreenCanvas` dan memakai clock worker, tetapi di perangkat mid-range hasilnya belum selalu stabil.
+Chrome di Android membatasi rendering halaman ke 60 fps pada layar 120 Hz, sementara Flutter menggambar sendiri di main thread. [`flutter_shim.js`](web/flutter_shim.js) memindahkan canvas Flutter ke `OffscreenCanvas` dan memakai clock worker supaya scroll dan animasi mengikuti refresh rate layar.
 
-Karena itu build default memilih **60 fps yang konsisten**. Untuk mencoba 120 Hz secara eksperimental:
+Build sekarang **mengaktifkan shim otomatis di Chrome Android** dan melewatinya di desktop, Safari, dan browser lain:
 
-```text
-https://mtegarpamungkas.github.io/folio/?shim=on
-```
-
-- `?shim=on` mengaktifkan shim di Chrome Android.
-- Tanpa parameter, halaman memakai jalur Flutter normal yang stabil.
+- Tanpa parameter, Chrome Android memakai jalur refresh rate penuh; browser lain tetap jalur Flutter normal.
+- `?shim=off` memaksa 60 fps, misalnya kalau HP terasa lebih berat atau baterai lebih penting.
+- `?shim=on` memaksa shim walau deteksi platform gagal.
 - `?shim-desktop` mengaktifkan jalur Android di Chromium desktop untuk pengujian, misalnya dengan flag `--enable-features=ThrottleMainFrameTo60Hz,UrgentMainFrameForInput`.
 - Jalur Safari/iPhone tidak diaktifkan karena Safari tidak memberi tahu refresh rate layar dan biaya baterainya tinggi.
 - Shim memakai perilaku Chrome yang tidak terdokumentasi; jika Chrome berubah, ia kembali ke 60 fps.
+- Terukur di Poco X3 NFC (Chrome 155): scroll ~120 fps (median 8,4 ms) dengan shim, 60 fps tanpa shim. Saat idle tetap 60 fps karena panel adaptif turun ke mode 60 Hz dan clock shim tidur kalau tidak ada frame; 120 fps penuh saat idle hanya bisa dipaksa dari OS, bukan dari web.
 - Frame yang memakan lebih dari 8,3 ms tetap akan melewatkan refresh, jadi 120 fps bukan jaminan pada HP kelas menengah.
 - Lisensi MIT, copyright Mathiew Abbas: [flutter_shim.LICENSE](web/flutter_shim.LICENSE). Sumber: [aumb/flutter_shim](https://github.com/aumb/flutter_shim).
 
