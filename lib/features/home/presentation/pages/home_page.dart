@@ -25,25 +25,20 @@ class HomePage extends StatelessWidget {
         return AdaptivePage(
           topPadding: 24,
           bottomPadding: 24,
+          lazy: true,
           children: [
             HomeIntro(
               developer: content.developer,
               projectCount: content.totalProjects,
             ),
             const SizedBox(height: 34),
-            RepaintBoundary(
-              child: FeaturedCarousel(projects: content.featuredProjects),
-            ),
+            FeaturedCarousel(projects: content.featuredProjects),
             SizedBox(height: context.sectionGap),
-            RepaintBoundary(
-              child: LatestReleasesSection(projects: content.latestProjects),
-            ),
+            LatestReleasesSection(projects: content.latestProjects),
             SizedBox(height: context.sectionGap),
-            RepaintBoundary(
-              child: CategoriesSection(counts: content.categoryCounts),
-            ),
+            CategoriesSection(counts: content.categoryCounts),
             SizedBox(height: context.sectionGap),
-            RepaintBoundary(child: MakerSection(developer: content.developer)),
+            MakerSection(developer: content.developer),
             const SizedBox(height: 38),
             const FolioFooter(),
           ],
