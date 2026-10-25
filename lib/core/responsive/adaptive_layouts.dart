@@ -14,6 +14,7 @@ class AdaptivePage extends StatelessWidget {
     this.bottomPadding = 24,
     this.maxWidth = AppBreakpoints.contentMaxWidth,
     this.scrollable = true,
+    this.lazy = false,
   });
 
   final List<Widget> children;
@@ -21,6 +22,12 @@ class AdaptivePage extends StatelessWidget {
   final double bottomPadding;
   final double maxWidth;
   final bool scrollable;
+
+  /// Builds scroll children only as they approach the viewport.
+  ///
+  /// Use this for long editorial pages. The visual padding, max width, and
+  /// scrolling behaviour stay identical to the non-lazy layout.
+  final bool lazy;
 
   @override
   Widget build(BuildContext context) {
@@ -49,16 +56,40 @@ class AdaptivePage extends StatelessWidget {
           );
         }
 
+        final viewPadding = EdgeInsets.fromLTRB(
+          padding,
+          topPadding,
+          padding,
+          bottomPadding,
+        );
+
+        if (lazy) {
+          return ScrollConfiguration(
+            behavior: ScrollConfiguration.of(
+              context,
+            ).copyWith(scrollbars: false),
+            child: ListView.builder(
+              primary: true,
+              padding: viewPadding,
+              itemCount: children.length,
+              addAutomaticKeepAlives: false,
+              itemBuilder: (context, index) {
+                return Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: maxWidth),
+                    child: children[index],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
         return ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
             primary: true,
-            padding: EdgeInsets.fromLTRB(
-              padding,
-              topPadding,
-              padding,
-              bottomPadding,
-            ),
+            padding: viewPadding,
             child: content,
           ),
         );

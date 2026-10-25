@@ -60,7 +60,9 @@ class _FeaturedCarouselState extends State<FeaturedCarousel> {
             itemCount: projects.length,
             onPageChanged: (value) => setState(() => _current = value),
             itemBuilder: (context, index) {
-              return _FeaturedSlide(project: projects[index]);
+              return RepaintBoundary(
+                child: _FeaturedSlide(project: projects[index]),
+              );
             },
           ),
         ),
