@@ -43,15 +43,30 @@ the MIS MSA Console live preview.
 Push-Location $deployDir
 try {
   git init -b gh-pages | Out-Null
+  if ($LASTEXITCODE -ne 0) { throw 'git init failed.' }
+
   git add .
+  if ($LASTEXITCODE -ne 0) { throw 'git add failed.' }
+
   git commit -m $commitMessage --allow-empty | Out-Null
+  if ($LASTEXITCODE -ne 0) { throw 'git commit failed.' }
+
   git remote add origin "https://github.com/$Repository.git"
+  if ($LASTEXITCODE -ne 0) { throw 'git remote add failed.' }
+
   git push --force -u origin gh-pages
+  if ($LASTEXITCODE -ne 0) { throw 'git push failed.' }
 } finally {
   Pop-Location
 }
 
+if (Test-Path -LiteralPath $deployDir) {
+  Remove-Item -LiteralPath $deployDir -Recurse -Force
+}
+
 $owner, $name = $Repository.Split('/')
+$owner = $owner.ToLowerInvariant()
+$name = $name.ToLowerInvariant()
 $siteUrl = if ($name -like '*.github.io') {
   "https://$name/"
 } else {

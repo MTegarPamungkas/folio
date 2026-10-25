@@ -2,6 +2,8 @@
 
 Portofolio dalam bentuk app store milik **Muhammad Tegar Pamungkas**, Full Stack Developer / Mobile Developer. Dibangun dengan Flutter untuk menampilkan aplikasi mobile dan website sebagai katalog yang bisa dijelajahi, dicari, disimpan, dan dibuka sebagai studi kasus.
 
+[Live site](https://mtegarpamungkas.github.io/folio/) · [GitHub repo](https://github.com/MTegarPamungkas/folio)
+
 ![Folio home](docs/screenshots/home-desktop.png)
 
 ## ✨ Fitur
