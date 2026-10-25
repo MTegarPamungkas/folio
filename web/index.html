@@ -64,7 +64,9 @@
       if (params.has('shim-desktop')) {
         window.flutterShimConfig = { anyPlatform: true };
       }
-      if (params.get('shim') !== 'off') {
+      const wantsHighRefresh =
+        params.get('shim') === 'on' || params.has('shim-desktop');
+      if (wantsHighRefresh) {
         document.write('<script src="flutter_shim.js"><\/script>');
       }
     })();
