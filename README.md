@@ -151,18 +151,26 @@ Tidak ada perhitungan kolom yang diulang di setiap halaman. Komponennya ada di [
 
 ### High refresh rate di Android Chrome
 
-Chrome di Android membatasi rendering halaman ke 60 fps pada layar 120 Hz, sementara Flutter menggambar sendiri di main thread. [`flutter_shim.js`](web/flutter_shim.js) memindahkan canvas Flutter ke `OffscreenCanvas` dan memakai clock worker supaya scroll dan animasi mengikuti refresh rate layar.
+Chrome di Android membatasi `requestAnimationFrame` halaman ke 60 fps walau layarnya 120 Hz. [`flutter_shim.js`](web/flutter_shim.js) memindahkan canvas Flutter ke `OffscreenCanvas` dan memakai clock worker untuk menaikkan laju callback ke 120.
 
-Build sekarang **mengaktifkan shim otomatis di Chrome Android** dan melewatinya di desktop, Safari, dan browser lain:
+Shim itu **tidak aktif secara default**. Pengukuran langsung di Poco X3 NFC (Chrome 155, panel dipaksa 120 Hz) lewat timestamp `dumpsys SurfaceFlinger --latency` menunjukkan frame yang benar-benar sampai ke layar:
 
-- Tanpa parameter, Chrome Android memakai jalur refresh rate penuh; browser lain tetap jalur Flutter normal.
-- `?shim=off` memaksa 60 fps, misalnya kalau HP terasa lebih berat atau baterai lebih penting.
-- `?shim=on` memaksa shim walau deteksi platform gagal.
+| Skenario | rAF yang dilaporkan halaman | Frame yang benar-benar tampil |
+| --- | --- | --- |
+| HTML biasa, tanpa shim | 60 | ~60 |
+| Scroll halaman ini, shim mati | 62–71 | 62–74, jeda terpanjang 25–33 ms |
+| Scroll halaman ini, shim hidup | 95–111 | 44–56, banyak jeda 20–60 ms |
+| Animasi ringan (`fps_probe`, tab Animasi) | 119,5 | ~120 (104 dari 126 jeda 8,3 ms) |
+
+Jadi angka 120 pada counter berbasis `requestAnimationFrame` (termasuk demo `shim.mathiewabbas.dev`) adalah laju permintaan frame, bukan frame yang sampai ke layar — dan bukan yang terasa di HP. Saat scroll, shim justru menurunkan frame yang tampil karena Flutter meminta dua kali lebih banyak frame daripada yang sanggup dikomposisikan Chrome.
+
+Karena itu shim sekarang opt-in, hanya untuk layar animasi ringan:
+
+- `?shim=on` mengaktifkan shim.
+- `?shim=off` mematikannya secara eksplisit (link lama tetap jalan).
 - `?shim-desktop` mengaktifkan jalur Android di Chromium desktop untuk pengujian, misalnya dengan flag `--enable-features=ThrottleMainFrameTo60Hz,UrgentMainFrameForInput`.
 - Jalur Safari/iPhone tidak diaktifkan karena Safari tidak memberi tahu refresh rate layar dan biaya baterainya tinggi.
 - Shim memakai perilaku Chrome yang tidak terdokumentasi; jika Chrome berubah, ia kembali ke 60 fps.
-- Terukur di Poco X3 NFC (Chrome 155): scroll ~120 fps (median 8,4 ms) dengan shim, 60 fps tanpa shim. Saat idle tetap 60 fps karena panel adaptif turun ke mode 60 Hz dan clock shim tidur kalau tidak ada frame; 120 fps penuh saat idle hanya bisa dipaksa dari OS, bukan dari web.
-- Frame yang memakan lebih dari 8,3 ms tetap akan melewatkan refresh, jadi 120 fps bukan jaminan pada HP kelas menengah.
 - Lisensi MIT, copyright Mathiew Abbas: [flutter_shim.LICENSE](web/flutter_shim.LICENSE). Sumber: [aumb/flutter_shim](https://github.com/aumb/flutter_shim).
 
 Build web default memakai CanvasKit/JavaScript. Jika nanti memakai skwasm, gunakan single-threaded skwasm karena multi-threaded skwasm memiliki bug yang bisa memicu crash pada 120 Hz.

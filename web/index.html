@@ -50,35 +50,29 @@
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <!--
-    High-refresh-rate renderer for Chrome on Android (120 Hz). Loaded by
-    default there and skipped on desktop, Safari, and other browsers.
-    Vendored from https://github.com/aumb/flutter_shim (MIT).
+    Optional high-refresh-rate shim (worker clock + OffscreenCanvas), vendored
+    from https://github.com/aumb/flutter_shim (MIT).
 
-    ?shim=off    keep the stable 60 fps path
-    ?shim=on     force the shim even if platform detection fails
-    ?shim-desktop test the Android/Chrome path on a desktop Chromium build
+    Off by default. Measured with SurfaceFlinger on a 120 Hz phone (Poco X3
+    NFC, Chrome 155): the shim lifts requestAnimationFrame to ~120, but frames
+    that actually reach the display stay at 60 or fewer during scrolling, and
+    there are more dropped frames than on the plain 60 fps path (44-56 vs
+    62-74 presented). It only helps light, animation-only screens.
+
+    ?shim=on      enable the shim
+    ?shim=off     explicit opt-out (kept so old links still work)
+    ?shim-desktop enable the Android/Chrome path on a desktop Chromium build
                   (for example with Chrome's ThrottleMainFrameTo60Hz
                   feature enabled)
   -->
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
+      if (!params.has('shim-desktop') && params.get('shim') !== 'on') return;
       if (params.has('shim-desktop')) {
         window.flutterShimConfig = { anyPlatform: true };
       }
-      const ua = navigator.userAgent;
-      const isAndroidChrome =
-        /Android/.test(ua) &&
-        /(Chrome|Chromium)\//.test(ua) &&
-        !/(EdgA|OPR|SamsungBrowser|Firefox|UCBrowser|YaBrowser)\//.test(ua);
-      const choice = params.get('shim');
-      const wantsHighRefresh =
-        choice === 'on' ||
-        params.has('shim-desktop') ||
-        (choice !== 'off' && isAndroidChrome);
-      if (wantsHighRefresh) {
-        document.write('<script src="flutter_shim.js"><\/script>');
-      }
+      document.write('<script src="flutter_shim.js"><\/script>');
     })();
   </script>
   <script src="flutter_bootstrap.js" async></script>
