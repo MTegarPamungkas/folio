@@ -169,13 +169,15 @@ flutter build appbundle --release
 
 ### Deploy ke GitHub Pages
 
-Workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) otomatis build + deploy setiap push ke `main`. Base href dihitung dari nama repo (project site vs user site), jadi aset dan live preview website tetap bekerja di subpath GitHub Pages.
+Situs live: **https://mtegarpamungkas.github.io/folio/**
 
-Langkah lengkapnya ada di [docs/deploy-github-pages.md](docs/deploy-github-pages.md). Ringkasnya:
+Deploy memakai branch `gh-pages` (tanpa GitHub Actions). Setelah mengubah kode atau konten:
 
-1. Push project ke repo GitHub.
-2. Buka **Settings → Pages → Source → GitHub Actions**.
-3. Jalankan/ulangi workflow; situs tersedia di `https://USERNAME.github.io/NAMA_REPO/`.
+```powershell
+pwsh tool/deploy_pages.ps1
+```
+
+Script membangun web dengan base href yang benar, membuat branch `gh-pages`, dan mem-push-nya. Panduan lengkap ada di [docs/deploy-github-pages.md](docs/deploy-github-pages.md).
 
 ## 🎛 Kustomisasi
 

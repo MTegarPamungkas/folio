@@ -1,39 +1,62 @@
 # Deploy ke GitHub Pages
 
-Workflow [`deploy-pages.yml`](../.github/workflows/deploy-pages.yml) membangun Flutter Web dan menerbitkannya ke GitHub Pages setiap kali ada push ke `main` atau `master`.
+Situs live: **https://mtegarpamungkas.github.io/folio/**
 
-## 1. Buat repo dan push
+Repo: **https://github.com/MTegarPamungkas/folio**
 
-```bash
-git init -b main
-git add .
-git commit -m "Build Folio portfolio"
-git remote add origin https://github.com/USERNAME/NAMA_REPO.git
-git push -u origin main
+Deploy memakai branch `gh-pages`, bukan GitHub Actions. Cara ini tidak membutuhkan runner Actions dan tetap bekerja untuk project site di subpath `/folio/`.
+
+## Cara update situs
+
+```powershell
+pwsh tool/deploy_pages.ps1
 ```
 
-## 2. Aktifkan Pages
+Script akan:
 
-Di repo GitHub:
+1. build Flutter Web dengan `--base-href /folio/`;
+2. menambahkan `.nojekyll`;
+3. membuat commit deploy di branch `gh-pages`;
+4. mem-push branch tersebut ke GitHub.
 
-1. **Settings → Pages**
-2. Bagian **Build and deployment**
-3. **Source: GitHub Actions**
+Setelah push, GitHub Pages biasanya memperbarui situs dalam 1–2 menit.
 
-Tidak perlu memilih branch `gh-pages`; workflow akan mengunggah artifact sendiri.
+## Setup pertama kali
 
-## 3. URL hasil
+Jika repo ini dipindah atau dibuat ulang:
 
-- Repo proyek `USERNAME/folio` → `https://USERNAME.github.io/folio/`
-- Repo user site `USERNAME/USERNAME.github.io` → `https://USERNAME.github.io/`
+1. Push kode utama ke branch `main`.
+2. Jalankan `pwsh tool/deploy_pages.ps1`.
+3. Buka **Settings → Pages**.
+4. Pilih **Deploy from a branch**.
+5. Branch: `gh-pages`, folder: `/ (root)`.
+6. Simpan.
 
-Workflow mendeteksi otomatis apakah repo adalah user site atau project site, lalu mengatur `--base-href` yang sesuai.
+Branch `gh-pages` hanya berisi hasil build; kode sumber tetap di `main`.
+
+## Repo atau domain lain
+
+Script menerima nama repo dan base href:
+
+```powershell
+pwsh tool/deploy_pages.ps1 `
+  -Repository "USERNAME/portfolio" `
+  -BaseHref "/portfolio/"
+```
+
+Untuk user site `USERNAME.github.io`:
+
+```powershell
+pwsh tool/deploy_pages.ps1 `
+  -Repository "USERNAME/USERNAME.github.io" `
+  -BaseHref "/"
+```
 
 ## Kenapa base href penting?
 
-GitHub Pages project site disajikan dari subpath `/NAMA_REPO/`, bukan dari `/`. Tanpa base href, Flutter akan mencari `main.dart.js` di domain root dan halaman menjadi blank.
+GitHub Pages project site disajikan dari `/NAMA_REPO/`, bukan `/`. Tanpa base href, Flutter mencari `main.dart.js` di root domain dan halaman menjadi blank.
 
-Build lokal yang menyerupai GitHub Pages:
+Build manual yang setara:
 
 ```bash
 flutter build web --release --base-href /folio/
@@ -41,27 +64,25 @@ flutter build web --release --base-href /folio/
 
 ## Live website preview
 
-Link demo `sites/mis-msa.html` tetap ikut ter-build. `Uri.base.resolve()` akan menghasilkan:
+Demo console ikut ter-build sebagai `sites/mis-msa.html`. URL-nya:
 
 ```text
-https://USERNAME.github.io/folio/sites/mis-msa.html
+https://mtegarpamungkas.github.io/folio/sites/mis-msa.html
 ```
 
 Tombol **Buka langsung** membuka URL tersebut di tab baru.
 
 ## Custom domain
 
-Jika memakai custom domain di root:
+Untuk custom domain di root:
 
-```bash
-flutter build web --release --base-href /
-```
-
-Sesuaikan langkah build di workflow menjadi `BASE_HREF="/"` dan tambahkan file `web/CNAME` berisi domain.
+1. Tambahkan file `web/CNAME` berisi domain.
+2. Build/deploy dengan `-BaseHref "/"`.
+3. Atur DNS sesuai instruksi GitHub Pages.
 
 ## Troubleshooting
 
-- **Halaman blank / 404 asset** — pastikan build memakai base href yang sesuai dengan URL Pages.
-- **Deploy tidak berjalan** — cek **Settings → Pages → Source** sudah diset ke **GitHub Actions**.
-- **Live preview tidak muncul** — pastikan `web/sites/mis-msa.html` ikut ter-commit dan build web berhasil.
+- **Halaman blank / asset 404** — base href tidak sesuai dengan URL Pages.
+- **Situs tidak berubah** — pastikan branch `gh-pages` baru saja ter-push dan tunggu build Pages selesai.
+- **Live preview tidak muncul** — pastikan `web/sites/mis-msa.html` ada dan ikut ter-build.
 - **Routing halaman** — aplikasi memakai hash routing (`#/explore`, `#/project/...`), jadi deep link tidak membutuhkan fallback 404.
