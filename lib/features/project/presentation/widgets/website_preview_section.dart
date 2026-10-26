@@ -13,9 +13,14 @@ import 'package:folio/shared/presentation/widgets/website/website_artwork.dart';
 import 'package:folio/shared/presentation/widgets/website/website_embed.dart';
 
 class WebsitePreviewSection extends StatefulWidget {
-  const WebsitePreviewSection({super.key, required this.project});
+  const WebsitePreviewSection({
+    super.key,
+    required this.project,
+    this.heading = 'Website live',
+  });
 
   final Project project;
+  final String heading;
 
   @override
   State<WebsitePreviewSection> createState() => _WebsitePreviewSectionState();
@@ -55,7 +60,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                   children: [
                     Flexible(
                       child: Text(
-                        'Website live',
+                        widget.heading,
                         style: theme.textTheme.headlineSmall?.copyWith(
                           fontSize: 21,
                         ),

@@ -82,8 +82,16 @@ class ProjectDetailPage extends StatelessWidget {
                     const SizedBox(height: 32),
                     if (project.isWebsite)
                       WebsitePreviewSection(project: project)
-                    else
+                    else ...[
                       ScreensSection(project: project),
+                      if (project.hasLiveUrl) ...[
+                        const SizedBox(height: 26),
+                        WebsitePreviewSection(
+                          project: project,
+                          heading: 'Versi web',
+                        ),
+                      ],
+                    ],
                     const SizedBox(height: 38),
                     DetailColumns(project: project),
                     const SizedBox(height: 42),

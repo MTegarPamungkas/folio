@@ -11,7 +11,7 @@ Portofolio dalam bentuk app store milik **Muhammad Tegar Pamungkas**, Full Stack
 - **Storefront yang dikurasi** — hero editorial, carousel proyek pilihan, rilis terbaru, dan kategori.
 - **Pencarian & filter** — cari berdasarkan nama, tagline, teknologi, atau kategori secara langsung.
 - **Halaman detail bergaya app listing** — ikon, metadata proyek, pratinjau tiga layar untuk aplikasi, cerita proyek, fitur, catatan rilis, dan proyek terkait.
-- **Live website preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Di native, preview memakai artwork statis dengan opsi direct.
+- **Live website preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah layar ponsel. Di native, preview memakai artwork statis dengan opsi direct.
 - **Tautan proyek** — repo GitHub, web demo, dan unduhan APK tampil sebagai kartu tautan di halaman detail.
 - **Koleksi tersimpan** — simpan proyek dengan `SharedPreferences`; data tetap ada setelah aplikasi dibuka ulang.
 - **Profil pembuat** — bio, prinsip kerja, keahlian, pengalaman, pendidikan, organisasi, sosial, dan preferensi tema.
