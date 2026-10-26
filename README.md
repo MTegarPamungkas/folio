@@ -1,6 +1,6 @@
 # Folio — Muhammad Tegar Pamungkas
 
-Portofolio dalam bentuk app store milik **Muhammad Tegar Pamungkas**, Full Stack Developer / Mobile Developer. Dibangun dengan Flutter untuk menampilkan aplikasi mobile dan website sebagai katalog yang bisa dijelajahi, dicari, disimpan, dan dibuka sebagai studi kasus.
+Portofolio saya, disusun seperti app store: **Muhammad Tegar Pamungkas**, Full Stack Developer / Mobile Developer. Dibangun dengan Flutter untuk menampilkan aplikasi mobile dan website sebagai katalog yang bisa dijelajahi, dicari, disimpan, dan dibuka sebagai studi kasus.
 
 [Live site](https://mtegarpamungkas.github.io/folio/) · [GitHub repo](https://github.com/MTegarPamungkas/folio)
 
@@ -11,10 +11,10 @@ Portofolio dalam bentuk app store milik **Muhammad Tegar Pamungkas**, Full Stack
 - **Storefront yang dikurasi** — hero editorial, carousel proyek pilihan, rilis terbaru, dan kategori.
 - **Pencarian & filter** — cari berdasarkan nama, tagline, teknologi, atau kategori secara langsung.
 - **Halaman detail bergaya app listing** — ikon, metadata proyek, pratinjau tiga layar untuk aplikasi, cerita proyek, fitur, catatan rilis, dan proyek terkait.
-- **Live website preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah layar ponsel. Di native, preview memakai artwork statis dengan opsi direct.
+- **Live web preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah layar ponsel. Di native, preview memakai artwork statis dengan opsi direct.
 - **Tautan proyek** — repo GitHub, web demo, dan unduhan APK tampil sebagai kartu tautan di halaman detail.
 - **Koleksi tersimpan** — simpan proyek dengan `SharedPreferences`; data tetap ada setelah aplikasi dibuka ulang.
-- **Profil pembuat** — bio, prinsip kerja, keahlian, pengalaman, pendidikan, organisasi, sosial, dan preferensi tema.
+- **Tentang saya** — bio, prinsip kerja, keahlian, pengalaman, pendidikan, organisasi, sosial, dan preferensi tema.
 - **Kontak yang berfungsi** — email dan nomor telepon siap disalin; form membuka aplikasi email dengan subjek dan isi yang sudah terisi.
 - **Responsif** — sidebar di desktop, bottom navigation di mobile, dengan komponen layout bersama.
 - **Tema terang/gelap/sistem** — mengikuti perangkat dan bisa diubah dari aplikasi.
@@ -25,12 +25,12 @@ Portofolio dalam bentuk app store milik **Muhammad Tegar Pamungkas**, Full Stack
 | Beranda | Detail proyek |
 | --- | --- |
 | ![Beranda](docs/screenshots/home-desktop.png) | ![Detail proyek](docs/screenshots/detail-desktop.png) |
-| **Jelajah** | **Profil** |
-| ![Jelajah](docs/screenshots/explore-desktop.png) | ![Profil](docs/screenshots/about-desktop.png) |
-| **Website live** | **Mobile** |
-| ![Website live](docs/screenshots/website-live.png) | ![Beranda mobile](docs/screenshots/home-mobile.png) |
-| **Pendidikan & organisasi** | **Detail di mobile** |
-| ![Pendidikan dan organisasi](docs/screenshots/about-education.png) | ![Detail mobile](docs/screenshots/detail-mobile.png) |
+| **Jelajah** | **Tentang** |
+| ![Jelajah](docs/screenshots/explore-desktop.png) | ![Tentang](docs/screenshots/about-desktop.png) |
+| **Versi web** | **Beranda mobile** |
+| ![Versi web](docs/screenshots/website-live.png) | ![Beranda mobile](docs/screenshots/home-mobile.png) |
+| **Kontak** | **Detail di mobile** |
+| ![Kontak](docs/screenshots/contact-desktop.png) | ![Detail mobile](docs/screenshots/detail-mobile.png) |
 
 ## 🏗 Arsitektur
 
