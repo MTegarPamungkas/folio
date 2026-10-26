@@ -43,7 +43,7 @@ class WebsiteArtwork extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'WEB PREVIEW · ${project.year}',
+                                'PRATINJAU WEB · ${project.year}',
                                 style: TextStyle(
                                   fontFamily: FolioTypography.sans,
                                   fontSize: 8,

@@ -226,7 +226,7 @@ extension ProjectVisuals on Project {
   IconData get icon => visual.icon;
 
   String get platformLabel => isWebsite
-      ? 'Web · Responsive'
+      ? 'Web · Responsif'
       : (hasLiveUrl ? 'Android · Web' : 'iOS · Android');
 }
 
