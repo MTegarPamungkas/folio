@@ -72,7 +72,7 @@ class FinanceHomePreview extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Container(
-          height: 124,
+          height: 116,
           width: double.infinity,
           padding: const EdgeInsets.fromLTRB(11, 10, 11, 8),
           decoration: BoxDecoration(

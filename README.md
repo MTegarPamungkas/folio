@@ -12,6 +12,7 @@ Portofolio dalam bentuk app store milik **Muhammad Tegar Pamungkas**, Full Stack
 - **Pencarian & filter** — cari berdasarkan nama, tagline, teknologi, atau kategori secara langsung.
 - **Halaman detail bergaya app listing** — ikon, metadata proyek, pratinjau tiga layar untuk aplikasi, cerita proyek, fitur, catatan rilis, dan proyek terkait.
 - **Live website preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Di native, preview memakai artwork statis dengan opsi direct.
+- **Tautan proyek** — repo GitHub, web demo, dan unduhan APK tampil sebagai kartu tautan di halaman detail.
 - **Koleksi tersimpan** — simpan proyek dengan `SharedPreferences`; data tetap ada setelah aplikasi dibuka ulang.
 - **Profil pembuat** — bio, prinsip kerja, keahlian, pengalaman, pendidikan, organisasi, sosial, dan preferensi tema.
 - **Kontak yang berfungsi** — email dan nomor telepon siap disalin; form membuka aplikasi email dengan subjek dan isi yang sudah terisi.
@@ -214,7 +215,7 @@ Script membangun web dengan base href yang benar, membuat branch `gh-pages`, dan
 Seluruh konten ada di **[`assets/data/portfolio.json`](assets/data/portfolio.json)**. File ini adalah satu-satunya sumber data; aplikasi membacanya saat startup lewat [`portfolio_json_data_source.dart`](lib/data/datasources/portfolio_json_data_source.dart) lalu memetakannya ke entity domain.
 
 - `developer`: nama, role, bio, lokasi, email, telepon, sosial, skill, pengalaman, pendidikan, organisasi, prinsip, dan statistik;
-- `projects`: cerita, peran, teknologi, fitur, release notes, highlight, tipe proyek (`mobileApp` / `website`), dan `liveUrl`.
+- `projects`: cerita, peran, teknologi, fitur, release notes, highlight, tipe proyek (`mobileApp` / `website`), `githubUrl`, `liveUrl`, dan `downloadUrl` opsional.
 
 Tidak ada form edit konten di UI. Untuk memperbarui portofolio, edit JSON lalu rebuild aplikasi. Data di repo ini sudah disusun dari CV Muhammad Tegar Pamungkas; periksa kembali sebelum publikasi.
 

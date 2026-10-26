@@ -12,7 +12,7 @@
     "phone": "+62 822-4661-4680",
     "availability": "Terbuka untuk peluang full-time",
     "yearsExperience": 3,
-    "projectCount": 12,
+    "projectCount": 13,
     "collaborationCount": 4,
     "socials": [
       {
@@ -129,6 +129,57 @@
     ]
   },
   "projects": [
+    {
+      "id": "dompetektif",
+      "name": "Dompetektif",
+      "tagline": "Ke mana uangmu pergi?",
+      "description": "Pelacak pengeluaran bergaya berkas investigasi: dompet jadi TKP, struk jadi barang bukti, dan laporan jadi temuan. Tersedia sebagai APK Android dan web PWA.",
+      "story": "Dompetektif berangkat dari pertanyaan sederhana: ke mana uang saya sebenarnya pergi? Aplikasi ini membungkus pencatatan pengeluaran sebagai berkas investigasi — dompet jadi TKP, struk jadi barang bukti, dan laporan jadi temuan.\n\nTantangan teknisnya ada di OCR struk. Build release sempat gagal total karena R8 membuang constructor registrar ML Kit; setelah itu ML Kit mengembalikan struk dua kolom sebagai blok label dan blok angka terpisah. Saya menambahkan rekonstruksi baris berdasarkan bounding box, lalu parser yang mengabaikan nomor nota, telepon, dan NPWP. Semua berjalan di perangkat, jadi struk tetap bisa dipindai tanpa koneksi.\n\nSisi datanya offline-first: Hive sebagai sumber kebenaran lokal, outbox ke Supabase, dan RLS untuk dompet bersama. Web PWA dan APK Android dibangun dari basis kode yang sama.",
+      "category": "fintech",
+      "type": "mobileApp",
+      "year": "2026",
+      "role": "Solo Developer",
+      "timeline": "Okt 2026",
+      "status": "Rilis v1.0.0 · APK + web demo",
+      "version": "1.0.0",
+      "updatedAt": "Okt 2026",
+      "tech": [
+        "Flutter",
+        "Dart",
+        "BLoC",
+        "Supabase",
+        "Hive",
+        "ML Kit",
+        "Offline-first"
+      ],
+      "features": [
+        "OCR struk di perangkat dengan rekonstruksi layout dua kolom",
+        "Parser total dan item yang tahan terhadap nomor nota, telepon, dan NPWP",
+        "Offline-first: Hive sebagai sumber lokal dan outbox ke Supabase",
+        "Dompet bersama, kode undangan, dan catatan tim realtime dengan RLS",
+        "Laporan investigasi dengan AI dan fallback analisis lokal",
+        "Kunci biometrik, ekspor PDF/CSV, serta web PWA dan APK per arsitektur"
+      ],
+      "releaseNotes": [
+        "Rilis v1.0.0 dengan APK arm64-v8a, armeabi-v7a, dan x86_64.",
+        "OCR struk dan biometrik diperbaiki untuk build release.",
+        "Web demo tersedia di GitHub Pages dan repo open source."
+      ],
+      "previewTitle": "Rp 468.000",
+      "previewSubtitle": "Total saldo",
+      "previewMetric": "58.300",
+      "previewMetricLabel": "total struk",
+      "previewItems": [
+        "Kopi Senja",
+        "Belanja Harian"
+      ],
+      "editorialTitle": "Usut tuntas,\nbukan sekadar catat.",
+      "highlight": "OCR + offline-first",
+      "featured": true,
+      "githubUrl": "https://github.com/MTegarPamungkas/dompetektif",
+      "liveUrl": "https://mtegarpamungkas.github.io/dompetektif/",
+      "downloadUrl": "https://github.com/MTegarPamungkas/dompetektif/releases/latest"
+    },
     {
       "id": "mis-msa",
       "name": "MIS MSA",

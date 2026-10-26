@@ -21,12 +21,13 @@ void main() {
     expect(developer.organizations, hasLength(2));
   });
 
-  test('loads six projects with real CV categories', () {
-    expect(content.projects, hasLength(6));
+  test('loads seven projects with real CV categories', () {
+    expect(content.projects, hasLength(7));
     expect(
       content.projects.map((project) => project.category),
       containsAll([
         ProjectCategory.enterprise,
+        ProjectCategory.finance,
         ProjectCategory.website,
         ProjectCategory.career,
         ProjectCategory.productivity,

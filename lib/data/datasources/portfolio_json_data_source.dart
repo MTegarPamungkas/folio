@@ -183,6 +183,7 @@ class PortfolioJsonDataSource {
       featured: json['featured'] == true,
       githubUrl: _optionalString(json['githubUrl']),
       liveUrl: _optionalString(json['liveUrl']),
+      downloadUrl: _optionalString(json['downloadUrl']),
     );
   }
 

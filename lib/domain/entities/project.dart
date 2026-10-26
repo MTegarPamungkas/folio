@@ -69,6 +69,7 @@ class Project extends Equatable {
     this.featured = false,
     this.githubUrl,
     this.liveUrl,
+    this.downloadUrl,
   });
 
   final String id;
@@ -97,10 +98,16 @@ class Project extends Equatable {
   final bool featured;
   final String? githubUrl;
   final String? liveUrl;
+  final String? downloadUrl;
 
   bool get isWebsite => type == ProjectType.website;
 
+  bool get hasGithubUrl => githubUrl != null && githubUrl!.trim().isNotEmpty;
+
   bool get hasLiveUrl => liveUrl != null && liveUrl!.trim().isNotEmpty;
+
+  bool get hasDownloadUrl =>
+      downloadUrl != null && downloadUrl!.trim().isNotEmpty;
 
   bool matches(String normalizedQuery) {
     if (normalizedQuery.isEmpty) return true;
@@ -142,5 +149,6 @@ class Project extends Equatable {
     featured,
     githubUrl,
     liveUrl,
+    downloadUrl,
   ];
 }

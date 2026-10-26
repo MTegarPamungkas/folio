@@ -177,6 +177,18 @@ abstract final class ProjectVisualCatalog {
         screenMuted: Color(0xFF71827A),
       ),
     ),
+    'dompetektif': ProjectVisual(
+      icon: Icons.manage_search_rounded,
+      palette: ProjectPalette(
+        start: Color(0xFF15191E),
+        end: Color(0xFFC9A227),
+        ink: Color(0xFFF7F1E3),
+        accent: Color(0xFFE8B84B),
+        screen: Color(0xFF12161B),
+        onScreen: Color(0xFFF4EFE4),
+        screenMuted: Color(0xFF9C9588),
+      ),
+    ),
   };
 
   static ProjectVisual visualFor(Project project) {

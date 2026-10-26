@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:folio/core/theme/folio_theme.dart';
+import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
@@ -131,6 +133,12 @@ class AsideInfo extends StatelessWidget {
             ],
           ),
         ),
+        if (project.hasGithubUrl ||
+            project.hasLiveUrl ||
+            project.hasDownloadUrl) ...[
+          const SizedBox(height: 12),
+          _ProjectLinks(project: project),
+        ],
         const SizedBox(height: 12),
         Container(
           padding: const EdgeInsets.all(20),
@@ -190,6 +198,105 @@ class AsideInfo extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _ProjectLinks extends StatelessWidget {
+  const _ProjectLinks({required this.project});
+
+  final Project project;
+
+  String? _resolveLink(String? raw) {
+    if (raw == null || raw.trim().isEmpty) return null;
+    final uri = Uri.tryParse(raw.trim());
+    if (uri == null) return null;
+    if (uri.hasScheme) return uri.toString();
+    if (!kIsWeb) return null;
+    return Uri.base.resolve(raw.trim()).toString();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.folio;
+    final theme = Theme.of(context);
+    final github = _resolveLink(project.githubUrl);
+    final live = _resolveLink(project.liveUrl);
+    final download = _resolveLink(project.downloadUrl);
+    final links = <({IconData icon, String label, String url})>[
+      if (github != null)
+        (icon: Icons.code_rounded, label: 'Repositori GitHub', url: github),
+      if (live != null)
+        (
+          icon: Icons.language_rounded,
+          label: project.isWebsite ? 'Website live' : 'Web demo',
+          url: live,
+        ),
+      if (download != null)
+        (icon: Icons.android_rounded, label: 'Unduh APK', url: download),
+    ];
+    if (links.isEmpty) return const SizedBox.shrink();
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: colors.surface,
+        borderRadius: BorderRadius.circular(22),
+        border: Border.all(color: colors.line),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Tautan', style: theme.textTheme.titleMedium),
+          const SizedBox(height: 8),
+          for (var i = 0; i < links.length; i++) ...[
+            if (i > 0) Divider(color: colors.line, height: 1),
+            _LinkRow(
+              icon: links[i].icon,
+              label: links[i].label,
+              url: links[i].url,
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _LinkRow extends StatelessWidget {
+  const _LinkRow({required this.icon, required this.label, required this.url});
+
+  final IconData icon;
+  final String label;
+  final String url;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.folio;
+    final theme = Theme.of(context);
+    return InkWell(
+      borderRadius: BorderRadius.circular(10),
+      onTap: () => openExternalLink(context, url),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 11),
+        child: Row(
+          children: [
+            Icon(icon, size: 16, color: colors.accent),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                label,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: colors.ink,
+                ),
+              ),
+            ),
+            Icon(Icons.north_east_rounded, size: 13, color: colors.inkMuted),
+          ],
+        ),
+      ),
     );
   }
 }
