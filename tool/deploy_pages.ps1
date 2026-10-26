@@ -37,7 +37,7 @@ $commitMessage = @'
 chore(pages): publish production web build
 
 Deploy the latest Flutter web build with the GitHub Pages base href and
-the MIS MSA Console live preview.
+project live previews.
 '@
 
 Push-Location $deployDir

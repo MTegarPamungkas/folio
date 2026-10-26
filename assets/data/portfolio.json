@@ -4,15 +4,15 @@
     "shortName": "Tegar",
     "initials": "MT",
     "role": "Full Stack Developer / Mobile Developer",
-    "tagline": "Membangun aplikasi produksi dari antarmuka sampai database.",
-    "bio": "Full Stack Developer yang terbiasa mengirim aplikasi mobile dan web untuk klien enterprise. Saya bekerja dari antarmuka, layanan backend, sampai database — menerjemahkan kebutuhan bisnis dan operasional menjadi perangkat lunak yang andal dan siap produksi.\n\nTerbiasa membangun fitur lapangan seperti presensi berlapis, offline-first sync, geofencing, dan B2B ticketing, serta memakai AI agent tools untuk mempercepat pengiriman tanpa mengorbankan kualitas.",
+    "tagline": "Dari antarmuka sampai database, siap dipakai.",
+    "bio": "Saya full-stack developer yang biasa mengirim aplikasi mobile dan web untuk klien enterprise. Saya kerja dari antarmuka, backend, sampai database—menerjemahkan kebutuhan bisnis dan operasional jadi perangkat lunak yang andal dan siap dipakai.\n\nSaya terbiasa membangun fitur lapangan seperti presensi berlapis, offline-first sync, geofencing, dan tiket B2B. Saya juga pakai AI agent tools untuk mempercepat kerja tanpa mengorbankan kualitas.",
     "location": "Bogor, West Java, Indonesia",
     "timezone": "WIB · UTC+7",
     "email": "mtegarpamungkas111@gmail.com",
     "phone": "+62 822-4661-4680",
     "availability": "Terbuka untuk peluang full-time",
     "yearsExperience": 3,
-    "projectCount": 13,
+    "projectCount": 12,
     "collaborationCount": 4,
     "socials": [
       {
@@ -24,7 +24,14 @@
     "skillGroups": [
       {
         "kind": "fullStack",
-        "skills": ["Flutter", "Dart", "Kotlin", "Java", "PHP", "REST APIs"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "Kotlin",
+          "Java",
+          "PHP",
+          "REST APIs"
+        ]
       },
       {
         "kind": "backend",
@@ -63,28 +70,28 @@
         "company": "Wavetek Integra Nusa, pt · South Jakarta",
         "period": "Des 2025 — Jun 2026",
         "current": false,
-        "description": "Membangun MIS MSA dari nol, aplikasi operasi lapangan yang dipakai PLN Batam, ICONNET, dan ASIANET untuk presensi, ticketing, K3, dan armada. Merancang presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS; menghadirkan offline-first sync yang tetap berjalan setelah aplikasi dibuka ulang; serta menambahkan background location setiap 15 menit. Turut membangun modul tiket B2B dengan audit log, pencarian cepat, dan 10+ modul operasional lain."
+        "description": "Saya membangun MIS MSA dari nol—aplikasi operasi lapangan yang dipakai PLN Batam, ICONNET, dan ASIANET untuk presensi, tiket, K3, dan armada. Saya merancang presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS; bikin offline-first sync yang tetap aman setelah aplikasi dibuka ulang; lalu menambahkan background location tiap 15 menit. Saya juga ikut membangun modul tiket B2B dengan audit log, pencarian cepat, plus 10+ modul operasional lain."
       },
       {
         "role": "Mobile Developer",
         "company": "INDI Technology · East Jakarta",
         "period": "Sep 2024 — Jan 2025",
         "current": false,
-        "description": "Mengembangkan GetCrew, aplikasi rekrutmen yang menghubungkan crew dengan perusahaan. Mengintegrasikan lowongan, profil, dan messaging lewat REST API bersama tim backend. Membangun dan mempublikasikan TomboAti (sebelumnya AhwalNote) ke Google Play Store, serta merapikan komunikasi API di service layer dan menerapkan adapter pattern agar perubahan backend tidak merusak UI."
+        "description": "Saya mengembangkan GetCrew, aplikasi rekrutmen yang mempertemukan crew dengan perusahaan. Saya integrasikan lowongan, profil, dan messaging lewat REST API bareng tim backend. Saya juga membangun dan merilis TomboAti (dulu AhwalNote) ke Google Play Store, sambil merapikan komunikasi API di service layer dan menerapkan adapter pattern supaya perubahan backend tidak merusak UI."
       },
       {
         "role": "Mobile Developer",
         "company": "Bangkit Academy · Remote",
         "period": "Agu 2023 — Jan 2024",
         "current": false,
-        "description": "Menyelesaikan mobile development track dengan fokus Android dan Kotlin. Membangun Movie Finder dengan local caching dan dependency injection, serta Story App dengan login aman, pengelolaan post, dan lokasi berbasis peta."
+        "description": "Saya menyelesaikan mobile development track dengan fokus Android dan Kotlin. Saya membangun Movie Finder dengan local caching dan dependency injection, serta Story App dengan login aman, pengelolaan post, dan lokasi berbasis peta."
       },
       {
         "role": "Software Engineering Intern",
         "company": "PT Lingkar Sembilan Titian Media · South Tangerang",
         "period": "Okt 2020 — Des 2020",
         "current": false,
-        "description": "Mendukung pengembangan web dan Android bersama tim engineering menggunakan PHP dan Java."
+        "description": "Saya membantu pengembangan web dan Android bareng tim engineering, pakai PHP dan Java."
       }
     ],
     "education": [
@@ -116,15 +123,15 @@
     "principles": [
       {
         "title": "Produksi, bukan demo",
-        "description": "Fokus pada aplikasi yang benar-benar dipakai: menangani kondisi lapangan, edge case, dan kebutuhan operasional nyata."
+        "description": "Saya fokus ke aplikasi yang benar-benar dipakai: siap menghadapi kondisi lapangan, edge case, dan kebutuhan operasional nyata."
       },
       {
         "title": "Offline-first",
-        "description": "Pengguna lapangan tidak selalu punya sinyal. Data harus aman di perangkat dan tersinkron kembali tanpa kehilangan pekerjaan."
+        "description": "Pengguna lapangan tidak selalu punya sinyal. Data harus aman di perangkat dan tersinkron lagi tanpa kehilangan pekerjaan."
       },
       {
         "title": "AI sebagai akselerator",
-        "description": "Memakai AI agent tools untuk mempercepat eksplorasi dan delivery, sambil tetap menjaga keputusan arsitektur dan kualitas kode."
+        "description": "Saya pakai AI agent tools untuk mempercepat eksplorasi dan delivery, tapi keputusan arsitektur dan kualitas kode tetap saya jaga."
       }
     ]
   },
@@ -133,8 +140,8 @@
       "id": "dompetektif",
       "name": "Dompetektif",
       "tagline": "Ke mana uangmu pergi?",
-      "description": "Pelacak pengeluaran bergaya berkas investigasi: dompet jadi TKP, struk jadi barang bukti, dan laporan jadi temuan. Tersedia sebagai APK Android dan web PWA.",
-      "story": "Dompetektif berangkat dari pertanyaan sederhana: ke mana uang saya sebenarnya pergi? Aplikasi ini membungkus pencatatan pengeluaran sebagai berkas investigasi — dompet jadi TKP, struk jadi barang bukti, dan laporan jadi temuan.\n\nTantangan teknisnya ada di OCR struk. Build release sempat gagal total karena R8 membuang constructor registrar ML Kit; setelah itu ML Kit mengembalikan struk dua kolom sebagai blok label dan blok angka terpisah. Saya menambahkan rekonstruksi baris berdasarkan bounding box, lalu parser yang mengabaikan nomor nota, telepon, dan NPWP. Semua berjalan di perangkat, jadi struk tetap bisa dipindai tanpa koneksi.\n\nSisi datanya offline-first: Hive sebagai sumber kebenaran lokal, outbox ke Supabase, dan RLS untuk dompet bersama. Web PWA dan APK Android dibangun dari basis kode yang sama.",
+      "description": "Pelacak pengeluaran bergaya berkas investigasi—dompet jadi TKP, struk jadi barang bukti, laporan jadi temuan. Ada versi APK Android dan web PWA.",
+      "story": "Dompetektif lahir dari pertanyaan yang cukup mengganggu: ke mana uang saya sebenarnya pergi? Daripada bikin tracker biasa, saya bungkus pencatatan pengeluaran jadi berkas investigasi—dompet jadi TKP, struk jadi barang bukti, laporan jadi temuan.\n\nBagian paling ribet justru OCR struk. Build release sempat gagal total karena R8 membuang constructor registrar ML Kit. Setelah itu, ML Kit ternyata mengembalikan struk dua kolom sebagai blok label dan blok angka terpisah. Saya tambahkan rekonstruksi baris dari bounding box, lalu parser yang mengabaikan nomor nota, telepon, dan NPWP. Semua jalan di perangkat, jadi struk tetap bisa dipindai tanpa koneksi.\n\nDatanya offline-first: Hive jadi sumber lokal, outbox ke Supabase, dan RLS buat dompet bersama. Web PWA dan APK Android saya bangun dari basis kode yang sama.",
       "category": "fintech",
       "type": "mobileApp",
       "year": "2026",
@@ -153,17 +160,17 @@
         "Offline-first"
       ],
       "features": [
-        "OCR struk di perangkat dengan rekonstruksi layout dua kolom",
-        "Parser total dan item yang tahan terhadap nomor nota, telepon, dan NPWP",
-        "Offline-first: Hive sebagai sumber lokal dan outbox ke Supabase",
+        "OCR struk jalan di perangkat, termasuk struk dua kolom",
+        "Parser total dan item yang tidak ketuker sama nomor nota, telepon, atau NPWP",
+        "Offline-first: Hive di perangkat, outbox ke Supabase",
         "Dompet bersama, kode undangan, dan catatan tim realtime dengan RLS",
         "Laporan investigasi dengan AI dan fallback analisis lokal",
-        "Kunci biometrik, ekspor PDF/CSV, serta web PWA dan APK per arsitektur"
+        "Kunci biometrik, ekspor PDF/CSV, plus APK dan web PWA"
       ],
       "releaseNotes": [
         "Rilis v1.0.0 dengan APK arm64-v8a, armeabi-v7a, dan x86_64.",
-        "OCR struk dan biometrik diperbaiki untuk build release.",
-        "Web demo tersedia di GitHub Pages dan repo open source."
+        "OCR struk dan biometrik sudah jalan di build release.",
+        "Web demo bisa dicoba langsung dari portofolio ini."
       ],
       "previewTitle": "Rp 468.000",
       "previewSubtitle": "Total saldo",
@@ -184,14 +191,14 @@
       "id": "mis-msa",
       "name": "MIS MSA",
       "tagline": "Presensi, tiket B2B, K3, dan armada dalam satu aplikasi.",
-      "description": "Aplikasi enterprise untuk presensi, tiket B2B, K3, patroli, armada, dan kebutuhan operasional lapangan.",
-      "story": "MIS MSA adalah aplikasi operasi lapangan yang dibangun dari nol untuk mendukung tim di PLN Batam, ICONNET, dan ASIANET. Pekerjaan lapangan tidak bisa bergantung pada sinyal yang stabil, jadi aplikasi ini dirancang agar tetap bisa dipakai saat offline dan menyinkronkan data secara otomatis ketika koneksi kembali.\n\nSalah satu tantangan terbesar adalah kepercayaan pada data presensi. Saya merancang presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS, lalu menambahkan background location setiap 15 menit untuk mendukung monitoring dan keselamatan pekerja. Di sisi operasional, modul tiket B2B dilengkapi status, audit log, dan pencarian cepat untuk puluhan ribu tiket.",
+      "description": "Aplikasi operasi lapangan buat presensi, tiket B2B, K3, patroli, armada, dan kebutuhan operasional lain.",
+      "story": "Saya membangun MIS MSA dari nol buat tim PLN Batam, ICONNET, dan ASIANET. Pekerjaan lapangan tidak bisa bergantung pada sinyal yang stabil, jadi aplikasinya saya rancang tetap bisa dipakai saat offline dan menyinkronkan data otomatis begitu koneksi balik.\n\nTantangan terbesarnya ada di kepercayaan data presensi. Saya rancang presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS, lalu menambahkan background location tiap 15 menit untuk monitoring dan keselamatan pekerja. Di sisi operasional, modul tiket B2B saya lengkapi dengan status, audit log, dan pencarian cepat untuk puluhan ribu tiket.",
       "category": "enterprise",
       "type": "mobileApp",
       "year": "2026",
       "role": "Mobile Developer",
       "timeline": "Des 2025 — Jun 2026",
-      "status": "Digunakan PLN Batam, ICONNET, ASIANET",
+      "status": "Dipakai PLN Batam, ICONNET, ASIANET",
       "version": "1.0.0",
       "updatedAt": "Jun 2026",
       "tech": [
@@ -202,10 +209,10 @@
       ],
       "features": [
         "Presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS",
-        "Dukungan offline dengan sinkronisasi otomatis setelah koneksi kembali",
-        "Background location logging setiap 15 menit untuk monitoring lapangan",
-        "Modul tiket B2B dengan status tracking, audit log, dan pencarian cepat",
-        "10+ modul tambahan: K3, patroli, pinjaman karyawan, armada, cash flow, dan IT helpdesk"
+        "Tetap bisa dipakai offline, lalu sinkron otomatis begitu koneksi balik",
+        "Background location tiap 15 menit buat monitoring lapangan",
+        "Modul tiket B2B dengan status, audit log, dan pencarian cepat",
+        "10+ modul lain: K3, patroli, pinjaman karyawan, armada, cash flow, dan IT helpdesk"
       ],
       "releaseNotes": [
         "Presensi lapangan dengan validasi lokasi dan kamera.",
@@ -216,7 +223,10 @@
       "previewSubtitle": "PLN Batam · hari ini",
       "previewMetric": "24",
       "previewMetricLabel": "tiket aktif",
-      "previewItems": ["Presensi", "Tiket B2B"],
+      "previewItems": [
+        "Presensi",
+        "Tiket B2B"
+      ],
       "editorialTitle": "Operasi lapangan,\ntanpa drama.",
       "highlight": "3 klien enterprise",
       "featured": true,
@@ -224,49 +234,11 @@
       "liveUrl": null
     },
     {
-      "id": "mis-msa-console",
-      "name": "MIS MSA Console",
-      "tagline": "Satu layar untuk membaca operasi lapangan.",
-      "description": "Console web pendamping MIS MSA untuk memantau presensi, tiket, dan ringkasan operasional.",
-      "story": "Aplikasi lapangan hanya bermanfaat jika tim operasional bisa membaca apa yang terjadi di lapangan. MIS MSA Console melengkapi aplikasi mobile dengan tampilan web untuk memantau presensi, antrean tiket, dan ringkasan operasional dalam satu tempat.\n\nSaya menghubungkan data dari layanan yang sama dengan aplikasi mobile, menyusun dashboard yang mudah dipindai, dan menjaga konsistensi status antara kedua platform. Fokusnya bukan menambah fitur sebanyak mungkin, tetapi membuat informasi penting cepat ditemukan oleh tim operasional.",
-      "category": "website",
-      "type": "website",
-      "year": "2026",
-      "role": "Full Stack Developer",
-      "timeline": "2026",
-      "status": "Internal enterprise",
-      "version": "1.0.0",
-      "updatedAt": "Jun 2026",
-      "tech": ["Web", "REST API", "Dashboard", "Reporting"],
-      "features": [
-        "Ringkasan presensi dan aktivitas lapangan dalam satu dashboard",
-        "Antrean tiket B2B dengan status dan prioritas",
-        "Laporan operasional untuk tim dan klien enterprise",
-        "Akses berbasis peran untuk tim internal",
-        "Live preview interaktif di versi web portofolio"
-      ],
-      "releaseNotes": [
-        "Dashboard operasional pertama.",
-        "Ringkasan tiket dan presensi harian.",
-        "Demo antarmuka ditambahkan ke portofolio."
-      ],
-      "previewTitle": "Operations overview",
-      "previewSubtitle": "MIS MSA · hari ini",
-      "previewMetric": "98%",
-      "previewMetricLabel": "presensi tepat waktu",
-      "previewItems": ["Attendance", "Ticket queue"],
-      "editorialTitle": "Semua operasi,\nsatu pandangan.",
-      "highlight": "Web console enterprise",
-      "featured": true,
-      "githubUrl": null,
-      "liveUrl": "sites/mis-msa.html"
-    },
-    {
       "id": "getcrew",
       "name": "GetCrew",
       "tagline": "Menemukan kru yang tepat, lebih cepat.",
-      "description": "Aplikasi rekrutmen yang menghubungkan crew dengan perusahaan lewat lowongan, profil, dan messaging.",
-      "story": "GetCrew mempertemukan crew dan perusahaan dalam satu alur rekrutmen. Saya mengerjakan integrasi lowongan, profil, dan messaging dengan REST API, serta berkoordinasi dengan tim backend agar kontrak data tetap sinkron dengan UI.\n\nKarena backend terus berkembang, saya merapikan komunikasi API di service layer dan menerapkan adapter pattern. Perubahan di sisi server bisa ditangani tanpa harus membongkar seluruh tampilan.",
+      "description": "Aplikasi rekrutmen yang mempertemukan crew dan perusahaan lewat lowongan, profil, dan messaging.",
+      "story": "Saya mengerjakan GetCrew, aplikasi yang mempertemukan crew dan perusahaan dalam satu alur rekrutmen. Saya integrasikan lowongan, profil, dan messaging lewat REST API, bareng tim backend saya jaga kontrak datanya tetap sinkron dengan UI.\n\nKarena backend terus berkembang, saya rapikan komunikasi API di service layer dan pakai adapter pattern. Perubahan di server bisa ditangani tanpa membongkar seluruh tampilan.",
       "category": "career",
       "type": "mobileApp",
       "year": "2025",
@@ -275,12 +247,17 @@
       "status": "Aplikasi rekrutmen",
       "version": "1.0.0",
       "updatedAt": "Jan 2025",
-      "tech": ["REST API", "Messaging", "Service Layer", "Adapter Pattern"],
+      "tech": [
+        "REST API",
+        "Messaging",
+        "Service Layer",
+        "Adapter Pattern"
+      ],
       "features": [
-        "Daftar lowongan dan profil crew dalam satu alur",
-        "Integrasi messaging dengan REST API",
-        "Service layer khusus untuk komunikasi API",
-        "Adapter pattern agar perubahan backend tidak merusak UI"
+        "Lowongan dan profil crew dalam satu alur",
+        "Messaging yang terhubung lewat REST API",
+        "Service layer khusus buat komunikasi API",
+        "Adapter pattern supaya perubahan backend tidak merusak UI"
       ],
       "releaseNotes": [
         "Integrasi lowongan dan profil.",
@@ -291,7 +268,10 @@
       "previewSubtitle": "12 kandidat baru",
       "previewMetric": "12",
       "previewMetricLabel": "lowongan aktif",
-      "previewItems": ["Kandidat", "Pesan"],
+      "previewItems": [
+        "Kandidat",
+        "Pesan"
+      ],
       "editorialTitle": "Orang yang tepat,\ndi waktu yang tepat.",
       "highlight": "REST API integration",
       "featured": true,
@@ -302,8 +282,8 @@
       "id": "tomboati",
       "name": "TomboAti",
       "tagline": "Dari ide sampai rilis publik.",
-      "description": "Aplikasi mobile yang dibangun dan dipublikasikan langsung ke Google Play Store.",
-      "story": "TomboAti (sebelumnya AhwalNote) adalah proyek yang saya bangun dari nol sampai tersedia untuk pengguna. Saya menangani alur aplikasi, pengelolaan data di perangkat, hingga proses publikasi ke Google Play Store.\n\nProyek ini mengajarkan pentingnya detail di luar fitur: penamaan, alur pengguna, pemeliharaan rilis, dan tanggung jawab ketika aplikasi benar-benar dipakai orang lain.",
+      "description": "Aplikasi mobile yang saya bangun dan rilis sendiri ke Google Play Store.",
+      "story": "TomboAti (dulu AhwalNote) saya bangun dari nol sampai akhirnya tersedia di Google Play Store. Saya pegang alur aplikasi, pengelolaan data di perangkat, sampai proses rilisnya.\n\nProyek ini ngajarin saya bahwa detail di luar fitur juga penting: penamaan, alur pengguna, pemeliharaan rilis, dan tanggung jawab saat aplikasi benar-benar dipakai orang lain.",
       "category": "produktivitas",
       "type": "mobileApp",
       "year": "2025",
@@ -312,12 +292,16 @@
       "status": "Live di Google Play Store",
       "version": "1.0.0",
       "updatedAt": "2025",
-      "tech": ["Mobile App", "Local Storage", "Google Play"],
+      "tech": [
+        "Mobile App",
+        "Local Storage",
+        "Google Play"
+      ],
       "features": [
-        "Aplikasi mobile dengan pengelolaan data di perangkat",
-        "Proses publikasi dan pemeliharaan rilis di Google Play Store",
-        "Alur penggunaan yang dirancang untuk kebutuhan sehari-hari",
-        "Pengalaman membawa produk dari ide sampai tersedia untuk pengguna"
+        "Aplikasi mobile dengan data yang disimpan di perangkat",
+        "Proses rilis dan pemeliharaan di Google Play Store",
+        "Alur yang dirancang buat kebutuhan sehari-hari",
+        "Pengalaman membawa produk dari ide sampai dipakai orang"
       ],
       "releaseNotes": [
         "Rilis publik pertama di Google Play Store.",
@@ -328,7 +312,10 @@
       "previewSubtitle": "Rilis publik · Google Play",
       "previewMetric": "01",
       "previewMetricLabel": "rilis publik",
-      "previewItems": ["Mobile app", "Play Store"],
+      "previewItems": [
+        "Mobile app",
+        "Play Store"
+      ],
       "editorialTitle": "Dari ide\nsampai rilis.",
       "highlight": "Live di Google Play",
       "featured": true,
@@ -339,8 +326,8 @@
       "id": "movie-finder",
       "name": "Movie Finder",
       "tagline": "Menemukan film tanpa menunggu koneksi.",
-      "description": "Aplikasi Android untuk eksplorasi film dengan local caching dan dependency injection.",
-      "story": "Movie Finder dibangun sebagai bagian dari mobile development track di Bangkit Academy. Saya memakai local caching agar data yang sudah dimuat tetap bisa dibaca, serta dependency injection untuk menjaga dependensi tetap terkelola saat fitur bertambah.\n\nProyek ini menjadi latihan untuk menghubungkan konsumsi API, penyimpanan lokal, dan arsitektur aplikasi dalam satu alur yang rapi.",
+      "description": "Aplikasi Android buat eksplorasi film dengan local caching dan dependency injection.",
+      "story": "Movie Finder saya bangun sebagai bagian dari mobile development track di Bangkit Academy. Saya pakai local caching supaya data yang sudah dimuat tetap bisa dibaca, dan dependency injection supaya dependensi tetap rapi saat fitur bertambah.\n\nProyek ini jadi latihan buat menyambungkan konsumsi API, penyimpanan lokal, dan arsitektur aplikasi dalam satu alur.",
       "category": "eksperimen",
       "type": "mobileApp",
       "year": "2024",
@@ -349,11 +336,16 @@
       "status": "Proyek pembelajaran",
       "version": "1.0.0",
       "updatedAt": "2024",
-      "tech": ["Kotlin", "Android", "Local Caching", "Dependency Injection"],
+      "tech": [
+        "Kotlin",
+        "Android",
+        "Local Caching",
+        "Dependency Injection"
+      ],
       "features": [
         "Eksplorasi film dari API",
         "Local caching untuk data yang sudah dimuat",
-        "Dependency injection untuk pengelolaan dependensi",
+        "Dependency injection buat pengelolaan dependensi",
         "Arsitektur aplikasi Android dengan Kotlin"
       ],
       "releaseNotes": [
@@ -365,7 +357,10 @@
       "previewSubtitle": "Tersimpan untuk dibaca offline",
       "previewMetric": "120",
       "previewMetricLabel": "film tersimpan",
-      "previewItems": ["Trending", "Favorit"],
+      "previewItems": [
+        "Trending",
+        "Favorit"
+      ],
       "editorialTitle": "Tontonan,\ntanpa jeda.",
       "highlight": "Bangkit Academy",
       "featured": false,
@@ -377,7 +372,7 @@
       "name": "Story App",
       "tagline": "Berbagi cerita dengan lokasi.",
       "description": "Aplikasi social sharing dengan login aman, pengelolaan post, dan lokasi berbasis peta.",
-      "story": "Story App mengeksplorasi bagaimana sebuah aplikasi sosial bisa menyatukan autentikasi, unggahan cerita, dan lokasi dalam alur yang sederhana. Saya membangun alur login yang aman, pengelolaan post, dan peta untuk menampilkan cerita berdasarkan tempat.\n\nProyek ini diselesaikan dalam mobile development track Bangkit Academy dengan fokus pada Android dan integrasi layanan.",
+      "story": "Story App adalah eksperimen saya buat menyatukan autentikasi, unggahan cerita, dan lokasi dalam satu alur sederhana. Saya bangun login yang aman, pengelolaan post, dan peta untuk menampilkan cerita berdasarkan tempat.\n\nProyek ini saya selesaikan di mobile development track Bangkit Academy, dengan fokus Android dan integrasi layanan.",
       "category": "eksperimen",
       "type": "mobileApp",
       "year": "2024",
@@ -386,7 +381,12 @@
       "status": "Proyek pembelajaran",
       "version": "1.0.0",
       "updatedAt": "2024",
-      "tech": ["Kotlin", "Android", "Maps", "Authentication"],
+      "tech": [
+        "Kotlin",
+        "Android",
+        "Maps",
+        "Authentication"
+      ],
       "features": [
         "Login aman untuk pengguna",
         "Pengelolaan post dan cerita",
@@ -402,7 +402,10 @@
       "previewSubtitle": "Lokasi dan cerita pengguna",
       "previewMetric": "08",
       "previewMetricLabel": "cerita terdekat",
-      "previewItems": ["Peta", "Cerita"],
+      "previewItems": [
+        "Peta",
+        "Cerita"
+      ],
       "editorialTitle": "Setiap tempat,\npunya cerita.",
       "highlight": "Bangkit Academy",
       "featured": false,

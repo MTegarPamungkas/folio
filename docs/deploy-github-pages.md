@@ -62,15 +62,15 @@ Build manual yang setara:
 flutter build web --release --base-href /folio/
 ```
 
-## Live website preview
+## Live web preview
 
-Demo console ikut ter-build sebagai `sites/mis-msa.html`. URL-nya:
+Preview mengikuti `liveUrl` proyek. Dompetektif memakai URL absolut:
 
 ```text
-https://mtegarpamungkas.github.io/folio/sites/mis-msa.html
+https://mtegarpamungkas.github.io/dompetektif/
 ```
 
-Tombol **Buka langsung** membuka URL tersebut di tab baru.
+Tombol **Buka langsung** membuka URL tersebut di tab baru. Proyek website statis juga bisa memakai file di `web/sites/` dengan URL relatif.
 
 ## Custom domain
 
@@ -84,5 +84,5 @@ Untuk custom domain di root:
 
 - **Halaman blank / asset 404** — base href tidak sesuai dengan URL Pages.
 - **Situs tidak berubah** — pastikan branch `gh-pages` baru saja ter-push dan tunggu build Pages selesai.
-- **Live preview tidak muncul** — pastikan `web/sites/mis-msa.html` ada dan ikut ter-build.
+- **Live preview tidak muncul** — pastikan `liveUrl` valid dan situsnya mengizinkan iframe.
 - **Routing halaman** — aplikasi memakai hash routing (`#/explore`, `#/project/...`), jadi deep link tidak membutuhkan fallback 404.

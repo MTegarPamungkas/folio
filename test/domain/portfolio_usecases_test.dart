@@ -45,12 +45,11 @@ void main() {
   group('portfolio use cases', () {
     test('home content exposes featured projects and counts', () {
       final content = GetHomeContent(repository)();
-      expect(content.featuredProjects, hasLength(5));
+      expect(content.featuredProjects, hasLength(4));
       expect(content.latestProjects, hasLength(4));
-      expect(content.totalProjects, 7);
+      expect(content.totalProjects, 6);
       expect(content.categoryCounts[ProjectCategory.enterprise], 1);
       expect(content.categoryCounts[ProjectCategory.finance], 1);
-      expect(content.categoryCounts[ProjectCategory.website], 1);
       expect(content.categoryCounts[ProjectCategory.career], 1);
       expect(content.categoryCounts[ProjectCategory.experiment], 2);
     });
@@ -66,11 +65,11 @@ void main() {
       );
     });
 
-    test('project detail resolves a website project with a live URL', () {
-      final detail = GetProjectDetail(repository)('mis-msa-console');
+    test('project detail resolves Dompetektif with its web build', () {
+      final detail = GetProjectDetail(repository)('dompetektif');
       expect(detail, isNotNull);
-      expect(detail!.project.type, ProjectType.website);
-      expect(detail.project.hasLiveUrl, isTrue);
+      expect(detail!.project.hasLiveUrl, isTrue);
+      expect(detail.project.hasDownloadUrl, isTrue);
     });
 
     test('project detail returns null for an unknown id', () {

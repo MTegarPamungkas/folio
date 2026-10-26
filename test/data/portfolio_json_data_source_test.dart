@@ -21,14 +21,13 @@ void main() {
     expect(developer.organizations, hasLength(2));
   });
 
-  test('loads seven projects with real CV categories', () {
-    expect(content.projects, hasLength(7));
+  test('loads six projects with real CV categories', () {
+    expect(content.projects, hasLength(6));
     expect(
       content.projects.map((project) => project.category),
       containsAll([
         ProjectCategory.enterprise,
         ProjectCategory.finance,
-        ProjectCategory.website,
         ProjectCategory.career,
         ProjectCategory.productivity,
         ProjectCategory.experiment,
@@ -40,10 +39,12 @@ void main() {
     );
   });
 
-  test('keeps the website project live preview URL', () {
-    final website = content.projects.singleWhere(
-      (project) => project.type == ProjectType.website,
+  test('keeps the Dompetektif web and APK links', () {
+    final project = content.projects.singleWhere(
+      (project) => project.id == 'dompetektif',
     );
-    expect(website.liveUrl, 'sites/mis-msa.html');
+    expect(project.liveUrl, 'https://mtegarpamungkas.github.io/dompetektif/');
+    expect(project.githubUrl, contains('dompetektif'));
+    expect(project.downloadUrl, contains('/releases/latest'));
   });
 }

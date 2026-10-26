@@ -219,14 +219,13 @@ Seluruh konten ada di **[`assets/data/portfolio.json`](assets/data/portfolio.jso
 
 Tidak ada form edit konten di UI. Untuk memperbarui portofolio, edit JSON lalu rebuild aplikasi. Data di repo ini sudah disusun dari CV Muhammad Tegar Pamungkas; periksa kembali sebelum publikasi.
 
-### Live website preview
+### Live web preview
 
-Demo console web ada di [`web/sites/mis-msa.html`](web/sites/mis-msa.html). Saat aplikasi dibuka di web, URL relatif pada `liveUrl` di-resolve terhadap host aplikasi lalu ditampilkan di iframe. Tombol **Buka langsung** dan ikon panah di browser chrome membuka situs di tab baru.
+Halaman detail memakai iframe untuk proyek yang punya `liveUrl`. Aplikasi mobile dengan web build—seperti Dompetektif—menampilkan preview web di bawah mockup ponsel, sedangkan proyek website memakainya sebagai preview utama.
 
-- URL relatif seperti `sites/mis-msa.html` bekerja di web.
-- Untuk Android/iOS dan direct link produksi, ganti `liveUrl` dengan URL publik absolut, misalnya `https://console.example.com`.
+- URL absolut seperti `https://mtegarpamungkas.github.io/dompetektif/` langsung dipakai di web dan native.
+- URL relatif seperti `sites/demo.html` di-resolve ke host aplikasi saat dibuka di web.
 - Beberapa situs eksternal memblokir iframe lewat header keamanan; opsi **Buka langsung** tetap tersedia.
-- Data pada console demo bersifat ilustratif, bukan data klien.
 
 ### Warna visual proyek
 
@@ -272,6 +271,4 @@ Test mencakup:
 - Favorit disimpan lokal di perangkat.
 - Tidak ada rating atau jumlah pengguna fiktif; kartu proyek memakai highlight yang diambil dari CV.
 - Mockup layar di halaman detail adalah ilustrasi antarmuka, bukan screenshot App Store.
-- `MIS MSA Console` adalah representasi sisi web/full-stack dari MIS MSA di portofolio ini; hapus entri `mis-msa-console` dari JSON jika tidak ingin menampilkannya.
-- Demo console memakai data ilustratif, bukan data klien; ganti URL dan kontennya dengan situs nyata sebelum deploy.
 - Build release Android saat ini memakai debug signing; siapkan keystore sebelum mengunggah ke Play Store.

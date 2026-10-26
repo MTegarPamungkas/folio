@@ -27,7 +27,6 @@ void main() {
       await _visit(tester, route);
     }
     await _visit(tester, '/project/mis-msa');
-    await _visit(tester, '/project/mis-msa-console');
     await _visit(tester, '/contact');
   });
 
@@ -46,7 +45,6 @@ void main() {
       await _visit(tester, route);
     }
     await _visit(tester, '/project/mis-msa');
-    await _visit(tester, '/project/mis-msa-console');
     await _visit(tester, '/contact');
   });
 }

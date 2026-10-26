@@ -117,7 +117,7 @@ abstract final class ProjectVisualCatalog {
         screenMuted: Color(0xFF6A7C74),
       ),
     ),
-    'mis-msa-console': ProjectVisual(
+    'website': ProjectVisual(
       icon: Icons.dashboard_customize_rounded,
       palette: ProjectPalette(
         start: Color(0xFF101B2D),
@@ -210,7 +210,7 @@ abstract final class ProjectVisualCatalog {
       ProjectCategory.enterprise => _visuals['mis-msa']!.palette,
       ProjectCategory.career => _visuals['getcrew']!.palette,
       ProjectCategory.experiment => _visuals['movie-finder']!.palette,
-      ProjectCategory.website => _visuals['mis-msa-console']!.palette,
+      ProjectCategory.website => _visuals['website']!.palette,
     };
   }
 
