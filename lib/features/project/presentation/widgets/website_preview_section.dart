@@ -16,7 +16,7 @@ class WebsitePreviewSection extends StatefulWidget {
   const WebsitePreviewSection({
     super.key,
     required this.project,
-    this.heading = 'Website live',
+    this.heading = 'Situs live',
   });
 
   final Project project;
@@ -105,7 +105,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                 Text(
                   kIsWeb
                       ? 'Jelajahi situsnya langsung di sini, atau buka di tab baru.'
-                      : 'Pratinjau statis tersedia di sini; buka situs untuk pengalaman penuh.',
+                      : 'Di sini cuma pratinjau statis—buka situsnya untuk pengalaman penuh.',
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontSize: 11,
                     color: colors.inkMuted,
@@ -134,7 +134,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                           context,
                           resolvedUri.toString(),
                           fallbackMessage:
-                              'Situs belum bisa dibuka dari preview.',
+                              'Situsnya belum bisa dibuka dari preview.',
                         )
                       : () => _showDirectFallback(context),
                   style: FilledButton.styleFrom(
@@ -157,7 +157,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                 ? openExternalLink(
                     context,
                     resolvedUri.toString(),
-                    fallbackMessage: 'Situs belum bisa dibuka dari preview.',
+                    fallbackMessage: 'Situsnya belum bisa dibuka dari preview.',
                   )
                 : _showDirectFallback(context),
             onReload: kIsWeb ? () => setState(() => _reloadToken += 1) : null,
@@ -178,8 +178,8 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
               Expanded(
                 child: Text(
                   canOpenDirectly
-                      ? 'Kamu bisa memilih untuk tetap di halaman ini atau membuka situs langsung di tab baru.'
-                      : 'Live site demo ini memakai tautan relatif dan tersedia saat aplikasi dijalankan sebagai website. Untuk versi native, ganti liveUrl dengan URL publik.',
+                      ? 'Kamu bisa tetap di halaman ini atau buka situsnya langsung di tab baru.'
+                      : 'Preview ini cuma tersedia saat dibuka di web. Di aplikasi native, buka tautannya langsung.',
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontSize: 10,
                     height: 1.5,
@@ -198,8 +198,8 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
     showFolioSnackBar(
       context,
       message:
-          'Live site demo ini tersedia di versi web. '
-          'Kamu tetap bisa membuka preview statis di halaman ini.',
+          'Preview langsung cuma ada di versi web. '
+          'Di sini kamu tetap bisa lihat pratinjau statisnya.',
       actionLabel: 'Salin tautan',
       onAction: () =>
           Clipboard.setData(ClipboardData(text: widget.project.liveUrl ?? '')),
@@ -216,7 +216,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
   }
 
   String _addressLabel(String? rawUrl) {
-    if (rawUrl == null || rawUrl.trim().isEmpty) return 'Belum ada live site';
+    if (rawUrl == null || rawUrl.trim().isEmpty) return 'Belum ada situs live';
     final parsed = Uri.tryParse(rawUrl.trim());
     if (parsed != null && parsed.hasScheme && parsed.host.isNotEmpty) {
       return parsed.host;

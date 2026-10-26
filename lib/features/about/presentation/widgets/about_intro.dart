@@ -30,7 +30,7 @@ class AboutIntro extends StatelessWidget {
     final copy = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Eyebrow('Tentang pembuat'),
+        const Eyebrow('Tentang saya'),
         const SizedBox(height: 16),
         Text.rich(
           TextSpan(

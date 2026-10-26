@@ -28,7 +28,7 @@ class HomeIntro extends StatelessWidget {
     final heading = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Eyebrow('Personal app store · 2026'),
+        const Eyebrow('Portofolio · 2026'),
         const SizedBox(height: 18),
         Text.rich(
           TextSpan(
@@ -56,8 +56,8 @@ class HomeIntro extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 590),
           child: Text(
-            'Portofolio dalam bentuk app store. Jelajahi aplikasi dan '
-            'website yang saya bangun, buka studi kasusnya, dan simpan '
+            'Portofolio saya, disusun seperti app store. Jelajahi aplikasi dan '
+            'website yang saya bangun, buka studi kasusnya, lalu simpan '
             'yang paling relevan untukmu.',
             style: theme.textTheme.bodyLarge?.copyWith(
               fontSize: context.isExpanded ? 16.5 : 15,

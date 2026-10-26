@@ -105,8 +105,8 @@ class _MakerCopy extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 560),
           child: Text(
-            '${developer.shortName} menghubungkan riset, desain, dan engineering '
-            'untuk membangun produk yang terasa sederhana — dan bertahan lama.',
+            'Saya menghubungkan riset, desain, dan engineering untuk bikin '
+            'produk yang terasa sederhana—dan bertahan lama.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: colors.background.withValues(alpha: 0.65),
               fontSize: 13,

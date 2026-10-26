@@ -75,6 +75,30 @@
       document.write('<script src="flutter_shim.js"><\/script>');
     })();
   </script>
+  <script>
+    // One-time cleanup for visitors who still have the old PWA service worker.
+    // The portfolio is served fresh; stale cached builds hid new projects.
+    (() => {
+      if (!('serviceWorker' in navigator)) return;
+      try {
+        const key = 'folio:sw-cleanup:v3';
+        if (localStorage.getItem(key)) return;
+        navigator.serviceWorker.getRegistrations().then((regs) => {
+          if (!regs.length) {
+            localStorage.setItem(key, '1');
+            return;
+          }
+          Promise.all(regs.map((r) => r.unregister()))
+            .then(() => ('caches' in window ? caches.keys() : []))
+            .then((keys) => Promise.all(keys.map((k) => caches.delete(k))))
+            .then(() => {
+              localStorage.setItem(key, '1');
+              window.location.reload();
+            });
+        });
+      } catch (_) {}
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

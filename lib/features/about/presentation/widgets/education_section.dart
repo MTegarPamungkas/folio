@@ -22,8 +22,7 @@ class EducationSection extends StatelessWidget {
         const SectionHeading(
           eyebrow: 'Pendidikan & organisasi',
           title: 'Tempat saya belajar dan tumbuh',
-          subtitle:
-              'Dasar teknis dari bangku sekolah dan kuliah, dilengkapi pengalaman organisasi.',
+          subtitle: 'Dari SMK sampai kuliah, plus pengalaman organisasi.',
         ),
         const SizedBox(height: 24),
         AdaptiveTwoPane(

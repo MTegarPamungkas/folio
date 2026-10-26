@@ -37,7 +37,7 @@ class FolioFooter extends StatelessWidget {
                   const FolioWordmark(fontSize: 21),
                   const SizedBox(height: 7),
                   Text(
-                    'Portofolio dalam bentuk app store.',
+                    'Portofolio saya, disusun seperti app store.',
                     style: theme.textTheme.bodySmall?.copyWith(
                       fontSize: 11.5,
                       color: colors.inkMuted,

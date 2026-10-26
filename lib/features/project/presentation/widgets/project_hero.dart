@@ -168,7 +168,7 @@ class ProjectHero extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(
-              'oleh $developerName',
+              'Saya, $developerName',
               style: theme.textTheme.bodySmall?.copyWith(
                 fontSize: 10.5,
                 color: colors.inkMuted,

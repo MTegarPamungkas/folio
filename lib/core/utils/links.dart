@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 Future<void> openExternalLink(
   BuildContext context,
   String url, {
-  String fallbackMessage = 'Tautan belum bisa dibuka.',
+  String fallbackMessage = 'Tautannya belum bisa dibuka.',
 }) async {
   final uri = Uri.tryParse(url);
   if (uri == null) {
@@ -41,7 +41,7 @@ Future<void> openExternalLink(
 Future<void> copyToClipboard(
   BuildContext context,
   String value, {
-  String message = 'Disalin ke clipboard.',
+  String message = 'Sudah disalin.',
 }) async {
   await Clipboard.setData(ClipboardData(text: value));
   if (context.mounted) {

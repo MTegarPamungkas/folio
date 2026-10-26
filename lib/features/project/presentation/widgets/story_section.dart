@@ -18,7 +18,7 @@ class StorySection extends StatelessWidget {
       children: [
         const DetailSectionTitle(
           eyebrow: 'STUDI KASUS',
-          title: 'Tentang proyek ini',
+          title: 'Cerita di balik proyek',
         ),
         const SizedBox(height: 14),
         Text(
@@ -125,7 +125,10 @@ class ReleaseNotes extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               Expanded(
-                child: Text('Yang baru', style: theme.textTheme.titleMedium),
+                child: Text(
+                  'Yang baru dirilis',
+                  style: theme.textTheme.titleMedium,
+                ),
               ),
               Text(
                 'v${project.version} · ${project.updatedAt}',

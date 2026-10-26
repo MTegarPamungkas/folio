@@ -63,7 +63,7 @@ class ExplorePage extends StatelessWidget {
               ),
               subtitle:
                   'Cari berdasarkan nama proyek, teknologi, atau kategori. '
-                  'Semua studi kasus ada di satu tempat.',
+                  'Semua studi kasus saya ada di sini.',
             ),
             const SizedBox(height: 28),
             ExploreSearchField(
@@ -90,8 +90,8 @@ class ExplorePage extends StatelessWidget {
                 icon: Icons.search_off_rounded,
                 title: 'Belum ada yang cocok',
                 message:
-                    'Coba kata kunci lain atau hapus filter kategori untuk '
-                    'melihat semua karya.',
+                    'Coba kata kunci lain, atau hapus filter kategorinya '
+                    'buat lihat semua karya.',
                 action: OutlinedButton(
                   onPressed: () => context.read<ExploreBloc>().add(
                     const ExploreFiltersCleared(),

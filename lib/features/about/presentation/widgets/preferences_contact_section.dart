@@ -65,7 +65,7 @@ class PreferencesCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Pilih tema yang paling nyaman. Preferensi disimpan di perangkat ini.',
+            'Pilih tema yang paling nyaman. Pilihanmu disimpan di perangkat ini.',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontSize: 11,
               height: 1.5,

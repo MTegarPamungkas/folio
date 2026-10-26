@@ -52,7 +52,7 @@ class ContactForm extends StatelessWidget {
                             style: theme.textTheme.titleMedium,
                           ),
                           Text(
-                            'Terbuka untuk proyek dan diskusi.',
+                            'Saya terbuka untuk proyek dan diskusi.',
                             style: theme.textTheme.bodySmall?.copyWith(
                               fontSize: 10.5,
                               color: colors.inkMuted,
@@ -171,7 +171,7 @@ class ContactForm extends StatelessWidget {
                     const SizedBox(width: 5),
                     Expanded(
                       child: Text(
-                        'Form ini membuka aplikasi email dengan pesan yang sudah '
+                        'Form ini cuma membuka aplikasi email dengan pesan yang sudah '
                         'terisi. Tidak ada data yang dikirim ke server.',
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontSize: 9.5,

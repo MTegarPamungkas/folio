@@ -18,7 +18,7 @@ class ExperienceSection extends StatelessWidget {
           eyebrow: 'Perjalanan',
           title: 'Belajar sambil membangun',
           subtitle:
-              'Dari internship dan Bangkit Academy sampai aplikasi enterprise yang dipakai di lapangan.',
+              'Dari magang dan Bangkit Academy sampai aplikasi enterprise yang dipakai di lapangan.',
         ),
         const SizedBox(height: 28),
         for (var i = 0; i < items.length; i++)

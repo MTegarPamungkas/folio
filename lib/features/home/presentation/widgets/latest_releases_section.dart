@@ -22,7 +22,7 @@ class LatestReleasesSection extends StatelessWidget {
           eyebrow: 'BARU DIPUBLIKASIKAN',
           title: 'Rilis terbaru',
           subtitle:
-              'Karya yang baru selesai — dari eksplorasi pertama sampai rilis.',
+              'Karya yang baru saya selesaikan—dari eksplorasi pertama sampai rilis.',
           action: ArrowAction(
             label: 'Jelajah semua',
             onPressed: () {

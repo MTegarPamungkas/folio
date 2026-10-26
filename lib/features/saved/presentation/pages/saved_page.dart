@@ -85,8 +85,8 @@ class SavedPage extends StatelessWidget {
                 icon: Icons.bookmark_border_rounded,
                 title: 'Belum ada karya tersimpan',
                 message:
-                    'Ketuk ikon bookmark pada proyek untuk menyimpannya di sini. '
-                    'Koleksimu akan tetap ada saat kamu kembali.',
+                    'Ketuk ikon simpan di proyek buat menyimpannya di sini. '
+                    'Koleksimu tetap ada saat kamu kembali.',
                 action: FilledButton.icon(
                   onPressed: () {
                     context.read<ExploreBloc>().add(

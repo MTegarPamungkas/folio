@@ -20,7 +20,7 @@ class SkillsSection extends StatelessWidget {
           eyebrow: 'Perangkat kerja',
           title: 'Hal yang saya kuasai',
           subtitle:
-              'Dari membentuk alur di Figma sampai merilis build yang stabil.',
+              'Dari merancang alur di Figma sampai merilis build yang stabil.',
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(

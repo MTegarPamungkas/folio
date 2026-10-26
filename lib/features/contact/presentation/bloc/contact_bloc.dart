@@ -88,13 +88,15 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
     ContactSubmitted event,
     Emitter<ContactState> emit,
   ) async {
-    final nameError = state.name.trim().length < 2 ? 'Nama perlu diisi.' : null;
+    final nameError = state.name.trim().length < 2
+        ? 'Nama kamu belum diisi.'
+        : null;
     final email = state.email.trim();
     final emailError = !_emailPattern.hasMatch(email)
-        ? 'Format email belum benar.'
+        ? 'Format emailnya belum benar.'
         : null;
     final messageError = state.message.trim().length < 20
-        ? 'Ceritakan sedikit lebih banyak (minimal 20 karakter).'
+        ? 'Ceritakan sedikit lebih banyak—minimal 20 karakter.'
         : null;
 
     if (nameError != null || emailError != null || messageError != null) {

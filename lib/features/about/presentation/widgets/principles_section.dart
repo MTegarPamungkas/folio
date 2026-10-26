@@ -18,8 +18,7 @@ class PrinciplesSection extends StatelessWidget {
         const SectionHeading(
           eyebrow: 'Cara saya bekerja',
           title: 'Prinsip yang saya pegang',
-          subtitle:
-              'Bukan aturan kaku, tapi cara berpikir yang membantu saya mengambil keputusan.',
+          subtitle: 'Ini bukan aturan kaku—cuma cara saya mengambil keputusan.',
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(

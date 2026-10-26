@@ -43,7 +43,7 @@ class WebsiteArtwork extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'FIELD OPERATIONS · ${project.year}',
+                                'WEB PREVIEW · ${project.year}',
                                 style: TextStyle(
                                   fontFamily: FolioTypography.sans,
                                   fontSize: 8,
@@ -94,7 +94,7 @@ class WebsiteArtwork extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Text(
-                                  'Buka console',
+                                  'Buka situs',
                                   style: TextStyle(
                                     fontFamily: FolioTypography.sans,
                                     fontSize: 8,
@@ -246,7 +246,7 @@ class _ArtworkNav extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        for (final label in ['Overview', 'Attendance', 'Reports']) ...[
+        for (final label in ['Beranda', 'Fitur', 'Kontak']) ...[
           Text(
             label,
             style: TextStyle(

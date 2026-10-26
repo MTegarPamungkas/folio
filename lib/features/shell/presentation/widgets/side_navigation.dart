@@ -51,7 +51,7 @@ class SideNavigation extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 4),
                 child: Text(
-                  'PERSONAL APP STORE',
+                  'PORTOFOLIO',
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     fontSize: 9,
                     letterSpacing: 1.3,
