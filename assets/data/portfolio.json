@@ -147,8 +147,8 @@
       "year": "2026",
       "role": "Solo Developer",
       "timeline": "Okt 2026",
-      "status": "Rilis v1.0.0 · APK + web demo",
-      "version": "1.0.0",
+      "status": "Rilis v1.0.1 · APK + web demo",
+      "version": "1.0.1",
       "updatedAt": "Okt 2026",
       "tech": [
         "Flutter",
@@ -168,9 +168,9 @@
         "Kunci biometrik, ekspor PDF/CSV, plus APK dan web PWA"
       ],
       "releaseNotes": [
-        "Rilis v1.0.0 dengan APK arm64-v8a, armeabi-v7a, dan x86_64.",
-        "OCR struk dan biometrik sudah jalan di build release.",
-        "Web demo bisa dicoba langsung dari portofolio ini."
+        "Rilis v1.0.1: login email/password langsung aktif.",
+        "Pendaftaran tidak lagi menunggu email konfirmasi.",
+        "APK tersedia per arsitektur: arm64-v8a, armeabi-v7a, dan x86_64."
       ],
       "previewTitle": "Rp 468.000",
       "previewSubtitle": "Total saldo",
