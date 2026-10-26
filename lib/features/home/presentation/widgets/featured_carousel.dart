@@ -327,7 +327,7 @@ class _FeaturedSlide extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'PILIHAN EDITOR',
+                            'PILIHAN SAYA',
                             style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                                   color: p.ink.withValues(alpha: 0.62),

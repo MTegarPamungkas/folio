@@ -19,7 +19,7 @@ class LatestReleasesSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: 'BARU DIPUBLIKASIKAN',
+          eyebrow: 'BARU SAYA RILIS',
           title: 'Rilis terbaru',
           subtitle:
               'Karya yang baru saya selesaikan—dari eksplorasi pertama sampai rilis.',
