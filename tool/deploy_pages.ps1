@@ -13,8 +13,17 @@ $deployDir = Join-Path $tempRoot 'folio-gh-pages'
 Push-Location $projectRoot
 try {
   Write-Host 'Building Flutter web...' -ForegroundColor Cyan
-  & flutter build web --release --base-href $BaseHref
-  if ($LASTEXITCODE -ne 0) {
+  # Flutter writes harmless warnings to stderr; keep them from aborting the
+  # script under `$ErrorActionPreference = 'Stop'` (Windows PowerShell 5.1).
+  $previousErrorAction = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  try {
+    & flutter build web --release --base-href $BaseHref
+    $buildExitCode = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousErrorAction
+  }
+  if ($buildExitCode -ne 0) {
     throw 'Flutter web build failed.'
   }
 } finally {
