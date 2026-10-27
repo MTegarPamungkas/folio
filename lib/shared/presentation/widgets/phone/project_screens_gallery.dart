@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
@@ -26,69 +24,39 @@ class ProjectScreensGallery extends StatelessWidget {
       letterSpacing: 0.9,
       color: colors.inkMuted,
     );
-
-    Widget screen(int index, double width) {
-      return Column(
-        children: [
-          PhoneMockup(project: project, variant: index, width: width),
-          const SizedBox(height: 11),
-          Text(
-            project.screenshotAt(index)?.label ??
-                const ['Utama', 'Detail', 'Ringkasan'][index],
-            style: captionStyle,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      );
-    }
+    final totalWidth = phoneWidth * count + _gap * (count - 1);
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        // Real captures are shown as a grid so every screenshot is visible at
-        // once; generated previews stay in a single scrollable row.
-        final grid = project.hasScreenshots;
-        const minItemWidth = 158.0;
-        final maxWidth = constraints.maxWidth;
-        var columns = count;
-        var itemWidth = phoneWidth;
-        if (grid) {
-          final natural = ((maxWidth + _gap) / (phoneWidth + _gap)).floor();
-          columns = math.min(count, math.max(2, natural));
-          itemWidth = (maxWidth - _gap * (columns - 1)) / columns;
-          if (itemWidth < minItemWidth) {
-            columns = math.max(1, columns - 1);
-            itemWidth = (maxWidth - _gap * (columns - 1)) / columns;
-          }
-          itemWidth = math.min(itemWidth, phoneWidth);
-        }
-        final fits = itemWidth * columns + _gap * (columns - 1) <= maxWidth;
+        final fits = totalWidth <= constraints.maxWidth;
 
-        final screens = grid
-            ? Wrap(
-                spacing: _gap,
-                runSpacing: 22,
-                alignment: WrapAlignment.center,
+        final screens = Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (var i = 0; i < count; i++) ...[
+              if (i > 0) const SizedBox(width: _gap),
+              Column(
                 children: [
-                  for (var i = 0; i < count; i++)
-                    SizedBox(width: itemWidth, child: screen(i, itemWidth)),
+                  PhoneMockup(project: project, variant: i, width: phoneWidth),
+                  const SizedBox(height: 11),
+                  Text(
+                    project.screenshotAt(i)?.label ??
+                        const ['Utama', 'Detail', 'Ringkasan'][i],
+                    style: captionStyle,
+                    textAlign: TextAlign.center,
+                  ),
                 ],
-              )
-            : Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  for (var i = 0; i < count; i++) ...[
-                    if (i > 0) const SizedBox(width: _gap),
-                    screen(i, itemWidth),
-                  ],
-                ],
-              );
+              ),
+            ],
+          ],
+        );
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (fits || grid)
-              screens
+            if (fits)
+              Center(child: screens)
             else
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -100,15 +68,21 @@ class ProjectScreensGallery extends StatelessWidget {
             Row(
               children: [
                 Icon(
-                  grid ? Icons.photo_library_outlined : Icons.swipe_rounded,
+                  fits
+                      ? (project.hasScreenshots
+                            ? Icons.photo_library_outlined
+                            : Icons.grid_view_rounded)
+                      : Icons.swipe_rounded,
                   size: 13,
                   color: colors.inkMuted,
                 ),
                 const SizedBox(width: 6),
                 Expanded(
                   child: Text(
-                    grid
-                        ? '$count tangkapan layar asli dari aplikasi.'
+                    project.hasScreenshots
+                        ? (fits
+                              ? '$count tangkapan layar asli dari aplikasi.'
+                              : '$count tangkapan layar asli—geser untuk lihat semua.')
                         : (fits
                               ? 'Tiga layar utama, dari alur sampai ringkasan.'
                               : 'Geser untuk melihat pratinjau'),
