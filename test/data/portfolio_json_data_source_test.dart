@@ -55,7 +55,7 @@ void main() {
         (project) => project.id == id,
       );
       expect(project.hasScreenshots, isTrue, reason: id);
-      expect(project.screenshots, hasLength(3), reason: id);
+      expect(project.screenshots, hasLength(6), reason: id);
       for (final screenshot in project.screenshots) {
         expect(screenshot.label, isNotEmpty);
         expect(screenshot.asset, startsWith('assets/screenshots/'));

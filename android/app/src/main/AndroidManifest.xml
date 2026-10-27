@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The detail page embeds the live project site in a WebView. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Folio"
         android:name="${applicationName}"

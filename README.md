@@ -10,8 +10,8 @@ Portofolio saya, disusun seperti app store: **Muhammad Tegar Pamungkas**, Full S
 
 - **Storefront yang dikurasi** — hero editorial, carousel proyek pilihan, rilis terbaru, dan kategori.
 - **Pencarian & filter** — cari berdasarkan nama, tagline, teknologi, atau kategori secara langsung.
-- **Halaman detail bergaya app listing** — ikon, metadata proyek, galeri tiga layar dari tangkapan layar asli aplikasi (dengan artwork generatif sebagai fallback), cerita proyek, fitur, catatan rilis, dan proyek terkait.
-- **Live web preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah layar ponsel. Di native, preview memakai artwork statis dengan opsi direct.
+- **Halaman detail bergaya app listing** — ikon, metadata proyek, galeri tangkapan layar asli aplikasi (dengan artwork generatif sebagai fallback), cerita proyek, fitur, catatan rilis, dan proyek terkait.
+- **Live web preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dan lewat WebView di Android/iOS, dengan tombol **Buka langsung** ke browser. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah galeri layar ponsel.
 - **Tautan proyek** — repo GitHub, web demo, dan unduhan APK tampil sebagai kartu tautan di halaman detail.
 - **Koleksi tersimpan** — simpan proyek dengan `SharedPreferences`; data tetap ada setelah aplikasi dibuka ulang.
 - **Tentang saya** — bio, prinsip kerja, keahlian, pengalaman, pendidikan, organisasi, sosial, dan preferensi tema.
@@ -222,11 +222,11 @@ Tidak ada form edit konten di UI. Untuk memperbarui portofolio, edit JSON lalu r
 
 ### Live web preview
 
-Halaman detail memakai iframe untuk proyek yang punya `liveUrl`. Aplikasi mobile dengan web build—seperti Dompetektif—menampilkan preview web di bawah mockup ponsel, sedangkan proyek website memakainya sebagai preview utama.
+Halaman detail menampilkan situs live proyek yang punya `liveUrl`: iframe di web, WebView di Android/iOS (lihat `website_embed_web.dart` dan `website_embed_io.dart`). Aplikasi mobile dengan web build—seperti Dompetektif—menampilkan preview web di bawah galeri tangkapan layar, sedangkan proyek website memakainya sebagai preview utama.
 
-- URL absolut seperti `https://mtegarpamungkas.github.io/dompetektif/` langsung dipakai di web dan native.
+- URL absolut seperti `https://mtegarpamungkas.github.io/dompetektif/` dipakai di web, Android, dan iOS.
 - URL relatif seperti `sites/demo.html` di-resolve ke host aplikasi saat dibuka di web.
-- Beberapa situs eksternal memblokir iframe lewat header keamanan; opsi **Buka langsung** tetap tersedia.
+- Kalau WebView/iframe gagal dimuat, tampil artwork statis sebagai fallback dan tombol **Muat ulang** tetap tersedia.
 
 ### Warna visual proyek
 

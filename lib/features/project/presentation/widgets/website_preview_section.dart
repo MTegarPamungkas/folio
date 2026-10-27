@@ -105,7 +105,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                 Text(
                   kIsWeb
                       ? 'Jelajahi situsnya langsung di sini, atau buka di tab baru.'
-                      : 'Di sini cuma pratinjau statis—buka situsnya untuk pengalaman penuh.',
+                      : 'Situs live tampil langsung di sini—geser di dalam bingkai atau buka di tab baru.',
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontSize: 11,
                     color: colors.inkMuted,
@@ -118,16 +118,15 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
               runSpacing: 7,
               alignment: WrapAlignment.end,
               children: [
-                if (kIsWeb)
-                  OutlinedButton.icon(
-                    onPressed: () => setState(() => _reloadToken += 1),
-                    style: OutlinedButton.styleFrom(
-                      minimumSize: const Size(0, 42),
-                      padding: const EdgeInsets.symmetric(horizontal: 13),
-                    ),
-                    icon: const Icon(Icons.refresh_rounded, size: 16),
-                    label: const Text('Muat ulang'),
+                OutlinedButton.icon(
+                  onPressed: () => setState(() => _reloadToken += 1),
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(0, 42),
+                    padding: const EdgeInsets.symmetric(horizontal: 13),
                   ),
+                  icon: const Icon(Icons.refresh_rounded, size: 16),
+                  label: const Text('Muat ulang'),
+                ),
                 FilledButton.icon(
                   onPressed: canOpenDirectly
                       ? () => openExternalLink(
@@ -160,7 +159,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                     fallbackMessage: 'Situsnya belum bisa dibuka dari preview.',
                   )
                 : _showDirectFallback(context),
-            onReload: kIsWeb ? () => setState(() => _reloadToken += 1) : null,
+            onReload: () => setState(() => _reloadToken += 1),
             child: resolvedUri == null
                 ? WebsiteArtwork(project: project)
                 : WebsiteEmbed(
@@ -179,7 +178,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                 child: Text(
                   canOpenDirectly
                       ? 'Kamu bisa tetap di halaman ini atau buka situsnya langsung di tab baru.'
-                      : 'Preview ini cuma tersedia saat dibuka di web. Di aplikasi native, buka tautannya langsung.',
+                      : 'Proyek ini belum punya situs live untuk ditampilkan.',
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontSize: 10,
                     height: 1.5,
@@ -197,9 +196,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
   void _showDirectFallback(BuildContext context) {
     showFolioSnackBar(
       context,
-      message:
-          'Preview langsung cuma ada di versi web. '
-          'Di sini kamu tetap bisa lihat pratinjau statisnya.',
+      message: 'Proyek ini belum punya situs live untuk dibuka.',
       actionLabel: 'Salin tautan',
       onAction: () =>
           Clipboard.setData(ClipboardData(text: widget.project.liveUrl ?? '')),

@@ -193,8 +193,20 @@
           "label": "Berkas"
         },
         {
+          "asset": "assets/screenshots/dompetektif/barang-bukti.png",
+          "label": "Barang Bukti"
+        },
+        {
           "asset": "assets/screenshots/dompetektif/laporan.png",
           "label": "Laporan"
+        },
+        {
+          "asset": "assets/screenshots/dompetektif/temuan.png",
+          "label": "Temuan"
+        },
+        {
+          "asset": "assets/screenshots/dompetektif/tim-investigasi.png",
+          "label": "Tim Investigasi"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/dompetektif",
@@ -254,12 +266,24 @@
           "label": "Beranda"
         },
         {
+          "asset": "assets/screenshots/bagi-fair/grup.png",
+          "label": "Grup"
+        },
+        {
           "asset": "assets/screenshots/bagi-fair/saldo.png",
           "label": "Saldo"
         },
         {
+          "asset": "assets/screenshots/bagi-fair/pengeluaran.png",
+          "label": "Detail pengeluaran"
+        },
+        {
           "asset": "assets/screenshots/bagi-fair/scan-struk.png",
           "label": "Scan struk"
+        },
+        {
+          "asset": "assets/screenshots/bagi-fair/aktivitas.png",
+          "label": "Aktivitas"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/bagi-fair",
