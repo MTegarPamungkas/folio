@@ -12,7 +12,7 @@
     "phone": "+62 822-4661-4680",
     "availability": "Terbuka untuk peluang full-time",
     "yearsExperience": 3,
-    "projectCount": 12,
+    "projectCount": 13,
     "collaborationCount": 4,
     "socials": [
       {
@@ -424,6 +424,80 @@
       "featured": true,
       "githubUrl": null,
       "liveUrl": null
+    },
+    {
+      "id": "lbh-apik",
+      "name": "LBH APIK Jakarta",
+      "tagline": "Bantuan hukum untuk perempuan, lebih mudah dijangkau.",
+      "description": "Situs resmi YLBH APIK Jakarta: profil lembaga, kanal pengaduan, donasi, dan publikasi—dibangun dengan Laravel dan React.",
+      "story": "LBH APIK Jakarta butuh rumah digital yang bisa menampung dua hal sekaligus: cerita lembaga dan kanal bantuan buat perempuan yang membutuhkan pendampingan hukum. Saya ikut membangun situsnya bersama tim, dari halaman sampai integrasi backend.\n\nBackend-nya Laravel, tampilannya React lewat Inertia—jadi halaman tetap cepat tanpa mengorbankan SEO. Isinya mulai dari profil lembaga (sejarah, visi-misi, struktur organisasi), publikasi (laporan, kajian, tulisan, produk hukum, buku), galeri kegiatan, sampai formulir pengaduan dan donasi.\n\nBagian yang paling saya jaga alurnya adalah pengaduan. Nomor hotline dan WhatsApp ditaruh di titik yang mudah ditemukan, formulirnya dibuat ringkas, dan halaman publikasi diberi pencarian plus filter supaya pengunjung bisa menemukan dokumen yang relevan tanpa menggulir panjang.",
+      "category": "website",
+      "type": "website",
+      "year": "2024",
+      "role": "Full Stack Developer",
+      "timeline": "2024",
+      "status": "Live di lbhapik.org",
+      "version": "1.0.0",
+      "updatedAt": "2024",
+      "tech": [
+        "Laravel",
+        "React JS",
+        "Inertia.js",
+        "Tailwind CSS",
+        "Responsive web"
+      ],
+      "features": [
+        "Profil lembaga: sejarah, visi-misi, struktur organisasi, dan logo",
+        "Publikasi dengan pencarian, filter tipe, label, dan rentang tanggal",
+        "Kanal pengaduan dengan formulir dan hotline WhatsApp",
+        "Halaman donasi dengan formulir data donatur",
+        "Galeri kegiatan dan arsip dokumen dalam satu situs",
+        "Dua bahasa (Indonesia/Inggris) dan mode terang/gelap"
+      ],
+      "releaseNotes": [
+        "Situs resmi lbhapik.org tayang dengan profil lembaga dan publikasi.",
+        "Formulir pengaduan terhubung ke hotline WhatsApp.",
+        "Pencarian dan filter publikasi, plus dukungan dua bahasa."
+      ],
+      "previewTitle": "Pengaduan",
+      "previewSubtitle": "Hotline & formulir",
+      "previewMetric": "6",
+      "previewMetricLabel": "jenis publikasi",
+      "previewItems": [
+        "Pengaduan",
+        "Publikasi"
+      ],
+      "editorialTitle": "Bantuan hukum,\nlebih mudah dijangkau.",
+      "highlight": "Laravel + React",
+      "featured": true,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/lbh-apik/beranda.jpg",
+          "label": "Beranda"
+        },
+        {
+          "asset": "assets/screenshots/lbh-apik/tentang-kami.jpg",
+          "label": "Tentang kami"
+        },
+        {
+          "asset": "assets/screenshots/lbh-apik/pengaduan.jpg",
+          "label": "Pengaduan"
+        },
+        {
+          "asset": "assets/screenshots/lbh-apik/publikasi.jpg",
+          "label": "Publikasi"
+        },
+        {
+          "asset": "assets/screenshots/lbh-apik/galeri.jpg",
+          "label": "Galeri"
+        },
+        {
+          "asset": "assets/screenshots/lbh-apik/donasi.jpg",
+          "label": "Donasi"
+        }
+      ],
+      "githubUrl": null,
+      "liveUrl": "https://www.lbhapik.org/"
     },
     {
       "id": "movie-finder",

@@ -22,8 +22,8 @@ void main() {
     expect(developer.organizations, hasLength(2));
   });
 
-  test('loads seven projects with real CV categories', () {
-    expect(content.projects, hasLength(7));
+  test('loads the portfolio projects with real CV categories', () {
+    expect(content.projects, hasLength(8));
     expect(
       content.projects.map((project) => project.category),
       containsAll([
@@ -32,6 +32,7 @@ void main() {
         ProjectCategory.career,
         ProjectCategory.productivity,
         ProjectCategory.experiment,
+        ProjectCategory.website,
       ]),
     );
     expect(
@@ -49,8 +50,8 @@ void main() {
     expect(project.downloadUrl, contains('/releases/latest'));
   });
 
-  test('ships real screenshots for Dompetektif and Bagi Fair', () async {
-    for (final id in ['dompetektif', 'bagi-fair']) {
+  test('ships real screenshots for the showcased projects', () async {
+    for (final id in ['dompetektif', 'bagi-fair', 'lbh-apik']) {
       final project = content.projects.singleWhere(
         (project) => project.id == id,
       );
@@ -66,8 +67,9 @@ void main() {
   });
 
   test('projects without screenshots keep the generated previews', () {
+    const withScreenshots = {'dompetektif', 'bagi-fair', 'lbh-apik'};
     final others = content.projects.where(
-      (project) => project.id != 'dompetektif' && project.id != 'bagi-fair',
+      (project) => !withScreenshots.contains(project.id),
     );
     expect(others.every((project) => !project.hasScreenshots), isTrue);
     expect(others.first.screenshotAt(0), isNull);

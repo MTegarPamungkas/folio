@@ -201,6 +201,18 @@ abstract final class ProjectVisualCatalog {
         screenMuted: Color(0xFF7C8B80),
       ),
     ),
+    'lbh-apik': ProjectVisual(
+      icon: Icons.balance_rounded,
+      palette: ProjectPalette(
+        start: Color(0xFF4B0E63),
+        end: Color(0xFF8B1FA8),
+        ink: Color(0xFFFDF6FF),
+        accent: Color(0xFFF6C445),
+        screen: Color(0xFFFBF3FD),
+        onScreen: Color(0xFF2C0C3A),
+        screenMuted: Color(0xFF7B6485),
+      ),
+    ),
   };
 
   static ProjectVisual visualFor(Project project) {

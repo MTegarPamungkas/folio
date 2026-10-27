@@ -10,7 +10,7 @@ Portofolio saya, disusun seperti app store: **Muhammad Tegar Pamungkas**, Full S
 
 - **Storefront yang dikurasi** — hero editorial, carousel proyek pilihan, rilis terbaru, dan kategori.
 - **Pencarian & filter** — cari berdasarkan nama, tagline, teknologi, atau kategori secara langsung.
-- **Halaman detail bergaya app listing** — ikon, metadata proyek, galeri tangkapan layar asli aplikasi (dengan artwork generatif sebagai fallback), cerita proyek, fitur, catatan rilis, dan proyek terkait.
+- **Halaman detail bergaya app listing** — ikon, metadata proyek, galeri tangkapan layar asli (layar aplikasi di bingkai ponsel, halaman situs di bingkai browser), cerita proyek, fitur, catatan rilis, dan proyek terkait.
 - **Live web preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dan lewat WebView di Android/iOS, dengan tombol **Buka langsung** ke browser. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah galeri layar ponsel.
 - **Tautan proyek** — repo GitHub, web demo, dan unduhan APK tampil sebagai kartu tautan di halaman detail.
 - **Koleksi tersimpan** — simpan proyek dengan `SharedPreferences`; data tetap ada setelah aplikasi dibuka ulang.
@@ -131,7 +131,7 @@ Tidak ada perhitungan kolom yang diulang di setiap halaman. Komponennya ada di [
 ### Widget yang dipisah
 
 - Section beranda: `home_intro.dart`, `featured_carousel.dart`, `latest_releases_section.dart`, `categories_section.dart`, `maker_section.dart`.
-- Detail proyek: `project_hero.dart`, `screens_section.dart`, `website_preview_section.dart`, `story_section.dart`, `aside_info.dart`, `detail_columns.dart`, `related_projects.dart`.
+- Detail proyek: `project_hero.dart`, `screens_section.dart`, `website_preview_section.dart`, `website_screens_section.dart`, `story_section.dart`, `aside_info.dart`, `detail_columns.dart`, `related_projects.dart`.
 - Mockup ponsel: frame, gallery, common widgets, painters, dan satu file per jenis layar di [`shared/presentation/widgets/phone`](lib/shared/presentation/widgets/phone).
 - Preview website: `WebsitePreviewSection`, `BrowserFrame`, `WebsiteArtwork`, dan live iframe dengan conditional import di [`shared/presentation/widgets/website`](lib/shared/presentation/widgets/website).
 - Profil: `about_intro.dart`, `principles_section.dart`, `skills_section.dart`, `experience_section.dart`, `education_section.dart`, dan `preferences_contact_section.dart`.
@@ -216,7 +216,8 @@ Seluruh konten ada di **[`assets/data/portfolio.json`](assets/data/portfolio.jso
 
 - `developer`: nama, role, bio, lokasi, email, telepon, sosial, skill, pengalaman, pendidikan, organisasi, prinsip, dan statistik;
 - `projects`: cerita, peran, teknologi, fitur, release notes, highlight, tipe proyek (`mobileApp` / `website`), `githubUrl`, `liveUrl`, dan `downloadUrl` opsional.
-- `projects[].screenshots`: opsional. Daftar `{ "asset": "assets/screenshots/<proyek>/<file>.png", "label": "Beranda" }` berisi tangkapan layar asli aplikasi. Kalau diisi, galeri dan mockup ponsel menampilkan gambar asli tersebut (label ikut dipakai); kalau kosong, aplikasi memakai artwork generatif seperti sebelumnya. Daftarkan foldernya di `pubspec.yaml`.
+- `projects[].screenshots`: opsional. Daftar `{ "asset": "assets/screenshots/<proyek>/<file>", "label": "Beranda" }` berisi tangkapan asli. Untuk aplikasi mobile, gambarnya tampil di bingkai ponsel; untuk proyek `website`, gambarnya tampil di bingkai browser sebagai galeri halaman situs. Kalau kosong, aplikasi memakai artwork generatif seperti sebelumnya. Daftarkan foldernya di `pubspec.yaml`.
+- `projects[].type`: `website` membuat halaman detail menampilkan situs live sebagai konten utama, disusul galeri halaman situs.
 
 Tidak ada form edit konten di UI. Untuk memperbarui portofolio, edit JSON lalu rebuild aplikasi. Data di repo ini sudah disusun dari CV Muhammad Tegar Pamungkas; periksa kembali sebelum publikasi.
 
@@ -271,5 +272,5 @@ Test mencakup:
 - Form kontak memakai `mailto:`; tidak ada backend dan tidak ada data yang dikirim ke server.
 - Favorit disimpan lokal di perangkat.
 - Tidak ada rating atau jumlah pengguna fiktif; kartu proyek memakai highlight yang diambil dari CV.
-- Mockup layar di halaman detail adalah ilustrasi antarmuka, bukan screenshot App Store.
+- Galeri di halaman detail memakai tangkapan layar asli: layar aplikasi di bingkai ponsel, halaman situs di bingkai browser. Proyek tanpa tangkapan layar memakai artwork generatif.
 - Build release Android saat ini memakai debug signing; siapkan keystore sebelum mengunggah ke Play Store.

@@ -188,6 +188,13 @@ class _FeaturedSlide extends StatelessWidget {
 
   final Project project;
 
+  String _addressLabel(String? rawUrl) {
+    if (rawUrl == null || rawUrl.trim().isEmpty) return project.name;
+    final uri = Uri.tryParse(rawUrl.trim());
+    if (uri != null && uri.host.isNotEmpty) return uri.host;
+    return rawUrl;
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = project.palette;
@@ -252,8 +259,15 @@ class _FeaturedSlide extends StatelessWidget {
                                 height: constraints.maxWidth >= 1000
                                     ? 200
                                     : 170,
-                                address: project.liveUrl ?? project.name,
-                                child: WebsiteArtwork(project: project),
+                                address: _addressLabel(project.liveUrl),
+                                child: project.hasScreenshots
+                                    ? Image.asset(
+                                        project.screenshots.first.asset,
+                                        fit: BoxFit.cover,
+                                        alignment: Alignment.topCenter,
+                                        filterQuality: FilterQuality.medium,
+                                      )
+                                    : WebsiteArtwork(project: project),
                               ),
                             )
                           : PhoneMockup(

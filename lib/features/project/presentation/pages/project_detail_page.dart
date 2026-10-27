@@ -12,6 +12,7 @@ import 'package:folio/features/project/presentation/widgets/project_hero.dart';
 import 'package:folio/features/project/presentation/widgets/related_projects.dart';
 import 'package:folio/features/project/presentation/widgets/screens_section.dart';
 import 'package:folio/features/project/presentation/widgets/website_preview_section.dart';
+import 'package:folio/features/project/presentation/widgets/website_screens_section.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 import 'package:folio/shared/presentation/widgets/footer/folio_footer.dart';
@@ -80,9 +81,13 @@ class ProjectDetailPage extends StatelessWidget {
                   children: [
                     ProjectHero(project: project),
                     const SizedBox(height: 32),
-                    if (project.isWebsite)
-                      WebsitePreviewSection(project: project)
-                    else ...[
+                    if (project.isWebsite) ...[
+                      WebsitePreviewSection(project: project),
+                      if (project.hasScreenshots) ...[
+                        const SizedBox(height: 26),
+                        WebsiteScreensSection(project: project),
+                      ],
+                    ] else ...[
                       ScreensSection(project: project),
                       if (project.hasLiveUrl) ...[
                         const SizedBox(height: 26),

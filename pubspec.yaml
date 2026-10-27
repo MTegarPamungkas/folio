@@ -32,6 +32,7 @@ flutter:
     - assets/data/portfolio.json
     - assets/screenshots/dompetektif/
     - assets/screenshots/bagi-fair/
+    - assets/screenshots/lbh-apik/
 
   fonts:
     - family: PlusJakartaSans
