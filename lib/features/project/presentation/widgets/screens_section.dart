@@ -44,7 +44,9 @@ class ScreensSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      'Tiga layar yang menunjukkan arah visual dan alur utama.',
+                      project.hasScreenshots
+                          ? 'Tangkapan layar asli, dari alur utama sampai fiturnya.'
+                          : 'Tiga layar yang menunjukkan arah visual dan alur utama.',
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontSize: 11,
                         color: colors.inkMuted,
@@ -61,7 +63,9 @@ class ScreensSection extends StatelessWidget {
                   border: Border.all(color: colors.line),
                 ),
                 child: Text(
-                  '3 LAYAR',
+                  project.hasScreenshots
+                      ? '${project.screenshots.length} TANGKAPAN'
+                      : '3 LAYAR',
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 8,
                     letterSpacing: 0.6,

@@ -62,6 +62,7 @@ class _PhoneFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = project.palette;
+    final screenshot = project.screenshotAt(variant);
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF111110),
@@ -78,41 +79,67 @@ class _PhoneFrame extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(27),
-        child: ColoredBox(
-          color: p.screen,
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  _StatusBar(project: project),
-                  Expanded(
-                    child: switch (variant) {
-                      0 => _HomeScreen(project: project),
-                      1 => ProjectDetailPreview(project: project),
-                      _ => ProjectSummaryPreview(project: project),
-                    },
-                  ),
-                  _HomeIndicator(color: p.onScreen),
-                ],
-              ),
-              Positioned(
-                top: 7,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Container(
-                    width: 58,
-                    height: 16,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF10100F),
-                      borderRadius: BorderRadius.circular(100),
+        child: screenshot != null
+            ? _ScreenshotScreen(screenshot: screenshot, background: p.screen)
+            : ColoredBox(
+                color: p.screen,
+                child: Stack(
+                  children: [
+                    Column(
+                      children: [
+                        _StatusBar(project: project),
+                        Expanded(
+                          child: switch (variant) {
+                            0 => _HomeScreen(project: project),
+                            1 => ProjectDetailPreview(project: project),
+                            _ => ProjectSummaryPreview(project: project),
+                          },
+                        ),
+                        _HomeIndicator(color: p.onScreen),
+                      ],
                     ),
-                  ),
+                    Positioned(
+                      top: 7,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: Container(
+                          width: 58,
+                          height: 16,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF10100F),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
+      ),
+    );
+  }
+}
+
+/// Renders a real capture of the shipped app inside the device frame, so the
+/// gallery shows the product instead of a drawn mockup.
+class _ScreenshotScreen extends StatelessWidget {
+  const _ScreenshotScreen({required this.screenshot, required this.background});
+
+  final ProjectScreenshot screenshot;
+  final Color background;
+
+  @override
+  Widget build(BuildContext context) {
+    return ColoredBox(
+      color: background,
+      child: Image.asset(
+        screenshot.asset,
+        // The capture fills the frame exactly; `fill` keeps the whole screen
+        // visible instead of cropping the app's own navigation bar.
+        fit: BoxFit.fill,
+        filterQuality: FilterQuality.medium,
+        gaplessPlayback: true,
       ),
     );
   }

@@ -189,6 +189,18 @@ abstract final class ProjectVisualCatalog {
         screenMuted: Color(0xFF9C9588),
       ),
     ),
+    'bagi-fair': ProjectVisual(
+      icon: Icons.receipt_long_rounded,
+      palette: ProjectPalette(
+        start: Color(0xFF0D5A45),
+        end: Color(0xFF2E9469),
+        ink: Color(0xFFF6F1E4),
+        accent: Color(0xFFE4703A),
+        screen: Color(0xFFF7F2E7),
+        onScreen: Color(0xFF14322A),
+        screenMuted: Color(0xFF7C8B80),
+      ),
+    ),
   };
 
   static ProjectVisual visualFor(Project project) {

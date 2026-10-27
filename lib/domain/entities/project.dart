@@ -41,6 +41,17 @@ enum ProjectCategory {
   }
 }
 
+/// One real capture of the running app, used instead of a drawn mockup.
+class ProjectScreenshot extends Equatable {
+  const ProjectScreenshot({required this.asset, required this.label});
+
+  final String asset;
+  final String label;
+
+  @override
+  List<Object?> get props => [asset, label];
+}
+
 class Project extends Equatable {
   const Project({
     required this.id,
@@ -67,6 +78,7 @@ class Project extends Equatable {
     required this.highlight,
     this.type = ProjectType.mobileApp,
     this.featured = false,
+    this.screenshots = const [],
     this.githubUrl,
     this.liveUrl,
     this.downloadUrl,
@@ -96,11 +108,21 @@ class Project extends Equatable {
   final String highlight;
   final ProjectType type;
   final bool featured;
+  final List<ProjectScreenshot> screenshots;
   final String? githubUrl;
   final String? liveUrl;
   final String? downloadUrl;
 
   bool get isWebsite => type == ProjectType.website;
+
+  bool get hasScreenshots => screenshots.isNotEmpty;
+
+  /// Real capture for the given slot, or `null` when the project only has the
+  /// generated previews.
+  ProjectScreenshot? screenshotAt(int index) {
+    if (index < 0 || index >= screenshots.length) return null;
+    return screenshots[index];
+  }
 
   bool get hasGithubUrl => githubUrl != null && githubUrl!.trim().isNotEmpty;
 
@@ -147,6 +169,7 @@ class Project extends Equatable {
     highlight,
     type,
     featured,
+    screenshots,
     githubUrl,
     liveUrl,
     downloadUrl,

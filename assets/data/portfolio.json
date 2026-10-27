@@ -183,9 +183,88 @@
       "editorialTitle": "Usut tuntas,\nbukan sekadar catat.",
       "highlight": "OCR + offline-first",
       "featured": true,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/dompetektif/meja-kasus.png",
+          "label": "Meja Kasus"
+        },
+        {
+          "asset": "assets/screenshots/dompetektif/berkas.png",
+          "label": "Berkas"
+        },
+        {
+          "asset": "assets/screenshots/dompetektif/laporan.png",
+          "label": "Laporan"
+        }
+      ],
       "githubUrl": "https://github.com/MTegarPamungkas/dompetektif",
       "liveUrl": "https://mtegarpamungkas.github.io/dompetektif/",
       "downloadUrl": "https://github.com/MTegarPamungkas/dompetektif/releases/latest"
+    },
+    {
+      "id": "bagi-fair",
+      "name": "Bagi Fair",
+      "tagline": "Bagi adil, tanpa baper.",
+      "description": "Aplikasi patungan buat trip, kos, dan nongkrong. Semua orang bisa mencatat pengeluaran, melihat asal tiap angka, lalu melunasi tanpa spreadsheet.",
+      "story": "Bagi Fair berangkat dari drama yang akrab: satu orang bayar dulu, sisanya janji transfer, lalu angka di spreadsheet tidak pernah cocok. Saya bangun aplikasi patungan yang menghitung pembagiannya secara eksplisit—bukan cuma membagi rata.\n\nBagian tersulitnya bukan UI, tapi keadilan angkanya. Pajak dan service charge dialokasikan proporsional ke subtotal tiap orang, pembulatan pakai largest-remainder supaya total bagian selalu pas, dan setiap posisi bisa dibuka lewat breakdown \"Kenapa angkanya segini?\". Untuk struk, foto struk dibaca AI lewat Supabase Edge Function, lalu hasilnya wajib lewat review yang bisa diedit sebelum jadi pengeluaran.\n\nDatanya cloud-first: Supabase Auth, Postgres dengan RLS, Realtime sebagai sinyal perubahan, dan cache lokal per pengguna. APK Android dan web dibangun dari basis kode yang sama.",
+      "category": "fintech",
+      "type": "mobileApp",
+      "year": "2026",
+      "role": "Solo Developer",
+      "timeline": "Okt 2026",
+      "status": "Rilis v1.0.2 · APK + web demo",
+      "version": "1.0.2",
+      "updatedAt": "Okt 2026",
+      "tech": [
+        "Flutter",
+        "Dart",
+        "BLoC",
+        "Supabase",
+        "Realtime",
+        "Edge Functions",
+        "Gemini"
+      ],
+      "features": [
+        "Empat mode bagi: rata, persentase, nominal pasti, atau per item",
+        "Pajak dan service dialokasikan proporsional, pembulatan largest-remainder",
+        "OCR struk lewat AI, selalu melewati review yang bisa diedit",
+        "Saldo bersih, transfer paling sedikit, dan status Impas",
+        "Realtime, notifikasi in-app, dan cache lokal per pengguna",
+        "Ekspor PDF/CSV per grup, tema terang/gelap, Indonesia/Inggris"
+      ],
+      "releaseNotes": [
+        "Rilis v1.0.2: APK per arsitektur arm64-v8a, armeabi-v7a, dan x86_64.",
+        "Scan struk menampilkan progres saat AI membaca, plus guard anti dobel-scan.",
+        "Web demo terpasang di GitHub Pages."
+      ],
+      "previewTitle": "Rp 172.500",
+      "previewSubtitle": "Total struk",
+      "previewMetric": "3 grup",
+      "previewMetricLabel": "patungan aktif",
+      "previewItems": [
+        "Kopi Kenangan",
+        "Nasi goreng"
+      ],
+      "editorialTitle": "Bagi adil,\ntanpa baper.",
+      "highlight": "Split bill + OCR AI",
+      "featured": true,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/bagi-fair/beranda.png",
+          "label": "Beranda"
+        },
+        {
+          "asset": "assets/screenshots/bagi-fair/saldo.png",
+          "label": "Saldo"
+        },
+        {
+          "asset": "assets/screenshots/bagi-fair/scan-struk.png",
+          "label": "Scan struk"
+        }
+      ],
+      "githubUrl": "https://github.com/MTegarPamungkas/bagi-fair",
+      "liveUrl": "https://mtegarpamungkas.github.io/bagi-fair/",
+      "downloadUrl": "https://github.com/MTegarPamungkas/bagi-fair/releases/latest"
     },
     {
       "id": "mis-msa",

@@ -10,7 +10,7 @@ Portofolio saya, disusun seperti app store: **Muhammad Tegar Pamungkas**, Full S
 
 - **Storefront yang dikurasi** — hero editorial, carousel proyek pilihan, rilis terbaru, dan kategori.
 - **Pencarian & filter** — cari berdasarkan nama, tagline, teknologi, atau kategori secara langsung.
-- **Halaman detail bergaya app listing** — ikon, metadata proyek, pratinjau tiga layar untuk aplikasi, cerita proyek, fitur, catatan rilis, dan proyek terkait.
+- **Halaman detail bergaya app listing** — ikon, metadata proyek, galeri tiga layar dari tangkapan layar asli aplikasi (dengan artwork generatif sebagai fallback), cerita proyek, fitur, catatan rilis, dan proyek terkait.
 - **Live web preview** — proyek website bisa langsung tampil di halaman detail lewat iframe saat dibuka di web, dengan tombol **Buka langsung** ke tab baru. Aplikasi mobile yang punya web build juga menampilkan preview web di bawah layar ponsel. Di native, preview memakai artwork statis dengan opsi direct.
 - **Tautan proyek** — repo GitHub, web demo, dan unduhan APK tampil sebagai kartu tautan di halaman detail.
 - **Koleksi tersimpan** — simpan proyek dengan `SharedPreferences`; data tetap ada setelah aplikasi dibuka ulang.
@@ -216,6 +216,7 @@ Seluruh konten ada di **[`assets/data/portfolio.json`](assets/data/portfolio.jso
 
 - `developer`: nama, role, bio, lokasi, email, telepon, sosial, skill, pengalaman, pendidikan, organisasi, prinsip, dan statistik;
 - `projects`: cerita, peran, teknologi, fitur, release notes, highlight, tipe proyek (`mobileApp` / `website`), `githubUrl`, `liveUrl`, dan `downloadUrl` opsional.
+- `projects[].screenshots`: opsional. Daftar `{ "asset": "assets/screenshots/<proyek>/<file>.png", "label": "Beranda" }` berisi tangkapan layar asli aplikasi. Kalau diisi, galeri dan mockup ponsel menampilkan gambar asli tersebut (label ikut dipakai); kalau kosong, aplikasi memakai artwork generatif seperti sebelumnya. Daftarkan foldernya di `pubspec.yaml`.
 
 Tidak ada form edit konten di UI. Untuk memperbarui portofolio, edit JSON lalu rebuild aplikasi. Data di repo ini sudah disusun dari CV Muhammad Tegar Pamungkas; periksa kembali sebelum publikasi.
 

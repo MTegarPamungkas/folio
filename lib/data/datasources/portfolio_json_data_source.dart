@@ -181,9 +181,27 @@ class PortfolioJsonDataSource {
       editorialTitle: _string(json['editorialTitle'], 'project.editorialTitle'),
       highlight: _string(json['highlight'], 'project.highlight'),
       featured: json['featured'] == true,
+      screenshots: _screenshots(json['screenshots']),
       githubUrl: _optionalString(json['githubUrl']),
       liveUrl: _optionalString(json['liveUrl']),
       downloadUrl: _optionalString(json['downloadUrl']),
+    );
+  }
+
+  /// Screenshots are optional: projects without them keep the generated
+  /// previews.
+  List<ProjectScreenshot> _screenshots(Object? value) {
+    if (value == null) return const [];
+    return [
+      for (final item in _list(value, 'project.screenshots'))
+        _screenshot(_map(item, 'project.screenshot')),
+    ];
+  }
+
+  ProjectScreenshot _screenshot(Map<String, dynamic> json) {
+    return ProjectScreenshot(
+      asset: _string(json['asset'], 'project.screenshot.asset'),
+      label: _string(json['label'], 'project.screenshot.label'),
     );
   }
 

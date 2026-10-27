@@ -45,11 +45,11 @@ void main() {
   group('portfolio use cases', () {
     test('home content exposes featured projects and counts', () {
       final content = GetHomeContent(repository)();
-      expect(content.featuredProjects, hasLength(4));
+      expect(content.featuredProjects, hasLength(5));
       expect(content.latestProjects, hasLength(4));
-      expect(content.totalProjects, 6);
+      expect(content.totalProjects, 7);
       expect(content.categoryCounts[ProjectCategory.enterprise], 1);
-      expect(content.categoryCounts[ProjectCategory.finance], 1);
+      expect(content.categoryCounts[ProjectCategory.finance], 2);
       expect(content.categoryCounts[ProjectCategory.career], 1);
       expect(content.categoryCounts[ProjectCategory.experiment], 2);
     });

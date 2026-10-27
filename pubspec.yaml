@@ -29,6 +29,8 @@ flutter:
 
   assets:
     - assets/data/portfolio.json
+    - assets/screenshots/dompetektif/
+    - assets/screenshots/bagi-fair/
 
   fonts:
     - family: PlusJakartaSans

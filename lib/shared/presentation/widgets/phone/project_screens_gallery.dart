@@ -16,7 +16,8 @@ class ProjectScreensGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.folio;
-    final totalWidth = phoneWidth * 3 + 40;
+    final count = project.hasScreenshots ? project.screenshots.length : 3;
+    final totalWidth = phoneWidth * count + 20 * (count - 1);
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -25,14 +26,15 @@ class ProjectScreensGallery extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            for (var i = 0; i < 3; i++) ...[
+            for (var i = 0; i < count; i++) ...[
               if (i > 0) const SizedBox(width: 20),
               Column(
                 children: [
                   PhoneMockup(project: project, variant: i, width: phoneWidth),
                   const SizedBox(height: 11),
                   Text(
-                    const ['Utama', 'Detail', 'Ringkasan'][i],
+                    project.screenshotAt(i)?.label ??
+                        const ['Utama', 'Detail', 'Ringkasan'][i],
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
                       fontSize: 9.5,
                       letterSpacing: 0.9,
@@ -69,7 +71,9 @@ class ProjectScreensGallery extends StatelessWidget {
                 Expanded(
                   child: Text(
                     fits
-                        ? 'Tiga layar utama, dari alur sampai ringkasan.'
+                        ? (project.hasScreenshots
+                              ? 'Tangkapan layar asli dari aplikasi.'
+                              : 'Tiga layar utama, dari alur sampai ringkasan.')
                         : 'Geser untuk melihat pratinjau',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
