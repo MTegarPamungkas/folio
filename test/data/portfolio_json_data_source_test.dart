@@ -24,7 +24,7 @@ void main() {
   });
 
   test('loads the portfolio projects with real CV categories', () {
-    expect(content.projects, hasLength(8));
+    expect(content.projects, hasLength(10));
     expect(
       content.projects.map((project) => project.category),
       containsAll([
@@ -57,6 +57,11 @@ void main() {
       'bagi-fair': 6,
       'lbh-apik': 6,
       'movie-finder': 4,
+      'story-app': 6,
+      'custom-fit': 6,
+      'team-intelligence': 6,
+      'tomboati': 6,
+      'getcrew': 3,
     };
     for (final entry in expectedCounts.entries) {
       final project = content.projects.singleWhere(
@@ -86,6 +91,11 @@ void main() {
       'bagi-fair',
       'lbh-apik',
       'movie-finder',
+      'story-app',
+      'custom-fit',
+      'team-intelligence',
+      'tomboati',
+      'getcrew',
     };
     final others = content.projects.where(
       (project) => !withScreenshots.contains(project.id),

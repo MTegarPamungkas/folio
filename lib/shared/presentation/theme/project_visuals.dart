@@ -177,6 +177,30 @@ abstract final class ProjectVisualCatalog {
         screenMuted: Color(0xFF71827A),
       ),
     ),
+    'custom-fit': ProjectVisual(
+      icon: Icons.checkroom_rounded,
+      palette: ProjectPalette(
+        start: Color(0xFF2B1B5A),
+        end: Color(0xFFC86DD7),
+        ink: Color(0xFFFFF8FF),
+        accent: Color(0xFFFFD166),
+        screen: Color(0xFFFBF5F8),
+        onScreen: Color(0xFF241634),
+        screenMuted: Color(0xFF82708F),
+      ),
+    ),
+    'team-intelligence': ProjectVisual(
+      icon: Icons.hub_rounded,
+      palette: ProjectPalette(
+        start: Color(0xFF0E1B26),
+        end: Color(0xFF1F8A70),
+        ink: Color(0xFFF2F7F5),
+        accent: Color(0xFF5EEAD4),
+        screen: Color(0xFF101820),
+        onScreen: Color(0xFFECF6F2),
+        screenMuted: Color(0xFF8FA6A0),
+      ),
+    ),
     'dompetektif': ProjectVisual(
       icon: Icons.manage_search_rounded,
       palette: ProjectPalette(

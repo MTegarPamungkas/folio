@@ -137,6 +137,157 @@
   },
   "projects": [
     {
+      "id": "custom-fit",
+      "name": "CustomFit",
+      "tagline": "Coba dulu di layar, baru dijahit.",
+      "description": "Aplikasi fashion yang menggabungkan virtual try-on generatif dengan pemesanan jahit ke penjahit.",
+      "story": "CustomFit lahir dari tim AuraVentures untuk menjawab satu masalah: sulit membayangkan baju custom sebelum dijahit, apalagi kalau jarak ke penjahit jauh. Saya mengerjakan aplikasi Flutter-nya, dari katalog pakaian dan alur virtual try-on sampai checkout dan pelacakan pesanan.\n\nPengguna memilih model, atasan, dan bawahan; hasil try-on dibuat lewat API generatif lalu ditampilkan sebagai gambar. Setelah cocok, pesanan diteruskan ke penjahit dengan opsi jahit prioritas atau normal, pembayaran, dan status pesanan yang bisa dipantau.",
+      "category": "ai-kreatif",
+      "type": "mobileApp",
+      "year": "2024",
+      "role": "Mobile Developer",
+      "timeline": "Jan — Feb 2024",
+      "status": "Proyek tim AuraVentures · SDG 9",
+      "version": "1.0",
+      "updatedAt": "Feb 2024",
+      "tech": [
+        "Flutter",
+        "Firebase Auth",
+        "Cloud Firestore",
+        "Dio",
+        "Generative AI"
+      ],
+      "features": [
+        "Onboarding dan autentikasi email atau Google",
+        "Katalog atasan, bawahan, rok, dan model dari Firestore",
+        "Virtual try-on generatif dengan pilihan model dan pakaian",
+        "Pemilihan material dan ukuran sebelum checkout",
+        "Checkout dengan alamat, opsi jahit, dan pembayaran",
+        "Pelacakan pesanan dari belum dibayar sampai selesai"
+      ],
+      "releaseNotes": [
+        "Alur onboarding, login, dan register.",
+        "Katalog pakaian dan virtual try-on generatif.",
+        "Checkout, pembayaran, dan pelacakan pesanan."
+      ],
+      "previewTitle": "CustomFit",
+      "previewSubtitle": "Virtual try-on · jahit custom",
+      "previewMetric": "04",
+      "previewMetricLabel": "kategori pakaian",
+      "previewItems": [
+        "Try-on",
+        "Pesanan"
+      ],
+      "editorialTitle": "Coba dulu,\nbaru dijahit.",
+      "highlight": "Generative virtual try-on",
+      "featured": false,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/custom-fit/home.jpg",
+          "label": "Beranda"
+        },
+        {
+          "asset": "assets/screenshots/custom-fit/try-on.jpg",
+          "label": "Virtual try-on"
+        },
+        {
+          "asset": "assets/screenshots/custom-fit/result.jpg",
+          "label": "Hasil desain"
+        },
+        {
+          "asset": "assets/screenshots/custom-fit/checkout.jpg",
+          "label": "Checkout"
+        },
+        {
+          "asset": "assets/screenshots/custom-fit/payment.jpg",
+          "label": "Pembayaran"
+        },
+        {
+          "asset": "assets/screenshots/custom-fit/orders.jpg",
+          "label": "Pesanan"
+        }
+      ],
+      "githubUrl": "https://github.com/MTegarPamungkas/custom_fit",
+      "liveUrl": null
+    },
+    {
+      "id": "team-intelligence",
+      "name": "Team Intelligence",
+      "tagline": "SYNC, platform kolaborasi tim berbasis AI.",
+      "description": "Platform kolaborasi tim dengan dashboard proyek, manajemen tugas, activity feed, dan AI insights.",
+      "story": "Team Intelligence (SYNC) adalah eksperimen saya membangun platform kolaborasi tim yang tidak cuma mencatat tugas, tapi membantu tim membaca kondisinya sendiri. Saya susun aplikasinya dengan clean architecture dan BLoC, dari dashboard, activity feed, task board, sampai modul AI.\n\nAI insights meringkas risiko dan ketidakseimbangan beban kerja dari data proyek, sementara AI conversations menjawab pertanyaan seputar tim dengan konteks anggota dan tugas. Datanya lewat Dio ke API, di-cache di SQLite, dan sesi disimpan di secure storage.",
+      "category": "produktivitas",
+      "type": "mobileApp",
+      "year": "2026",
+      "role": "Flutter Developer",
+      "timeline": "Sep 2025 — Okt 2026",
+      "status": "Repo publik · dalam pengembangan",
+      "version": "1.0.0",
+      "updatedAt": "Okt 2026",
+      "tech": [
+        "Flutter",
+        "BLoC",
+        "Clean Architecture",
+        "Dio",
+        "SQLite",
+        "Gemini AI",
+        "GoRouter"
+      ],
+      "features": [
+        "Dashboard proyek: progress, anggota, efisiensi, dan fokus tim",
+        "Task board dengan prioritas, progres, dependency, tag, dan assignment",
+        "AI insights untuk risiko, beban kerja, dan rekomendasi",
+        "AI conversations dengan konteks proyek dan anggota",
+        "Activity feed dan notifikasi perubahan tim",
+        "Manajemen anggota, permission, dan project settings"
+      ],
+      "releaseNotes": [
+        "Dashboard proyek dan activity feed.",
+        "Manajemen tugas, dependency, dan anggota.",
+        "AI insights dan AI conversations.",
+        "Notifikasi, permission, dan project settings."
+      ],
+      "previewTitle": "Microsoft Platform",
+      "previewSubtitle": "SYNC · progres 65%",
+      "previewMetric": "88,33%",
+      "previewMetricLabel": "efisiensi tim",
+      "previewItems": [
+        "Dashboard",
+        "AI Insights"
+      ],
+      "editorialTitle": "Kerja tim,\nlebih terukur.",
+      "highlight": "AI team insights",
+      "featured": false,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/team-intelligence/dashboard.jpg",
+          "label": "Dashboard"
+        },
+        {
+          "asset": "assets/screenshots/team-intelligence/tasks.jpg",
+          "label": "Tugas"
+        },
+        {
+          "asset": "assets/screenshots/team-intelligence/ai-chat.jpg",
+          "label": "AI Chat"
+        },
+        {
+          "asset": "assets/screenshots/team-intelligence/insights.jpg",
+          "label": "AI Insights"
+        },
+        {
+          "asset": "assets/screenshots/team-intelligence/activity.jpg",
+          "label": "Aktivitas"
+        },
+        {
+          "asset": "assets/screenshots/team-intelligence/members.jpg",
+          "label": "Anggota"
+        }
+      ],
+      "githubUrl": "https://github.com/MTegarPamungkas/team_intelligence",
+      "liveUrl": null
+    },
+    {
       "id": "dompetektif",
       "name": "Dompetektif",
       "tagline": "Ke mana uangmu pergi?",
@@ -337,95 +488,6 @@
       "liveUrl": null
     },
     {
-      "id": "getcrew",
-      "name": "GetCrew",
-      "tagline": "Menemukan kru yang tepat, lebih cepat.",
-      "description": "Aplikasi rekrutmen yang mempertemukan crew dan perusahaan lewat lowongan, profil, dan messaging.",
-      "story": "Saya mengerjakan GetCrew, aplikasi yang mempertemukan crew dan perusahaan dalam satu alur rekrutmen. Saya integrasikan lowongan, profil, dan messaging lewat REST API, bareng tim backend saya jaga kontrak datanya tetap sinkron dengan UI.\n\nKarena backend terus berkembang, saya rapikan komunikasi API di service layer dan pakai adapter pattern. Perubahan di server bisa ditangani tanpa membongkar seluruh tampilan.",
-      "category": "career",
-      "type": "mobileApp",
-      "year": "2025",
-      "role": "Mobile Developer",
-      "timeline": "Sep 2024 — Jan 2025",
-      "status": "Aplikasi rekrutmen",
-      "version": "1.0.0",
-      "updatedAt": "Jan 2025",
-      "tech": [
-        "REST API",
-        "Messaging",
-        "Service Layer",
-        "Adapter Pattern"
-      ],
-      "features": [
-        "Lowongan dan profil crew dalam satu alur",
-        "Messaging yang terhubung lewat REST API",
-        "Service layer khusus buat komunikasi API",
-        "Adapter pattern supaya perubahan backend tidak merusak UI"
-      ],
-      "releaseNotes": [
-        "Integrasi lowongan dan profil.",
-        "Alur messaging antara crew dan perusahaan.",
-        "Perapian service layer dan adapter API."
-      ],
-      "previewTitle": "Crew tersedia",
-      "previewSubtitle": "12 kandidat baru",
-      "previewMetric": "12",
-      "previewMetricLabel": "lowongan aktif",
-      "previewItems": [
-        "Kandidat",
-        "Pesan"
-      ],
-      "editorialTitle": "Orang yang tepat,\ndi waktu yang tepat.",
-      "highlight": "REST API integration",
-      "featured": true,
-      "githubUrl": null,
-      "liveUrl": null
-    },
-    {
-      "id": "tomboati",
-      "name": "TomboAti",
-      "tagline": "Dari ide sampai rilis publik.",
-      "description": "Aplikasi mobile yang saya bangun dan rilis sendiri ke Google Play Store.",
-      "story": "TomboAti (dulu AhwalNote) saya bangun dari nol sampai akhirnya tersedia di Google Play Store. Saya pegang alur aplikasi, pengelolaan data di perangkat, sampai proses rilisnya.\n\nProyek ini ngajarin saya bahwa detail di luar fitur juga penting: penamaan, alur pengguna, pemeliharaan rilis, dan tanggung jawab saat aplikasi benar-benar dipakai orang lain.",
-      "category": "produktivitas",
-      "type": "mobileApp",
-      "year": "2025",
-      "role": "Mobile Developer",
-      "timeline": "2024 — 2025",
-      "status": "Live di Google Play Store",
-      "version": "1.0.0",
-      "updatedAt": "2025",
-      "tech": [
-        "Mobile App",
-        "Local Storage",
-        "Google Play"
-      ],
-      "features": [
-        "Aplikasi mobile dengan data yang disimpan di perangkat",
-        "Proses rilis dan pemeliharaan di Google Play Store",
-        "Alur yang dirancang buat kebutuhan sehari-hari",
-        "Pengalaman membawa produk dari ide sampai dipakai orang"
-      ],
-      "releaseNotes": [
-        "Rilis publik pertama di Google Play Store.",
-        "Perbaikan stabilitas dan alur penggunaan.",
-        "Pemeliharaan rilis setelah publikasi."
-      ],
-      "previewTitle": "TomboAti",
-      "previewSubtitle": "Rilis publik · Google Play",
-      "previewMetric": "01",
-      "previewMetricLabel": "rilis publik",
-      "previewItems": [
-        "Mobile app",
-        "Play Store"
-      ],
-      "editorialTitle": "Dari ide\nsampai rilis.",
-      "highlight": "Live di Google Play",
-      "featured": true,
-      "githubUrl": null,
-      "liveUrl": null
-    },
-    {
       "id": "lbh-apik",
       "name": "LBH APIK Jakarta",
       "tagline": "Bantuan hukum untuk perempuan, lebih mudah dijangkau.",
@@ -571,45 +633,212 @@
     {
       "id": "story-app",
       "name": "Story App",
-      "tagline": "Berbagi cerita dengan lokasi.",
-      "description": "Aplikasi social sharing dengan login aman, pengelolaan post, dan lokasi berbasis peta.",
-      "story": "Story App adalah eksperimen saya buat menyatukan autentikasi, unggahan cerita, dan lokasi dalam satu alur sederhana. Saya bangun login yang aman, pengelolaan post, dan peta untuk menampilkan cerita berdasarkan tempat.\n\nProyek ini saya selesaikan di mobile development track Bangkit Academy, dengan fokus Android dan integrasi layanan.",
+      "tagline": "StorySync: berbagi momen dengan lokasi.",
+      "description": "Aplikasi berbagi cerita dengan feed berpaging, unggahan foto, dan peta lokasi cerita.",
+      "story": "Story App (StorySync) saya bangun sebagai submission Dicoding untuk menyatukan feed cerita, unggahan foto, dan lokasi dalam satu alur Android. Saya mengerjakan login dan register, feed, detail cerita, unggah dari galeri atau kamera, sampai peta marker cerita.\n\nTantangan terbesarnya menjaga feed tetap enak dipakai. Saya pasang Paging 3 dengan Room sebagai cache, jadi cerita yang sudah dimuat tetap bisa dibaca saat offline. Sesi pengguna disimpan di DataStore, foto dan lokasi dikirim lewat Retrofit, dan halaman detail memakai shared-element transition supaya perpindahan dari kartu terasa nyambung.",
       "category": "eksperimen",
       "type": "mobileApp",
-      "year": "2024",
+      "year": "2023",
       "role": "Android Developer",
-      "timeline": "Agu 2023 — Jan 2024",
-      "status": "Proyek pembelajaran",
-      "version": "1.0.0",
-      "updatedAt": "2024",
+      "timeline": "Nov 2023",
+      "status": "Submission Dicoding · repo publik",
+      "version": "1.0",
+      "updatedAt": "Nov 2023",
       "tech": [
         "Kotlin",
         "Android",
-        "Maps",
-        "Authentication"
+        "Retrofit",
+        "Room",
+        "Paging 3",
+        "Google Maps",
+        "DataStore",
+        "Glide"
       ],
       "features": [
-        "Login aman untuk pengguna",
-        "Pengelolaan post dan cerita",
-        "Lokasi cerita pada peta",
-        "Alur sosial yang terintegrasi dengan API"
+        "Login dan register dengan sesi tersimpan di DataStore",
+        "Feed cerita dengan Paging 3, 5 cerita per halaman",
+        "Cache Room dan remote mediator untuk mode offline",
+        "Unggah cerita dari galeri atau kamera",
+        "Lokasi opsional dan peta marker cerita",
+        "Detail cerita dengan shared-element transition"
       ],
       "releaseNotes": [
-        "Autentikasi dan pengelolaan sesi.",
-        "Unggah dan kelola cerita.",
-        "Tampilan cerita berbasis lokasi."
+        "Autentikasi, sesi, dan logout.",
+        "Feed berpaging dengan cache offline.",
+        "Unggah cerita dan peta lokasi.",
+        "Mode gelap dan pull-to-refresh."
       ],
       "previewTitle": "Cerita sekitar",
-      "previewSubtitle": "Lokasi dan cerita pengguna",
-      "previewMetric": "08",
-      "previewMetricLabel": "cerita terdekat",
+      "previewSubtitle": "StorySync · feed & peta",
+      "previewMetric": "05",
+      "previewMetricLabel": "cerita per halaman",
       "previewItems": [
         "Peta",
-        "Cerita"
+        "Feed"
       ],
-      "editorialTitle": "Setiap tempat,\npunya cerita.",
-      "highlight": "Bangkit Academy",
+      "editorialTitle": "Setiap momen,\npunya lokasi.",
+      "highlight": "Paging + Room offline",
       "featured": false,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/story-app/welcome.jpg",
+          "label": "Selamat datang"
+        },
+        {
+          "asset": "assets/screenshots/story-app/login.jpg",
+          "label": "Masuk"
+        },
+        {
+          "asset": "assets/screenshots/story-app/feed.jpg",
+          "label": "Beranda"
+        },
+        {
+          "asset": "assets/screenshots/story-app/detail.jpg",
+          "label": "Detail cerita"
+        },
+        {
+          "asset": "assets/screenshots/story-app/add-story.jpg",
+          "label": "Tambah cerita"
+        },
+        {
+          "asset": "assets/screenshots/story-app/map.jpg",
+          "label": "Peta cerita"
+        }
+      ],
+      "githubUrl": "https://github.com/MTegarPamungkas/Story_App",
+      "liveUrl": null
+    },
+    {
+      "id": "tomboati",
+      "name": "TomboAti",
+      "tagline": "Teman harian untuk hati dan ibadah.",
+      "description": "Aplikasi pendamping ibadah: check-in mood, dalil Qur'an dan hadis, serta katalog 114 surat.",
+      "story": "TomboAti berangkat dari ide sederhana: saat hati sedang tidak baik, orang sering bingung harus membaca atau mendengar apa. Aplikasi ini menuntun lewat check-in mood, lalu menampilkan dalil Qur'an dan hadis yang relevan dengan kondisi yang dipilih.\n\nSaya mengerjakan alur aplikasi, katalog 114 surat, riwayat check-in, sampai proses rilis. TomboAti tersedia di Google Play Store lewat INDI Technology, dan saya tetap menjaga detail kecil seperti penamaan, alur pengguna, serta pemeliharaan rilis setelah aplikasi dipakai orang lain.",
+      "category": "produktivitas",
+      "type": "mobileApp",
+      "year": "2025",
+      "role": "Mobile Developer",
+      "timeline": "2024 — 2025",
+      "status": "Live di Google Play Store",
+      "version": "1.0.0",
+      "updatedAt": "2025",
+      "tech": [
+        "Flutter",
+        "Android",
+        "Google Play"
+      ],
+      "features": [
+        "Check-in mood harian dengan pilihan emosi",
+        "Rekomendasi dalil Qur'an dan hadis sesuai kondisi",
+        "Katalog 114 surat dengan teks Arab dan terjemahan",
+        "Kategori tema: akhlak, Al-Qur'an, puasa, dan ilmu",
+        "Riwayat check-in dan kalender ibadah",
+        "Klip kajian singkat di beranda"
+      ],
+      "releaseNotes": [
+        "Rilis publik di Google Play Store.",
+        "Check-in mood dan rekomendasi dalil.",
+        "Katalog 114 surat dan riwayat harian.",
+        "Perbaikan alur dan stabilitas aplikasi."
+      ],
+      "previewTitle": "Sehat Selalu, Tegar",
+      "previewSubtitle": "Check-in mood · dalil harian",
+      "previewMetric": "114",
+      "previewMetricLabel": "surat Al-Qur'an",
+      "previewItems": [
+        "Mood",
+        "Qur'an"
+      ],
+      "editorialTitle": "Temani hati,\nsetiap hari.",
+      "highlight": "Live di Google Play",
+      "featured": true,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/tomboati/onboarding.jpg",
+          "label": "Onboarding"
+        },
+        {
+          "asset": "assets/screenshots/tomboati/home.jpg",
+          "label": "Beranda"
+        },
+        {
+          "asset": "assets/screenshots/tomboati/mood.jpg",
+          "label": "Pilih mood"
+        },
+        {
+          "asset": "assets/screenshots/tomboati/dalil.jpg",
+          "label": "Dalil"
+        },
+        {
+          "asset": "assets/screenshots/tomboati/quran.jpg",
+          "label": "Qur'an"
+        },
+        {
+          "asset": "assets/screenshots/tomboati/surah.jpg",
+          "label": "Detail surat"
+        }
+      ],
+      "githubUrl": null,
+      "liveUrl": null
+    },
+    {
+      "id": "getcrew",
+      "name": "GetCrew",
+      "tagline": "Menemukan kru yang tepat, lebih cepat.",
+      "description": "Aplikasi rekrutmen yang mempertemukan crew dan perusahaan lewat lowongan, profil, dan messaging.",
+      "story": "Saya mengerjakan GetCrew, aplikasi rekrutmen berbasis Flutter yang mempertemukan crew dan perusahaan dalam satu alur. Lowongan, profil, dan messaging saya integrasikan lewat REST API, bareng tim backend saya jaga kontrak datanya tetap sinkron dengan UI.\n\nKarena backend terus berkembang, saya rapikan komunikasi API di service layer dan pakai adapter pattern. Perubahan di server bisa ditangani tanpa membongkar seluruh tampilan, sementara state management menjaga alur pencarian dan lamaran tetap konsisten.",
+      "category": "career",
+      "type": "mobileApp",
+      "year": "2025",
+      "role": "Mobile Developer",
+      "timeline": "Sep 2024 — Jan 2025",
+      "status": "Aplikasi rekrutmen · INDI Technology",
+      "version": "1.0.0",
+      "updatedAt": "Jan 2025",
+      "tech": [
+        "Flutter",
+        "REST API",
+        "State Management",
+        "Messaging"
+      ],
+      "features": [
+        "Pencarian lowongan event dan crew",
+        "Kategori peran: sales promotion, MC, usher, dan crew event",
+        "Rekomendasi lowongan sesuai preferensi",
+        "Profil dan preferensi kerja crew",
+        "Messaging antara crew dan perusahaan",
+        "Notifikasi dan pembaruan status lamaran"
+      ],
+      "releaseNotes": [
+        "Integrasi lowongan dan profil.",
+        "Alur messaging antara crew dan perusahaan.",
+        "Perapian service layer dan adapter API."
+      ],
+      "previewTitle": "Cari preferensi karir",
+      "previewSubtitle": "Lowongan event & crew",
+      "previewMetric": "12",
+      "previewMetricLabel": "lowongan aktif",
+      "previewItems": [
+        "Lowongan",
+        "Pesan"
+      ],
+      "editorialTitle": "Orang yang tepat,\ndi waktu yang tepat.",
+      "highlight": "Rekrutmen crew",
+      "featured": true,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/getcrew/onboarding.jpg",
+          "label": "Onboarding"
+        },
+        {
+          "asset": "assets/screenshots/getcrew/login.jpg",
+          "label": "Masuk"
+        },
+        {
+          "asset": "assets/screenshots/getcrew/home.jpg",
+          "label": "Beranda"
+        }
+      ],
       "githubUrl": null,
       "liveUrl": null
     }

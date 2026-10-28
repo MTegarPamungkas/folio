@@ -47,12 +47,14 @@ void main() {
       final content = GetHomeContent(repository)();
       expect(content.featuredProjects, hasLength(6));
       expect(content.latestProjects, hasLength(4));
-      expect(content.totalProjects, 8);
+      expect(content.totalProjects, 10);
       expect(content.categoryCounts[ProjectCategory.enterprise], 1);
       expect(content.categoryCounts[ProjectCategory.finance], 2);
       expect(content.categoryCounts[ProjectCategory.career], 1);
       expect(content.categoryCounts[ProjectCategory.experiment], 2);
       expect(content.categoryCounts[ProjectCategory.website], 1);
+      expect(content.categoryCounts[ProjectCategory.ai], 1);
+      expect(content.categoryCounts[ProjectCategory.productivity], 2);
     });
 
     test('project detail resolves project and related projects', () {
