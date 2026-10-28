@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 
 class StorySection extends StatelessWidget {
   const StorySection({super.key, required this.project});
@@ -11,18 +12,18 @@ class StorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colors = context.folio;
-    final paragraphs = project.story.split('\n\n');
+    final paragraphs = project.storyIn(context.language).split('\n\n');
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const DetailSectionTitle(
-          eyebrow: 'STUDI KASUS',
-          title: 'Cerita di balik proyek',
+        DetailSectionTitle(
+          eyebrow: context.tr('STUDI KASUS'),
+          title: context.tr('Cerita di balik proyek'),
         ),
         const SizedBox(height: 14),
         Text(
-          project.description,
+          project.descriptionIn(context.language),
           style: theme.textTheme.bodyLarge?.copyWith(
             fontSize: 17,
             height: 1.6,
@@ -43,12 +44,12 @@ class StorySection extends StatelessWidget {
           if (i != paragraphs.length - 1) const SizedBox(height: 13),
         ],
         const SizedBox(height: 31),
-        const DetailSectionTitle(
-          eyebrow: 'YANG SAYA RANCANG',
-          title: 'Fitur utama',
+        DetailSectionTitle(
+          eyebrow: context.tr('YANG SAYA RANCANG'),
+          title: context.tr('Fitur utama'),
         ),
         const SizedBox(height: 16),
-        for (var i = 0; i < project.features.length; i++)
+        for (final feature in project.featuresIn(context.language))
           Padding(
             padding: const EdgeInsets.only(bottom: 11),
             child: Row(
@@ -71,7 +72,7 @@ class StorySection extends StatelessWidget {
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    project.features[i],
+                    feature,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       fontSize: 13,
                       height: 1.55,
@@ -126,12 +127,13 @@ class ReleaseNotes extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  'Yang baru dirilis',
+                  context.tr('Yang baru dirilis'),
                   style: theme.textTheme.titleMedium,
                 ),
               ),
               Text(
-                'v${project.version} · ${project.updatedAt}',
+                'v${project.version} · '
+                '${project.updatedAtIn(context.language)}',
                 style: theme.textTheme.labelSmall?.copyWith(
                   fontSize: 8.5,
                   color: colors.inkMuted,
@@ -140,7 +142,7 @@ class ReleaseNotes extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 13),
-          for (final note in project.releaseNotes)
+          for (final note in project.releaseNotesIn(context.language))
             Padding(
               padding: const EdgeInsets.only(bottom: 7),
               child: Row(

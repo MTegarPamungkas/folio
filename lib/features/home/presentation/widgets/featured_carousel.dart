@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/brand/category_pill.dart';
+import 'package:folio/shared/presentation/widgets/phone/phone_mockup.dart';
 import 'package:folio/shared/presentation/widgets/project/project_icon.dart';
 import 'package:folio/shared/presentation/widgets/project/project_pattern_painter.dart';
-import 'package:folio/shared/presentation/widgets/phone/phone_mockup.dart';
 import 'package:folio/shared/presentation/widgets/website/browser_frame.dart';
 import 'package:folio/shared/presentation/widgets/website/website_artwork.dart';
 import 'package:go_router/go_router.dart';
@@ -74,7 +75,9 @@ class _FeaturedCarouselState extends State<FeaturedCarousel> {
               children: [
                 for (var i = 0; i < projects.length; i++)
                   Semantics(
-                    label: 'Tampilkan pilihan ${i + 1}',
+                    label: context.trArgs('Tampilkan pilihan {index}', {
+                      'index': '${i + 1}',
+                    }),
                     button: true,
                     selected: i == _current,
                     child: InkWell(
@@ -114,7 +117,7 @@ class _FeaturedCarouselState extends State<FeaturedCarousel> {
                 if (showArrows) ...[
                   _CarouselArrow(
                     icon: Icons.arrow_back_rounded,
-                    tooltip: 'Pilihan sebelumnya',
+                    tooltip: context.tr('Pilihan sebelumnya'),
                     dark: false,
                     onPressed: _current == 0 ? null : () => _goTo(_current - 1),
                     disabled: _current == 0,
@@ -122,7 +125,7 @@ class _FeaturedCarouselState extends State<FeaturedCarousel> {
                   const SizedBox(width: 8),
                   _CarouselArrow(
                     icon: Icons.arrow_forward_rounded,
-                    tooltip: 'Pilihan berikutnya',
+                    tooltip: context.tr('Pilihan berikutnya'),
                     dark: true,
                     onPressed: _current == projects.length - 1
                         ? null
@@ -198,6 +201,7 @@ class _FeaturedSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = project.palette;
+    final language = context.language;
     return LayoutBuilder(
       builder: (context, constraints) {
         final wide = constraints.maxWidth >= 760;
@@ -341,7 +345,7 @@ class _FeaturedSlide extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'PILIHAN SAYA',
+                            context.tr('PILIHAN SAYA'),
                             style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                                   color: p.ink.withValues(alpha: 0.62),
@@ -352,7 +356,7 @@ class _FeaturedSlide extends StatelessWidget {
                           ),
                           const SizedBox(height: 9),
                           Text(
-                            project.editorialTitle,
+                            project.editorialTitleIn(language),
                             style: Theme.of(context).textTheme.displaySmall
                                 ?.copyWith(
                                   color: p.ink,
@@ -364,7 +368,7 @@ class _FeaturedSlide extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            project.tagline,
+                            project.taglineIn(language),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context).textTheme.bodyMedium
@@ -386,7 +390,7 @@ class _FeaturedSlide extends StatelessWidget {
                               ),
                               const SizedBox(width: 5),
                               Text(
-                                project.type.label,
+                                context.tr(project.type.label),
                                 style: Theme.of(context).textTheme.labelMedium
                                     ?.copyWith(
                                       color: p.ink,
@@ -407,7 +411,7 @@ class _FeaturedSlide extends StatelessWidget {
                               ),
                               Flexible(
                                 child: Text(
-                                  project.highlight,
+                                  project.highlightIn(language),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: Theme.of(context).textTheme.labelMedium
@@ -455,7 +459,7 @@ class _FeaturedSlide extends StatelessWidget {
                                   Icons.arrow_outward_rounded,
                                   size: 16,
                                 ),
-                                label: const Text('Buka proyek'),
+                                label: Text(context.tr('Buka proyek')),
                               ),
                               FavoriteIconButton(
                                 project: project,

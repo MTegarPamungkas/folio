@@ -33,6 +33,10 @@ class TestHarness {
     return _content ??= await PortfolioJsonDataSource().load();
   }
 
+  static Future<void> preload() async {
+    _content ??= await _loadContent();
+  }
+
   static Future<TestHarness> create() async {
     // Widget tests replace one tree with another without disposing the old
     // global Bloc instances first. Disposing them while the previous test tree

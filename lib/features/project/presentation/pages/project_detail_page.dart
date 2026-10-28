@@ -13,6 +13,7 @@ import 'package:folio/features/project/presentation/widgets/related_projects.dar
 import 'package:folio/features/project/presentation/widgets/screens_section.dart';
 import 'package:folio/features/project/presentation/widgets/website_preview_section.dart';
 import 'package:folio/features/project/presentation/widgets/website_screens_section.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 import 'package:folio/shared/presentation/widgets/footer/folio_footer.dart';
@@ -44,8 +45,10 @@ class ProjectDetailPage extends StatelessWidget {
             body: Column(
               children: [
                 const FolioPageBar(),
-                const Expanded(
-                  child: Center(child: Text('Proyek tidak ditemukan.')),
+                Expanded(
+                  child: Center(
+                    child: Text(context.tr('Proyek tidak ditemukan.')),
+                  ),
                 ),
               ],
             ),
@@ -60,7 +63,7 @@ class ProjectDetailPage extends StatelessWidget {
                 actions: [
                   CircularIconButton(
                     icon: Icons.share_outlined,
-                    tooltip: 'Bagikan proyek',
+                    tooltip: context.tr('Bagikan proyek'),
                     onPressed: () => _share(context, project),
                   ),
                   const SizedBox(width: 7),
@@ -93,7 +96,7 @@ class ProjectDetailPage extends StatelessWidget {
                         const SizedBox(height: 26),
                         WebsitePreviewSection(
                           project: project,
-                          heading: 'Versi web',
+                          heading: context.tr('Versi web'),
                         ),
                       ],
                     ],
@@ -120,6 +123,10 @@ class ProjectDetailPage extends StatelessWidget {
               .replace(fragment: '/project/${project.id}', query: '')
               .toString()
         : '${project.name} — Folio';
-    copyToClipboard(context, link, message: 'Tautan proyek disalin.');
+    copyToClipboard(
+      context,
+      link,
+      message: context.readTr('Tautan proyek disalin.'),
+    );
   }
 }

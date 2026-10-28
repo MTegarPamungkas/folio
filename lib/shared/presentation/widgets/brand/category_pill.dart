@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 
 class CategoryPill extends StatelessWidget {
@@ -36,7 +37,7 @@ class CategoryPill extends StatelessWidget {
           Icon(category.icon, size: 12, color: resolved),
           const SizedBox(width: 5),
           Text(
-            category.label,
+            context.tr(category.label),
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
               fontSize: 9.5,
               letterSpacing: 0.45,

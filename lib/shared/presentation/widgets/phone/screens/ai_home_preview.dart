@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 
@@ -112,7 +113,7 @@ class AiHomePreview extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      project.previewTitle,
+                      project.previewTitleIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 14,
@@ -121,7 +122,7 @@ class AiHomePreview extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      project.previewSubtitle,
+                      project.previewSubtitleIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7,
@@ -186,7 +187,7 @@ class AiHomePreview extends StatelessWidget {
             Icon(Icons.auto_awesome_rounded, size: 9, color: p.accent),
             const SizedBox(width: 4),
             Text(
-              project.previewMetric,
+              project.previewMetricIn(context.language),
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7.5,
@@ -196,7 +197,7 @@ class AiHomePreview extends StatelessWidget {
             ),
             const SizedBox(width: 4),
             Text(
-              project.previewMetricLabel,
+              project.previewMetricLabelIn(context.language),
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7.5,

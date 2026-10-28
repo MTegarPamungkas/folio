@@ -3,6 +3,7 @@ import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 
 class HomeIntro extends StatelessWidget {
@@ -28,7 +29,7 @@ class HomeIntro extends StatelessWidget {
     final heading = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Eyebrow('Portofolio · 2026'),
+        Eyebrow(context.tr('Portofolio · 2026')),
         const SizedBox(height: 18),
         Text.rich(
           TextSpan(
@@ -38,9 +39,9 @@ class HomeIntro extends StatelessWidget {
               letterSpacing: headingSize * -0.045,
             ),
             children: [
-              const TextSpan(text: 'Temukan '),
+              TextSpan(text: context.tr('Temukan ')),
               TextSpan(
-                text: 'karya',
+                text: context.tr('karya'),
                 style: FolioTypography.serif(
                   fontSize: headingSize * 1.06,
                   color: colors.accent,
@@ -48,7 +49,7 @@ class HomeIntro extends StatelessWidget {
                   letterSpacing: -1,
                 ),
               ),
-              const TextSpan(text: ' yang\nsedang saya bangun.'),
+              TextSpan(text: context.tr(' yang\nsedang saya bangun.')),
             ],
           ),
         ),
@@ -56,9 +57,11 @@ class HomeIntro extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 590),
           child: Text(
-            'Portofolio saya, disusun seperti app store. Jelajahi aplikasi dan '
-            'website yang saya bangun, buka studi kasusnya, lalu simpan '
-            'yang paling relevan untukmu.',
+            context.tr(
+              'Portofolio saya, disusun seperti app store. Jelajahi aplikasi dan '
+              'website yang saya bangun, buka studi kasusnya, lalu simpan '
+              'yang paling relevan untukmu.',
+            ),
             style: theme.textTheme.bodyLarge?.copyWith(
               fontSize: context.isExpanded ? 16.5 : 15,
               height: 1.65,
@@ -94,9 +97,9 @@ class IntroStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = [
-      (projectCount.toString().padLeft(2, '0'), 'Karya pilihan'),
-      ('${developer.projectCount}', 'Proyek & modul'),
-      ('${developer.yearsExperience}+', 'Pengalaman'),
+      (projectCount.toString().padLeft(2, '0'), context.tr('Karya pilihan')),
+      ('${developer.projectCount}', context.tr('Proyek & modul')),
+      ('${developer.yearsExperience}+', context.tr('Pengalaman')),
     ];
 
     return LayoutBuilder(

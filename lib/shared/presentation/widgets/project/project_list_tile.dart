@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/project/project_icon.dart';
 
 class ProjectListTile extends StatelessWidget {
@@ -54,7 +55,7 @@ class ProjectListTile extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          project.type.label,
+                          context.tr(project.type.label),
                           style: Theme.of(context).textTheme.labelSmall
                               ?.copyWith(
                                 fontSize: 8,
@@ -66,7 +67,7 @@ class ProjectListTile extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      project.tagline,
+                      context.tr(project.taglineIn(context.language)),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -76,7 +77,8 @@ class ProjectListTile extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      '${project.category.label} · ${project.version}',
+                      '${context.tr(project.category.label)} · '
+                      '${project.version}',
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         fontSize: 9,
                         letterSpacing: 0.45,

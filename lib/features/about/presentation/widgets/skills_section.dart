@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
@@ -16,11 +17,12 @@ class SkillsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SectionHeading(
-          eyebrow: 'Perangkat kerja',
-          title: 'Hal yang saya kuasai',
-          subtitle:
-              'Dari merancang alur di Figma sampai merilis build yang stabil.',
+        SectionHeading(
+          eyebrow: context.tr('Perangkat kerja'),
+          title: context.tr('Hal yang saya kuasai'),
+          subtitle: context.tr(
+            'Dari merancang alur di Figma sampai merilis build yang stabil.',
+          ),
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(
@@ -59,7 +61,7 @@ class _SkillGroupCard extends StatelessWidget {
               const SizedBox(width: 9),
               Expanded(
                 child: Text(
-                  group.title,
+                  context.tr(group.title),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(
@@ -69,7 +71,9 @@ class _SkillGroupCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                '${group.skills.length.toString().padLeft(2, '0')} tools',
+                context.trArgs('{count} tools', {
+                  'count': '${group.skills.length}'.padLeft(2, '0'),
+                }),
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   fontSize: 8.5,
                   color: colors.inkMuted,

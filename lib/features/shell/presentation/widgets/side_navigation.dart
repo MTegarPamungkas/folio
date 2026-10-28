@@ -4,8 +4,10 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:folio/features/shell/presentation/widgets/shell_destinations.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/brand/developer_avatar.dart';
 import 'package:folio/shared/presentation/widgets/brand/folio_wordmark.dart';
+import 'package:folio/shared/presentation/widgets/navigation/language_toggle.dart';
 import 'package:folio/shared/presentation/widgets/navigation/theme_toggle.dart';
 import 'package:go_router/go_router.dart';
 
@@ -51,7 +53,7 @@ class SideNavigation extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 4),
                 child: Text(
-                  'PORTOFOLIO',
+                  context.tr('PORTOFOLIO'),
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     fontSize: 9,
                     letterSpacing: 1.3,
@@ -130,6 +132,8 @@ class SideNavigation extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
+              const LanguageToggle(compact: true),
+              const SizedBox(height: 6),
               const ThemeToggle(compact: true),
             ],
           ),
@@ -169,7 +173,7 @@ class _ContactCard extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            'Punya ide\nyang ingin dibuat?',
+            context.tr('Punya ide\nyang ingin dibuat?'),
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
               color: colors.background,
               height: 1.25,
@@ -178,7 +182,7 @@ class _ContactCard extends StatelessWidget {
           ),
           const SizedBox(height: 7),
           Text(
-            'Mari bicara soal produk, alur, dan detailnya.',
+            context.tr('Mari bicara soal produk, alur, dan detailnya.'),
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: colors.background.withValues(alpha: 0.62),
               fontSize: 11,
@@ -193,12 +197,16 @@ class _ContactCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 3),
               child: Row(
                 children: [
-                  Text(
-                    'Ajak kolaborasi',
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color: colors.accent,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w700,
+                  Flexible(
+                    child: Text(
+                      context.tr('Ajak kolaborasi'),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        color: colors.accent,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 5),
@@ -279,7 +287,7 @@ class _SideNavItemState extends State<_SideNavItem> {
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        widget.destination.label,
+                        context.tr(widget.destination.label),
                         style: Theme.of(context).textTheme.labelLarge?.copyWith(
                           fontWeight: widget.selected
                               ? FontWeight.w700

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 
 class ExploreSearchField extends StatefulWidget {
   const ExploreSearchField({
@@ -58,7 +59,7 @@ class _ExploreSearchFieldState extends State<ExploreSearchField> {
           textInputAction: TextInputAction.search,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 15),
           decoration: InputDecoration(
-            hintText: 'Cari proyek, teknologi, atau kategori…',
+            hintText: context.tr('Cari proyek, teknologi, atau kategori…'),
             filled: true,
             fillColor: colors.surfaceElevated,
             contentPadding: const EdgeInsets.symmetric(
@@ -82,7 +83,7 @@ class _ExploreSearchFieldState extends State<ExploreSearchField> {
               builder: (context, value, _) {
                 if (value.text.isEmpty) return const SizedBox.shrink();
                 return IconButton(
-                  tooltip: 'Hapus pencarian',
+                  tooltip: context.tr('Hapus pencarian'),
                   onPressed: widget.onClear,
                   icon: const Icon(Icons.close_rounded, size: 18),
                 );

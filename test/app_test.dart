@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:folio/core/router/app_router.dart';
+import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/domain/entities/app_theme_mode.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_event.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
 import 'test_dependencies.dart';
 
 void main() {
+  // Widget tests run inside a fake-async zone where `rootBundle` loads never
+  // complete, so the JSON is read once in `setUpAll` (a real async zone).
+  setUpAll(TestHarness.preload);
+
   testWidgets('home and search flow render on a phone viewport', (
     tester,
   ) async {
@@ -91,5 +96,48 @@ void main() {
       (state) => !state.isSaved('mis-msa'),
     );
     expect(harness.savedProjects(harness.favoritesBloc.state.ids), isEmpty);
+  });
+
+  test('language defaults to Indonesian and persists the choice', () async {
+    final harness = await TestHarness.create();
+    expect(harness.settingsBloc.state.language, AppLanguage.id);
+
+    harness.settingsBloc.add(const SettingsLanguageChanged(AppLanguage.en));
+    await harness.settingsBloc.stream.firstWhere(
+      (state) => state.language == AppLanguage.en,
+    );
+    await Future<void>.delayed(const Duration(milliseconds: 10));
+    expect(harness.preferences.getString('folio.language'), 'en');
+  });
+
+  testWidgets('switches the interface copy to English', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    addTearDown(() => appRouter.go('/'));
+
+    final harness = await TestHarness.create();
+    await tester.pumpWidget(harness.app);
+    appRouter.go('/');
+    await tester.pumpAndSettle();
+
+    expect(find.text('Beranda'), findsOneWidget);
+    expect(find.text('Jelajah'), findsOneWidget);
+
+    await tester.tap(find.text('ID').first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('English').last);
+    await tester.pumpAndSettle();
+
+    expect(harness.settingsBloc.state.language, AppLanguage.en);
+    expect(find.text('Beranda'), findsNothing);
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Explore'), findsOneWidget);
+    expect(find.text('Saved'), findsOneWidget);
+    expect(find.text('About'), findsOneWidget);
+    expect(harness.preferences.getString('folio.language'), 'en');
+
+    await tester.pumpWidget(const SizedBox.shrink());
   });
 }

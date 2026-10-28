@@ -1,4 +1,5 @@
 import 'package:folio/data/datasources/preferences_local_data_source.dart';
+import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/domain/entities/app_theme_mode.dart';
 import 'package:folio/domain/repositories/settings_repository.dart';
 
@@ -13,4 +14,11 @@ class SettingsRepositoryImpl implements SettingsRepository {
   @override
   Future<void> saveThemeMode(AppThemeMode mode) =>
       _localDataSource.setThemeMode(mode);
+
+  @override
+  AppLanguage getLanguage() => _localDataSource.getLanguage();
+
+  @override
+  Future<void> saveLanguage(AppLanguage language) =>
+      _localDataSource.setLanguage(language);
 }

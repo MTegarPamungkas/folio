@@ -10,6 +10,7 @@ import 'package:folio/features/explore/presentation/widgets/category_filter_bar.
 import 'package:folio/features/explore/presentation/widgets/explore_search_field.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_state.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/common/app_surfaces.dart';
@@ -32,7 +33,7 @@ class ExplorePage extends StatelessWidget {
           bottomPadding: 24,
           children: [
             PageIntro(
-              eyebrow: 'Jelajah koleksi',
+              eyebrow: context.tr('Jelajah koleksi'),
               title: Text.rich(
                 TextSpan(
                   style: theme.textTheme.displaySmall?.copyWith(
@@ -44,9 +45,9 @@ class ExplorePage extends StatelessWidget {
                     letterSpacing: -1.7,
                   ),
                   children: [
-                    const TextSpan(text: 'Temukan '),
+                    TextSpan(text: context.tr('Temukan ')),
                     TextSpan(
-                      text: 'semua karya.',
+                      text: context.tr('semua karya.'),
                       style: FolioTypography.serif(
                         fontSize: context.responsive<double>(
                           compact: 43,
@@ -61,9 +62,10 @@ class ExplorePage extends StatelessWidget {
                   ],
                 ),
               ),
-              subtitle:
-                  'Cari berdasarkan nama proyek, teknologi, atau kategori. '
-                  'Semua studi kasus saya ada di sini.',
+              subtitle: context.tr(
+                'Cari berdasarkan nama proyek, teknologi, atau kategori. '
+                'Semua studi kasus saya ada di sini.',
+              ),
             ),
             const SizedBox(height: 28),
             ExploreSearchField(
@@ -88,15 +90,16 @@ class ExplorePage extends StatelessWidget {
             if (state.results.isEmpty)
               EmptyCollection(
                 icon: Icons.search_off_rounded,
-                title: 'Belum ada yang cocok',
-                message:
-                    'Coba kata kunci lain, atau hapus filter kategorinya '
-                    'buat lihat semua karya.',
+                title: context.tr('Belum ada yang cocok'),
+                message: context.tr(
+                  'Coba kata kunci lain, atau hapus filter kategorinya '
+                  'buat lihat semua karya.',
+                ),
                 action: OutlinedButton(
                   onPressed: () => context.read<ExploreBloc>().add(
                     const ExploreFiltersCleared(),
                   ),
-                  child: const Text('Tampilkan semua'),
+                  child: Text(context.tr('Tampilkan semua')),
                 ),
               )
             else
@@ -146,8 +149,12 @@ class _ResultsHeader extends StatelessWidget {
           liveRegion: true,
           child: Text(
             filtering
-                ? '${state.results.length} hasil ditemukan'
-                : '${state.results.length} karya pilihan',
+                ? context.trArgs('{count} hasil ditemukan', {
+                    'count': '${state.results.length}',
+                  })
+                : context.trArgs('{count} karya pilihan', {
+                    'count': '${state.results.length}',
+                  }),
             style: theme.textTheme.titleSmall?.copyWith(fontSize: 13),
           ),
         ),
@@ -156,8 +163,14 @@ class _ResultsHeader extends StatelessWidget {
           Flexible(
             child: Text(
               state.query.trim().isNotEmpty
-                  ? 'untuk “${state.query.trim()}”'
-                  : 'di ${state.selectedCategory?.label}',
+                  ? context.trArgs('untuk “{query}”', {
+                      'query': state.query.trim(),
+                    })
+                  : context.trArgs('di {category}', {
+                      'category': state.selectedCategory == null
+                          ? ''
+                          : context.tr(state.selectedCategory!.label),
+                    }),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall?.copyWith(
@@ -176,7 +189,7 @@ class _ResultsHeader extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8),
             ),
             icon: const Icon(Icons.close_rounded, size: 15),
-            label: const Text('Reset'),
+            label: Text(context.tr('Reset')),
           ),
       ],
     );

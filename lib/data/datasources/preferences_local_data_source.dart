@@ -1,3 +1,4 @@
+import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/domain/entities/app_theme_mode.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -5,6 +6,7 @@ class PreferencesLocalDataSource {
   const PreferencesLocalDataSource(this._preferences);
 
   static const _themeKey = 'folio.themeMode';
+  static const _languageKey = 'folio.language';
   static const _savedKey = 'folio.savedProjects';
 
   final SharedPreferences _preferences;
@@ -14,6 +16,13 @@ class PreferencesLocalDataSource {
 
   Future<void> setThemeMode(AppThemeMode mode) {
     return _preferences.setString(_themeKey, mode.name);
+  }
+
+  AppLanguage getLanguage() =>
+      AppLanguage.fromCode(_preferences.getString(_languageKey));
+
+  Future<void> setLanguage(AppLanguage language) {
+    return _preferences.setString(_languageKey, language.code);
   }
 
   Set<String> getFavoriteIds() =>

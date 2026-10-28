@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/domain/entities/app_theme_mode.dart';
 
 sealed class SettingsEvent extends Equatable {
@@ -24,4 +25,13 @@ final class SettingsThemeToggled extends SettingsEvent {
 
   @override
   List<Object?> get props => [isCurrentlyDark];
+}
+
+final class SettingsLanguageChanged extends SettingsEvent {
+  const SettingsLanguageChanged(this.language);
+
+  final AppLanguage language;
+
+  @override
+  List<Object?> get props => [language];
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_painters.dart';
@@ -57,7 +58,7 @@ class FocusHomePreview extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      project.previewMetric,
+                      project.previewMetricIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 27,
@@ -69,7 +70,7 @@ class FocusHomePreview extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      project.previewMetricLabel,
+                      project.previewMetricLabelIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7,
@@ -129,7 +130,7 @@ class FocusHomePreview extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      project.previewItems[0],
+                      project.previewItemsIn(context.language)[0],
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 8,
@@ -138,7 +139,7 @@ class FocusHomePreview extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      project.previewItems[1],
+                      project.previewItemsIn(context.language)[1],
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7,

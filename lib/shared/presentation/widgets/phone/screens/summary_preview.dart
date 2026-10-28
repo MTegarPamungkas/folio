@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_painters.dart';
@@ -39,7 +40,7 @@ class ProjectSummaryPreview extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            project.previewMetricLabel.toUpperCase(),
+            project.previewMetricLabelIn(context.language).toUpperCase(),
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 6.5,
@@ -50,7 +51,7 @@ class ProjectSummaryPreview extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            project.previewMetric,
+            project.previewMetricIn(context.language),
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 32,
@@ -101,7 +102,7 @@ class ProjectSummaryPreview extends StatelessWidget {
               Expanded(
                 child: PreviewMiniStat(
                   project: project,
-                  label: 'Sesi',
+                  label: context.tr('Sesi'),
                   value: '24',
                 ),
               ),
@@ -109,7 +110,7 @@ class ProjectSummaryPreview extends StatelessWidget {
               Expanded(
                 child: PreviewMiniStat(
                   project: project,
-                  label: 'Waktu',
+                  label: context.tr('Waktu'),
                   value: '6j 40m',
                 ),
               ),
@@ -117,7 +118,7 @@ class ProjectSummaryPreview extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            'Aktivitas',
+            context.tr('Aktivitas'),
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 9,
@@ -126,7 +127,7 @@ class ProjectSummaryPreview extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 6),
-          for (final item in project.previewItems) ...[
+          for (final item in project.previewItemsIn(context.language)) ...[
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 7),
               decoration: BoxDecoration(

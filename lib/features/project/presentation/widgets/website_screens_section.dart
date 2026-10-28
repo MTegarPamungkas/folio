@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/website/website_screens_gallery.dart';
 
 /// Shows the real captures of a website project: the pages that make up the
@@ -39,14 +40,16 @@ class WebsiteScreensSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Tampilan situs',
+                      context.tr('Tampilan situs'),
                       style: theme.textTheme.headlineSmall?.copyWith(
                         fontSize: 21,
                       ),
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      'Tangkapan halaman asli, dari beranda sampai formulir.',
+                      context.tr(
+                        'Tangkapan halaman asli, dari beranda sampai formulir.',
+                      ),
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontSize: 11,
                         color: colors.inkMuted,
@@ -56,17 +59,16 @@ class WebsiteScreensSection extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 5,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
                 decoration: BoxDecoration(
                   color: colors.surface,
                   borderRadius: BorderRadius.circular(100),
                   border: Border.all(color: colors.line),
                 ),
                 child: Text(
-                  '${project.screenshots.length} HALAMAN',
+                  context.trArgs('{count} HALAMAN', {
+                    'count': '${project.screenshots.length}',
+                  }),
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 8,
                     letterSpacing: 0.6,

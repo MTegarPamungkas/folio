@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 
 class ExperienceSection extends StatelessWidget {
@@ -14,11 +15,12 @@ class ExperienceSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SectionHeading(
-          eyebrow: 'Perjalanan',
-          title: 'Belajar sambil membangun',
-          subtitle:
-              'Dari magang dan Bangkit Academy sampai aplikasi enterprise yang dipakai di lapangan.',
+        SectionHeading(
+          eyebrow: context.tr('Perjalanan'),
+          title: context.tr('Belajar sambil membangun'),
+          subtitle: context.tr(
+            'Dari magang dan Bangkit Academy sampai aplikasi enterprise yang dipakai di lapangan.',
+          ),
         ),
         const SizedBox(height: 28),
         for (var i = 0; i < items.length; i++)
@@ -39,6 +41,7 @@ class _TimelineItem extends StatelessWidget {
     final colors = context.folio;
     final theme = Theme.of(context);
     final compact = context.isCompact;
+    final language = context.language;
     final periodWidth = compact ? 0.0 : 142.0;
     final lineLeft = periodWidth + 9.5;
 
@@ -47,7 +50,7 @@ class _TimelineItem extends StatelessWidget {
       children: [
         if (compact) ...[
           Text(
-            item.period,
+            item.periodIn(language),
             style: theme.textTheme.labelSmall?.copyWith(
               fontSize: 9,
               letterSpacing: 0.7,
@@ -70,7 +73,7 @@ class _TimelineItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
-                  'SEKARANG',
+                  context.tr('SEKARANG'),
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 7.5,
                     letterSpacing: 0.7,
@@ -93,7 +96,7 @@ class _TimelineItem extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 600),
           child: Text(
-            item.description,
+            item.descriptionIn(language),
             style: theme.textTheme.bodySmall?.copyWith(
               fontSize: 12,
               height: 1.6,
@@ -122,7 +125,7 @@ class _TimelineItem extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 6, right: 18),
                   child: Text(
-                    item.period,
+                    item.periodIn(language),
                     textAlign: TextAlign.right,
                     style: theme.textTheme.labelSmall?.copyWith(
                       fontSize: 9.5,

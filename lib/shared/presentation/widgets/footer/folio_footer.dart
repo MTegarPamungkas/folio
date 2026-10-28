@@ -4,6 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/core/utils/links.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_state.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/folio_wordmark.dart';
 
@@ -37,7 +38,7 @@ class FolioFooter extends StatelessWidget {
                   const FolioWordmark(fontSize: 21),
                   const SizedBox(height: 7),
                   Text(
-                    'Portofolio saya, disusun seperti app store.',
+                    context.tr('Portofolio saya, disusun seperti app store.'),
                     style: theme.textTheme.bodySmall?.copyWith(
                       fontSize: 11.5,
                       color: colors.inkMuted,
@@ -57,8 +58,10 @@ class FolioFooter extends StatelessWidget {
                         onTap: () => openExternalLink(
                           context,
                           social.url,
-                          fallbackMessage:
-                              'Tautan ${social.label} belum bisa dibuka.',
+                          fallbackMessage: context.trArgs(
+                            'Tautan {platform} belum bisa dibuka.',
+                            {'platform': social.label},
+                          ),
                         ),
                         borderRadius: BorderRadius.circular(10),
                         child: Container(
@@ -81,7 +84,8 @@ class FolioFooter extends StatelessWidget {
               );
 
               final copyright = Text(
-                '© ${DateTime.now().year} ${developer.name} · Dibuat dengan Flutter',
+                '© ${DateTime.now().year} ${developer.name} · '
+                '${context.tr('Dibuat dengan Flutter')}',
                 style: theme.textTheme.bodySmall?.copyWith(
                   fontSize: 10.5,
                   color: colors.inkMuted,

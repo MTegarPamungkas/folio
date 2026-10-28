@@ -9,6 +9,7 @@ import 'package:folio/features/contact/presentation/bloc/contact_event.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_state.dart';
 import 'package:folio/features/contact/presentation/widgets/contact_form.dart';
 import 'package:folio/features/contact/presentation/widgets/contact_info.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_feedback.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/footer/folio_footer.dart';
@@ -35,19 +36,20 @@ class ContactPage extends StatelessWidget {
                 if (state.status == ContactStatus.success) {
                   showFolioSnackBar(
                     context,
-                    message: 'Membuka aplikasi email kamu…',
+                    message: context.readTr('Membuka aplikasi email kamu…'),
                   );
                   bloc.add(const ContactStatusAcknowledged());
                 } else if (state.status == ContactStatus.failure) {
                   showFolioSnackBar(
                     context,
-                    message:
-                        state.errorMessage ?? 'Aplikasi email tidak tersedia.',
-                    actionLabel: 'Salin email',
+                    message: state.errorMessage == null
+                        ? context.readTr('Aplikasi email tidak tersedia.')
+                        : context.readTr(state.errorMessage!),
+                    actionLabel: context.readTr('Salin email'),
                     onAction: () => copyToClipboard(
                       context,
                       state.context.developer.email,
-                      message: 'Email disalin.',
+                      message: context.readTr('Email disalin.'),
                     ),
                   );
                   bloc.add(const ContactStatusAcknowledged());
@@ -59,7 +61,7 @@ class ContactPage extends StatelessWidget {
                 bottomPadding: 24,
                 children: [
                   PageIntro(
-                    eyebrow: 'Kontak',
+                    eyebrow: context.tr('Kontak'),
                     title: Text.rich(
                       TextSpan(
                         style: theme.textTheme.displaySmall?.copyWith(
@@ -71,9 +73,11 @@ class ContactPage extends StatelessWidget {
                           letterSpacing: -1.8,
                         ),
                         children: [
-                          const TextSpan(text: 'Mari bikin sesuatu\nyang '),
                           TextSpan(
-                            text: 'berkesan.',
+                            text: context.tr('Mari bikin sesuatu\nyang '),
+                          ),
+                          TextSpan(
+                            text: context.tr('berkesan.'),
                             style: FolioTypography.serif(
                               fontSize: context.responsive<double>(
                                 compact: 43,
@@ -87,10 +91,11 @@ class ContactPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    subtitle:
-                        'Punya produk yang ingin dibangun, alur yang ingin '
-                        'dirapikan, atau ide yang masih setengah jadi? Ceritakan '
-                        'saja — saya senang mendengarnya.',
+                    subtitle: context.tr(
+                      'Punya produk yang ingin dibangun, alur yang ingin '
+                      'dirapikan, atau ide yang masih setengah jadi? Ceritakan '
+                      'saja — saya senang mendengarnya.',
+                    ),
                     maxSubtitleWidth: 550,
                   ),
                   const SizedBox(height: 32),

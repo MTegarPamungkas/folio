@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 
@@ -104,7 +105,7 @@ class FoodHomePreview extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      project.previewTitle,
+                      project.previewTitleIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.serifFamily,
                         fontSize: 28,
@@ -115,7 +116,7 @@ class FoodHomePreview extends StatelessWidget {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      project.previewSubtitle,
+                      project.previewSubtitleIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7,
@@ -131,7 +132,7 @@ class FoodHomePreview extends StatelessWidget {
         const SizedBox(height: 9),
         Row(
           children: [
-            for (final label in project.previewItems) ...[
+            for (final label in project.previewItemsIn(context.language)) ...[
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                 decoration: BoxDecoration(

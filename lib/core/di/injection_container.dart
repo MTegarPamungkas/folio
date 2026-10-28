@@ -14,11 +14,13 @@ import 'package:folio/domain/usecases/get_about_content.dart';
 import 'package:folio/domain/usecases/get_contact_context.dart';
 import 'package:folio/domain/usecases/get_favorite_ids.dart';
 import 'package:folio/domain/usecases/get_home_content.dart';
+import 'package:folio/domain/usecases/get_language.dart';
 import 'package:folio/domain/usecases/get_portfolio_content.dart';
 import 'package:folio/domain/usecases/get_project_detail.dart';
 import 'package:folio/domain/usecases/get_saved_projects.dart';
 import 'package:folio/domain/usecases/get_theme_mode.dart';
 import 'package:folio/domain/usecases/send_contact_request.dart';
+import 'package:folio/domain/usecases/set_language.dart';
 import 'package:folio/domain/usecases/set_theme_mode.dart';
 import 'package:folio/domain/usecases/toggle_favorite.dart';
 import 'package:folio/features/about/presentation/bloc/about_bloc.dart';
@@ -74,13 +76,15 @@ Future<SharedPreferences> configureDependencies({
     ..registerLazySingleton(() => ToggleFavorite(getIt()))
     ..registerLazySingleton(() => GetThemeMode(getIt()))
     ..registerLazySingleton(() => SetThemeMode(getIt()))
+    ..registerLazySingleton(() => GetLanguage(getIt()))
+    ..registerLazySingleton(() => SetLanguage(getIt()))
     ..registerLazySingleton(() => GetContactContext(getIt()))
     ..registerLazySingleton(() => SendContactRequest(getIt()));
 
   // App-level state
   getIt
     ..registerLazySingleton<SettingsBloc>(
-      () => SettingsBloc(getIt(), getIt()),
+      () => SettingsBloc(getIt(), getIt(), getIt(), getIt()),
       dispose: (bloc) => bloc.close(),
     )
     ..registerLazySingleton<FavoritesBloc>(

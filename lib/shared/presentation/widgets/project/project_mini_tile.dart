@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/project/project_icon.dart';
 
 class ProjectMiniTile extends StatelessWidget {
@@ -43,7 +44,7 @@ class ProjectMiniTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    project.tagline,
+                    project.taglineIn(context.language),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(

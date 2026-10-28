@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 
 class ProjectDetailPreview extends StatelessWidget {
@@ -81,7 +82,7 @@ class ProjectDetailPreview extends StatelessWidget {
                       borderRadius: BorderRadius.circular(100),
                     ),
                     child: Text(
-                      project.previewMetric,
+                      project.previewMetricIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7,
@@ -96,7 +97,7 @@ class ProjectDetailPreview extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            project.previewTitle,
+            project.previewTitleIn(context.language),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -110,7 +111,7 @@ class ProjectDetailPreview extends StatelessWidget {
           ),
           const SizedBox(height: 3),
           Text(
-            project.previewSubtitle,
+            project.previewSubtitleIn(context.language),
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 7.5,
@@ -148,7 +149,7 @@ class ProjectDetailPreview extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text(
-                project.category.label,
+                context.tr(project.category.label),
                 style: TextStyle(
                   fontFamily: FolioTypography.sans,
                   fontSize: 7,
@@ -162,7 +163,7 @@ class ProjectDetailPreview extends StatelessWidget {
             spacing: 5,
             runSpacing: 5,
             children: [
-              for (final item in project.previewItems)
+              for (final item in project.previewItemsIn(context.language))
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 7,
@@ -185,7 +186,7 @@ class ProjectDetailPreview extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            project.description,
+            project.descriptionIn(context.language),
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -205,7 +206,7 @@ class ProjectDetailPreview extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
-              'Mulai jelajah',
+              context.tr('Mulai jelajah'),
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 8.5,

@@ -4,6 +4,7 @@ import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/project/project_list_tile.dart';
 import 'package:go_router/go_router.dart';
@@ -19,12 +20,13 @@ class LatestReleasesSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: 'BARU SAYA RILIS',
-          title: 'Rilis terbaru',
-          subtitle:
-              'Karya yang baru saya selesaikan—dari eksplorasi pertama sampai rilis.',
+          eyebrow: context.tr('BARU SAYA RILIS'),
+          title: context.tr('Rilis terbaru'),
+          subtitle: context.tr(
+            'Karya yang baru saya selesaikan—dari eksplorasi pertama sampai rilis.',
+          ),
           action: ArrowAction(
-            label: 'Jelajah semua',
+            label: context.tr('Jelajah semua'),
             onPressed: () {
               context.read<ExploreBloc>().add(const ExploreFiltersCleared());
               context.go('/explore');

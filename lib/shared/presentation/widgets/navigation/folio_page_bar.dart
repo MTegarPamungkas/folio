@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/brand/folio_wordmark.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 import 'package:go_router/go_router.dart';
@@ -39,7 +40,7 @@ class FolioPageBar extends StatelessWidget {
                 children: [
                   CircularIconButton(
                     icon: Icons.arrow_back_rounded,
-                    tooltip: 'Kembali',
+                    tooltip: context.tr('Kembali'),
                     onPressed: () {
                       if (context.canPop()) {
                         context.pop();

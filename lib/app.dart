@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:folio/core/router/app_router.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
@@ -41,6 +42,9 @@ class FolioApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: settings.themeMode.materialThemeMode,
+            locale: settings.language.locale,
+            supportedLocales: AppLanguageLocales.supported,
+            localizationsDelegates: AppLanguageLocales.delegates,
             routerConfig: appRouter,
             scrollBehavior: const FolioScrollBehavior(),
           );
@@ -48,6 +52,18 @@ class FolioApp extends StatelessWidget {
       ),
     );
   }
+}
+
+/// The languages this portfolio ships in, plus the Material delegates that
+/// localize built-in widgets (date pickers, tooltips, text selection…).
+abstract final class AppLanguageLocales {
+  static const supported = [Locale('id'), Locale('en')];
+
+  static const delegates = [
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+  ];
 }
 
 class FolioScrollBehavior extends MaterialScrollBehavior {

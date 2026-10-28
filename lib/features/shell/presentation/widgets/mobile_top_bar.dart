@@ -4,8 +4,10 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/brand/developer_avatar.dart';
 import 'package:folio/shared/presentation/widgets/brand/folio_wordmark.dart';
+import 'package:folio/shared/presentation/widgets/navigation/language_toggle.dart';
 import 'package:go_router/go_router.dart';
 
 class MobileTopBar extends StatelessWidget {
@@ -39,31 +41,45 @@ class MobileTopBar extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 10, 12, 10),
           child: Row(
             children: [
-              InkWell(
-                onTap: () => context.go('/'),
-                borderRadius: BorderRadius.circular(10),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6),
-                  child: FolioWordmark(fontSize: 24),
+              // The wordmark shrinks instead of overflowing when the reader
+              // uses large text or a narrow phone.
+              Expanded(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: InkWell(
+                    onTap: () => context.go('/'),
+                    borderRadius: BorderRadius.circular(10),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 6),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: FolioWordmark(fontSize: 24),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              const Spacer(),
               if (currentIndex != 1)
                 Padding(
                   padding: const EdgeInsets.only(right: 2),
                   child: IconButton(
                     onPressed: onSearch,
-                    tooltip: 'Cari karya',
+                    tooltip: context.tr('Cari karya'),
                     icon: const Icon(Icons.search_rounded, size: 22),
                   ),
                 ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 2),
+                child: LanguageToggle(compact: true),
+              ),
               IconButton(
                 onPressed: () => context.read<SettingsBloc>().add(
                   SettingsThemeToggled(isCurrentlyDark: isDark),
                 ),
                 tooltip: isDark
-                    ? 'Ganti ke tema terang'
-                    : 'Ganti ke tema gelap',
+                    ? context.tr('Ganti ke tema terang')
+                    : context.tr('Ganti ke tema gelap'),
                 icon: Icon(
                   isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
                   size: 21,

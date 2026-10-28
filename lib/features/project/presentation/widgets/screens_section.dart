@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/phone/project_screens_gallery.dart';
 
 class ScreensSection extends StatelessWidget {
@@ -37,7 +38,7 @@ class ScreensSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Tampilan aplikasi',
+                      context.tr('Tampilan aplikasi'),
                       style: theme.textTheme.headlineSmall?.copyWith(
                         fontSize: 21,
                       ),
@@ -45,8 +46,12 @@ class ScreensSection extends StatelessWidget {
                     const SizedBox(height: 3),
                     Text(
                       project.hasScreenshots
-                          ? 'Tangkapan layar asli, dari alur utama sampai fiturnya.'
-                          : 'Tiga layar yang menunjukkan arah visual dan alur utama.',
+                          ? context.tr(
+                              'Tangkapan layar asli, dari alur utama sampai fiturnya.',
+                            )
+                          : context.tr(
+                              'Tiga layar yang menunjukkan arah visual dan alur utama.',
+                            ),
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontSize: 11,
                         color: colors.inkMuted,
@@ -64,8 +69,10 @@ class ScreensSection extends StatelessWidget {
                 ),
                 child: Text(
                   project.hasScreenshots
-                      ? '${project.screenshots.length} TANGKAPAN'
-                      : '3 LAYAR',
+                      ? context.trArgs('{count} TANGKAPAN', {
+                          'count': '${project.screenshots.length}',
+                        })
+                      : context.tr('3 LAYAR'),
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 8,
                     letterSpacing: 0.6,

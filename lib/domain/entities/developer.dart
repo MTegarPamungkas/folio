@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:folio/domain/entities/app_language.dart';
 
 enum SocialPlatform {
   github('GitHub'),
@@ -72,6 +73,8 @@ class ExperienceItem extends Equatable {
     required this.company,
     required this.period,
     required this.description,
+    this.periodEn,
+    this.descriptionEn,
     this.current = false,
   });
 
@@ -79,10 +82,26 @@ class ExperienceItem extends Equatable {
   final String company;
   final String period;
   final String description;
+  final String? periodEn;
+  final String? descriptionEn;
   final bool current;
 
+  String periodIn(AppLanguage language) =>
+      language.isEnglish ? periodEn ?? period : period;
+
+  String descriptionIn(AppLanguage language) =>
+      language.isEnglish ? descriptionEn ?? description : description;
+
   @override
-  List<Object?> get props => [role, company, period, description, current];
+  List<Object?> get props => [
+    role,
+    company,
+    period,
+    description,
+    periodEn,
+    descriptionEn,
+    current,
+  ];
 }
 
 class EducationItem extends Equatable {
@@ -107,24 +126,42 @@ class OrganizationItem extends Equatable {
     required this.role,
     required this.organization,
     required this.period,
+    this.periodEn,
   });
 
   final String role;
   final String organization;
   final String period;
+  final String? periodEn;
+
+  String periodIn(AppLanguage language) =>
+      language.isEnglish ? periodEn ?? period : period;
 
   @override
-  List<Object?> get props => [role, organization, period];
+  List<Object?> get props => [role, organization, period, periodEn];
 }
 
 class Principle extends Equatable {
-  const Principle({required this.title, required this.description});
+  const Principle({
+    required this.title,
+    required this.description,
+    this.titleEn,
+    this.descriptionEn,
+  });
 
   final String title;
   final String description;
+  final String? titleEn;
+  final String? descriptionEn;
+
+  String titleIn(AppLanguage language) =>
+      language.isEnglish ? titleEn ?? title : title;
+
+  String descriptionIn(AppLanguage language) =>
+      language.isEnglish ? descriptionEn ?? description : description;
 
   @override
-  List<Object?> get props => [title, description];
+  List<Object?> get props => [title, description, titleEn, descriptionEn];
 }
 
 class Developer extends Equatable {
@@ -140,6 +177,9 @@ class Developer extends Equatable {
     required this.email,
     required this.phone,
     required this.availability,
+    this.taglineEn,
+    this.bioEn,
+    this.availabilityEn,
     required this.yearsExperience,
     required this.projectCount,
     required this.collaborationCount,
@@ -162,6 +202,9 @@ class Developer extends Equatable {
   final String email;
   final String phone;
   final String availability;
+  final String? taglineEn;
+  final String? bioEn;
+  final String? availabilityEn;
   final int yearsExperience;
   final int projectCount;
   final int collaborationCount;
@@ -171,6 +214,14 @@ class Developer extends Equatable {
   final List<EducationItem> education;
   final List<OrganizationItem> organizations;
   final List<Principle> principles;
+
+  String taglineIn(AppLanguage language) =>
+      language.isEnglish ? taglineEn ?? tagline : tagline;
+
+  String bioIn(AppLanguage language) => language.isEnglish ? bioEn ?? bio : bio;
+
+  String availabilityIn(AppLanguage language) =>
+      language.isEnglish ? availabilityEn ?? availability : availability;
 
   @override
   List<Object?> get props => [
@@ -185,6 +236,9 @@ class Developer extends Equatable {
     email,
     phone,
     availability,
+    taglineEn,
+    bioEn,
+    availabilityEn,
     yearsExperience,
     projectCount,
     collaborationCount,

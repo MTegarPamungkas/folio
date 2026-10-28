@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 
 class CategoryFilterBar extends StatelessWidget {
@@ -21,14 +22,14 @@ class CategoryFilterBar extends StatelessWidget {
       child: Row(
         children: [
           TechPill(
-            label: 'Semua',
+            label: context.tr('Semua'),
             selected: selected == null,
             onTap: () => onSelected(null),
           ),
           const SizedBox(width: 7),
           for (final category in categories) ...[
             TechPill(
-              label: category.label,
+              label: context.tr(category.label),
               selected: selected == category,
               onTap: () => onSelected(selected == category ? null : category),
             ),

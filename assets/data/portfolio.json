@@ -4,13 +4,16 @@
     "shortName": "Tegar",
     "initials": "MT",
     "role": "Full Stack Developer / Mobile Developer",
-    "tagline": "Dari antarmuka sampai database, siap dipakai.",
-    "bio": "Saya full-stack developer yang biasa mengirim aplikasi mobile dan web untuk klien enterprise. Saya kerja dari antarmuka, backend, sampai database—menerjemahkan kebutuhan bisnis dan operasional jadi perangkat lunak yang andal dan siap dipakai.\n\nSaya terbiasa membangun fitur lapangan seperti presensi berlapis, offline-first sync, geofencing, dan tiket B2B. Saya juga pakai AI agent tools untuk mempercepat kerja tanpa mengorbankan kualitas.",
+    "tagline": "Dari antarmuka hingga database, siap dipakai.",
+    "taglineEn": "From interface to database, ready to ship.",
+    "bio": "Saya full-stack developer dengan pengalaman membangun aplikasi mobile dan web untuk klien enterprise. Saya menangani seluruh lapisan, mulai dari antarmuka, backend, hingga database, untuk menerjemahkan kebutuhan bisnis dan operasional menjadi perangkat lunak yang andal dan siap digunakan.\n\nSaya berpengalaman membangun fitur lapangan seperti presensi berlapis, sinkronisasi offline-first, geofencing, dan tiket B2B. Saya juga memanfaatkan AI agent tools untuk mempercepat pekerjaan tanpa mengorbankan kualitas.",
+    "bioEn": "I'm a full-stack developer experienced in building mobile and web applications for enterprise clients. I work across the entire stack, from interface and backend to database, turning business and operational needs into reliable, production-ready software.\n\nI have hands-on experience building field-operations features such as layered attendance, offline-first sync, geofencing, and B2B ticketing. I also use AI agent tools to speed up my work without compromising quality.",
     "location": "Bogor, West Java, Indonesia",
     "timezone": "WIB · UTC+7",
     "email": "mtegarpamungkas111@gmail.com",
     "phone": "+62 822-4661-4680",
     "availability": "Terbuka untuk peluang full-time",
+    "availabilityEn": "Open to full-time opportunities",
     "yearsExperience": 3,
     "projectCount": 13,
     "collaborationCount": 4,
@@ -24,14 +27,7 @@
     "skillGroups": [
       {
         "kind": "fullStack",
-        "skills": [
-          "Flutter",
-          "Dart",
-          "Kotlin",
-          "Java",
-          "PHP",
-          "REST APIs"
-        ]
+        "skills": ["Flutter", "Dart", "Kotlin", "Java", "PHP", "REST APIs"]
       },
       {
         "kind": "backend",
@@ -69,29 +65,37 @@
         "role": "Mobile Developer",
         "company": "Wavetek Integra Nusa, pt · South Jakarta",
         "period": "Des 2025 — Jun 2026",
+        "periodEn": "Dec 2025 — Jun 2026",
         "current": false,
-        "description": "Saya membangun MIS MSA dari nol—aplikasi operasi lapangan yang dipakai PLN Batam, ICONNET, dan ASIANET untuk presensi, tiket, K3, dan armada. Saya merancang presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS; bikin offline-first sync yang tetap aman setelah aplikasi dibuka ulang; lalu menambahkan background location tiap 15 menit. Saya juga ikut membangun modul tiket B2B dengan audit log, pencarian cepat, plus 10+ modul operasional lain."
+        "description": "Membangun MIS MSA dari nol, aplikasi operasi lapangan yang digunakan PLN Batam, ICONNET, dan ASIANET untuk presensi, tiket, K3, dan manajemen armada. Merancang presensi berlapis dengan selfie langsung, geofencing, dan deteksi mock GPS; mengembangkan sinkronisasi offline-first yang tetap aman setelah aplikasi dibuka ulang; serta menambahkan pelacakan lokasi latar belakang setiap 15 menit. Turut mengembangkan modul tiket B2B dengan audit log dan pencarian cepat, serta lebih dari 10 modul operasional lainnya.",
+        "descriptionEn": "Built MIS MSA from scratch, a field-operations app used by PLN Batam, ICONNET, and ASIANET for attendance, ticketing, occupational health and safety (K3), and fleet management. Designed layered attendance with live selfies, geofencing, and mock GPS detection; built offline-first sync that stays safe after the app is reopened; and added background location tracking every 15 minutes. Also contributed to the B2B ticketing module with audit logs and fast search, along with more than 10 other operational modules."
       },
       {
         "role": "Mobile Developer",
         "company": "INDI Technology · East Jakarta",
         "period": "Sep 2024 — Jan 2025",
+        "periodEn": "Sep 2024 — Jan 2025",
         "current": false,
-        "description": "Saya mengembangkan GetCrew, aplikasi rekrutmen yang mempertemukan crew dengan perusahaan. Saya integrasikan lowongan, profil, dan messaging lewat REST API bareng tim backend. Saya juga membangun dan merilis TomboAti (dulu AhwalNote) ke Google Play Store, sambil merapikan komunikasi API di service layer dan menerapkan adapter pattern supaya perubahan backend tidak merusak UI."
+        "description": "Mengembangkan GetCrew, aplikasi rekrutmen yang mempertemukan crew dengan perusahaan, dengan mengintegrasikan lowongan, profil, dan fitur pesan melalui REST API bersama tim backend. Membangun dan merilis TomboAti (sebelumnya AhwalNote) ke Google Play Store. Merapikan komunikasi API pada service layer dan menerapkan adapter pattern agar perubahan di backend tidak memengaruhi tampilan aplikasi.",
+        "descriptionEn": "Developed GetCrew, a recruitment app that connects crew with companies, integrating job listings, profiles, and messaging through REST APIs together with the backend team. Built and released TomboAti (formerly AhwalNote) to the Google Play Store. Streamlined API communication in the service layer and applied the adapter pattern so backend changes do not affect the app's UI."
       },
       {
         "role": "Mobile Developer",
         "company": "Bangkit Academy · Remote",
         "period": "Agu 2023 — Jan 2024",
+        "periodEn": "Aug 2023 — Jan 2024",
         "current": false,
-        "description": "Saya menyelesaikan mobile development track dengan fokus Android dan Kotlin. Saya membangun Movie Finder dengan local caching dan dependency injection, serta Story App dengan login aman, pengelolaan post, dan lokasi berbasis peta."
+        "description": "Menyelesaikan jalur mobile development dengan fokus pada Android dan Kotlin. Membangun Movie Finder dengan local caching dan dependency injection, serta Story App dengan fitur login yang aman, pengelolaan postingan, dan lokasi berbasis peta.",
+        "descriptionEn": "Completed the mobile development track with a focus on Android and Kotlin. Built Movie Finder with local caching and dependency injection, and Story App with secure login, post management, and map-based location."
       },
       {
         "role": "Software Engineering Intern",
         "company": "PT Lingkar Sembilan Titian Media · South Tangerang",
         "period": "Okt 2020 — Des 2020",
+        "periodEn": "Oct 2020 — Dec 2020",
         "current": false,
-        "description": "Saya membantu pengembangan web dan Android bareng tim engineering, pakai PHP dan Java."
+        "description": "Membantu pengembangan aplikasi web dan Android bersama tim engineering menggunakan PHP dan Java.",
+        "descriptionEn": "Assisted in web and Android development alongside the engineering team using PHP and Java."
       }
     ],
     "education": [
@@ -112,26 +116,34 @@
       {
         "role": "Technical & Curriculum — Flutter Division",
         "organization": "Google Developer Student Club (GDSC) UNSIKA",
-        "period": "Agu 2023 — Jun 2024"
+        "period": "Agu 2023 — Jun 2024",
+        "periodEn": "Aug 2023 — Jun 2024"
       },
       {
         "role": "Research and Development Division",
         "organization": "HIMTIKA (Informatics Engineering Student Association) UNSIKA",
-        "period": "Des 2021 — Des 2022"
+        "period": "Des 2021 — Des 2022",
+        "periodEn": "Dec 2021 — Dec 2022"
       }
     ],
     "principles": [
       {
-        "title": "Produksi, bukan demo",
-        "description": "Saya fokus ke aplikasi yang benar-benar dipakai: siap menghadapi kondisi lapangan, edge case, dan kebutuhan operasional nyata."
+        "title": "Produksi, bukan sekadar demo",
+        "titleEn": "Production, not just demos",
+        "description": "Saya berfokus pada aplikasi yang benar-benar digunakan: siap menghadapi kondisi lapangan, edge case, dan kebutuhan operasional nyata.",
+        "descriptionEn": "I focus on applications that are actually used: ready for field conditions, edge cases, and real operational needs."
       },
       {
         "title": "Offline-first",
-        "description": "Pengguna lapangan tidak selalu punya sinyal. Data harus aman di perangkat dan tersinkron lagi tanpa kehilangan pekerjaan."
+        "titleEn": "Offline-first",
+        "description": "Pengguna lapangan tidak selalu memiliki sinyal. Data harus tetap aman di perangkat dan dapat tersinkron kembali tanpa kehilangan pekerjaan.",
+        "descriptionEn": "Field users don't always have a signal. Data must stay safe on the device and sync back without losing any work."
       },
       {
         "title": "AI sebagai akselerator",
-        "description": "Saya pakai AI agent tools untuk mempercepat eksplorasi dan delivery, tapi keputusan arsitektur dan kualitas kode tetap saya jaga."
+        "titleEn": "AI as an accelerator",
+        "description": "Saya memanfaatkan AI agent tools untuk mempercepat eksplorasi dan delivery, sementara keputusan arsitektur dan kualitas kode tetap saya jaga.",
+        "descriptionEn": "I use AI agent tools to speed up exploration and delivery, while I stay responsible for architectural decisions and code quality."
       }
     ]
   },
@@ -146,16 +158,22 @@
       "id": "custom-fit",
       "name": "CustomFit",
       "tagline": "Coba dulu di layar, baru dijahit.",
-      "description": "Aplikasi fashion yang menggabungkan virtual try-on generatif dengan pemesanan jahit ke penjahit.",
-      "story": "CustomFit lahir dari tim AuraVentures untuk menjawab satu masalah: sulit membayangkan baju custom sebelum dijahit, apalagi kalau jarak ke penjahit jauh. Saya mengerjakan aplikasi Flutter-nya, dari katalog pakaian dan alur virtual try-on sampai checkout dan pelacakan pesanan.\n\nPengguna memilih model, atasan, dan bawahan; hasil try-on dibuat lewat API generatif lalu ditampilkan sebagai gambar. Setelah cocok, pesanan diteruskan ke penjahit dengan opsi jahit prioritas atau normal, pembayaran, dan status pesanan yang bisa dipantau.",
+      "taglineEn": "Try it on screen first, then get it tailored.",
+      "description": "Aplikasi fashion yang menggabungkan virtual try-on generatif dengan pemesanan jahit langsung ke penjahit.",
+      "descriptionEn": "A fashion app that combines generative virtual try-on with made-to-measure ordering directly from tailors.",
+      "story": "CustomFit lahir dari tim AuraVentures untuk menjawab satu masalah: sulit membayangkan hasil pakaian custom sebelum dijahit, terlebih jika jarak ke penjahit jauh. Saya mengerjakan aplikasi Flutter-nya, mulai dari katalog pakaian dan alur virtual try-on hingga checkout dan pelacakan pesanan.\n\nPengguna memilih model, atasan, dan bawahan, lalu hasil try-on dihasilkan melalui API generatif dan ditampilkan sebagai gambar. Setelah cocok, pesanan diteruskan ke penjahit dengan pilihan jahit prioritas atau normal, lengkap dengan pembayaran dan status pesanan yang dapat dipantau.",
+      "storyEn": "CustomFit was born from the AuraVentures team to solve one problem: it's hard to picture a custom garment before it's sewn, especially when the tailor is far away. I built the Flutter app, from the clothing catalog and virtual try-on flow to checkout and order tracking.\n\nUsers choose a model, a top, and a bottom, and the try-on result is generated through a generative API and shown as an image. Once it looks right, the order is forwarded to the tailor with a priority or normal sewing option, along with payment and an order status that can be tracked.",
       "category": "ai-kreatif",
       "type": "mobileApp",
       "year": "2024",
       "role": "Mobile Developer",
       "timeline": "Jan — Feb 2024",
+      "timelineEn": "Jan — Feb 2024",
       "status": "Proyek tim AuraVentures · SDG 9",
+      "statusEn": "AuraVentures team project · SDG 9",
       "version": "1.0",
       "updatedAt": "Feb 2024",
+      "updatedAtEn": "Feb 2024",
       "tech": [
         "Flutter",
         "Firebase Auth",
@@ -164,53 +182,76 @@
         "Generative AI"
       ],
       "features": [
-        "Onboarding dan autentikasi email atau Google",
+        "Onboarding dan autentikasi melalui email atau Google",
         "Katalog atasan, bawahan, rok, dan model dari Firestore",
         "Virtual try-on generatif dengan pilihan model dan pakaian",
         "Pemilihan material dan ukuran sebelum checkout",
         "Checkout dengan alamat, opsi jahit, dan pembayaran",
-        "Pelacakan pesanan dari belum dibayar sampai selesai"
+        "Pelacakan pesanan, dari belum dibayar hingga selesai"
+      ],
+      "featuresEn": [
+        "Onboarding and authentication via email or Google",
+        "Catalog of tops, bottoms, skirts, and models from Firestore",
+        "Generative virtual try-on with model and clothing selection",
+        "Material and size selection before checkout",
+        "Checkout with address, sewing option, and payment",
+        "Order tracking from unpaid to completed"
       ],
       "releaseNotes": [
-        "Alur onboarding, login, dan register.",
+        "Alur onboarding, login, dan registrasi.",
         "Katalog pakaian dan virtual try-on generatif.",
         "Checkout, pembayaran, dan pelacakan pesanan."
       ],
-      "previewTitle": "CustomFit",
-      "previewSubtitle": "Virtual try-on · jahit custom",
-      "previewMetric": "04",
-      "previewMetricLabel": "kategori pakaian",
-      "previewItems": [
-        "Try-on",
-        "Pesanan"
+      "releaseNotesEn": [
+        "Onboarding, login, and registration flow.",
+        "Clothing catalog and generative virtual try-on.",
+        "Checkout, payment, and order tracking."
       ],
+      "previewTitle": "CustomFit",
+      "previewTitleEn": "CustomFit",
+      "previewSubtitle": "Virtual try-on · jahit custom",
+      "previewSubtitleEn": "Virtual try-on · custom tailoring",
+      "previewMetric": "04",
+      "previewMetricEn": "04",
+      "previewMetricLabel": "kategori pakaian",
+      "previewMetricLabelEn": "clothing categories",
+      "previewItems": ["Try-on", "Pesanan"],
+      "previewItemsEn": ["Try-on", "Orders"],
       "editorialTitle": "Coba dulu,\nbaru dijahit.",
+      "editorialTitleEn": "Try it on first,\nthen get it sewn.",
       "highlight": "Generative virtual try-on",
+      "highlightEn": "Generative virtual try-on",
       "featured": false,
       "screenshots": [
         {
           "asset": "assets/screenshots/custom-fit/home.jpg",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/custom-fit/try-on.jpg",
-          "label": "Virtual try-on"
+          "label": "Virtual try-on",
+          "labelEn": "Virtual try-on"
         },
         {
           "asset": "assets/screenshots/custom-fit/result.jpg",
-          "label": "Hasil desain"
+          "label": "Hasil desain",
+          "labelEn": "Design result"
         },
         {
           "asset": "assets/screenshots/custom-fit/checkout.jpg",
-          "label": "Checkout"
+          "label": "Checkout",
+          "labelEn": "Checkout"
         },
         {
           "asset": "assets/screenshots/custom-fit/payment.jpg",
-          "label": "Pembayaran"
+          "label": "Pembayaran",
+          "labelEn": "Payment"
         },
         {
           "asset": "assets/screenshots/custom-fit/orders.jpg",
-          "label": "Pesanan"
+          "label": "Pesanan",
+          "labelEn": "Orders"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/custom_fit",
@@ -220,16 +261,22 @@
       "id": "team-intelligence",
       "name": "Team Intelligence",
       "tagline": "SYNC, platform kolaborasi tim berbasis AI.",
+      "taglineEn": "SYNC, an AI-powered team collaboration platform.",
       "description": "Platform kolaborasi tim dengan dashboard proyek, manajemen tugas, activity feed, dan AI insights.",
-      "story": "Team Intelligence (SYNC) adalah eksperimen saya membangun platform kolaborasi tim yang tidak cuma mencatat tugas, tapi membantu tim membaca kondisinya sendiri. Saya susun aplikasinya dengan clean architecture dan BLoC, dari dashboard, activity feed, task board, sampai modul AI.\n\nAI insights meringkas risiko dan ketidakseimbangan beban kerja dari data proyek, sementara AI conversations menjawab pertanyaan seputar tim dengan konteks anggota dan tugas. Datanya lewat Dio ke API, di-cache di SQLite, dan sesi disimpan di secure storage.",
+      "descriptionEn": "A team collaboration platform with a project dashboard, task management, activity feed, and AI insights.",
+      "story": "Team Intelligence (SYNC) adalah eksperimen saya dalam membangun platform kolaborasi yang tidak hanya mencatat tugas, tetapi juga membantu tim memahami kondisinya sendiri. Aplikasi ini saya susun dengan clean architecture dan BLoC, mencakup dashboard, activity feed, task board, hingga modul AI.\n\nAI insights merangkum risiko dan ketidakseimbangan beban kerja dari data proyek, sedangkan AI conversations menjawab pertanyaan seputar tim dengan konteks anggota dan tugas. Data diambil melalui Dio dari API, disimpan sementara di SQLite, dan sesi pengguna diamankan di secure storage.",
+      "storyEn": "Team Intelligence (SYNC) is my experiment in building a collaboration platform that doesn't just track tasks, but also helps teams understand their own condition. I structured the app with clean architecture and BLoC, covering the dashboard, activity feed, task board, and AI modules.\n\nAI insights summarize risks and workload imbalances from project data, while AI conversations answer questions about the team using member and task context. Data is fetched from the API through Dio, cached in SQLite, and user sessions are secured in secure storage.",
       "category": "produktivitas",
       "type": "mobileApp",
       "year": "2026",
       "role": "Flutter Developer",
       "timeline": "Sep 2025 — Okt 2026",
+      "timelineEn": "Sep 2025 — Oct 2026",
       "status": "Repo publik · dalam pengembangan",
+      "statusEn": "Public repo · in development",
       "version": "1.0.0",
       "updatedAt": "Okt 2026",
+      "updatedAtEn": "Oct 2026",
       "tech": [
         "Flutter",
         "BLoC",
@@ -240,54 +287,78 @@
         "GoRouter"
       ],
       "features": [
-        "Dashboard proyek: progress, anggota, efisiensi, dan fokus tim",
-        "Task board dengan prioritas, progres, dependency, tag, dan assignment",
+        "Dashboard proyek: progres, anggota, efisiensi, dan fokus tim",
+        "Task board dengan prioritas, progres, dependensi, tag, dan penugasan",
         "AI insights untuk risiko, beban kerja, dan rekomendasi",
         "AI conversations dengan konteks proyek dan anggota",
         "Activity feed dan notifikasi perubahan tim",
-        "Manajemen anggota, permission, dan project settings"
+        "Manajemen anggota, permission, dan pengaturan proyek"
+      ],
+      "featuresEn": [
+        "Project dashboard: progress, members, efficiency, and team focus",
+        "Task board with priority, progress, dependencies, tags, and assignment",
+        "AI insights for risks, workload, and recommendations",
+        "AI conversations with project and member context",
+        "Activity feed and team change notifications",
+        "Member management, permissions, and project settings"
       ],
       "releaseNotes": [
         "Dashboard proyek dan activity feed.",
-        "Manajemen tugas, dependency, dan anggota.",
+        "Manajemen tugas, dependensi, dan anggota.",
         "AI insights dan AI conversations.",
-        "Notifikasi, permission, dan project settings."
+        "Notifikasi, permission, dan pengaturan proyek."
+      ],
+      "releaseNotesEn": [
+        "Project dashboard and activity feed.",
+        "Task, dependency, and member management.",
+        "AI insights and AI conversations.",
+        "Notifications, permissions, and project settings."
       ],
       "previewTitle": "Microsoft Platform",
+      "previewTitleEn": "Microsoft Platform",
       "previewSubtitle": "SYNC · progres 65%",
+      "previewSubtitleEn": "SYNC · 65% progress",
       "previewMetric": "88,33%",
+      "previewMetricEn": "88.33%",
       "previewMetricLabel": "efisiensi tim",
-      "previewItems": [
-        "Dashboard",
-        "AI Insights"
-      ],
+      "previewMetricLabelEn": "team efficiency",
+      "previewItems": ["Dashboard", "AI Insights"],
+      "previewItemsEn": ["Dashboard", "AI Insights"],
       "editorialTitle": "Kerja tim,\nlebih terukur.",
+      "editorialTitleEn": "Teamwork,\nmore measurable.",
       "highlight": "AI team insights",
+      "highlightEn": "AI team insights",
       "featured": false,
       "screenshots": [
         {
           "asset": "assets/screenshots/team-intelligence/dashboard.jpg",
-          "label": "Dashboard"
+          "label": "Dashboard",
+          "labelEn": "Dashboard"
         },
         {
           "asset": "assets/screenshots/team-intelligence/tasks.jpg",
-          "label": "Tugas"
+          "label": "Tugas",
+          "labelEn": "Tasks"
         },
         {
           "asset": "assets/screenshots/team-intelligence/ai-chat.jpg",
-          "label": "AI Chat"
+          "label": "AI Chat",
+          "labelEn": "AI Chat"
         },
         {
           "asset": "assets/screenshots/team-intelligence/insights.jpg",
-          "label": "AI Insights"
+          "label": "AI Insights",
+          "labelEn": "AI Insights"
         },
         {
           "asset": "assets/screenshots/team-intelligence/activity.jpg",
-          "label": "Aktivitas"
+          "label": "Aktivitas",
+          "labelEn": "Activity"
         },
         {
           "asset": "assets/screenshots/team-intelligence/members.jpg",
-          "label": "Anggota"
+          "label": "Anggota",
+          "labelEn": "Members"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/team_intelligence",
@@ -297,16 +368,22 @@
       "id": "dompetektif",
       "name": "Dompetektif",
       "tagline": "Ke mana uangmu pergi?",
-      "description": "Pelacak pengeluaran bergaya berkas investigasi—dompet jadi TKP, struk jadi barang bukti, laporan jadi temuan. Ada versi APK Android dan web PWA.",
-      "story": "Dompetektif lahir dari pertanyaan yang cukup mengganggu: ke mana uang saya sebenarnya pergi? Daripada bikin tracker biasa, saya bungkus pencatatan pengeluaran jadi berkas investigasi—dompet jadi TKP, struk jadi barang bukti, laporan jadi temuan.\n\nBagian paling ribet justru OCR struk. Build release sempat gagal total karena R8 membuang constructor registrar ML Kit. Setelah itu, ML Kit ternyata mengembalikan struk dua kolom sebagai blok label dan blok angka terpisah. Saya tambahkan rekonstruksi baris dari bounding box, lalu parser yang mengabaikan nomor nota, telepon, dan NPWP. Semua jalan di perangkat, jadi struk tetap bisa dipindai tanpa koneksi.\n\nDatanya offline-first: Hive jadi sumber lokal, outbox ke Supabase, dan RLS buat dompet bersama. Web PWA dan APK Android saya bangun dari basis kode yang sama.",
+      "taglineEn": "Where does your money go?",
+      "description": "Pelacak pengeluaran bergaya berkas investigasi: dompet menjadi TKP, struk menjadi barang bukti, dan laporan menjadi temuan. Tersedia dalam versi APK Android dan web PWA.",
+      "descriptionEn": "An expense tracker styled as an investigation file: the wallet becomes the crime scene (TKP), receipts become evidence, and reports become findings. Available as an Android APK and a web PWA.",
+      "story": "Dompetektif lahir dari pertanyaan yang cukup mengusik: ke mana uang saya sebenarnya pergi? Alih-alih membuat tracker biasa, saya mengemas pencatatan pengeluaran sebagai berkas investigasi: dompet menjadi TKP, struk menjadi barang bukti, dan laporan menjadi temuan.\n\nBagian tersulit justru OCR struk. Build release sempat gagal total karena R8 menghapus constructor registrar ML Kit. Setelah itu, ML Kit ternyata mengembalikan struk dua kolom sebagai blok label dan blok angka yang terpisah. Saya menambahkan rekonstruksi baris berdasarkan bounding box, lalu membuat parser yang mengabaikan nomor nota, nomor telepon, dan NPWP. Seluruh proses berjalan di perangkat, sehingga struk tetap dapat dipindai tanpa koneksi.\n\nData dikelola dengan pendekatan offline-first: Hive sebagai sumber data lokal, outbox untuk sinkronisasi ke Supabase, dan RLS untuk dompet bersama. Web PWA dan APK Android dibangun dari basis kode yang sama.",
+      "storyEn": "Dompetektif was born from a rather nagging question: where does my money actually go? Instead of building yet another tracker, I packaged expense logging as an investigation file: the wallet becomes the crime scene (TKP), receipts become evidence, and reports become findings.\n\nThe hardest part was receipt OCR. The release build once failed completely because R8 stripped ML Kit's registrar constructor. After that, ML Kit turned out to return two-column receipts as separate blocks of labels and numbers. I added line reconstruction based on bounding boxes, then built a parser that ignores receipt numbers, phone numbers, and tax IDs (NPWP). Everything runs on the device, so receipts can still be scanned without a connection.\n\nData is handled offline-first: Hive as the local source of truth, an outbox for syncing to Supabase, and RLS for shared wallets. The web PWA and the Android APK are built from the same codebase.",
       "category": "fintech",
       "type": "mobileApp",
       "year": "2026",
       "role": "Solo Developer",
       "timeline": "Okt 2026",
+      "timelineEn": "Oct 2026",
       "status": "Rilis v1.0.1 · APK + web demo",
+      "statusEn": "Released v1.0.1 · APK + web demo",
       "version": "1.0.1",
       "updatedAt": "Okt 2026",
+      "updatedAtEn": "Oct 2026",
       "tech": [
         "Flutter",
         "Dart",
@@ -317,53 +394,76 @@
         "Offline-first"
       ],
       "features": [
-        "OCR struk jalan di perangkat, termasuk struk dua kolom",
-        "Parser total dan item yang tidak ketuker sama nomor nota, telepon, atau NPWP",
+        "OCR struk yang berjalan di perangkat, termasuk struk dua kolom",
+        "Parser total dan item yang tidak tertukar dengan nomor nota, telepon, atau NPWP",
         "Offline-first: Hive di perangkat, outbox ke Supabase",
         "Dompet bersama, kode undangan, dan catatan tim realtime dengan RLS",
         "Laporan investigasi dengan AI dan fallback analisis lokal",
-        "Kunci biometrik, ekspor PDF/CSV, plus APK dan web PWA"
+        "Kunci biometrik, ekspor PDF/CSV, serta tersedia sebagai APK dan web PWA"
+      ],
+      "featuresEn": [
+        "On-device receipt OCR, including two-column receipts",
+        "Total and item parser that doesn't confuse receipt numbers, phone numbers, or tax IDs (NPWP)",
+        "Offline-first: Hive on the device, outbox to Supabase",
+        "Shared wallets, invite codes, and realtime team notes with RLS",
+        "AI investigation reports with a local analysis fallback",
+        "Biometric lock, PDF/CSV export, and availability as both APK and web PWA"
       ],
       "releaseNotes": [
         "Rilis v1.0.1: login email/password langsung aktif.",
         "Pendaftaran tidak lagi menunggu email konfirmasi.",
         "APK tersedia per arsitektur: arm64-v8a, armeabi-v7a, dan x86_64."
       ],
-      "previewTitle": "Rp 468.000",
-      "previewSubtitle": "Total saldo",
-      "previewMetric": "58.300",
-      "previewMetricLabel": "total struk",
-      "previewItems": [
-        "Kopi Senja",
-        "Belanja Harian"
+      "releaseNotesEn": [
+        "Release v1.0.1: email/password login is now active immediately.",
+        "Sign-up no longer waits for email confirmation.",
+        "APKs are available per architecture: arm64-v8a, armeabi-v7a, and x86_64."
       ],
+      "previewTitle": "Rp 468.000",
+      "previewTitleEn": "Rp 468.000",
+      "previewSubtitle": "Total saldo",
+      "previewSubtitleEn": "Total balance",
+      "previewMetric": "58.300",
+      "previewMetricEn": "58,300",
+      "previewMetricLabel": "total struk",
+      "previewMetricLabelEn": "receipt total",
+      "previewItems": ["Kopi Senja", "Belanja Harian"],
+      "previewItemsEn": ["Kopi Senja", "Daily Groceries"],
       "editorialTitle": "Usut tuntas,\nbukan sekadar catat.",
+      "editorialTitleEn": "Investigate thoroughly,\nnot just record.",
       "highlight": "OCR + offline-first",
+      "highlightEn": "OCR + offline-first",
       "featured": true,
       "screenshots": [
         {
           "asset": "assets/screenshots/dompetektif/meja-kasus.png",
-          "label": "Meja Kasus"
+          "label": "Meja Kasus",
+          "labelEn": "Case Desk"
         },
         {
           "asset": "assets/screenshots/dompetektif/berkas.png",
-          "label": "Berkas"
+          "label": "Berkas",
+          "labelEn": "Files"
         },
         {
           "asset": "assets/screenshots/dompetektif/barang-bukti.png",
-          "label": "Barang Bukti"
+          "label": "Barang Bukti",
+          "labelEn": "Evidence"
         },
         {
           "asset": "assets/screenshots/dompetektif/laporan.png",
-          "label": "Laporan"
+          "label": "Laporan",
+          "labelEn": "Report"
         },
         {
           "asset": "assets/screenshots/dompetektif/temuan.png",
-          "label": "Temuan"
+          "label": "Temuan",
+          "labelEn": "Findings"
         },
         {
           "asset": "assets/screenshots/dompetektif/tim-investigasi.png",
-          "label": "Tim Investigasi"
+          "label": "Tim Investigasi",
+          "labelEn": "Investigation Team"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/dompetektif",
@@ -373,17 +473,23 @@
     {
       "id": "bagi-fair",
       "name": "Bagi Fair",
-      "tagline": "Bagi adil, tanpa baper.",
-      "description": "Aplikasi patungan buat trip, kos, dan nongkrong. Semua orang bisa mencatat pengeluaran, melihat asal tiap angka, lalu melunasi tanpa spreadsheet.",
-      "story": "Bagi Fair berangkat dari drama yang akrab: satu orang bayar dulu, sisanya janji transfer, lalu angka di spreadsheet tidak pernah cocok. Saya bangun aplikasi patungan yang menghitung pembagiannya secara eksplisit—bukan cuma membagi rata.\n\nBagian tersulitnya bukan UI, tapi keadilan angkanya. Pajak dan service charge dialokasikan proporsional ke subtotal tiap orang, pembulatan pakai largest-remainder supaya total bagian selalu pas, dan setiap posisi bisa dibuka lewat breakdown \"Kenapa angkanya segini?\". Untuk struk, foto struk dibaca AI lewat Supabase Edge Function, lalu hasilnya wajib lewat review yang bisa diedit sebelum jadi pengeluaran.\n\nDatanya cloud-first: Supabase Auth, Postgres dengan RLS, Realtime sebagai sinyal perubahan, dan cache lokal per pengguna. APK Android dan web dibangun dari basis kode yang sama.",
+      "tagline": "Bagi adil, tanpa drama.",
+      "taglineEn": "Split fairly, no drama.",
+      "description": "Aplikasi patungan untuk trip, kos, dan acara kumpul. Setiap anggota dapat mencatat pengeluaran, melihat asal tiap angka, dan melunasi tanpa spreadsheet.",
+      "descriptionEn": "A bill-splitting app for trips, boarding houses, and hangouts. Everyone can log expenses, see where each number comes from, and settle up without a spreadsheet.",
+      "story": "Bagi Fair berangkat dari situasi yang akrab: satu orang membayar lebih dulu, yang lain berjanji transfer, lalu angka di spreadsheet tidak pernah cocok. Saya membangun aplikasi patungan yang menghitung pembagian secara eksplisit, bukan sekadar membagi rata.\n\nBagian tersulitnya bukan UI, melainkan keadilan angkanya. Pajak dan service charge dialokasikan proporsional terhadap subtotal masing-masing orang, pembulatan menggunakan metode largest-remainder agar total bagian selalu pas, dan setiap angka dapat ditelusuri lewat rincian \"Kenapa angkanya segini?\". Untuk struk, foto dibaca AI melalui Supabase Edge Function, lalu hasilnya wajib melewati tahap review yang dapat diedit sebelum menjadi pengeluaran.\n\nData dikelola dengan pendekatan cloud-first: Supabase Auth, Postgres dengan RLS, Realtime sebagai sinyal perubahan, dan cache lokal per pengguna. APK Android dan web dibangun dari basis kode yang sama.",
+      "storyEn": "Bagi Fair started from a familiar situation: one person pays first, the others promise to transfer later, and the numbers in the spreadsheet never add up. I built a bill-splitting app that calculates each share explicitly, rather than just dividing equally.\n\nThe hardest part wasn't the UI but the fairness of the numbers. Tax and service charge are allocated proportionally to each person's subtotal, rounding uses the largest-remainder method so the shares always add up exactly, and every figure can be traced through a \"Why this number?\" breakdown. For receipts, the photo is read by AI through a Supabase Edge Function, and the result must pass an editable review step before it becomes an expense.\n\nData is handled cloud-first: Supabase Auth, Postgres with RLS, Realtime as the change signal, and a per-user local cache. The Android APK and the web app are built from the same codebase.",
       "category": "fintech",
       "type": "mobileApp",
       "year": "2026",
       "role": "Solo Developer",
       "timeline": "Okt 2026",
+      "timelineEn": "Oct 2026",
       "status": "Rilis v1.0.2 · APK + web demo",
+      "statusEn": "Released v1.0.2 · APK + web demo",
       "version": "1.0.2",
       "updatedAt": "Okt 2026",
+      "updatedAtEn": "Oct 2026",
       "tech": [
         "Flutter",
         "Dart",
@@ -394,53 +500,76 @@
         "Gemini"
       ],
       "features": [
-        "Empat mode bagi: rata, persentase, nominal pasti, atau per item",
-        "Pajak dan service dialokasikan proporsional, pembulatan largest-remainder",
-        "OCR struk lewat AI, selalu melewati review yang bisa diedit",
-        "Saldo bersih, transfer paling sedikit, dan status Impas",
+        "Empat mode pembagian: rata, persentase, nominal pasti, atau per item",
+        "Pajak dan service dialokasikan proporsional, dengan pembulatan largest-remainder",
+        "OCR struk berbasis AI yang selalu melewati review yang dapat diedit",
+        "Saldo bersih, transfer minimum, dan status Impas",
         "Realtime, notifikasi in-app, dan cache lokal per pengguna",
-        "Ekspor PDF/CSV per grup, tema terang/gelap, Indonesia/Inggris"
+        "Ekspor PDF/CSV per grup, tema terang/gelap, serta bahasa Indonesia/Inggris"
+      ],
+      "featuresEn": [
+        "Four split modes: equal, percentage, exact amount, or per item",
+        "Tax and service allocated proportionally, with largest-remainder rounding",
+        "AI-powered receipt OCR that always goes through an editable review",
+        "Net balances, minimum transfers, and a Settled status",
+        "Realtime, in-app notifications, and a per-user local cache",
+        "PDF/CSV export per group, light/dark theme, and Indonesian/English"
       ],
       "releaseNotes": [
         "Rilis v1.0.2: APK per arsitektur arm64-v8a, armeabi-v7a, dan x86_64.",
-        "Scan struk menampilkan progres saat AI membaca, plus guard anti dobel-scan.",
-        "Web demo terpasang di GitHub Pages."
+        "Pemindaian struk menampilkan progres saat AI membaca, dilengkapi pencegahan pemindaian ganda.",
+        "Web demo tersedia di GitHub Pages."
+      ],
+      "releaseNotesEn": [
+        "Release v1.0.2: APKs per architecture: arm64-v8a, armeabi-v7a, and x86_64.",
+        "Receipt scanning shows progress while the AI reads, with a guard against double scans.",
+        "Web demo available on GitHub Pages."
       ],
       "previewTitle": "Rp 172.500",
+      "previewTitleEn": "Rp 172.500",
       "previewSubtitle": "Total struk",
+      "previewSubtitleEn": "Receipt total",
       "previewMetric": "3 grup",
+      "previewMetricEn": "3 groups",
       "previewMetricLabel": "patungan aktif",
-      "previewItems": [
-        "Kopi Kenangan",
-        "Nasi goreng"
-      ],
-      "editorialTitle": "Bagi adil,\ntanpa baper.",
+      "previewMetricLabelEn": "active splits",
+      "previewItems": ["Kopi Kenangan", "Nasi goreng"],
+      "previewItemsEn": ["Kopi Kenangan", "Nasi goreng"],
+      "editorialTitle": "Bagi adil,\ntanpa drama.",
+      "editorialTitleEn": "Split fairly,\nno drama.",
       "highlight": "Split bill + OCR AI",
+      "highlightEn": "Split bill + OCR AI",
       "featured": true,
       "screenshots": [
         {
           "asset": "assets/screenshots/bagi-fair/beranda.png",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/bagi-fair/grup.png",
-          "label": "Grup"
+          "label": "Grup",
+          "labelEn": "Groups"
         },
         {
           "asset": "assets/screenshots/bagi-fair/saldo.png",
-          "label": "Saldo"
+          "label": "Saldo",
+          "labelEn": "Balance"
         },
         {
           "asset": "assets/screenshots/bagi-fair/pengeluaran.png",
-          "label": "Detail pengeluaran"
+          "label": "Detail pengeluaran",
+          "labelEn": "Expense detail"
         },
         {
           "asset": "assets/screenshots/bagi-fair/scan-struk.png",
-          "label": "Scan struk"
+          "label": "Scan struk",
+          "labelEn": "Scan receipt"
         },
         {
           "asset": "assets/screenshots/bagi-fair/aktivitas.png",
-          "label": "Aktivitas"
+          "label": "Aktivitas",
+          "labelEn": "Activity"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/bagi-fair",
@@ -451,16 +580,22 @@
       "id": "mis-msa",
       "name": "MIS MSA",
       "tagline": "Presensi, tiket B2B, K3, dan armada dalam satu aplikasi.",
-      "description": "Aplikasi operasi lapangan buat presensi, tiket B2B, K3, patroli, armada, dan kebutuhan operasional lain.",
-      "story": "Saya membangun MIS MSA dari nol buat tim PLN Batam, ICONNET, dan ASIANET. Pekerjaan lapangan tidak bisa bergantung pada sinyal yang stabil, jadi aplikasinya saya rancang tetap bisa dipakai saat offline dan menyinkronkan data otomatis begitu koneksi balik.\n\nTantangan terbesarnya ada di kepercayaan data presensi. Saya rancang presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS, lalu menambahkan background location tiap 15 menit untuk monitoring dan keselamatan pekerja. Di sisi operasional, modul tiket B2B saya lengkapi dengan status, audit log, dan pencarian cepat untuk puluhan ribu tiket.",
+      "taglineEn": "Attendance, B2B tickets, K3, and fleet in one app.",
+      "description": "Aplikasi operasi lapangan untuk presensi, tiket B2B, K3, patroli, armada, dan berbagai kebutuhan operasional lainnya.",
+      "descriptionEn": "A field-operations app for attendance, B2B ticketing, K3 (occupational health and safety), patrols, fleet, and other operational needs.",
+      "story": "Saya membangun MIS MSA dari nol untuk tim PLN Batam, ICONNET, dan ASIANET. Pekerjaan lapangan tidak bisa bergantung pada sinyal yang stabil, sehingga aplikasi ini dirancang tetap dapat digunakan saat offline dan menyinkronkan data secara otomatis begitu koneksi kembali.\n\nTantangan terbesarnya ada pada kepercayaan terhadap data presensi. Saya merancang presensi berlapis dengan selfie langsung, geofencing, dan deteksi mock GPS, lalu menambahkan pelacakan lokasi latar belakang setiap 15 menit untuk pemantauan dan keselamatan pekerja. Di sisi operasional, modul tiket B2B dilengkapi status, audit log, dan pencarian cepat yang mampu menangani puluhan ribu tiket.",
+      "storyEn": "I built MIS MSA from scratch for the PLN Batam, ICONNET, and ASIANET teams. Field work can't depend on a stable signal, so the app is designed to stay usable offline and sync data automatically once the connection returns.\n\nThe biggest challenge was trust in attendance data. I designed layered attendance with live selfies, geofencing, and mock GPS detection, then added background location tracking every 15 minutes for monitoring and worker safety. On the operations side, the B2B ticketing module comes with statuses, audit logs, and fast search capable of handling tens of thousands of tickets.",
       "category": "enterprise",
       "type": "mobileApp",
       "year": "2026",
       "role": "Mobile Developer",
       "timeline": "Des 2025 — Jun 2026",
-      "status": "Dipakai PLN Batam, ICONNET, ASIANET",
+      "timelineEn": "Dec 2025 — Jun 2026",
+      "status": "Digunakan PLN Batam, ICONNET, ASIANET",
+      "statusEn": "Used by PLN Batam, ICONNET, ASIANET",
       "version": "1.0.0",
       "updatedAt": "Jun 2026",
+      "updatedAtEn": "Jun 2026",
       "tech": [
         "Offline-first",
         "Geofencing",
@@ -468,48 +603,69 @@
         "B2B Ticketing"
       ],
       "features": [
-        "Presensi berlapis dengan selfie live, geofencing, dan deteksi mock GPS",
-        "Tetap bisa dipakai offline, lalu sinkron otomatis begitu koneksi balik",
-        "Background location tiap 15 menit buat monitoring lapangan",
+        "Presensi berlapis dengan selfie langsung, geofencing, dan deteksi mock GPS",
+        "Tetap dapat digunakan offline, lalu tersinkron otomatis saat koneksi kembali",
+        "Pelacakan lokasi latar belakang setiap 15 menit untuk pemantauan lapangan",
         "Modul tiket B2B dengan status, audit log, dan pencarian cepat",
-        "10+ modul lain: K3, patroli, pinjaman karyawan, armada, cash flow, dan IT helpdesk"
+        "Lebih dari 10 modul lain: K3, patroli, pinjaman karyawan, armada, cash flow, dan IT helpdesk"
+      ],
+      "featuresEn": [
+        "Layered attendance with live selfies, geofencing, and mock GPS detection",
+        "Works offline, then syncs automatically when the connection returns",
+        "Background location tracking every 15 minutes for field monitoring",
+        "B2B ticketing module with statuses, audit logs, and fast search",
+        "10+ other modules: K3, patrols, employee loans, fleet, cash flow, and IT helpdesk"
       ],
       "releaseNotes": [
         "Presensi lapangan dengan validasi lokasi dan kamera.",
         "Sinkronisasi offline yang tetap aman setelah aplikasi dibuka ulang.",
         "Modul operasional untuk K3, patroli, armada, dan helpdesk."
       ],
-      "previewTitle": "Check-in lapangan",
-      "previewSubtitle": "PLN Batam · hari ini",
-      "previewMetric": "24",
-      "previewMetricLabel": "tiket aktif",
-      "previewItems": [
-        "Presensi",
-        "Tiket B2B"
+      "releaseNotesEn": [
+        "Field attendance with location and camera validation.",
+        "Offline sync that stays safe after the app is reopened.",
+        "Operational modules for K3, patrols, fleet, and helpdesk."
       ],
+      "previewTitle": "Check-in lapangan",
+      "previewTitleEn": "Field check-in",
+      "previewSubtitle": "PLN Batam · hari ini",
+      "previewSubtitleEn": "PLN Batam · today",
+      "previewMetric": "24",
+      "previewMetricEn": "24",
+      "previewMetricLabel": "tiket aktif",
+      "previewMetricLabelEn": "active tickets",
+      "previewItems": ["Presensi", "Tiket B2B"],
+      "previewItemsEn": ["Attendance", "B2B Tickets"],
       "editorialTitle": "Operasi lapangan,\ntanpa drama.",
+      "editorialTitleEn": "Field operations,\nwithout the drama.",
       "highlight": "3 klien enterprise",
+      "highlightEn": "3 enterprise clients",
       "featured": true,
       "screenshots": [
         {
           "asset": "assets/screenshots/mis-msa/login.jpg",
-          "label": "Masuk"
+          "label": "Masuk",
+          "labelEn": "Sign in"
         },
         {
           "asset": "assets/screenshots/mis-msa/home.jpg",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/mis-msa/patrol.jpg",
-          "label": "Detail tiket"
+          "label": "Detail tiket",
+          "labelEn": "Ticket detail"
         },
         {
           "asset": "assets/screenshots/mis-msa/attendance.jpg",
-          "label": "Form absensi"
+          "label": "Form absensi",
+          "labelEn": "Attendance form"
         },
         {
           "asset": "assets/screenshots/mis-msa/settings.jpg",
-          "label": "Pengaturan"
+          "label": "Pengaturan",
+          "labelEn": "Settings"
         }
       ],
       "githubUrl": null,
@@ -519,16 +675,22 @@
       "id": "lbh-apik",
       "name": "LBH APIK Jakarta",
       "tagline": "Bantuan hukum untuk perempuan, lebih mudah dijangkau.",
-      "description": "Situs resmi YLBH APIK Jakarta: profil lembaga, kanal pengaduan, donasi, dan publikasi—dibangun dengan Laravel dan React.",
-      "story": "LBH APIK Jakarta butuh rumah digital yang bisa menampung dua hal sekaligus: cerita lembaga dan kanal bantuan buat perempuan yang membutuhkan pendampingan hukum. Saya ikut membangun situsnya bersama tim, dari halaman sampai integrasi backend.\n\nBackend-nya Laravel, tampilannya React lewat Inertia—jadi halaman tetap cepat tanpa mengorbankan SEO. Isinya mulai dari profil lembaga (sejarah, visi-misi, struktur organisasi), publikasi (laporan, kajian, tulisan, produk hukum, buku), galeri kegiatan, sampai formulir pengaduan dan donasi.\n\nBagian yang paling saya jaga alurnya adalah pengaduan. Nomor hotline dan WhatsApp ditaruh di titik yang mudah ditemukan, formulirnya dibuat ringkas, dan halaman publikasi diberi pencarian plus filter supaya pengunjung bisa menemukan dokumen yang relevan tanpa menggulir panjang.",
+      "taglineEn": "Legal aid for women, easier to reach.",
+      "description": "Situs resmi YLBH APIK Jakarta: profil lembaga, kanal pengaduan, donasi, dan publikasi, dibangun dengan Laravel dan React.",
+      "descriptionEn": "The official website of YLBH APIK Jakarta: organization profile, complaint channel, donations, and publications, built with Laravel and React.",
+      "story": "LBH APIK Jakarta membutuhkan rumah digital yang dapat memuat dua hal sekaligus: profil lembaga dan kanal bantuan bagi perempuan yang memerlukan pendampingan hukum. Saya turut membangun situs ini bersama tim, mulai dari halaman hingga integrasi backend.\n\nBackend menggunakan Laravel dengan tampilan React melalui Inertia, sehingga halaman tetap cepat tanpa mengorbankan SEO. Isinya mencakup profil lembaga (sejarah, visi-misi, struktur organisasi), publikasi (laporan, kajian, tulisan, produk hukum, buku), galeri kegiatan, serta formulir pengaduan dan donasi.\n\nBagian yang paling saya perhatikan alurnya adalah pengaduan. Nomor hotline dan WhatsApp ditempatkan di lokasi yang mudah ditemukan, formulirnya dibuat ringkas, dan halaman publikasi dilengkapi pencarian serta filter agar pengunjung dapat menemukan dokumen yang relevan tanpa harus menggulir panjang.",
+      "storyEn": "LBH APIK Jakarta needed a digital home that could hold two things at once: the organization's profile and a help channel for women who need legal assistance. I helped build the site with the team, from pages to backend integration.\n\nThe backend uses Laravel with a React frontend through Inertia, so pages stay fast without sacrificing SEO. It covers the organization profile (history, vision and mission, organizational structure), publications (reports, studies, articles, legal products, books), an activity gallery, as well as complaint and donation forms.\n\nThe part whose flow I paid the most attention to is the complaint channel. The hotline and WhatsApp numbers are placed where they're easy to find, the form is kept concise, and the publications page comes with search and filters so visitors can find relevant documents without scrolling endlessly.",
       "category": "website",
       "type": "website",
       "year": "2024",
       "role": "Full Stack Developer",
       "timeline": "2024",
+      "timelineEn": "2024",
       "status": "Live di lbhapik.org",
+      "statusEn": "Live at lbhapik.org",
       "version": "1.0.0",
       "updatedAt": "2024",
+      "updatedAtEn": "2024",
       "tech": [
         "Laravel",
         "React JS",
@@ -544,46 +706,69 @@
         "Galeri kegiatan dan arsip dokumen dalam satu situs",
         "Dua bahasa (Indonesia/Inggris) dan mode terang/gelap"
       ],
+      "featuresEn": [
+        "Organization profile: history, vision and mission, structure, and logo",
+        "Publications with search, type and label filters, and date range",
+        "Complaint channel with a form and WhatsApp hotline",
+        "Donation page with a donor details form",
+        "Activity gallery and document archive in one site",
+        "Two languages (Indonesian/English) and light/dark mode"
+      ],
       "releaseNotes": [
         "Situs resmi lbhapik.org tayang dengan profil lembaga dan publikasi.",
         "Formulir pengaduan terhubung ke hotline WhatsApp.",
-        "Pencarian dan filter publikasi, plus dukungan dua bahasa."
+        "Pencarian dan filter publikasi, serta dukungan dua bahasa."
+      ],
+      "releaseNotesEn": [
+        "Official lbhapik.org site launched with the organization profile and publications.",
+        "Complaint form connected to the WhatsApp hotline.",
+        "Publication search and filters, plus two-language support."
       ],
       "previewTitle": "Pengaduan",
+      "previewTitleEn": "Complaints",
       "previewSubtitle": "Hotline & formulir",
+      "previewSubtitleEn": "Hotline & form",
       "previewMetric": "6",
+      "previewMetricEn": "6",
       "previewMetricLabel": "jenis publikasi",
-      "previewItems": [
-        "Pengaduan",
-        "Publikasi"
-      ],
+      "previewMetricLabelEn": "publication types",
+      "previewItems": ["Pengaduan", "Publikasi"],
+      "previewItemsEn": ["Complaints", "Publications"],
       "editorialTitle": "Bantuan hukum,\nlebih mudah dijangkau.",
+      "editorialTitleEn": "Legal aid,\neasier to reach.",
       "highlight": "Laravel + React",
+      "highlightEn": "Laravel + React",
       "featured": true,
       "screenshots": [
         {
           "asset": "assets/screenshots/lbh-apik/beranda.jpg",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/lbh-apik/tentang-kami.jpg",
-          "label": "Tentang kami"
+          "label": "Tentang kami",
+          "labelEn": "About us"
         },
         {
           "asset": "assets/screenshots/lbh-apik/pengaduan.jpg",
-          "label": "Pengaduan"
+          "label": "Pengaduan",
+          "labelEn": "Complaints"
         },
         {
           "asset": "assets/screenshots/lbh-apik/publikasi.jpg",
-          "label": "Publikasi"
+          "label": "Publikasi",
+          "labelEn": "Publications"
         },
         {
           "asset": "assets/screenshots/lbh-apik/galeri.jpg",
-          "label": "Galeri"
+          "label": "Galeri",
+          "labelEn": "Gallery"
         },
         {
           "asset": "assets/screenshots/lbh-apik/donasi.jpg",
-          "label": "Donasi"
+          "label": "Donasi",
+          "labelEn": "Donate"
         }
       ],
       "githubUrl": null,
@@ -592,17 +777,23 @@
     {
       "id": "movie-finder",
       "name": "Movie Finder",
-      "tagline": "Katalog film harian, plus favorit yang tersimpan.",
-      "description": "Aplikasi Android untuk menjelajah film trending, mencari judul, dan menyimpan favorit—dibangun dengan Jetpack Compose, Hilt, Retrofit, dan Room.",
-      "story": "Movie Finder saya bangun untuk latihan menerapkan arsitektur Android yang rapi di satu aplikasi kecil: daftar film, pencarian, detail, dan favorit. Datanya dari TMDB—trending harian, search, dan detail per film—lalu dipetakan ke model yang dipakai UI.\n\nDi sisi tampilan saya pakai Jetpack Compose dengan Material 3. Grid poster menyesuaikan orientasi: dua kolom saat tegak, empat kolom saat lanskap. Setiap layar membaca satu UiState yang sama, jadi keadaan loading, kosong, dan gagal tampil konsisten tanpa logika bercabang di banyak tempat.\n\nFavorit disimpan di Room, jadi judul yang disimpan tetap ada saat aplikasi dibuka lagi. Hilt merapikan dependensi antara repository, database, dan Retrofit. Untuk memastikan alurnya tidak rusak, saya menulis tes instrumentasi dengan MockWebServer dan Compose UI test.",
+      "tagline": "Katalog film harian, lengkap dengan favorit tersimpan.",
+      "taglineEn": "A daily movie catalog, with saved favorites.",
+      "description": "Aplikasi Android untuk menjelajahi film trending, mencari judul, dan menyimpan favorit, dibangun dengan Jetpack Compose, Hilt, Retrofit, dan Room.",
+      "descriptionEn": "An Android app for browsing trending movies, searching titles, and saving favorites, built with Jetpack Compose, Hilt, Retrofit, and Room.",
+      "story": "Movie Finder saya bangun untuk melatih penerapan arsitektur Android yang rapi dalam satu aplikasi kecil: daftar film, pencarian, detail, dan favorit. Data berasal dari TMDB (trending harian, pencarian, dan detail per film), lalu dipetakan ke model yang digunakan UI.\n\nDari sisi tampilan, saya menggunakan Jetpack Compose dengan Material 3. Grid poster menyesuaikan orientasi: dua kolom saat tegak dan empat kolom saat lanskap. Setiap layar membaca satu UiState yang sama, sehingga kondisi loading, kosong, dan gagal tampil konsisten tanpa logika bercabang di banyak tempat.\n\nFavorit disimpan di Room, sehingga judul yang disimpan tetap ada saat aplikasi dibuka kembali. Hilt merapikan dependensi antara repository, database, dan Retrofit. Untuk memastikan alurnya tidak rusak, saya menulis tes instrumentasi dengan MockWebServer dan Compose UI test.",
+      "storyEn": "I built Movie Finder to practice applying a clean Android architecture in one small app: movie list, search, details, and favorites. Data comes from TMDB (daily trending, search, and per-movie details), then is mapped to the models the UI uses.\n\nFor the UI, I used Jetpack Compose with Material 3. The poster grid adapts to orientation: two columns in portrait and four in landscape. Every screen reads from the same UiState, so loading, empty, and error states appear consistently without branching logic scattered across the code.\n\nFavorites are stored in Room, so saved titles are still there when the app is reopened. Hilt tidies up the dependencies between the repository, database, and Retrofit. To make sure the flow doesn't break, I wrote instrumentation tests with MockWebServer and Compose UI tests.",
       "category": "eksperimen",
       "type": "mobileApp",
       "year": "2023",
       "role": "Android Developer",
       "timeline": "2023",
+      "timelineEn": "2023",
       "status": "Selesai · repo publik",
+      "statusEn": "Completed · public repo",
       "version": "1.0",
       "updatedAt": "Nov 2023",
+      "updatedAtEn": "Nov 2023",
       "tech": [
         "Kotlin",
         "Jetpack Compose",
@@ -615,44 +806,66 @@
       "features": [
         "Daftar film trending harian dari TMDB dalam grid poster",
         "Grid menyesuaikan orientasi: 2 kolom tegak, 4 kolom lanskap",
-        "Pencarian judul lewat endpoint search/movie",
+        "Pencarian judul melalui endpoint search/movie",
         "Detail film: poster, genre, rating, tahun, durasi, dan badge usia",
         "Favorit tersimpan di Room dan tetap ada setelah aplikasi ditutup",
-        "Keadaan loading, kosong, dan gagal ditangani lewat satu UiState",
+        "Kondisi loading, kosong, dan gagal ditangani melalui satu UiState",
         "Tes instrumentasi dengan MockWebServer dan Compose UI test"
+      ],
+      "featuresEn": [
+        "Daily trending movies from TMDB in a poster grid",
+        "Grid adapts to orientation: 2 columns portrait, 4 columns landscape",
+        "Title search via the search/movie endpoint",
+        "Movie details: poster, genre, rating, year, runtime, and age badge",
+        "Favorites stored in Room and kept after the app is closed",
+        "Loading, empty, and error states handled through a single UiState",
+        "Instrumentation tests with MockWebServer and Compose UI tests"
       ],
       "releaseNotes": [
         "Rilis 1.0 dengan daftar trending, pencarian, dan halaman detail film.",
-        "Favorit disimpan lokal lewat Room.",
+        "Favorit disimpan secara lokal melalui Room.",
         "Tes instrumentasi dengan MockWebServer dan Compose UI test."
       ],
-      "previewTitle": "Trending hari ini",
-      "previewSubtitle": "Grid poster dari TMDB",
-      "previewMetric": "20",
-      "previewMetricLabel": "film per halaman",
-      "previewItems": [
-        "Trending",
-        "Favorit"
+      "releaseNotesEn": [
+        "Release 1.0 with trending list, search, and movie detail page.",
+        "Favorites stored locally through Room.",
+        "Instrumentation tests with MockWebServer and Compose UI tests."
       ],
+      "previewTitle": "Trending hari ini",
+      "previewTitleEn": "Trending today",
+      "previewSubtitle": "Grid poster dari TMDB",
+      "previewSubtitleEn": "Poster grid from TMDB",
+      "previewMetric": "20",
+      "previewMetricEn": "20",
+      "previewMetricLabel": "film per halaman",
+      "previewMetricLabelEn": "movies per page",
+      "previewItems": ["Trending", "Favorit"],
+      "previewItemsEn": ["Trending", "Favorites"],
       "editorialTitle": "Film harian,\ndi satu grid.",
+      "editorialTitleEn": "Daily movies,\nin one grid.",
       "highlight": "Jetpack Compose",
+      "highlightEn": "Jetpack Compose",
       "featured": false,
       "screenshots": [
         {
           "asset": "assets/screenshots/movie-finder/home.jpg",
-          "label": "Home"
+          "label": "Home",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/movie-finder/detail.jpg",
-          "label": "Detail"
+          "label": "Detail",
+          "labelEn": "Detail"
         },
         {
           "asset": "assets/screenshots/movie-finder/favorite.jpg",
-          "label": "Favorite"
+          "label": "Favorite",
+          "labelEn": "Favorite"
         },
         {
           "asset": "assets/screenshots/movie-finder/about.jpg",
-          "label": "About"
+          "label": "About",
+          "labelEn": "About"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/movie_finder_kotlin",
@@ -661,17 +874,23 @@
     {
       "id": "story-app",
       "name": "Story App",
-      "tagline": "StorySync: berbagi momen dengan lokasi.",
+      "tagline": "StorySync: berbagi momen beserta lokasinya.",
+      "taglineEn": "StorySync: sharing moments along with their locations.",
       "description": "Aplikasi berbagi cerita dengan feed berpaging, unggahan foto, dan peta lokasi cerita.",
-      "story": "Story App (StorySync) saya bangun sebagai submission Dicoding untuk menyatukan feed cerita, unggahan foto, dan lokasi dalam satu alur Android. Saya mengerjakan login dan register, feed, detail cerita, unggah dari galeri atau kamera, sampai peta marker cerita.\n\nTantangan terbesarnya menjaga feed tetap enak dipakai. Saya pasang Paging 3 dengan Room sebagai cache, jadi cerita yang sudah dimuat tetap bisa dibaca saat offline. Sesi pengguna disimpan di DataStore, foto dan lokasi dikirim lewat Retrofit, dan halaman detail memakai shared-element transition supaya perpindahan dari kartu terasa nyambung.",
+      "descriptionEn": "A story-sharing app with a paged feed, photo uploads, and a story location map.",
+      "story": "Story App (StorySync) saya bangun sebagai submission Dicoding untuk menyatukan feed cerita, unggahan foto, dan lokasi dalam satu alur Android. Saya mengerjakan login dan registrasi, feed, detail cerita, unggahan dari galeri atau kamera, hingga peta marker cerita.\n\nTantangan terbesarnya adalah menjaga feed tetap nyaman digunakan. Saya menerapkan Paging 3 dengan Room sebagai cache, sehingga cerita yang sudah dimuat tetap dapat dibaca saat offline. Sesi pengguna disimpan di DataStore, foto dan lokasi dikirim melalui Retrofit, dan halaman detail memakai shared-element transition agar perpindahan dari kartu terasa mulus.",
+      "storyEn": "Story App (StorySync) was built as a Dicoding submission to bring the story feed, photo uploads, and location together in a single Android flow. I built login and registration, the feed, story details, uploads from the gallery or camera, and the story marker map.\n\nThe biggest challenge was keeping the feed pleasant to use. I applied Paging 3 with Room as a cache, so stories that have already loaded can still be read offline. User sessions are stored in DataStore, photos and locations are sent through Retrofit, and the detail page uses a shared-element transition so moving from a card feels smooth.",
       "category": "eksperimen",
       "type": "mobileApp",
       "year": "2023",
       "role": "Android Developer",
       "timeline": "Nov 2023",
+      "timelineEn": "Nov 2023",
       "status": "Submission Dicoding · repo publik",
+      "statusEn": "Dicoding submission · public repo",
       "version": "1.0",
       "updatedAt": "Nov 2023",
+      "updatedAtEn": "Nov 2023",
       "tech": [
         "Kotlin",
         "Android",
@@ -683,12 +902,20 @@
         "Glide"
       ],
       "features": [
-        "Login dan register dengan sesi tersimpan di DataStore",
+        "Login dan registrasi dengan sesi tersimpan di DataStore",
         "Feed cerita dengan Paging 3, 5 cerita per halaman",
         "Cache Room dan remote mediator untuk mode offline",
         "Unggah cerita dari galeri atau kamera",
         "Lokasi opsional dan peta marker cerita",
         "Detail cerita dengan shared-element transition"
+      ],
+      "featuresEn": [
+        "Login and registration with sessions stored in DataStore",
+        "Story feed with Paging 3, 5 stories per page",
+        "Room cache and remote mediator for offline mode",
+        "Upload stories from the gallery or camera",
+        "Optional location and a story marker map",
+        "Story detail with shared-element transition"
       ],
       "releaseNotes": [
         "Autentikasi, sesi, dan logout.",
@@ -696,41 +923,57 @@
         "Unggah cerita dan peta lokasi.",
         "Mode gelap dan pull-to-refresh."
       ],
-      "previewTitle": "Cerita sekitar",
-      "previewSubtitle": "StorySync · feed & peta",
-      "previewMetric": "05",
-      "previewMetricLabel": "cerita per halaman",
-      "previewItems": [
-        "Peta",
-        "Feed"
+      "releaseNotesEn": [
+        "Authentication, sessions, and logout.",
+        "Paged feed with offline cache.",
+        "Story upload and location map.",
+        "Dark mode and pull-to-refresh."
       ],
+      "previewTitle": "Cerita sekitar",
+      "previewTitleEn": "Stories nearby",
+      "previewSubtitle": "StorySync · feed & peta",
+      "previewSubtitleEn": "StorySync · feed & map",
+      "previewMetric": "05",
+      "previewMetricEn": "05",
+      "previewMetricLabel": "cerita per halaman",
+      "previewMetricLabelEn": "stories per page",
+      "previewItems": ["Peta", "Feed"],
+      "previewItemsEn": ["Map", "Feed"],
       "editorialTitle": "Setiap momen,\npunya lokasi.",
+      "editorialTitleEn": "Every moment\nhas a location.",
       "highlight": "Paging + Room offline",
+      "highlightEn": "Paging + Room offline",
       "featured": false,
       "screenshots": [
         {
           "asset": "assets/screenshots/story-app/welcome.jpg",
-          "label": "Selamat datang"
+          "label": "Selamat datang",
+          "labelEn": "Welcome"
         },
         {
           "asset": "assets/screenshots/story-app/login.jpg",
-          "label": "Masuk"
+          "label": "Masuk",
+          "labelEn": "Sign in"
         },
         {
           "asset": "assets/screenshots/story-app/feed.jpg",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/story-app/detail.jpg",
-          "label": "Detail cerita"
+          "label": "Detail cerita",
+          "labelEn": "Story detail"
         },
         {
           "asset": "assets/screenshots/story-app/add-story.jpg",
-          "label": "Tambah cerita"
+          "label": "Tambah cerita",
+          "labelEn": "Add story"
         },
         {
           "asset": "assets/screenshots/story-app/map.jpg",
-          "label": "Peta cerita"
+          "label": "Peta cerita",
+          "labelEn": "Story map"
         }
       ],
       "githubUrl": "https://github.com/MTegarPamungkas/Story_App",
@@ -740,21 +983,23 @@
       "id": "tomboati",
       "name": "TomboAti",
       "tagline": "Teman harian untuk hati dan ibadah.",
-      "description": "Aplikasi pendamping ibadah: check-in mood, dalil Qur'an dan hadis, serta katalog 114 surat.",
-      "story": "TomboAti berangkat dari ide sederhana: saat hati sedang tidak baik, orang sering bingung harus membaca atau mendengar apa. Aplikasi ini menuntun lewat check-in mood, lalu menampilkan dalil Qur'an dan hadis yang relevan dengan kondisi yang dipilih.\n\nSaya mengerjakan alur aplikasi, katalog 114 surat, riwayat check-in, sampai proses rilis. TomboAti tersedia di Google Play Store lewat INDI Technology, dan saya tetap menjaga detail kecil seperti penamaan, alur pengguna, serta pemeliharaan rilis setelah aplikasi dipakai orang lain.",
+      "taglineEn": "A daily companion for the heart and worship.",
+      "description": "Aplikasi pendamping ibadah dengan check-in mood, dalil Qur'an dan hadis, serta katalog 114 surat.",
+      "descriptionEn": "A worship companion app with mood check-ins, Qur'an and hadith evidence, and a catalog of 114 surahs.",
+      "story": "TomboAti berangkat dari ide sederhana: saat hati sedang tidak baik, orang sering bingung harus membaca atau mendengarkan apa. Aplikasi ini menuntun pengguna lewat check-in mood, lalu menampilkan dalil Qur'an dan hadis yang relevan dengan kondisi yang dipilih.\n\nSaya mengerjakan alur aplikasi, katalog 114 surat, riwayat check-in, hingga proses rilis. TomboAti tersedia di Google Play Store melalui INDI Technology, dan saya tetap memperhatikan detail seperti penamaan, alur pengguna, dan pemeliharaan rilis setelah aplikasi digunakan banyak orang.",
+      "storyEn": "TomboAti started from a simple idea: when the heart isn't well, people often don't know what to read or listen to. The app guides users through a mood check-in, then shows Qur'an and hadith evidence that is relevant to the chosen condition.\n\nI worked on the app flow, the 114-surah catalog, check-in history, and the release process. TomboAti is available on the Google Play Store through INDI Technology, and I kept paying attention to details like naming, user flow, and release maintenance after the app was in other people's hands.",
       "category": "produktivitas",
       "type": "mobileApp",
       "year": "2025",
       "role": "Mobile Developer",
       "timeline": "2024 — 2025",
+      "timelineEn": "2024 — 2025",
       "status": "Live di Google Play Store",
+      "statusEn": "Live on Google Play Store",
       "version": "1.0.0",
       "updatedAt": "2025",
-      "tech": [
-        "Flutter",
-        "Android",
-        "Google Play"
-      ],
+      "updatedAtEn": "2025",
+      "tech": ["Flutter", "Android", "Google Play"],
       "features": [
         "Check-in mood harian dengan pilihan emosi",
         "Rekomendasi dalil Qur'an dan hadis sesuai kondisi",
@@ -763,47 +1008,71 @@
         "Riwayat check-in dan kalender ibadah",
         "Klip kajian singkat di beranda"
       ],
+      "featuresEn": [
+        "Daily mood check-in with emotion choices",
+        "Qur'an and hadith recommendations based on the selected condition",
+        "Catalog of 114 surahs with Arabic text and translation",
+        "Theme categories: character, the Qur'an, fasting, and knowledge",
+        "Check-in history and worship calendar",
+        "Short study clips on the home screen"
+      ],
       "releaseNotes": [
         "Rilis publik di Google Play Store.",
         "Check-in mood dan rekomendasi dalil.",
         "Katalog 114 surat dan riwayat harian.",
         "Perbaikan alur dan stabilitas aplikasi."
       ],
-      "previewTitle": "Sehat Selalu, Tegar",
-      "previewSubtitle": "Check-in mood · dalil harian",
-      "previewMetric": "114",
-      "previewMetricLabel": "surat Al-Qur'an",
-      "previewItems": [
-        "Mood",
-        "Qur'an"
+      "releaseNotesEn": [
+        "Public release on the Google Play Store.",
+        "Mood check-in and evidence recommendations.",
+        "114-surah catalog and daily history.",
+        "Flow and stability improvements."
       ],
+      "previewTitle": "Sehat Selalu, Tegar",
+      "previewTitleEn": "Stay well, Tegar",
+      "previewSubtitle": "Check-in mood · dalil harian",
+      "previewSubtitleEn": "Mood check-in · daily evidence",
+      "previewMetric": "114",
+      "previewMetricEn": "114",
+      "previewMetricLabel": "surat Al-Qur'an",
+      "previewMetricLabelEn": "Qur'an surahs",
+      "previewItems": ["Mood", "Qur'an"],
+      "previewItemsEn": ["Mood", "Qur'an"],
       "editorialTitle": "Temani hati,\nsetiap hari.",
+      "editorialTitleEn": "Accompany the heart,\nevery day.",
       "highlight": "Live di Google Play",
+      "highlightEn": "Live on Google Play",
       "featured": true,
       "screenshots": [
         {
           "asset": "assets/screenshots/tomboati/onboarding.jpg",
-          "label": "Onboarding"
+          "label": "Onboarding",
+          "labelEn": "Onboarding"
         },
         {
           "asset": "assets/screenshots/tomboati/home.jpg",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         },
         {
           "asset": "assets/screenshots/tomboati/mood.jpg",
-          "label": "Pilih mood"
+          "label": "Pilih mood",
+          "labelEn": "Choose mood"
         },
         {
           "asset": "assets/screenshots/tomboati/dalil.jpg",
-          "label": "Dalil"
+          "label": "Dalil",
+          "labelEn": "Evidence"
         },
         {
           "asset": "assets/screenshots/tomboati/quran.jpg",
-          "label": "Qur'an"
+          "label": "Qur'an",
+          "labelEn": "Qur'an"
         },
         {
           "asset": "assets/screenshots/tomboati/surah.jpg",
-          "label": "Detail surat"
+          "label": "Detail surat",
+          "labelEn": "Surah detail"
         }
       ],
       "githubUrl": null,
@@ -813,58 +1082,79 @@
       "id": "getcrew",
       "name": "GetCrew",
       "tagline": "Menemukan kru yang tepat, lebih cepat.",
-      "description": "Aplikasi rekrutmen yang mempertemukan crew dan perusahaan lewat lowongan, profil, dan messaging.",
-      "story": "Saya mengerjakan GetCrew, aplikasi rekrutmen berbasis Flutter yang mempertemukan crew dan perusahaan dalam satu alur. Lowongan, profil, dan messaging saya integrasikan lewat REST API, bareng tim backend saya jaga kontrak datanya tetap sinkron dengan UI.\n\nKarena backend terus berkembang, saya rapikan komunikasi API di service layer dan pakai adapter pattern. Perubahan di server bisa ditangani tanpa membongkar seluruh tampilan, sementara state management menjaga alur pencarian dan lamaran tetap konsisten.",
+      "taglineEn": "Finding the right crew, faster.",
+      "description": "Aplikasi rekrutmen yang mempertemukan crew dan perusahaan melalui lowongan, profil, dan fitur pesan.",
+      "descriptionEn": "A recruitment app that connects crew and companies through job listings, profiles, and messaging.",
+      "story": "Saya mengerjakan GetCrew, aplikasi rekrutmen berbasis Flutter yang mempertemukan crew dan perusahaan dalam satu alur. Lowongan, profil, dan fitur pesan diintegrasikan melalui REST API, dan bersama tim backend saya menjaga kontrak data tetap sinkron dengan UI.\n\nKarena backend terus berkembang, saya merapikan komunikasi API pada service layer dan menerapkan adapter pattern. Perubahan di server dapat ditangani tanpa membongkar seluruh tampilan, sementara state management menjaga alur pencarian dan lamaran tetap konsisten.",
+      "storyEn": "I worked on GetCrew, a Flutter-based recruitment app that brings crew and companies together in a single flow. Job listings, profiles, and messaging are integrated through REST APIs, and together with the backend team I kept the data contract in sync with the UI.\n\nAs the backend kept evolving, I streamlined API communication in the service layer and applied the adapter pattern. Server changes can be handled without tearing apart the whole UI, while state management keeps the search and application flow consistent.",
       "category": "career",
       "type": "mobileApp",
       "year": "2025",
       "role": "Mobile Developer",
       "timeline": "Sep 2024 — Jan 2025",
+      "timelineEn": "Sep 2024 — Jan 2025",
       "status": "Aplikasi rekrutmen · INDI Technology",
+      "statusEn": "Recruitment app · INDI Technology",
       "version": "1.0.0",
       "updatedAt": "Jan 2025",
-      "tech": [
-        "Flutter",
-        "REST API",
-        "State Management",
-        "Messaging"
-      ],
+      "updatedAtEn": "Jan 2025",
+      "tech": ["Flutter", "REST API", "State Management", "Messaging"],
       "features": [
         "Pencarian lowongan event dan crew",
         "Kategori peran: sales promotion, MC, usher, dan crew event",
         "Rekomendasi lowongan sesuai preferensi",
         "Profil dan preferensi kerja crew",
-        "Messaging antara crew dan perusahaan",
+        "Fitur pesan antara crew dan perusahaan",
         "Notifikasi dan pembaruan status lamaran"
+      ],
+      "featuresEn": [
+        "Event and crew job search",
+        "Role categories: sales promotion, MC, usher, and event crew",
+        "Job recommendations based on preferences",
+        "Crew profiles and work preferences",
+        "Messaging between crew and companies",
+        "Notifications and application status updates"
       ],
       "releaseNotes": [
         "Integrasi lowongan dan profil.",
-        "Alur messaging antara crew dan perusahaan.",
+        "Alur pesan antara crew dan perusahaan.",
         "Perapian service layer dan adapter API."
       ],
-      "previewTitle": "Cari preferensi karir",
-      "previewSubtitle": "Lowongan event & crew",
-      "previewMetric": "12",
-      "previewMetricLabel": "lowongan aktif",
-      "previewItems": [
-        "Lowongan",
-        "Pesan"
+      "releaseNotesEn": [
+        "Job listing and profile integration.",
+        "Messaging flow between crew and companies.",
+        "Service layer and API adapter cleanup."
       ],
+      "previewTitle": "Cari preferensi karir",
+      "previewTitleEn": "Find your career preferences",
+      "previewSubtitle": "Lowongan event & crew",
+      "previewSubtitleEn": "Event & crew jobs",
+      "previewMetric": "12",
+      "previewMetricEn": "12",
+      "previewMetricLabel": "lowongan aktif",
+      "previewMetricLabelEn": "active jobs",
+      "previewItems": ["Lowongan", "Pesan"],
+      "previewItemsEn": ["Jobs", "Messages"],
       "editorialTitle": "Orang yang tepat,\ndi waktu yang tepat.",
+      "editorialTitleEn": "The right people,\nat the right time.",
       "highlight": "Rekrutmen crew",
+      "highlightEn": "Crew recruitment",
       "featured": true,
       "screenshots": [
         {
           "asset": "assets/screenshots/getcrew/onboarding.jpg",
-          "label": "Onboarding"
+          "label": "Onboarding",
+          "labelEn": "Onboarding"
         },
         {
           "asset": "assets/screenshots/getcrew/login.jpg",
-          "label": "Masuk"
+          "label": "Masuk",
+          "labelEn": "Sign in"
         },
         {
           "asset": "assets/screenshots/getcrew/home.jpg",
-          "label": "Beranda"
+          "label": "Beranda",
+          "labelEn": "Home"
         }
       ],
       "githubUrl": null,

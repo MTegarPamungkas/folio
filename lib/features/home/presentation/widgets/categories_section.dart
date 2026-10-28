@@ -5,6 +5,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/common/app_surfaces.dart';
@@ -20,10 +21,12 @@ class CategoriesSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SectionHeading(
-          eyebrow: 'MULAI DARI SINI',
-          title: 'Jelajahi kategori',
-          subtitle: 'Temukan karya sesuai bidang yang sedang kamu cari.',
+        SectionHeading(
+          eyebrow: context.tr('MULAI DARI SINI'),
+          title: context.tr('Jelajahi kategori'),
+          subtitle: context.tr(
+            'Temukan karya sesuai bidang yang sedang kamu cari.',
+          ),
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(
@@ -109,7 +112,7 @@ class CategoryTile extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            category.label,
+                            context.tr(category.label),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context).textTheme.titleSmall
@@ -117,7 +120,9 @@ class CategoryTile extends StatelessWidget {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            '$count karya',
+                            context.trArgs('{count} karya', {
+                              'count': '$count',
+                            }),
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                                   fontSize: 10,

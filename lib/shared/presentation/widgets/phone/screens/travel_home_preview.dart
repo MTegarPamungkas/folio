@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 
@@ -18,7 +19,7 @@ class TravelHomePreview extends StatelessWidget {
         PreviewHeader(project: project),
         const SizedBox(height: 11),
         Text(
-          'Ke mana minggu ini?',
+          context.tr('Ke mana minggu ini?'),
           style: TextStyle(
             fontFamily: FolioTypography.sans,
             fontSize: 18,
@@ -41,7 +42,7 @@ class TravelHomePreview extends StatelessWidget {
               Icon(Icons.search_rounded, size: 11, color: p.screenMuted),
               const SizedBox(width: 5),
               Text(
-                'Cari destinasi',
+                context.tr('Cari destinasi'),
                 style: TextStyle(
                   fontFamily: FolioTypography.sans,
                   fontSize: 8,
@@ -114,7 +115,7 @@ class TravelHomePreview extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    project.previewTitle,
+                    project.previewTitleIn(context.language),
                     style: TextStyle(
                       fontFamily: FolioTypography.serifFamily,
                       fontSize: 25,
@@ -130,7 +131,7 @@ class TravelHomePreview extends StatelessWidget {
                       Icon(Icons.calendar_today_rounded, size: 8, color: p.ink),
                       const SizedBox(width: 4),
                       Text(
-                        project.previewSubtitle,
+                        project.previewSubtitleIn(context.language),
                         style: TextStyle(
                           fontFamily: FolioTypography.sans,
                           fontSize: 7.5,
@@ -163,7 +164,7 @@ class TravelHomePreview extends StatelessWidget {
             ),
             const SizedBox(width: 6),
             Text(
-              'Lihat semua',
+              context.tr('Lihat semua'),
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7,
@@ -210,7 +211,7 @@ class TravelHomePreview extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          project.previewItems[i],
+                          project.previewItemsIn(context.language)[i],
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 
 class DeveloperAvatar extends StatelessWidget {
   const DeveloperAvatar({
@@ -52,10 +53,10 @@ class DeveloperAvatar extends StatelessWidget {
     );
 
     return Semantics(
-      label: 'Buka profil',
+      label: context.tr('Buka profil'),
       button: onTap != null,
       child: Tooltip(
-        message: 'Buka profil',
+        message: context.tr('Buka profil'),
         child: InkResponse(
           onTap: onTap,
           radius: size,

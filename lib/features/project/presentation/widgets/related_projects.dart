@@ -4,6 +4,7 @@ import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/project/project_mini_tile.dart';
 import 'package:go_router/go_router.dart';
@@ -19,10 +20,10 @@ class RelatedProjects extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: 'LANJUTKAN MENJELAJAH',
-          title: 'Karya lain yang mungkin cocok',
+          eyebrow: context.tr('LANJUTKAN MENJELAJAH'),
+          title: context.tr('Karya lain yang mungkin cocok'),
           action: ArrowAction(
-            label: 'Lihat semua',
+            label: context.tr('Lihat semua'),
             onPressed: () {
               context.read<ExploreBloc>().add(const ExploreFiltersCleared());
               context.go('/explore');

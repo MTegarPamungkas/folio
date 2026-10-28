@@ -5,6 +5,7 @@ import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/brand/category_pill.dart';
@@ -58,7 +59,7 @@ class ProjectHero extends StatelessWidget {
                   const SizedBox(width: 5),
                   Flexible(
                     child: Text(
-                      project.status,
+                      project.statusIn(context.language),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.labelSmall?.copyWith(
@@ -100,7 +101,7 @@ class ProjectHero extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    project.tagline,
+                    project.taglineIn(context.language),
                     style: theme.textTheme.bodyMedium?.copyWith(
                       fontSize: context.isCompact ? 13 : 14.5,
                       height: 1.45,
@@ -126,7 +127,7 @@ class ProjectHero extends StatelessWidget {
               color: colors.ink,
             ),
             Text(
-              project.type.label,
+              context.tr(project.type.label),
               style: theme.textTheme.bodySmall?.copyWith(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w700,
@@ -134,7 +135,7 @@ class ProjectHero extends StatelessWidget {
               ),
             ),
             Text(
-              project.highlight,
+              project.highlightIn(context.language),
               style: theme.textTheme.bodySmall?.copyWith(fontSize: 10.5),
             ),
             Text(
@@ -168,7 +169,7 @@ class ProjectHero extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(
-              'Saya, $developerName',
+              context.trArgs('Saya, {name}', {'name': developerName}),
               style: theme.textTheme.bodySmall?.copyWith(
                 fontSize: 10.5,
                 color: colors.inkMuted,
@@ -238,7 +239,7 @@ class _PrimaryAction extends StatelessWidget {
         foregroundColor: colors.background,
       ),
       icon: const Icon(Icons.arrow_outward_rounded, size: 17),
-      label: const Text('Ajukan kolaborasi'),
+      label: Text(context.tr('Ajukan kolaborasi')),
     );
   }
 }

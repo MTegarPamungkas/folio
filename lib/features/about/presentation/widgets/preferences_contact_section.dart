@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/theme/folio_theme.dart';
+import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/domain/entities/app_theme_mode.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_state.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:go_router/go_router.dart';
 
 class PreferencesContactSection extends StatelessWidget {
@@ -57,7 +59,7 @@ class PreferencesCard extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  'Preferensi tampilan',
+                  context.tr('Preferensi tampilan'),
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ),
@@ -65,7 +67,9 @@ class PreferencesCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Pilih tema yang paling nyaman. Pilihanmu disimpan di perangkat ini.',
+            context.tr(
+              'Pilih tema yang paling nyaman. Pilihanmu disimpan di perangkat ini.',
+            ),
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontSize: 11,
               height: 1.5,
@@ -94,7 +98,93 @@ class PreferencesCard extends StatelessWidget {
               );
             },
           ),
+          const SizedBox(height: 18),
+          Text(
+            context.tr('Bahasa'),
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const SizedBox(height: 8),
+          BlocBuilder<SettingsBloc, SettingsState>(
+            builder: (context, settings) {
+              return Row(
+                children: [
+                  for (final language in AppLanguage.values) ...[
+                    if (language != AppLanguage.values.first)
+                      const SizedBox(width: 6),
+                    Expanded(
+                      child: LanguageChoice(
+                        language: language,
+                        selected: settings.language == language,
+                        onTap: () => context.read<SettingsBloc>().add(
+                          SettingsLanguageChanged(language),
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              );
+            },
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class LanguageChoice extends StatelessWidget {
+  const LanguageChoice({
+    super.key,
+    required this.language,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final AppLanguage language;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.folio;
+    return Semantics(
+      button: true,
+      selected: selected,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
+          padding: const EdgeInsets.symmetric(vertical: 11, horizontal: 5),
+          decoration: BoxDecoration(
+            color: selected ? colors.ink : colors.surfaceElevated,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: selected ? colors.ink : colors.line),
+          ),
+          child: Column(
+            children: [
+              Text(
+                language.shortLabel,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  fontSize: 11,
+                  letterSpacing: 0.6,
+                  fontWeight: FontWeight.w700,
+                  color: selected ? colors.background : colors.inkMuted,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                language.nativeName,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  fontSize: 9,
+                  letterSpacing: 0.1,
+                  fontWeight: FontWeight.w600,
+                  color: selected ? colors.background : colors.inkMuted,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -116,9 +206,12 @@ class ThemeChoice extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.folio;
     final (icon, label) = switch (mode) {
-      AppThemeMode.system => (Icons.brightness_auto_rounded, 'Sistem'),
-      AppThemeMode.light => (Icons.light_mode_outlined, 'Terang'),
-      AppThemeMode.dark => (Icons.dark_mode_outlined, 'Gelap'),
+      AppThemeMode.system => (
+        Icons.brightness_auto_rounded,
+        context.tr('Sistem'),
+      ),
+      AppThemeMode.light => (Icons.light_mode_outlined, context.tr('Terang')),
+      AppThemeMode.dark => (Icons.dark_mode_outlined, context.tr('Gelap')),
     };
     return Semantics(
       button: true,
@@ -191,7 +284,7 @@ class ContactInvite extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'ADA YANG INGIN DIBANGUN?',
+                context.tr('ADA YANG INGIN DIBANGUN?'),
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: ink.withValues(alpha: 0.64),
                   fontSize: 8.5,
@@ -200,7 +293,7 @@ class ContactInvite extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                'Ceritakan idemu.',
+                context.tr('Ceritakan idemu.'),
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   color: ink,
                   fontSize: 30,
@@ -209,7 +302,9 @@ class ContactInvite extends StatelessWidget {
               ),
               const SizedBox(height: 6),
               Text(
-                'Saya terbuka untuk proyek produk, aplikasi, dan kolaborasi jangka panjang.',
+                context.tr(
+                  'Saya terbuka untuk proyek produk, aplikasi, dan kolaborasi jangka panjang.',
+                ),
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: ink.withValues(alpha: 0.72),
                   fontSize: 11,
@@ -225,7 +320,7 @@ class ContactInvite extends StatelessWidget {
                   minimumSize: const Size(0, 46),
                 ),
                 icon: const Icon(Icons.arrow_outward_rounded, size: 16),
-                label: const Text('Mulai percakapan'),
+                label: Text(context.tr('Mulai percakapan')),
               ),
             ],
           ),

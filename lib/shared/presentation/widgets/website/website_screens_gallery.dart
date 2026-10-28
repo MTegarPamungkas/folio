@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/website/browser_frame.dart';
 
 /// Real page captures of a website project, laid out as a horizontal slider of
@@ -55,7 +56,7 @@ class WebsiteScreensGallery extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              shot.label,
+              shot.labelIn(context.language),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: captionStyle,
@@ -106,8 +107,14 @@ class WebsiteScreensGallery extends StatelessWidget {
                 Expanded(
                   child: Text(
                     fits
-                        ? '${screenshots.length} halaman asli dari situs live.'
-                        : '${screenshots.length} halaman asli—geser untuk lihat semua.',
+                        ? context.trArgs(
+                            '{count} halaman asli dari situs live.',
+                            {'count': '${screenshots.length}'},
+                          )
+                        : context.trArgs(
+                            '{count} halaman asli—geser untuk lihat semua.',
+                            {'count': '${screenshots.length}'},
+                          ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(

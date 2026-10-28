@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/category_pill.dart';
 import 'package:folio/shared/presentation/widgets/project/project_icon.dart';
@@ -134,7 +135,9 @@ class ProjectCover extends StatelessWidget {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            project.previewMetricLabel.toUpperCase(),
+                            project
+                                .previewMetricLabelIn(context.language)
+                                .toUpperCase(),
                             style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                                   color: p.ink.withValues(alpha: 0.7),
@@ -161,7 +164,7 @@ class ProjectCover extends StatelessWidget {
                     border: Border.all(color: p.ink.withValues(alpha: 0.16)),
                   ),
                   child: Text(
-                    project.previewMetric,
+                    project.previewMetricIn(context.language),
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: p.ink,
                       fontSize: 11,

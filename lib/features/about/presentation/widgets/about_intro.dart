@@ -7,6 +7,7 @@ import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/developer.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/availability_badge.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
@@ -30,7 +31,7 @@ class AboutIntro extends StatelessWidget {
     final copy = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Eyebrow('Tentang saya'),
+        Eyebrow(context.tr('Tentang saya')),
         const SizedBox(height: 16),
         Text.rich(
           TextSpan(
@@ -40,10 +41,14 @@ class AboutIntro extends StatelessWidget {
               letterSpacing: headingSize * -0.045,
             ),
             children: [
-              TextSpan(text: 'Halo, saya ${developer.shortName}.\n'),
-              const TextSpan(text: 'Saya bikin produk\nyang '),
               TextSpan(
-                text: 'siap dipakai.',
+                text: context.trArgs('Halo, saya {name}.\n', {
+                  'name': developer.shortName,
+                }),
+              ),
+              TextSpan(text: context.tr('Saya bikin produk\nyang ')),
+              TextSpan(
+                text: context.tr('siap dipakai.'),
                 style: FolioTypography.serif(
                   fontSize: headingSize * 1.06,
                   color: colors.accent,
@@ -58,7 +63,7 @@ class AboutIntro extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 600),
           child: Text(
-            developer.bio.split('\n\n').first,
+            developer.bioIn(context.language).split('\n\n').first,
             style: theme.textTheme.bodyLarge?.copyWith(
               fontSize: context.isExpanded ? 16 : 14.5,
               height: 1.7,
@@ -72,7 +77,10 @@ class AboutIntro extends StatelessWidget {
           runSpacing: 8,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            AvailabilityBadge(label: developer.availability, compact: true),
+            AvailabilityBadge(
+              label: developer.availabilityIn(context.language),
+              compact: true,
+            ),
             _InfoPill(
               icon: Icons.location_on_outlined,
               label: developer.location.replaceFirst('West Java, ', ''),
@@ -88,7 +96,7 @@ class AboutIntro extends StatelessWidget {
             FilledButton.icon(
               onPressed: () => context.push('/contact'),
               icon: const Icon(Icons.mail_outline_rounded, size: 18),
-              label: const Text('Ajak kolaborasi'),
+              label: Text(context.tr('Ajak kolaborasi')),
             ),
             OutlinedButton.icon(
               onPressed: () {
@@ -96,7 +104,7 @@ class AboutIntro extends StatelessWidget {
                 context.go('/explore');
               },
               icon: const Icon(Icons.grid_view_rounded, size: 17),
-              label: const Text('Lihat karya'),
+              label: Text(context.tr('Lihat karya')),
             ),
           ],
         ),
@@ -181,7 +189,10 @@ class _SocialButton extends StatelessWidget {
       onTap: () => openExternalLink(
         context,
         social.url,
-        fallbackMessage: 'Tautan ${social.label} belum bisa dibuka.',
+        fallbackMessage: context.trArgs(
+          'Tautan {platform} belum bisa dibuka.',
+          {'platform': social.label},
+        ),
       ),
       borderRadius: BorderRadius.circular(12),
       child: Container(
@@ -401,9 +412,9 @@ class _StatsStrip extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.folio;
     final stats = [
-      ('${developer.yearsExperience}+', 'Tahun pengalaman'),
-      ('${developer.projectCount}', 'Proyek & modul'),
-      ('${developer.collaborationCount}', 'Kolaborasi'),
+      ('${developer.yearsExperience}+', context.tr('Tahun pengalaman')),
+      ('${developer.projectCount}', context.tr('Proyek & modul')),
+      ('${developer.collaborationCount}', context.tr('Kolaborasi')),
     ];
 
     return Container(

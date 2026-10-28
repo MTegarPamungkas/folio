@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_feedback.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<void> openExternalLink(
   BuildContext context,
   String url, {
-  String fallbackMessage = 'Tautannya belum bisa dibuka.',
+  String? fallbackMessage,
 }) async {
+  final message =
+      fallbackMessage ?? context.readTr('Tautannya belum bisa dibuka.');
+  final copyLabel = context.readTr('Salin tautan');
   final uri = Uri.tryParse(url);
   if (uri == null) {
     if (context.mounted) {
-      showFolioSnackBar(context, message: fallbackMessage);
+      showFolioSnackBar(context, message: message);
     }
     return;
   }
@@ -21,8 +25,8 @@ Future<void> openExternalLink(
     if (!opened && context.mounted) {
       showFolioSnackBar(
         context,
-        message: fallbackMessage,
-        actionLabel: 'Salin tautan',
+        message: message,
+        actionLabel: copyLabel,
         onAction: () => Clipboard.setData(ClipboardData(text: url)),
       );
     }
@@ -30,8 +34,8 @@ Future<void> openExternalLink(
     if (context.mounted) {
       showFolioSnackBar(
         context,
-        message: fallbackMessage,
-        actionLabel: 'Salin tautan',
+        message: message,
+        actionLabel: copyLabel,
         onAction: () => Clipboard.setData(ClipboardData(text: url)),
       );
     }
@@ -41,10 +45,11 @@ Future<void> openExternalLink(
 Future<void> copyToClipboard(
   BuildContext context,
   String value, {
-  String message = 'Sudah disalin.',
+  String? message,
 }) async {
+  final text = message ?? context.readTr('Sudah disalin.');
   await Clipboard.setData(ClipboardData(text: value));
   if (context.mounted) {
-    showFolioSnackBar(context, message: message);
+    showFolioSnackBar(context, message: text);
   }
 }

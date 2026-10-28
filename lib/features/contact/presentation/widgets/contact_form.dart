@@ -4,6 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_bloc.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_event.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_state.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 
 class ContactForm extends StatelessWidget {
   const ContactForm({super.key});
@@ -48,11 +49,13 @@ class ContactForm extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tulis pesan',
+                            context.tr('Tulis pesan'),
                             style: theme.textTheme.titleMedium,
                           ),
                           Text(
-                            'Saya terbuka untuk proyek dan diskusi.',
+                            context.tr(
+                              'Saya terbuka untuk proyek dan diskusi.',
+                            ),
                             style: theme.textTheme.bodySmall?.copyWith(
                               fontSize: 10.5,
                               color: colors.inkMuted,
@@ -74,9 +77,11 @@ class ContactForm extends StatelessWidget {
                         textInputAction: TextInputAction.next,
                         autofillHints: const [AutofillHints.name],
                         decoration: InputDecoration(
-                          labelText: 'Nama',
-                          hintText: 'Nama lengkap',
-                          errorText: state.nameError,
+                          labelText: context.tr('Nama'),
+                          hintText: context.tr('Nama lengkap'),
+                          errorText: state.nameError == null
+                              ? null
+                              : context.tr(state.nameError!),
                         ),
                       ),
                       TextFormField(
@@ -89,7 +94,9 @@ class ContactForm extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: 'Email',
                           hintText: 'nama@email.com',
-                          errorText: state.emailError,
+                          errorText: state.emailError == null
+                              ? null
+                              : context.tr(state.emailError!),
                         ),
                       ),
                     ];
@@ -117,11 +124,16 @@ class ContactForm extends StatelessWidget {
                 DropdownButtonFormField<String>(
                   initialValue: state.projectType,
                   isExpanded: true,
-                  decoration: const InputDecoration(labelText: 'Jenis proyek'),
+                  decoration: InputDecoration(
+                    labelText: context.tr('Jenis proyek'),
+                  ),
                   borderRadius: BorderRadius.circular(16),
                   items: [
                     for (final type in contactProjectTypes)
-                      DropdownMenuItem(value: type, child: Text(type)),
+                      DropdownMenuItem(
+                        value: type,
+                        child: Text(context.tr(type)),
+                      ),
                   ],
                   onChanged: (value) =>
                       bloc.add(ContactProjectTypeChanged(value ?? '')),
@@ -134,11 +146,14 @@ class ContactForm extends StatelessWidget {
                   maxLines: 8,
                   textInputAction: TextInputAction.newline,
                   decoration: InputDecoration(
-                    labelText: 'Pesan',
-                    hintText:
-                        'Ceritakan sedikit tentang produk, tujuan, dan waktu yang kamu bayangkan…',
+                    labelText: context.tr('Pesan'),
+                    hintText: context.tr(
+                      'Ceritakan sedikit tentang produk, tujuan, dan waktu yang kamu bayangkan…',
+                    ),
                     alignLabelWithHint: true,
-                    errorText: state.messageError,
+                    errorText: state.messageError == null
+                        ? null
+                        : context.tr(state.messageError!),
                   ),
                 ),
                 const SizedBox(height: 18),
@@ -155,8 +170,8 @@ class ContactForm extends StatelessWidget {
                       : const Icon(Icons.mail_outline_rounded, size: 18),
                   label: Text(
                     state.isSubmitting
-                        ? 'Menyiapkan email…'
-                        : 'Buka aplikasi email',
+                        ? context.tr('Menyiapkan email…')
+                        : context.tr('Buka aplikasi email'),
                   ),
                 ),
                 const SizedBox(height: 11),
@@ -171,8 +186,10 @@ class ContactForm extends StatelessWidget {
                     const SizedBox(width: 5),
                     Expanded(
                       child: Text(
-                        'Form ini cuma membuka aplikasi email dengan pesan yang sudah '
-                        'terisi. Tidak ada data yang dikirim ke server.',
+                        context.tr(
+                          'Form ini cuma membuka aplikasi email dengan pesan yang sudah '
+                          'terisi. Tidak ada data yang dikirim ke server.',
+                        ),
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontSize: 9.5,
                           height: 1.5,

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:folio/domain/entities/app_language.dart';
 
 enum ProjectType {
   mobileApp('Aplikasi mobile'),
@@ -43,13 +44,21 @@ enum ProjectCategory {
 
 /// One real capture of the running app, used instead of a drawn mockup.
 class ProjectScreenshot extends Equatable {
-  const ProjectScreenshot({required this.asset, required this.label});
+  const ProjectScreenshot({
+    required this.asset,
+    required this.label,
+    this.labelEn,
+  });
 
   final String asset;
   final String label;
+  final String? labelEn;
+
+  String labelIn(AppLanguage language) =>
+      language.isEnglish ? labelEn ?? label : label;
 
   @override
-  List<Object?> get props => [asset, label];
+  List<Object?> get props => [asset, label, labelEn];
 }
 
 class Project extends Equatable {
@@ -76,6 +85,21 @@ class Project extends Equatable {
     required this.previewItems,
     required this.editorialTitle,
     required this.highlight,
+    this.taglineEn,
+    this.descriptionEn,
+    this.storyEn,
+    this.timelineEn,
+    this.statusEn,
+    this.updatedAtEn,
+    this.featuresEn = const [],
+    this.releaseNotesEn = const [],
+    this.previewTitleEn,
+    this.previewSubtitleEn,
+    this.previewMetricEn,
+    this.previewMetricLabelEn,
+    this.previewItemsEn = const [],
+    this.editorialTitleEn,
+    this.highlightEn,
     this.type = ProjectType.mobileApp,
     this.featured = false,
     this.screenshots = const [],
@@ -106,6 +130,21 @@ class Project extends Equatable {
   final List<String> previewItems;
   final String editorialTitle;
   final String highlight;
+  final String? taglineEn;
+  final String? descriptionEn;
+  final String? storyEn;
+  final String? timelineEn;
+  final String? statusEn;
+  final String? updatedAtEn;
+  final List<String> featuresEn;
+  final List<String> releaseNotesEn;
+  final String? previewTitleEn;
+  final String? previewSubtitleEn;
+  final String? previewMetricEn;
+  final String? previewMetricLabelEn;
+  final List<String> previewItemsEn;
+  final String? editorialTitleEn;
+  final String? highlightEn;
   final ProjectType type;
   final bool featured;
   final List<ProjectScreenshot> screenshots;
@@ -131,12 +170,58 @@ class Project extends Equatable {
   bool get hasDownloadUrl =>
       downloadUrl != null && downloadUrl!.trim().isNotEmpty;
 
+  String taglineIn(AppLanguage language) =>
+      _localized(tagline, taglineEn, language);
+
+  String descriptionIn(AppLanguage language) =>
+      _localized(description, descriptionEn, language);
+
+  String storyIn(AppLanguage language) => _localized(story, storyEn, language);
+
+  String timelineIn(AppLanguage language) =>
+      _localized(timeline, timelineEn, language);
+
+  String statusIn(AppLanguage language) =>
+      _localized(status, statusEn, language);
+
+  String updatedAtIn(AppLanguage language) =>
+      _localized(updatedAt, updatedAtEn, language);
+
+  List<String> featuresIn(AppLanguage language) =>
+      _localizedList(features, featuresEn, language);
+
+  List<String> releaseNotesIn(AppLanguage language) =>
+      _localizedList(releaseNotes, releaseNotesEn, language);
+
+  String previewTitleIn(AppLanguage language) =>
+      _localized(previewTitle, previewTitleEn, language);
+
+  String previewSubtitleIn(AppLanguage language) =>
+      _localized(previewSubtitle, previewSubtitleEn, language);
+
+  String previewMetricIn(AppLanguage language) =>
+      _localized(previewMetric, previewMetricEn, language);
+
+  String previewMetricLabelIn(AppLanguage language) =>
+      _localized(previewMetricLabel, previewMetricLabelEn, language);
+
+  List<String> previewItemsIn(AppLanguage language) =>
+      _localizedList(previewItems, previewItemsEn, language);
+
+  String editorialTitleIn(AppLanguage language) =>
+      _localized(editorialTitle, editorialTitleEn, language);
+
+  String highlightIn(AppLanguage language) =>
+      _localized(highlight, highlightEn, language);
+
   bool matches(String normalizedQuery) {
     if (normalizedQuery.isEmpty) return true;
     final haystack = <String>[
       name,
       tagline,
+      taglineEn ?? '',
       description,
+      descriptionEn ?? '',
       category.label,
       ...tech,
     ].join(' ').toLowerCase();
@@ -167,6 +252,21 @@ class Project extends Equatable {
     previewItems,
     editorialTitle,
     highlight,
+    taglineEn,
+    descriptionEn,
+    storyEn,
+    timelineEn,
+    statusEn,
+    updatedAtEn,
+    featuresEn,
+    releaseNotesEn,
+    previewTitleEn,
+    previewSubtitleEn,
+    previewMetricEn,
+    previewMetricLabelEn,
+    previewItemsEn,
+    editorialTitleEn,
+    highlightEn,
     type,
     featured,
     screenshots,
@@ -175,3 +275,12 @@ class Project extends Equatable {
     downloadUrl,
   ];
 }
+
+String _localized(String base, String? english, AppLanguage language) =>
+    language.isEnglish ? english ?? base : base;
+
+List<String> _localizedList(
+  List<String> base,
+  List<String> english,
+  AppLanguage language,
+) => language.isEnglish && english.isNotEmpty ? english : base;

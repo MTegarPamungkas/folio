@@ -5,6 +5,7 @@ import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/developer.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_bloc.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_state.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/availability_badge.dart';
 
@@ -35,46 +36,46 @@ class _ContactInfoContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AvailabilityBadge(label: developer.availability),
+        AvailabilityBadge(label: developer.availabilityIn(context.language)),
         const SizedBox(height: 20),
         _ContactRow(
           icon: Icons.mail_outline_rounded,
-          label: 'Email',
+          label: context.tr('Email'),
           value: developer.email,
           onTap: () => copyToClipboard(
             context,
             developer.email,
-            message: 'Email disalin.',
+            message: context.readTr('Email disalin.'),
           ),
           trailingIcon: Icons.copy_rounded,
         ),
         const SizedBox(height: 11),
         _ContactRow(
           icon: Icons.phone_outlined,
-          label: 'Telepon',
+          label: context.tr('Telepon'),
           value: developer.phone,
           onTap: () => copyToClipboard(
             context,
             developer.phone,
-            message: 'Nomor telepon disalin.',
+            message: context.readTr('Nomor telepon disalin.'),
           ),
           trailingIcon: Icons.copy_rounded,
         ),
         const SizedBox(height: 11),
         _ContactRow(
           icon: Icons.location_on_outlined,
-          label: 'Lokasi',
+          label: context.tr('Lokasi'),
           value: developer.location,
         ),
         const SizedBox(height: 11),
         _ContactRow(
           icon: Icons.schedule_rounded,
-          label: 'Waktu respons',
-          value: 'Biasanya dalam 1–2 hari kerja',
+          label: context.tr('Waktu respons'),
+          value: context.tr('Biasanya dalam 1–2 hari kerja'),
         ),
         const SizedBox(height: 22),
         Text(
-          'TEMUKAN SAYA DI',
+          context.tr('TEMUKAN SAYA DI'),
           style: theme.textTheme.labelSmall?.copyWith(
             fontSize: 9,
             letterSpacing: 1.2,
@@ -91,7 +92,10 @@ class _ContactInfoContent extends StatelessWidget {
                 onTap: () => openExternalLink(
                   context,
                   social.url,
-                  fallbackMessage: 'Tautan ${social.label} belum bisa dibuka.',
+                  fallbackMessage: context.trArgs(
+                    'Tautan {platform} belum bisa dibuka.',
+                    {'platform': social.label},
+                  ),
                 ),
                 borderRadius: BorderRadius.circular(11),
                 child: Container(
@@ -133,7 +137,10 @@ class _ContactInfoContent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Prosesnya sederhana', style: theme.textTheme.titleSmall),
+              Text(
+                context.tr('Prosesnya sederhana'),
+                style: theme.textTheme.titleSmall,
+              ),
               const SizedBox(height: 10),
               for (var i = 0; i < _steps.length; i++) ...[
                 Row(
@@ -151,7 +158,7 @@ class _ContactInfoContent extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        _steps[i],
+                        context.tr(_steps[i]),
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontSize: 11,
                           height: 1.55,

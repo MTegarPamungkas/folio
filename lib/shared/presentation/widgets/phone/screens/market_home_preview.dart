@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 
@@ -43,7 +44,7 @@ class MarketHomePreview extends StatelessWidget {
                     Icon(Icons.search_rounded, size: 10, color: p.screenMuted),
                     const SizedBox(width: 5),
                     Text(
-                      'Cari karya lokal',
+                      context.tr('Cari karya lokal'),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7.5,
@@ -106,7 +107,7 @@ class MarketHomePreview extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      project.previewTitle,
+                      project.previewTitleIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 18,
@@ -118,7 +119,7 @@ class MarketHomePreview extends StatelessWidget {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      project.previewSubtitle,
+                      project.previewSubtitleIn(context.language),
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7,
@@ -149,7 +150,7 @@ class MarketHomePreview extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Baru dari pengrajin',
+              context.tr('Baru dari pengrajin'),
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 9,
@@ -159,7 +160,7 @@ class MarketHomePreview extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              'Lihat',
+              context.tr('Lihat'),
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7,
@@ -203,7 +204,7 @@ class MarketHomePreview extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          project.previewItems[i],
+                          project.previewItemsIn(context.language)[i],
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(

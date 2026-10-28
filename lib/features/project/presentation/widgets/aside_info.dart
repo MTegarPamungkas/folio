@@ -5,6 +5,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/developer_avatar.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
@@ -36,7 +37,7 @@ class AsideInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Informasi', style: theme.textTheme.titleMedium),
+              Text(context.tr('Informasi'), style: theme.textTheme.titleMedium),
               const SizedBox(height: 16),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +47,7 @@ class AsideInfo extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'TIPE',
+                          context.tr('TIPE'),
                           style: theme.textTheme.labelSmall?.copyWith(
                             fontSize: 7.5,
                             letterSpacing: 0.9,
@@ -55,7 +56,7 @@ class AsideInfo extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          project.type.label,
+                          context.tr(project.type.label),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: theme.textTheme.titleMedium?.copyWith(
@@ -74,7 +75,7 @@ class AsideInfo extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'TAHUN',
+                          context.tr('TAHUN'),
                           style: theme.textTheme.labelSmall?.copyWith(
                             fontSize: 7.5,
                             letterSpacing: 0.9,
@@ -97,13 +98,22 @@ class AsideInfo extends StatelessWidget {
               const SizedBox(height: 18),
               Divider(color: colors.line),
               const SizedBox(height: 15),
-              _InfoRow(label: 'Kategori', value: project.category.label),
-              _InfoRow(label: 'Peran', value: project.role),
-              _InfoRow(label: 'Durasi', value: project.timeline),
-              _InfoRow(label: 'Status', value: project.status),
               _InfoRow(
-                label: 'Platform',
-                value: project.platformLabel,
+                label: context.tr('Kategori'),
+                value: context.tr(project.category.label),
+              ),
+              _InfoRow(label: context.tr('Peran'), value: project.role),
+              _InfoRow(
+                label: context.tr('Durasi'),
+                value: project.timelineIn(context.language),
+              ),
+              _InfoRow(
+                label: context.tr('Status'),
+                value: project.statusIn(context.language),
+              ),
+              _InfoRow(
+                label: context.tr('Platform'),
+                value: context.tr(project.platformLabel),
                 isLast: true,
               ),
             ],
@@ -120,7 +130,10 @@ class AsideInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Dibuat dengan', style: theme.textTheme.titleMedium),
+              Text(
+                context.tr('Dibuat dengan'),
+                style: theme.textTheme.titleMedium,
+              ),
               const SizedBox(height: 13),
               Wrap(
                 spacing: 7,
@@ -152,7 +165,7 @@ class AsideInfo extends StatelessWidget {
               DeveloperAvatar(initials: initials, size: 38, showStatus: false),
               const SizedBox(height: 13),
               Text(
-                'Tertarik dengan pendekatan ini?',
+                context.tr('Tertarik dengan pendekatan ini?'),
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: colors.background,
                   height: 1.3,
@@ -160,8 +173,10 @@ class AsideInfo extends StatelessWidget {
               ),
               const SizedBox(height: 6),
               Text(
-                'Ceritakan tantangan produkmu. Saya senang membantu memetakan '
-                'langkah pertamanya.',
+                context.tr(
+                  'Ceritakan tantangan produkmu. Saya senang membantu memetakan '
+                  'langkah pertamanya.',
+                ),
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: colors.background.withValues(alpha: 0.62),
                   fontSize: 10.5,
@@ -177,7 +192,7 @@ class AsideInfo extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        'Mulai percakapan',
+                        context.tr('Mulai percakapan'),
                         style: theme.textTheme.labelMedium?.copyWith(
                           color: colors.accent,
                           fontSize: 11,
@@ -225,15 +240,23 @@ class _ProjectLinks extends StatelessWidget {
     final download = _resolveLink(project.downloadUrl);
     final links = <({IconData icon, String label, String url})>[
       if (github != null)
-        (icon: Icons.code_rounded, label: 'Repositori GitHub', url: github),
+        (
+          icon: Icons.code_rounded,
+          label: context.tr('Repositori GitHub'),
+          url: github,
+        ),
       if (live != null)
         (
           icon: Icons.language_rounded,
-          label: project.isWebsite ? 'Website live' : 'Web demo',
+          label: context.tr(project.isWebsite ? 'Website live' : 'Web demo'),
           url: live,
         ),
       if (download != null)
-        (icon: Icons.android_rounded, label: 'Unduh APK', url: download),
+        (
+          icon: Icons.android_rounded,
+          label: context.tr('Unduh APK'),
+          url: download,
+        ),
     ];
     if (links.isEmpty) return const SizedBox.shrink();
 
@@ -247,7 +270,7 @@ class _ProjectLinks extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Tautan', style: theme.textTheme.titleMedium),
+          Text(context.tr('Tautan'), style: theme.textTheme.titleMedium),
           const SizedBox(height: 8),
           for (var i = 0; i < links.length; i++) ...[
             if (i > 0) Divider(color: colors.line, height: 1),

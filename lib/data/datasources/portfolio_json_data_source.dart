@@ -41,12 +41,15 @@ class PortfolioJsonDataSource {
       initials: _string(json['initials'], 'developer.initials'),
       role: _string(json['role'], 'developer.role'),
       tagline: _string(json['tagline'], 'developer.tagline'),
+      taglineEn: _optionalString(json['taglineEn']),
       bio: _string(json['bio'], 'developer.bio'),
+      bioEn: _optionalString(json['bioEn']),
       location: _string(json['location'], 'developer.location'),
       timezone: _string(json['timezone'], 'developer.timezone'),
       email: _string(json['email'], 'developer.email'),
       phone: _string(json['phone'], 'developer.phone'),
       availability: _string(json['availability'], 'developer.availability'),
+      availabilityEn: _optionalString(json['availabilityEn']),
       yearsExperience: _integer(
         json['yearsExperience'],
         'developer.yearsExperience',
@@ -113,7 +116,9 @@ class PortfolioJsonDataSource {
       role: _string(json['role'], 'experience.role'),
       company: _string(json['company'], 'experience.company'),
       period: _string(json['period'], 'experience.period'),
+      periodEn: _optionalString(json['periodEn']),
       description: _string(json['description'], 'experience.description'),
+      descriptionEn: _optionalString(json['descriptionEn']),
       current: json['current'] == true,
     );
   }
@@ -132,13 +137,16 @@ class PortfolioJsonDataSource {
       role: _string(json['role'], 'organization.role'),
       organization: _string(json['organization'], 'organization.name'),
       period: _string(json['period'], 'organization.period'),
+      periodEn: _optionalString(json['periodEn']),
     );
   }
 
   Principle _principle(Map<String, dynamic> json) {
     return Principle(
       title: _string(json['title'], 'principle.title'),
+      titleEn: _optionalString(json['titleEn']),
       description: _string(json['description'], 'principle.description'),
+      descriptionEn: _optionalString(json['descriptionEn']),
     );
   }
 
@@ -153,8 +161,11 @@ class PortfolioJsonDataSource {
       id: _string(json['id'], 'project.id'),
       name: _string(json['name'], 'project.name'),
       tagline: _string(json['tagline'], 'project.tagline'),
+      taglineEn: _optionalString(json['taglineEn']),
       description: _string(json['description'], 'project.description'),
+      descriptionEn: _optionalString(json['descriptionEn']),
       story: _string(json['story'], 'project.story'),
+      storyEn: _optionalString(json['storyEn']),
       category: category,
       type:
           ProjectType.fromName(_optionalString(json['type'])) ??
@@ -162,25 +173,37 @@ class PortfolioJsonDataSource {
       year: _string(json['year'], 'project.year'),
       role: _string(json['role'], 'project.role'),
       timeline: _string(json['timeline'], 'project.timeline'),
+      timelineEn: _optionalString(json['timelineEn']),
       status: _string(json['status'], 'project.status'),
+      statusEn: _optionalString(json['statusEn']),
       version: _string(json['version'], 'project.version'),
       updatedAt: _string(json['updatedAt'], 'project.updatedAt'),
+      updatedAtEn: _optionalString(json['updatedAtEn']),
       tech: _strings(json['tech'], 'project.tech'),
       features: _strings(json['features'], 'project.features'),
+      featuresEn: _optionalStrings(json['featuresEn']),
       releaseNotes: _strings(json['releaseNotes'], 'project.releaseNotes'),
+      releaseNotesEn: _optionalStrings(json['releaseNotesEn']),
       previewTitle: _string(json['previewTitle'], 'project.previewTitle'),
+      previewTitleEn: _optionalString(json['previewTitleEn']),
       previewSubtitle: _string(
         json['previewSubtitle'],
         'project.previewSubtitle',
       ),
+      previewSubtitleEn: _optionalString(json['previewSubtitleEn']),
       previewMetric: _string(json['previewMetric'], 'project.previewMetric'),
+      previewMetricEn: _optionalString(json['previewMetricEn']),
       previewMetricLabel: _string(
         json['previewMetricLabel'],
         'project.previewMetricLabel',
       ),
+      previewMetricLabelEn: _optionalString(json['previewMetricLabelEn']),
       previewItems: _strings(json['previewItems'], 'project.previewItems'),
+      previewItemsEn: _optionalStrings(json['previewItemsEn']),
       editorialTitle: _string(json['editorialTitle'], 'project.editorialTitle'),
+      editorialTitleEn: _optionalString(json['editorialTitleEn']),
       highlight: _string(json['highlight'], 'project.highlight'),
+      highlightEn: _optionalString(json['highlightEn']),
       featured: json['featured'] == true,
       screenshots: _screenshots(json['screenshots']),
       githubUrl: _optionalString(json['githubUrl']),
@@ -203,6 +226,7 @@ class PortfolioJsonDataSource {
     return ProjectScreenshot(
       asset: _string(json['asset'], 'project.screenshot.asset'),
       label: _string(json['label'], 'project.screenshot.label'),
+      labelEn: _optionalString(json['labelEn']),
     );
   }
 
@@ -235,6 +259,11 @@ class PortfolioJsonDataSource {
     if (value == null) return null;
     if (value is String) return value.isEmpty ? null : value;
     throw FormatException('Expected optional text');
+  }
+
+  List<String> _optionalStrings(Object? value) {
+    if (value == null) return const [];
+    return _strings(value, 'localized list');
   }
 
   int _integer(Object? value, String field) {

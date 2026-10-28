@@ -4,6 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_state.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 
 class ThemeToggle extends StatelessWidget {
   const ThemeToggle({super.key, this.compact = false});
@@ -19,7 +20,9 @@ class ThemeToggle extends StatelessWidget {
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, settings) {
         return Tooltip(
-          message: isDark ? 'Ganti ke tema terang' : 'Ganti ke tema gelap',
+          message: isDark
+              ? context.tr('Ganti ke tema terang')
+              : context.tr('Ganti ke tema gelap'),
           child: InkWell(
             onTap: () => context.read<SettingsBloc>().add(
               SettingsThemeToggled(isCurrentlyDark: isDark),
@@ -47,8 +50,10 @@ class ThemeToggle extends StatelessWidget {
                   Expanded(
                     child: Text(
                       compact
-                          ? (isDark ? 'Tema terang' : 'Tema gelap')
-                          : 'Tema',
+                          ? (isDark
+                                ? context.tr('Tema terang')
+                                : context.tr('Tema gelap'))
+                          : context.tr('Tema'),
                       style: theme.textTheme.labelMedium?.copyWith(
                         color: colors.inkMuted,
                         fontSize: 11,
@@ -57,7 +62,7 @@ class ThemeToggle extends StatelessWidget {
                   ),
                   if (!compact)
                     Text(
-                      isDark ? 'Gelap' : 'Terang',
+                      isDark ? context.tr('Gelap') : context.tr('Terang'),
                       style: theme.textTheme.bodySmall?.copyWith(fontSize: 11),
                     ),
                 ],

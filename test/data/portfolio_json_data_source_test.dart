@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:folio/data/datasources/portfolio_json_data_source.dart';
+import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/domain/entities/portfolio_content.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
@@ -87,10 +88,7 @@ void main() {
   });
 
   test('every project ships real screenshots and keeps the fallback safe', () {
-    expect(
-      content.projects.every((project) => project.hasScreenshots),
-      isTrue,
-    );
+    expect(content.projects.every((project) => project.hasScreenshots), isTrue);
     for (final project in content.projects) {
       expect(project.screenshotAt(0), isNotNull, reason: project.id);
       expect(
@@ -99,5 +97,30 @@ void main() {
         reason: project.id,
       );
     }
+  });
+
+  test('ships English copy next to the Indonesian source', () {
+    final developer = content.developer;
+    expect(developer.taglineEn, isNotNull);
+    expect(developer.bioEn, isNotNull);
+    expect(developer.availabilityEn, isNotNull);
+
+    for (final project in content.projects) {
+      expect(project.taglineEn, isNotNull, reason: project.id);
+      expect(project.storyEn, isNotNull, reason: project.id);
+      expect(project.featuresEn, isNotEmpty, reason: project.id);
+      expect(project.taglineIn(AppLanguage.en), project.taglineEn);
+      expect(project.taglineIn(AppLanguage.id), project.tagline);
+    }
+
+    final project = content.projects.singleWhere(
+      (project) => project.id == 'mis-msa',
+    );
+    expect(project.storyIn(AppLanguage.en), project.storyEn);
+    expect(project.storyIn(AppLanguage.id), project.story);
+    expect(
+      project.screenshots.first.labelIn(AppLanguage.en),
+      project.screenshots.first.labelEn ?? project.screenshots.first.label,
+    );
   });
 }

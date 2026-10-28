@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:folio/features/shell/presentation/widgets/shell_destinations.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 
 class MobileNavigation extends StatelessWidget {
   const MobileNavigation({
@@ -50,8 +51,8 @@ class MobileNavigation extends StatelessWidget {
                         child: Icon(shellDestinations[i].selectedIcon),
                       )
                     : Icon(shellDestinations[i].selectedIcon),
-                label: shellDestinations[i].label,
-                tooltip: shellDestinations[i].label,
+                label: context.tr(shellDestinations[i].label),
+                tooltip: context.tr(shellDestinations[i].label),
               ),
           ],
         ),

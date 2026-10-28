@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 
 /// A static, designed website preview used when an iframe is not available.
@@ -14,7 +15,10 @@ class WebsiteArtwork extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = project.palette;
-    final title = project.editorialTitle.replaceAll('\n', ' ');
+    final previewItems = project.previewItemsIn(context.language);
+    final title = project
+        .editorialTitleIn(context.language)
+        .replaceAll('\n', ' ');
 
     return ExcludeSemantics(
       child: FittedBox(
@@ -43,7 +47,9 @@ class WebsiteArtwork extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'PRATINJAU WEB · ${project.year}',
+                                context.trArgs('PRATINJAU WEB · {year}', {
+                                  'year': project.year,
+                                }),
                                 style: TextStyle(
                                   fontFamily: FolioTypography.sans,
                                   fontSize: 8,
@@ -72,7 +78,7 @@ class WebsiteArtwork extends StatelessWidget {
                                   maxWidth: 260,
                                 ),
                                 child: Text(
-                                  project.tagline,
+                                  project.taglineIn(context.language),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -94,7 +100,7 @@ class WebsiteArtwork extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Text(
-                                  'Buka situs',
+                                  context.tr('Buka situs'),
                                   style: TextStyle(
                                     fontFamily: FolioTypography.sans,
                                     fontSize: 8,
@@ -142,7 +148,9 @@ class WebsiteArtwork extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        project.previewMetric,
+                                        project.previewMetricIn(
+                                          context.language,
+                                        ),
                                         style: TextStyle(
                                           fontFamily: FolioTypography.sans,
                                           fontSize: 38,
@@ -154,7 +162,9 @@ class WebsiteArtwork extends StatelessWidget {
                                       ),
                                       const SizedBox(height: 4),
                                       Text(
-                                        project.previewMetricLabel,
+                                        project.previewMetricLabelIn(
+                                          context.language,
+                                        ),
                                         style: TextStyle(
                                           fontFamily: FolioTypography.sans,
                                           fontSize: 8,
@@ -174,7 +184,7 @@ class WebsiteArtwork extends StatelessWidget {
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      for (var i = 0; i < project.previewItems.length; i++) ...[
+                      for (var i = 0; i < previewItems.length; i++) ...[
                         if (i > 0) const SizedBox(width: 10),
                         Expanded(
                           child: Container(
@@ -199,7 +209,7 @@ class WebsiteArtwork extends StatelessWidget {
                                 const SizedBox(width: 10),
                                 Expanded(
                                   child: Text(
-                                    project.previewItems[i],
+                                    previewItems[i],
                                     style: TextStyle(
                                       fontFamily: FolioTypography.sans,
                                       fontSize: 8,
@@ -248,7 +258,7 @@ class _ArtworkNav extends StatelessWidget {
         const Spacer(),
         for (final label in ['Beranda', 'Fitur', 'Kontak']) ...[
           Text(
-            label,
+            context.tr(label),
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 8,

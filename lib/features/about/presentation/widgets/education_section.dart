@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
+import 'package:folio/shared/presentation/l10n/app_strings.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 
 class EducationSection extends StatelessWidget {
@@ -19,10 +20,12 @@ class EducationSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SectionHeading(
-          eyebrow: 'Pendidikan & organisasi',
-          title: 'Tempat saya belajar dan tumbuh',
-          subtitle: 'Dari SMK sampai kuliah, plus pengalaman organisasi.',
+        SectionHeading(
+          eyebrow: context.tr('Pendidikan & organisasi'),
+          title: context.tr('Tempat saya belajar dan tumbuh'),
+          subtitle: context.tr(
+            'Dari SMK sampai kuliah, plus pengalaman organisasi.',
+          ),
         ),
         const SizedBox(height: 24),
         AdaptiveTwoPane(
@@ -30,7 +33,7 @@ class EducationSection extends StatelessWidget {
           gap: 28,
           compactGap: 22,
           start: _Column(
-            label: 'PENDIDIKAN',
+            label: context.tr('PENDIDIKAN'),
             children: [
               for (var i = 0; i < education.length; i++)
                 _EducationCard(
@@ -40,7 +43,7 @@ class EducationSection extends StatelessWidget {
             ],
           ),
           end: _Column(
-            label: 'ORGANISASI',
+            label: context.tr('ORGANISASI'),
             children: [
               for (var i = 0; i < organizations.length; i++)
                 _OrganizationCard(
@@ -198,7 +201,7 @@ class _OrganizationCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 7),
                 Text(
-                  item.period,
+                  item.periodIn(context.language),
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 8.5,
                     letterSpacing: 0.5,
