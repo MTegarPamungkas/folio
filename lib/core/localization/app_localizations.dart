@@ -57,34 +57,36 @@ class AppLocalizations {
   String get pageNotFound => t('Halaman tidak ditemukan', 'Page not found');
   String get backToHome => t('Kembali ke beranda', 'Back to home');
   String get ideaPrompt =>
-      t('Punya ide\nyang ingin dibuat?', 'Got an idea\nyou want to build?');
+      t('Punya ide\nyang ingin diwujudkan?', 'Got an idea\nyou want to build?');
   String get collaboratePrompt => t(
-    'Mari bicara soal produk, alur, dan detailnya.',
-    "Let's talk about the product, the flow, and the details.",
+    'Mari diskusikan produk, alur, dan detailnya.',
+    "Let's talk through the product, the flow, and the details.",
   );
-  String get collaborateCta => t('Ajak kolaborasi', "Let's collaborate");
+  String get collaborateCta => t('Ajak berkolaborasi', "Let's collaborate");
   String get startConversation => t('Mulai percakapan', 'Start a conversation');
 
   // Footer & shared feedback.
   String get footerTagline => t(
     'Portofolio saya, disusun seperti app store.',
-    'My portfolio, arranged like an app store.',
+    'My portfolio, laid out like an app store.',
   );
   String copyright(String year, String name) => t(
     '© $year $name · Dibuat dengan Flutter',
     '© $year $name · Built with Flutter',
   );
   String linkOpenFailed(String platform) => t(
-    'Tautan $platform belum bisa dibuka.',
-    'The $platform link could not be opened.',
+    'Tautan $platform tidak dapat dibuka.',
+    "Couldn't open the $platform link.",
   );
   String get linkOpenFailedGeneric =>
-      t('Tautannya belum bisa dibuka.', 'The link could not be opened.');
+      t('Tautan tidak dapat dibuka.', "Couldn't open the link.");
   String get copyLink => t('Salin tautan', 'Copy link');
-  String get copied => t('Sudah disalin.', 'Copied.');
+  String get copied => t('Berhasil disalin.', 'Copied to clipboard.');
   String get copyEmail => t('Salin email', 'Copy email');
-  String get emailCopied => t('Email disalin.', 'Email copied.');
-  String get phoneCopied => t('Nomor telepon disalin.', 'Phone number copied.');
+  String get emailCopied =>
+      t('Email berhasil disalin.', 'Email address copied.');
+  String get phoneCopied =>
+      t('Nomor telepon berhasil disalin.', 'Phone number copied.');
 
   // Home.
   String get portfolioYear => t('Portofolio · 2026', 'Portfolio · 2026');
@@ -94,7 +96,7 @@ class AppLocalizations {
       t(' yang\nsedang saya bangun.', " I'm\ncurrently building.");
   String get heroDescription => t(
     'Portofolio saya, disusun seperti app store. Jelajahi aplikasi dan website yang saya bangun, buka studi kasusnya, lalu simpan yang paling relevan untukmu.',
-    'My portfolio, arranged like an app store. Browse the apps and websites I built, open the case studies, and save the ones that matter to you.',
+    "My portfolio, laid out like an app store. Browse the apps and websites I've built, open the case studies, and save the ones most relevant to you.",
   );
   String get selectedWork => t('Karya pilihan', 'Selected work');
   String get projectsAndModules => t('Proyek & modul', 'Projects & modules');
@@ -109,18 +111,18 @@ class AppLocalizations {
   String get justReleased => t('BARU SAYA RILIS', 'JUST RELEASED');
   String get latestReleases => t('Rilis terbaru', 'Latest releases');
   String get latestReleasesBody => t(
-    'Karya yang baru saya selesaikan—dari eksplorasi pertama sampai rilis.',
-    'Work I just wrapped up—from first exploration to release.',
+    'Karya yang baru saya selesaikan, dari eksplorasi awal hingga rilis.',
+    'Recently completed work, from first exploration to release.',
   );
   String get exploreAll => t('Jelajah semua', 'Explore all');
   String get behindTheScreens => t('DI BALIK LAYAR', 'BEHIND THE SCREENS');
   String get tidyDesign => t('Desain yang rapi,\n', 'Tidy design,\n');
   String get calmCode => t('kode yang tenang.', 'calm code.');
   String get makerBody => t(
-    'Saya menghubungkan riset, desain, dan engineering untuk bikin produk yang terasa sederhana—dan bertahan lama.',
-    'I connect research, design, and engineering to build products that feel simple—and last.',
+    'Saya memadukan riset, desain, dan engineering untuk membangun produk yang terasa sederhana dan tahan lama.',
+    'I bring research, design, and engineering together to build products that feel simple and stand the test of time.',
   );
-  String get getToKnowMe => t('Kenalan lebih dekat', 'Get to know me');
+  String get getToKnowMe => t('Kenali saya lebih dekat', 'Get to know me');
   String get mobileDeveloper => t('Mobile Developer', 'Mobile Developer');
   String get fullStack => t('Full Stack', 'Full Stack');
   String showItem(String index) =>
@@ -135,11 +137,11 @@ class AppLocalizations {
   String get exploreHighlight => t('semua karya.', 'every project.');
   String get exploreBody => t(
     'Cari berdasarkan nama proyek, teknologi, atau kategori. Semua studi kasus saya ada di sini.',
-    'Search by project name, technology, or category. All my case studies live here.',
+    'Search by project name, technology, or category. All my case studies are here.',
   );
   String get noMatches => t('Belum ada yang cocok', 'No matches yet');
   String get noMatchesBody => t(
-    'Coba kata kunci lain, atau hapus filter kategorinya buat lihat semua karya.',
+    'Coba kata kunci lain, atau hapus filter kategori untuk melihat semua karya.',
     'Try another keyword, or clear the category filter to see every project.',
   );
   String get showAll => t('Tampilkan semua', 'Show all');
@@ -162,12 +164,12 @@ class AppLocalizations {
   String get savedHeadlineLead => t('Karya yang\nkamu ', 'Work you\n');
   String get savedHeadlineAccent => t('simpan.', 'saved.');
   String get savedSubtitle =>
-      t('Hanya tersimpan di perangkat ini.', 'Only saved on this device.');
+      t('Hanya tersimpan di perangkat ini.', 'Saved on this device only.');
   String get savedEmptyTitle =>
       t('Belum ada karya tersimpan', 'No saved work yet');
   String get savedEmptyBody => t(
-    'Ketuk ikon simpan di proyek buat menyimpannya di sini. Koleksimu tetap ada saat kamu kembali.',
-    'Tap the save icon on a project to keep it here. Your collection stays when you come back.',
+    'Ketuk ikon simpan pada proyek untuk menyimpannya di sini. Koleksimu akan tetap tersimpan saat kamu kembali.',
+    'Tap the save icon on any project to keep it here. Your collection will be waiting when you return.',
   );
   String get startExploring => t('Mulai jelajah', 'Start exploring');
   String savedCount(String count) =>
@@ -178,22 +180,22 @@ class AppLocalizations {
   String get aboutMe => t('Tentang saya', 'About me');
   String greeting(String name) => t('Halo, saya $name.\n', "Hi, I'm $name.\n");
   String get aboutHeadlineLead =>
-      t('Saya bikin produk\nyang ', 'I build products\nthat are ');
+      t('Saya membangun produk\nyang ', 'I build products\nthat are ');
   String get aboutHeadlineAccent => t('siap dipakai.', 'ready to use.');
   String get viewWork => t('Lihat karya', 'View work');
   String get yearsOfExperience => t('Tahun pengalaman', 'Years of experience');
   String get collaborations => t('Kolaborasi', 'Collaborations');
   String get howIWork => t('Cara saya bekerja', 'How I work');
   String get principlesTitle =>
-      t('Prinsip yang saya pegang', 'Principles I hold');
+      t('Prinsip yang saya pegang', 'Principles I work by');
   String get principlesBody => t(
-    'Ini bukan aturan kaku—cuma cara saya mengambil keputusan.',
-    'These are not rigid rules—just how I make decisions.',
+    'Ini bukan aturan baku, melainkan cara saya mengambil keputusan.',
+    "These aren't rigid rules, just how I approach decisions.",
   );
   String get toolboxTitle => t('Perangkat kerja', 'Toolbox');
-  String get toolboxSubtitle => t('Hal yang saya kuasai', "What I'm good at");
+  String get toolboxSubtitle => t('Hal yang saya kuasai', 'My core strengths');
   String get toolboxBody => t(
-    'Dari merancang alur di Figma sampai merilis build yang stabil.',
+    'Dari merancang alur di Figma hingga merilis build yang stabil.',
     'From mapping flows in Figma to shipping stable builds.',
   );
   String toolsCount(String count) => t('$count tools', '$count tools');
@@ -201,7 +203,7 @@ class AppLocalizations {
   String get journeyTitle =>
       t('Belajar sambil membangun', 'Learning by building');
   String get journeyBody => t(
-    'Dari magang dan Bangkit Academy sampai aplikasi enterprise yang dipakai di lapangan.',
+    'Dari magang dan Bangkit Academy hingga aplikasi enterprise yang digunakan di lapangan.',
     'From internships and Bangkit Academy to enterprise apps used in the field.',
   );
   String get now => t('SEKARANG', 'NOW');
@@ -210,8 +212,8 @@ class AppLocalizations {
   String get educationSubtitle =>
       t('Tempat saya belajar dan tumbuh', 'Where I learned and grew');
   String get educationBody => t(
-    'Dari SMK sampai kuliah, plus pengalaman organisasi.',
-    'From vocational school to university, plus organizational experience.',
+    'Dari SMK hingga perguruan tinggi, serta pengalaman berorganisasi.',
+    'From vocational school to university, along with organizational experience.',
   );
   String get educationLabel => t('PENDIDIKAN', 'EDUCATION');
   String get organizationsLabel => t('ORGANISASI', 'ORGANIZATIONS');
@@ -219,7 +221,7 @@ class AppLocalizations {
       t('Preferensi tampilan', 'Display preferences');
   String get displayPreferencesBody => t(
     'Pilih tema yang paling nyaman. Pilihanmu disimpan di perangkat ini.',
-    'Pick the theme that feels best. Your choice is stored on this device.',
+    'Choose the theme that feels most comfortable. Your choice is saved on this device.',
   );
   String get system => t('Sistem', 'System');
   String get light => t('Terang', 'Light');
@@ -237,15 +239,15 @@ class AppLocalizations {
       t('Membuka aplikasi email kamu…', 'Opening your email app…');
   String get emailAppUnavailableOnDevice => t(
     'Aplikasi email tidak tersedia di perangkat ini.',
-    'Email app is not available on this device.',
+    'No email app is available on this device.',
   );
   String get contactTitle => t('Kontak', 'Contact');
   String get contactHeadlineLead =>
-      t('Mari bikin sesuatu\nyang ', "Let's make something\n");
+      t('Mari membuat sesuatu\nyang ', "Let's make something\n");
   String get contactHeadlineAccent => t('berkesan.', 'memorable.');
   String get contactBody => t(
-    'Punya produk yang ingin dibangun, alur yang ingin dirapikan, atau ide yang masih setengah jadi? Ceritakan saja — saya senang mendengarnya.',
-    'Have a product to build, a flow to untangle, or a half-formed idea? Tell me about it — I would love to hear it.',
+    'Punya produk yang ingin dibangun, alur yang ingin dirapikan, atau ide yang masih setengah jadi? Ceritakan saja, saya senang mendengarnya.',
+    "Have a product to build, a flow to untangle, or a half-formed idea? Tell me about it, I'd love to hear it.",
   );
   String get writeMessage => t('Tulis pesan', 'Write a message');
   String get contactAvailability => t(
@@ -263,7 +265,7 @@ class AppLocalizations {
   String get preparingEmail => t('Menyiapkan email…', 'Preparing email…');
   String get openEmailApp => t('Buka aplikasi email', 'Open email app');
   String get formDisclaimer => t(
-    'Form ini cuma membuka aplikasi email dengan pesan yang sudah terisi. Tidak ada data yang dikirim ke server.',
+    'Formulir ini hanya membuka aplikasi email dengan pesan yang sudah terisi. Tidak ada data yang dikirim ke server.',
     'This form only opens your email app with the message pre-filled. No data is sent to a server.',
   );
   String get phone => t('Telepon', 'Phone');
@@ -291,12 +293,12 @@ class AppLocalizations {
   String get projectTypeConsulting => t('Konsultasi', 'Consulting');
   String get projectTypeOther => t('Kolaborasi lain', 'Other collaboration');
   String get nameError =>
-      t('Nama kamu belum diisi.', 'Your name is still empty.');
+      t('Nama kamu belum diisi.', 'Please enter your name.');
   String get emailError =>
-      t('Format emailnya belum benar.', 'That email format is not right yet.');
+      t('Format email belum sesuai.', 'Please enter a valid email address.');
   String get messageError => t(
-    'Ceritakan sedikit lebih banyak—minimal 20 karakter.',
-    'Tell me a bit more—at least 20 characters.',
+    'Mohon ceritakan sedikit lebih lengkap, minimal 20 karakter.',
+    'Please share a little more, at least 20 characters.',
   );
 
   // Project detail.
@@ -322,7 +324,7 @@ class AppLocalizations {
       t('Tertarik dengan pendekatan ini?', 'Interested in this approach?');
   String get interestedBody => t(
     'Ceritakan tantangan produkmu. Saya senang membantu memetakan langkah pertamanya.',
-    'Tell me about your product challenge. I enjoy helping map the first step.',
+    "Tell me about your product challenge. I'd be glad to help map out the first step.",
   );
   String get githubRepository => t('Repositori GitHub', 'GitHub repository');
   String get liveWebsite => t('Website live', 'Live website');
@@ -337,49 +339,49 @@ class AppLocalizations {
   String get whatsNew => t('Yang baru dirilis', "What's new");
   String get appScreens => t('Tampilan aplikasi', 'App screens');
   String get appScreensBody => t(
-    'Tangkapan layar asli, dari alur utama sampai fiturnya.',
-    'Real captures, from the main flow to the details.',
+    'Tangkapan layar asli, dari alur utama hingga fiturnya.',
+    'Real screenshots, from the main flow to the details.',
   );
   String get threeScreensBody => t(
     'Tiga layar yang menunjukkan arah visual dan alur utama.',
     'Three screens showing the visual direction and main flow.',
   );
   String capturesCount(String count) =>
-      t('$count TANGKAPAN', '$count CAPTURES');
+      t('$count TANGKAPAN', '$count SCREENSHOTS');
   String get threeScreens => t('3 LAYAR', '3 SCREENS');
   String get liveSite => t('Situs live', 'Live site');
   String get live => t('LIVE', 'LIVE');
   String get liveSiteBody => t(
     'Jelajahi situsnya langsung di sini, atau buka di tab baru.',
-    'Explore the site right here, or open it in a new tab.',
+    'Browse the site right here, or open it in a new tab.',
   );
   String get liveSiteBodyEmbedded => t(
-    'Situs live tampil langsung di sini—geser di dalam bingkai atau buka di tab baru.',
-    'The live site renders right here—scroll inside the frame or open it in a new tab.',
+    'Situs live ditampilkan langsung di sini. Geser di dalam bingkai atau buka di tab baru.',
+    'The live site is shown right here—scroll inside the frame or open it in a new tab.',
   );
   String get reload => t('Muat ulang', 'Reload');
   String get openLive => t('Buka langsung', 'Open live');
   String get liveSiteOpenFailed => t(
-    'Situsnya belum bisa dibuka dari preview.',
-    'The site could not be opened from the preview.',
+    'Situs tidak dapat dibuka dari pratinjau.',
+    "The site couldn't be opened from the preview.",
   );
   String get liveSiteOpenFailedBody => t(
     'Kamu bisa tetap di halaman ini atau buka situsnya langsung di tab baru.',
     'You can stay on this page or open the site in a new tab.',
   );
   String get noLiveSiteBody => t(
-    'Proyek ini belum punya situs live untuk ditampilkan.',
+    'Proyek ini belum memiliki situs live untuk ditampilkan.',
     'This project has no live site to show yet.',
   );
   String get noLiveSiteOpenBody => t(
-    'Proyek ini belum punya situs live untuk dibuka.',
+    'Proyek ini belum memiliki situs live untuk dibuka.',
     'This project has no live site to open yet.',
   );
   String get noLiveSite => t('Belum ada situs live', 'No live site yet');
   String get websiteScreens => t('Tampilan situs', 'Website screens');
   String get websiteScreensBody => t(
-    'Tangkapan halaman asli, dari beranda sampai formulir.',
-    'Real page captures, from the home page to the form.',
+    'Tangkapan halaman asli, dari beranda hingga formulir.',
+    'Real page screenshots, from the home page to the form.',
   );
   String pagesCount(String count) => t('$count HALAMAN', '$count PAGES');
   String get keepExploring => t('LANJUTKAN MENJELAJAH', 'KEEP EXPLORING');
@@ -389,40 +391,41 @@ class AppLocalizations {
   String get view => t('Lihat', 'View');
   String get searchDestinations => t('Cari destinasi', 'Search destinations');
   String get findLocalWork => t('Cari karya lokal', 'Find local work');
-  String get reloadPreview => t('Muat ulang preview', 'Reload preview');
+  String get reloadPreview => t('Muat ulang pratinjau', 'Reload preview');
 
   // Screenshot galleries.
   String get mainScreen => t('Utama', 'Main');
   String get detailScreen => t('Detail', 'Detail');
   String get summaryScreen => t('Ringkasan', 'Summary');
   String galleryCapturesSwipe(String count) => t(
-    '$count tangkapan layar asli—geser untuk lihat semua.',
-    '$count real captures—swipe to see them all.',
+    '$count tangkapan layar asli, geser untuk melihat semua.',
+    '$count real screenshots—swipe to see them all.',
   );
   String get galleryThreeScreens => t(
-    'Tiga layar utama, dari alur sampai ringkasan.',
+    'Tiga layar utama, dari alur hingga ringkasan.',
     'Three key screens, from the flow to the summary.',
   );
   String get swipeToPreview =>
       t('Geser untuk melihat pratinjau', 'Swipe to see the previews');
   String galleryRealCaptures(String count) => t(
     '$count tangkapan layar asli dari aplikasi.',
-    '$count real captures from the app.',
+    '$count real screenshots from the app.',
   );
   String galleryRealPages(String count) => t(
     '$count halaman asli dari situs live.',
     '$count real pages from the live site.',
   );
   String galleryRealPagesSwipe(String count) => t(
-    '$count halaman asli—geser untuk lihat semua.',
+    '$count halaman asli, geser untuk melihat semua.',
     '$count real pages—swipe to see them all.',
   );
   String get openSite => t('Buka situs', 'Open site');
 
   // Favorites.
   String removedFromSaved(String name) =>
-      t('$name dihapus dari tersimpan.', '$name removed from saved.');
-  String savedNotice(String name) => t('$name disimpan.', '$name saved.');
+      t('$name dihapus dari daftar tersimpan.', '$name removed from Saved.');
+  String savedNotice(String name) =>
+      t('$name disimpan.', '$name added to Saved.');
   String get removeFromSaved => t('Hapus dari tersimpan', 'Remove from saved');
   String get saveProject => t('Simpan proyek', 'Save project');
   String get save => t('Simpan', 'Save');
