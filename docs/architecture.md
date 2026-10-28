@@ -88,11 +88,14 @@ Saat pindah ke REST/Firebase, ganti datasource dengan implementasi remote dan pe
 - Halaman detail proyek memakai widget per bagian: hero, screenshots aplikasi atau live website, story, aside, related.
 - Preview website dipisah menjadi `WebsitePreviewSection` + `BrowserFrame` + `WebsiteArtwork`, dengan iframe web melalui conditional import.
 - Profil dipecah menjadi intro, prinsip, skill, pengalaman, pendidikan/organisasi, dan preferensi/kontak.
+- Copy tidak ditulis langsung di widget: ambil dari `context.l10n`. Tiap string punya getter sendiri, sedangkan string berparameter menjadi method (`greeting(name)`, `savedCount(count)`). Bahasa aktif mengikuti locale `MaterialApp`, dan konten `portfolio.json` ikut lewat `context.language`.
 
 ### Core
 
 - `core/di/injection_container.dart` — komposisi dependency dengan `get_it`.
 - `core/router/app_router.dart` — route + provider Bloc per halaman.
+- `core/localization/app_localizations.dart` — semua copy antarmuka (Indonesia/Inggris) sebagai getter bertipe, plus `context.l10n`.
+- `core/localization/entity_labels.dart` — label enum (`ProjectType`, `ProjectCategory`, `SkillGroupKind`, platform) yang dipetakan ke copy.
 - `core/responsive/` — breakpoint dan layout primitive.
 - `core/theme/` — token dan tema Material 3.
 - `core/utils/` — tautan eksternal dan clipboard.
@@ -227,6 +230,11 @@ Contoh menambah fitur “Press”:
 - `test/app_test.dart` — alur pencarian, form kontak, persistensi.
 - `test/routes_test.dart` — semua route pada viewport mobile dengan teks 130% dan desktop, termasuk halaman website live.
 - `test/data/portfolio_json_data_source_test.dart` — memastikan JSON bisa diparse dan field penting tersedia.
+
+Selain `flutter test`, dua guard dijalankan manual:
+
+- `dart run tool/check_l10n.dart` — setiap entri harus berbentuk `t(id, en)`, nama dan teks sumber unik, placeholder cocok dengan parameter, dan tidak ada entri yang tidak terpakai.
+- `dart run tool/check_hardcoded.dart` — menandai copy Indonesia yang ditulis langsung di widget, bukan lewat `context.l10n`.
 
 Test tidak membutuhkan backend atau perangkat fisik.
 
