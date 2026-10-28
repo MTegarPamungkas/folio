@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_painters.dart';
@@ -31,7 +31,7 @@ class FinanceHomePreview extends StatelessWidget {
         ),
         const SizedBox(height: 13),
         Text(
-          context.tr('Sisa bulan ini'),
+          context.l10n.leftThisMonth,
           style: TextStyle(
             fontFamily: FolioTypography.sans,
             fontSize: 8,
@@ -60,7 +60,7 @@ class FinanceHomePreview extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Text(
-                context.tr('+12,4% dari bulan lalu'),
+                context.l10n.monthlyDelta,
                 style: TextStyle(
                   fontFamily: FolioTypography.sans,
                   fontSize: 6.5,
@@ -140,7 +140,7 @@ class FinanceHomePreview extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              context.tr('Semua'),
+              context.l10n.all,
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7,

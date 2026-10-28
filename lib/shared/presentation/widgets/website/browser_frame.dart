@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 
 class BrowserFrame extends StatelessWidget {
   const BrowserFrame({
@@ -107,7 +107,7 @@ class BrowserFrame extends StatelessWidget {
                     SizedBox(width: compact ? 4 : 8),
                     _BrowserAction(
                       icon: Icons.refresh_rounded,
-                      tooltip: context.tr('Muat ulang preview'),
+                      tooltip: context.l10n.reloadPreview,
                       size: iconSize,
                       onPressed: onReload!,
                     ),
@@ -116,7 +116,7 @@ class BrowserFrame extends StatelessWidget {
                     SizedBox(width: compact ? 1 : 4),
                     _BrowserAction(
                       icon: Icons.arrow_outward_rounded,
-                      tooltip: context.tr('Buka langsung'),
+                      tooltip: context.l10n.openLive,
                       size: iconSize,
                       onPressed: onOpen!,
                     ),

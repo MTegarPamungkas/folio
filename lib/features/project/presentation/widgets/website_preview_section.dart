@@ -6,7 +6,7 @@ import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/common/app_feedback.dart';
 import 'package:folio/shared/presentation/widgets/website/browser_frame.dart';
@@ -14,14 +14,10 @@ import 'package:folio/shared/presentation/widgets/website/website_artwork.dart';
 import 'package:folio/shared/presentation/widgets/website/website_embed.dart';
 
 class WebsitePreviewSection extends StatefulWidget {
-  const WebsitePreviewSection({
-    super.key,
-    required this.project,
-    this.heading = 'Situs live',
-  });
+  const WebsitePreviewSection({super.key, required this.project, this.heading});
 
   final Project project;
-  final String heading;
+  final String? heading;
 
   @override
   State<WebsitePreviewSection> createState() => _WebsitePreviewSectionState();
@@ -61,7 +57,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                   children: [
                     Flexible(
                       child: Text(
-                        context.tr(widget.heading),
+                        widget.heading ?? context.l10n.liveSite,
                         style: theme.textTheme.headlineSmall?.copyWith(
                           fontSize: 21,
                         ),
@@ -90,7 +86,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            'LIVE',
+                            context.l10n.live,
                             style: theme.textTheme.labelSmall?.copyWith(
                               color: colors.ink,
                               fontSize: 7.5,
@@ -105,12 +101,8 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                 const SizedBox(height: 3),
                 Text(
                   kIsWeb
-                      ? context.tr(
-                          'Jelajahi situsnya langsung di sini, atau buka di tab baru.',
-                        )
-                      : context.tr(
-                          'Situs live tampil langsung di sini—geser di dalam bingkai atau buka di tab baru.',
-                        ),
+                      ? context.l10n.liveSiteBody
+                      : context.l10n.liveSiteBodyEmbedded,
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontSize: 11,
                     color: colors.inkMuted,
@@ -130,16 +122,14 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                   ),
                   icon: const Icon(Icons.refresh_rounded, size: 16),
-                  label: Text(context.tr('Muat ulang')),
+                  label: Text(context.l10n.reload),
                 ),
                 FilledButton.icon(
                   onPressed: canOpenDirectly
                       ? () => openExternalLink(
                           context,
                           resolvedUri.toString(),
-                          fallbackMessage: context.readTr(
-                            'Situsnya belum bisa dibuka dari preview.',
-                          ),
+                          fallbackMessage: context.l10n.liveSiteOpenFailed,
                         )
                       : () => _showDirectFallback(context),
                   style: FilledButton.styleFrom(
@@ -149,7 +139,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                     padding: const EdgeInsets.symmetric(horizontal: 14),
                   ),
                   icon: const Icon(Icons.arrow_outward_rounded, size: 16),
-                  label: Text(context.tr('Buka langsung')),
+                  label: Text(context.l10n.openLive),
                 ),
               ],
             ),
@@ -162,9 +152,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
                 ? openExternalLink(
                     context,
                     resolvedUri.toString(),
-                    fallbackMessage: context.readTr(
-                      'Situsnya belum bisa dibuka dari preview.',
-                    ),
+                    fallbackMessage: context.l10n.liveSiteOpenFailed,
                   )
                 : _showDirectFallback(context),
             onReload: () => setState(() => _reloadToken += 1),
@@ -185,12 +173,8 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
               Expanded(
                 child: Text(
                   canOpenDirectly
-                      ? context.tr(
-                          'Kamu bisa tetap di halaman ini atau buka situsnya langsung di tab baru.',
-                        )
-                      : context.tr(
-                          'Proyek ini belum punya situs live untuk ditampilkan.',
-                        ),
+                      ? context.l10n.liveSiteOpenFailedBody
+                      : context.l10n.noLiveSiteBody,
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontSize: 10,
                     height: 1.5,
@@ -208,10 +192,8 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
   void _showDirectFallback(BuildContext context) {
     showFolioSnackBar(
       context,
-      message: context.readTr(
-        'Proyek ini belum punya situs live untuk dibuka.',
-      ),
-      actionLabel: context.readTr('Salin tautan'),
+      message: context.l10n.noLiveSiteOpenBody,
+      actionLabel: context.l10n.copyLink,
       onAction: () =>
           Clipboard.setData(ClipboardData(text: widget.project.liveUrl ?? '')),
     );
@@ -228,7 +210,7 @@ class _WebsitePreviewSectionState extends State<WebsitePreviewSection> {
 
   String _addressLabel(String? rawUrl) {
     if (rawUrl == null || rawUrl.trim().isEmpty) {
-      return context.readTr('Belum ada situs live');
+      return context.l10n.noLiveSite;
     }
     final parsed = Uri.tryParse(rawUrl.trim());
     if (parsed != null && parsed.hasScheme && parsed.host.isNotEmpty) {

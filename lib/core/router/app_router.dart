@@ -16,7 +16,7 @@ import 'package:folio/features/project/presentation/pages/project_detail_page.da
 import 'package:folio/features/saved/presentation/bloc/saved_bloc.dart';
 import 'package:folio/features/saved/presentation/pages/saved_page.dart';
 import 'package:folio/features/shell/presentation/widgets/app_shell.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -121,13 +121,13 @@ final GoRouter appRouter = GoRouter(
               const Icon(Icons.explore_off_rounded, size: 48),
               const SizedBox(height: 14),
               Text(
-                context.tr('Halaman tidak ditemukan'),
+                context.l10n.pageNotFound,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const SizedBox(height: 18),
               FilledButton(
                 onPressed: () => context.go('/'),
-                child: Text(context.tr('Kembali ke beranda')),
+                child: Text(context.l10n.backToHome),
               ),
             ],
           ),

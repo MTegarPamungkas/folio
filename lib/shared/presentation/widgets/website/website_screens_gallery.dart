@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/website/browser_frame.dart';
 
 /// Real page captures of a website project, laid out as a horizontal slider of
@@ -107,13 +107,9 @@ class WebsiteScreensGallery extends StatelessWidget {
                 Expanded(
                   child: Text(
                     fits
-                        ? context.trArgs(
-                            '{count} halaman asli dari situs live.',
-                            {'count': '${screenshots.length}'},
-                          )
-                        : context.trArgs(
-                            '{count} halaman asli—geser untuk lihat semua.',
-                            {'count': '${screenshots.length}'},
+                        ? context.l10n.galleryRealPages('${screenshots.length}')
+                        : context.l10n.galleryRealPagesSwipe(
+                            '${screenshots.length}',
                           ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

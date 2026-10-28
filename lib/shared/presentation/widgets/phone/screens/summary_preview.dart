@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_painters.dart';
@@ -102,7 +102,7 @@ class ProjectSummaryPreview extends StatelessWidget {
               Expanded(
                 child: PreviewMiniStat(
                   project: project,
-                  label: context.tr('Sesi'),
+                  label: context.l10n.session,
                   value: '24',
                 ),
               ),
@@ -110,7 +110,7 @@ class ProjectSummaryPreview extends StatelessWidget {
               Expanded(
                 child: PreviewMiniStat(
                   project: project,
-                  label: context.tr('Waktu'),
+                  label: context.l10n.time,
                   value: '6j 40m',
                 ),
               ),
@@ -118,7 +118,7 @@ class ProjectSummaryPreview extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            context.tr('Aktivitas'),
+            context.l10n.activity,
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 9,

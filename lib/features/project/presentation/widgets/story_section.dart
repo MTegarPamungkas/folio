@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 
 class StorySection extends StatelessWidget {
   const StorySection({super.key, required this.project});
@@ -18,8 +18,8 @@ class StorySection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         DetailSectionTitle(
-          eyebrow: context.tr('STUDI KASUS'),
-          title: context.tr('Cerita di balik proyek'),
+          eyebrow: context.l10n.caseStudy,
+          title: context.l10n.storyTitle,
         ),
         const SizedBox(height: 14),
         Text(
@@ -45,8 +45,8 @@ class StorySection extends StatelessWidget {
         ],
         const SizedBox(height: 31),
         DetailSectionTitle(
-          eyebrow: context.tr('YANG SAYA RANCANG'),
-          title: context.tr('Fitur utama'),
+          eyebrow: context.l10n.designedLabel,
+          title: context.l10n.keyFeatures,
         ),
         const SizedBox(height: 16),
         for (final feature in project.featuresIn(context.language))
@@ -127,7 +127,7 @@ class ReleaseNotes extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  context.tr('Yang baru dirilis'),
+                  context.l10n.whatsNew,
                   style: theme.textTheme.titleMedium,
                 ),
               ),

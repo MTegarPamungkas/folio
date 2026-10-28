@@ -4,7 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/brand/developer_avatar.dart';
 import 'package:folio/shared/presentation/widgets/brand/folio_wordmark.dart';
 import 'package:folio/shared/presentation/widgets/navigation/language_toggle.dart';
@@ -65,7 +65,7 @@ class MobileTopBar extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 2),
                   child: IconButton(
                     onPressed: onSearch,
-                    tooltip: context.tr('Cari karya'),
+                    tooltip: context.l10n.searchWork,
                     icon: const Icon(Icons.search_rounded, size: 22),
                   ),
                 ),
@@ -78,8 +78,8 @@ class MobileTopBar extends StatelessWidget {
                   SettingsThemeToggled(isCurrentlyDark: isDark),
                 ),
                 tooltip: isDark
-                    ? context.tr('Ganti ke tema terang')
-                    : context.tr('Ganti ke tema gelap'),
+                    ? context.l10n.switchToLightTheme
+                    : context.l10n.switchToDarkTheme,
                 icon: Icon(
                   isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
                   size: 21,

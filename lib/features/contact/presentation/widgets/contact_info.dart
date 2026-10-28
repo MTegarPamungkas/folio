@@ -5,7 +5,7 @@ import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/developer.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_bloc.dart';
 import 'package:folio/features/contact/presentation/bloc/contact_state.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/availability_badge.dart';
 
@@ -32,6 +32,11 @@ class _ContactInfoContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colors = context.folio;
+    final steps = [
+      context.l10n.processStepContext,
+      context.l10n.processStepReply,
+      context.l10n.processStepSchedule,
+    ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,42 +45,42 @@ class _ContactInfoContent extends StatelessWidget {
         const SizedBox(height: 20),
         _ContactRow(
           icon: Icons.mail_outline_rounded,
-          label: context.tr('Email'),
+          label: context.l10n.email,
           value: developer.email,
           onTap: () => copyToClipboard(
             context,
             developer.email,
-            message: context.readTr('Email disalin.'),
+            message: context.l10n.emailCopied,
           ),
           trailingIcon: Icons.copy_rounded,
         ),
         const SizedBox(height: 11),
         _ContactRow(
           icon: Icons.phone_outlined,
-          label: context.tr('Telepon'),
+          label: context.l10n.phone,
           value: developer.phone,
           onTap: () => copyToClipboard(
             context,
             developer.phone,
-            message: context.readTr('Nomor telepon disalin.'),
+            message: context.l10n.phoneCopied,
           ),
           trailingIcon: Icons.copy_rounded,
         ),
         const SizedBox(height: 11),
         _ContactRow(
           icon: Icons.location_on_outlined,
-          label: context.tr('Lokasi'),
+          label: context.l10n.location,
           value: developer.location,
         ),
         const SizedBox(height: 11),
         _ContactRow(
           icon: Icons.schedule_rounded,
-          label: context.tr('Waktu respons'),
-          value: context.tr('Biasanya dalam 1–2 hari kerja'),
+          label: context.l10n.responseTime,
+          value: context.l10n.responseTimeValue,
         ),
         const SizedBox(height: 22),
         Text(
-          context.tr('TEMUKAN SAYA DI'),
+          context.l10n.findMeOn,
           style: theme.textTheme.labelSmall?.copyWith(
             fontSize: 9,
             letterSpacing: 1.2,
@@ -92,10 +97,7 @@ class _ContactInfoContent extends StatelessWidget {
                 onTap: () => openExternalLink(
                   context,
                   social.url,
-                  fallbackMessage: context.trArgs(
-                    'Tautan {platform} belum bisa dibuka.',
-                    {'platform': social.label},
-                  ),
+                  fallbackMessage: context.l10n.linkOpenFailed(social.label),
                 ),
                 borderRadius: BorderRadius.circular(11),
                 child: Container(
@@ -138,11 +140,11 @@ class _ContactInfoContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                context.tr('Prosesnya sederhana'),
+                context.l10n.processTitle,
                 style: theme.textTheme.titleSmall,
               ),
               const SizedBox(height: 10),
-              for (var i = 0; i < _steps.length; i++) ...[
+              for (var i = 0; i < steps.length; i++) ...[
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -158,7 +160,7 @@ class _ContactInfoContent extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        context.tr(_steps[i]),
+                        steps[i],
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontSize: 11,
                           height: 1.55,
@@ -168,7 +170,7 @@ class _ContactInfoContent extends StatelessWidget {
                     ),
                   ],
                 ),
-                if (i != _steps.length - 1) const SizedBox(height: 7),
+                if (i != steps.length - 1) const SizedBox(height: 7),
               ],
             ],
           ),
@@ -176,12 +178,6 @@ class _ContactInfoContent extends StatelessWidget {
       ],
     );
   }
-
-  static const List<String> _steps = [
-    'Kamu ceritakan konteks dan tujuan.',
-    'Saya balas dengan pertanyaan dan kemungkinan arah.',
-    'Kita jadwalkan percakapan singkat tanpa tekanan.',
-  ];
 }
 
 class _ContactRow extends StatelessWidget {

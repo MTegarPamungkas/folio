@@ -3,7 +3,7 @@ import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class MakerSection extends StatelessWidget {
@@ -71,7 +71,7 @@ class _MakerCopy extends StatelessWidget {
             Container(width: 22, height: 1.5, color: colors.accent),
             const SizedBox(width: 9),
             Text(
-              context.tr('DI BALIK LAYAR'),
+              context.l10n.behindTheScreens,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                 color: colors.background.withValues(alpha: 0.6),
                 fontSize: 9,
@@ -90,9 +90,9 @@ class _MakerCopy extends StatelessWidget {
               letterSpacing: -1.2,
             ),
             children: [
-              TextSpan(text: context.tr('Desain yang rapi,\n')),
+              TextSpan(text: context.l10n.tidyDesign),
               TextSpan(
-                text: context.tr('kode yang tenang.'),
+                text: context.l10n.calmCode,
                 style: FolioTypography.serif(
                   fontSize: context.isCompact ? 34 : 41,
                   color: colors.accent,
@@ -106,10 +106,7 @@ class _MakerCopy extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 560),
           child: Text(
-            context.tr(
-              'Saya menghubungkan riset, desain, dan engineering untuk bikin '
-              'produk yang terasa sederhana—dan bertahan lama.',
-            ),
+            context.l10n.makerBody,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: colors.background.withValues(alpha: 0.65),
               fontSize: 13,
@@ -126,7 +123,7 @@ class _MakerCopy extends StatelessWidget {
             minimumSize: const Size(0, 48),
           ),
           icon: const Icon(Icons.arrow_outward_rounded, size: 17),
-          label: Text(context.tr('Kenalan lebih dekat')),
+          label: Text(context.l10n.getToKnowMe),
         ),
       ],
     );
@@ -186,7 +183,7 @@ class MakerPortrait extends StatelessWidget {
               top: 12,
               right: compact ? 14 : 8,
               child: _FloatingPill(
-                label: context.tr('Mobile Developer'),
+                label: context.l10n.mobileDeveloper,
                 icon: Icons.phone_iphone_rounded,
                 background: colors.background,
                 foreground: colors.ink,
@@ -197,7 +194,7 @@ class MakerPortrait extends StatelessWidget {
               bottom: 0,
               left: compact ? 14 : 0,
               child: _FloatingPill(
-                label: context.tr('Full Stack'),
+                label: context.l10n.fullStack,
                 icon: Icons.code_rounded,
                 background: colors.surface,
                 foreground: colors.ink,

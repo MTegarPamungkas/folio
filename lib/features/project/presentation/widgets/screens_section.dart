@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/phone/project_screens_gallery.dart';
 
 class ScreensSection extends StatelessWidget {
@@ -38,7 +38,7 @@ class ScreensSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      context.tr('Tampilan aplikasi'),
+                      context.l10n.appScreens,
                       style: theme.textTheme.headlineSmall?.copyWith(
                         fontSize: 21,
                       ),
@@ -46,12 +46,8 @@ class ScreensSection extends StatelessWidget {
                     const SizedBox(height: 3),
                     Text(
                       project.hasScreenshots
-                          ? context.tr(
-                              'Tangkapan layar asli, dari alur utama sampai fiturnya.',
-                            )
-                          : context.tr(
-                              'Tiga layar yang menunjukkan arah visual dan alur utama.',
-                            ),
+                          ? context.l10n.appScreensBody
+                          : context.l10n.threeScreensBody,
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontSize: 11,
                         color: colors.inkMuted,
@@ -69,10 +65,10 @@ class ScreensSection extends StatelessWidget {
                 ),
                 child: Text(
                   project.hasScreenshots
-                      ? context.trArgs('{count} TANGKAPAN', {
-                          'count': '${project.screenshots.length}',
-                        })
-                      : context.tr('3 LAYAR'),
+                      ? context.l10n.capturesCount(
+                          '${project.screenshots.length}',
+                        )
+                      : context.l10n.threeScreens,
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 8,
                     letterSpacing: 0.6,

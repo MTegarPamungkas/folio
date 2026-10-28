@@ -5,7 +5,7 @@ import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_event.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_state.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/common/app_feedback.dart';
 
 void toggleFavorite(BuildContext context, Project project) {
@@ -14,10 +14,8 @@ void toggleFavorite(BuildContext context, Project project) {
   showFolioSnackBar(
     context,
     message: wasSaved
-        ? context.readTrArgs('{name} dihapus dari tersimpan.', {
-            'name': project.name,
-          })
-        : context.readTrArgs('{name} disimpan.', {'name': project.name}),
+        ? context.l10n.removedFromSaved(project.name)
+        : context.l10n.savedNotice(project.name),
   );
 }
 
@@ -60,8 +58,8 @@ class FavoriteIconButton extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             child: IconButton(
               tooltip: saved
-                  ? context.tr('Hapus dari tersimpan')
-                  : context.tr('Simpan proyek'),
+                  ? context.l10n.removeFromSaved
+                  : context.l10n.saveProject,
               onPressed: () => toggleFavorite(context, project),
               icon: Icon(
                 saved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
@@ -96,7 +94,7 @@ class FavoriteOutlineButton extends StatelessWidget {
             size: 17,
             color: saved ? colors.accent : colors.ink,
           ),
-          label: Text(saved ? context.tr('Tersimpan') : context.tr('Simpan')),
+          label: Text(saved ? context.l10n.savedTab : context.l10n.save),
         );
       },
     );

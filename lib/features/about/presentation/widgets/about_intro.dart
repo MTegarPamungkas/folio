@@ -7,7 +7,7 @@ import 'package:folio/core/utils/links.dart';
 import 'package:folio/domain/entities/developer.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/brand/availability_badge.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
@@ -31,7 +31,7 @@ class AboutIntro extends StatelessWidget {
     final copy = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Eyebrow(context.tr('Tentang saya')),
+        Eyebrow(context.l10n.aboutMe),
         const SizedBox(height: 16),
         Text.rich(
           TextSpan(
@@ -41,14 +41,10 @@ class AboutIntro extends StatelessWidget {
               letterSpacing: headingSize * -0.045,
             ),
             children: [
+              TextSpan(text: context.l10n.greeting(developer.shortName)),
+              TextSpan(text: context.l10n.aboutHeadlineLead),
               TextSpan(
-                text: context.trArgs('Halo, saya {name}.\n', {
-                  'name': developer.shortName,
-                }),
-              ),
-              TextSpan(text: context.tr('Saya bikin produk\nyang ')),
-              TextSpan(
-                text: context.tr('siap dipakai.'),
+                text: context.l10n.aboutHeadlineAccent,
                 style: FolioTypography.serif(
                   fontSize: headingSize * 1.06,
                   color: colors.accent,
@@ -96,7 +92,7 @@ class AboutIntro extends StatelessWidget {
             FilledButton.icon(
               onPressed: () => context.push('/contact'),
               icon: const Icon(Icons.mail_outline_rounded, size: 18),
-              label: Text(context.tr('Ajak kolaborasi')),
+              label: Text(context.l10n.collaborateCta),
             ),
             OutlinedButton.icon(
               onPressed: () {
@@ -104,7 +100,7 @@ class AboutIntro extends StatelessWidget {
                 context.go('/explore');
               },
               icon: const Icon(Icons.grid_view_rounded, size: 17),
-              label: Text(context.tr('Lihat karya')),
+              label: Text(context.l10n.viewWork),
             ),
           ],
         ),
@@ -189,10 +185,7 @@ class _SocialButton extends StatelessWidget {
       onTap: () => openExternalLink(
         context,
         social.url,
-        fallbackMessage: context.trArgs(
-          'Tautan {platform} belum bisa dibuka.',
-          {'platform': social.label},
-        ),
+        fallbackMessage: context.l10n.linkOpenFailed(social.label),
       ),
       borderRadius: BorderRadius.circular(12),
       child: Container(
@@ -412,9 +405,9 @@ class _StatsStrip extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.folio;
     final stats = [
-      ('${developer.yearsExperience}+', context.tr('Tahun pengalaman')),
-      ('${developer.projectCount}', context.tr('Proyek & modul')),
-      ('${developer.collaborationCount}', context.tr('Kolaborasi')),
+      ('${developer.yearsExperience}+', context.l10n.yearsOfExperience),
+      ('${developer.projectCount}', context.l10n.projectsAndModules),
+      ('${developer.collaborationCount}', context.l10n.collaborations),
     ];
 
     return Container(

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
+import 'package:folio/core/localization/entity_labels.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
@@ -18,11 +19,9 @@ class SkillsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: context.tr('Perangkat kerja'),
-          title: context.tr('Hal yang saya kuasai'),
-          subtitle: context.tr(
-            'Dari merancang alur di Figma sampai merilis build yang stabil.',
-          ),
+          eyebrow: context.l10n.toolboxTitle,
+          title: context.l10n.toolboxSubtitle,
+          subtitle: context.l10n.toolboxBody,
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(
@@ -61,7 +60,7 @@ class _SkillGroupCard extends StatelessWidget {
               const SizedBox(width: 9),
               Expanded(
                 child: Text(
-                  context.tr(group.title),
+                  skillGroupLabel(context.l10n, group.kind),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(
@@ -71,9 +70,9 @@ class _SkillGroupCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                context.trArgs('{count} tools', {
-                  'count': '${group.skills.length}'.padLeft(2, '0'),
-                }),
+                context.l10n.toolsCount(
+                  '${group.skills.length}'.padLeft(2, '0'),
+                ),
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   fontSize: 8.5,
                   color: colors.inkMuted,

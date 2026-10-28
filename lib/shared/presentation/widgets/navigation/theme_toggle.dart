@@ -4,7 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_state.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 
 class ThemeToggle extends StatelessWidget {
   const ThemeToggle({super.key, this.compact = false});
@@ -21,8 +21,8 @@ class ThemeToggle extends StatelessWidget {
       builder: (context, settings) {
         return Tooltip(
           message: isDark
-              ? context.tr('Ganti ke tema terang')
-              : context.tr('Ganti ke tema gelap'),
+              ? context.l10n.switchToLightTheme
+              : context.l10n.switchToDarkTheme,
           child: InkWell(
             onTap: () => context.read<SettingsBloc>().add(
               SettingsThemeToggled(isCurrentlyDark: isDark),
@@ -51,9 +51,9 @@ class ThemeToggle extends StatelessWidget {
                     child: Text(
                       compact
                           ? (isDark
-                                ? context.tr('Tema terang')
-                                : context.tr('Tema gelap'))
-                          : context.tr('Tema'),
+                                ? context.l10n.lightTheme
+                                : context.l10n.darkTheme)
+                          : context.l10n.theme,
                       style: theme.textTheme.labelMedium?.copyWith(
                         color: colors.inkMuted,
                         fontSize: 11,
@@ -62,7 +62,7 @@ class ThemeToggle extends StatelessWidget {
                   ),
                   if (!compact)
                     Text(
-                      isDark ? context.tr('Gelap') : context.tr('Terang'),
+                      isDark ? context.l10n.dark : context.l10n.light,
                       style: theme.textTheme.bodySmall?.copyWith(fontSize: 11),
                     ),
                 ],

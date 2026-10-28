@@ -5,7 +5,8 @@ import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
+import 'package:folio/core/localization/entity_labels.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/brand/category_pill.dart';
@@ -127,7 +128,7 @@ class ProjectHero extends StatelessWidget {
               color: colors.ink,
             ),
             Text(
-              context.tr(project.type.label),
+              projectTypeLabel(context.l10n, project.type),
               style: theme.textTheme.bodySmall?.copyWith(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w700,
@@ -169,7 +170,7 @@ class ProjectHero extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(
-              context.trArgs('Saya, {name}', {'name': developerName}),
+              context.l10n.me(developerName),
               style: theme.textTheme.bodySmall?.copyWith(
                 fontSize: 10.5,
                 color: colors.inkMuted,
@@ -239,7 +240,7 @@ class _PrimaryAction extends StatelessWidget {
         foregroundColor: colors.background,
       ),
       icon: const Icon(Icons.arrow_outward_rounded, size: 17),
-      label: Text(context.tr('Ajukan kolaborasi')),
+      label: Text(context.l10n.proposeCollaboration),
     );
   }
 }

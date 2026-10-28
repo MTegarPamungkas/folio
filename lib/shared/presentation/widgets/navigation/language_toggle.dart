@@ -4,7 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/app_language.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 
 class LanguageToggle extends StatelessWidget {
   const LanguageToggle({super.key, this.compact = false});
@@ -19,7 +19,7 @@ class LanguageToggle extends StatelessWidget {
     );
 
     return PopupMenuButton<AppLanguage>(
-      tooltip: context.tr('Ganti bahasa'),
+      tooltip: context.l10n.switchLanguage,
       initialValue: language,
       onSelected: (value) =>
           context.read<SettingsBloc>().add(SettingsLanguageChanged(value)),

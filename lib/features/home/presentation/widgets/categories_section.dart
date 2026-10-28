@@ -5,7 +5,8 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
+import 'package:folio/core/localization/entity_labels.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/common/app_surfaces.dart';
@@ -22,11 +23,9 @@ class CategoriesSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: context.tr('MULAI DARI SINI'),
-          title: context.tr('Jelajahi kategori'),
-          subtitle: context.tr(
-            'Temukan karya sesuai bidang yang sedang kamu cari.',
-          ),
+          eyebrow: context.l10n.startHere,
+          title: context.l10n.exploreCategories,
+          subtitle: context.l10n.exploreCategoriesBody,
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(
@@ -112,7 +111,7 @@ class CategoryTile extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr(category.label),
+                            projectCategoryLabel(context.l10n, category),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context).textTheme.titleSmall
@@ -120,9 +119,7 @@ class CategoryTile extends StatelessWidget {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            context.trArgs('{count} karya', {
-                              'count': '$count',
-                            }),
+                            context.l10n.projectCount('$count'),
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                                   fontSize: 10,

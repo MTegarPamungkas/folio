@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 
 class FolioWordmark extends StatelessWidget {
   const FolioWordmark({
@@ -21,7 +21,7 @@ class FolioWordmark extends StatelessWidget {
     final ink = color ?? context.folio.ink;
     final dot = dotColor ?? context.folio.accent;
     return Semantics(
-      label: context.tr('Folio, beranda'),
+      label: context.l10n.folioHome,
       button: true,
       child: Row(
         mainAxisSize: MainAxisSize.min,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/website/website_screens_gallery.dart';
 
 /// Shows the real captures of a website project: the pages that make up the
@@ -40,16 +40,14 @@ class WebsiteScreensSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      context.tr('Tampilan situs'),
+                      context.l10n.websiteScreens,
                       style: theme.textTheme.headlineSmall?.copyWith(
                         fontSize: 21,
                       ),
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      context.tr(
-                        'Tangkapan halaman asli, dari beranda sampai formulir.',
-                      ),
+                      context.l10n.websiteScreensBody,
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontSize: 11,
                         color: colors.inkMuted,
@@ -66,9 +64,7 @@ class WebsiteScreensSection extends StatelessWidget {
                   border: Border.all(color: colors.line),
                 ),
                 child: Text(
-                  context.trArgs('{count} HALAMAN', {
-                    'count': '${project.screenshots.length}',
-                  }),
+                  context.l10n.pagesCount('${project.screenshots.length}'),
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 8,
                     letterSpacing: 0.6,

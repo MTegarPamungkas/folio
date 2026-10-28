@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 
 /// A static, designed website preview used when an iframe is not available.
@@ -47,9 +47,7 @@ class WebsiteArtwork extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                context.trArgs('PRATINJAU WEB · {year}', {
-                                  'year': project.year,
-                                }),
+                                context.l10n.webPreview(project.year),
                                 style: TextStyle(
                                   fontFamily: FolioTypography.sans,
                                   fontSize: 8,
@@ -100,7 +98,7 @@ class WebsiteArtwork extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Text(
-                                  context.tr('Buka situs'),
+                                  context.l10n.openSite,
                                   style: TextStyle(
                                     fontFamily: FolioTypography.sans,
                                     fontSize: 8,
@@ -256,9 +254,13 @@ class _ArtworkNav extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        for (final label in ['Beranda', 'Fitur', 'Kontak']) ...[
+        for (final label in [
+          context.l10n.home,
+          context.l10n.features,
+          context.l10n.contactTitle,
+        ]) ...[
           Text(
-            context.tr(label),
+            label,
             style: TextStyle(
               fontFamily: FolioTypography.sans,
               fontSize: 8,

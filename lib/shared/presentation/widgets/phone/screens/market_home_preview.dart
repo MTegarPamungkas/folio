@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 
@@ -44,7 +44,7 @@ class MarketHomePreview extends StatelessWidget {
                     Icon(Icons.search_rounded, size: 10, color: p.screenMuted),
                     const SizedBox(width: 5),
                     Text(
-                      context.tr('Cari karya lokal'),
+                      context.l10n.findLocalWork,
                       style: TextStyle(
                         fontFamily: FolioTypography.sans,
                         fontSize: 7.5,
@@ -150,7 +150,7 @@ class MarketHomePreview extends StatelessWidget {
         Row(
           children: [
             Text(
-              context.tr('Baru dari pengrajin'),
+              context.l10n.newFromMakers,
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 9,
@@ -160,7 +160,7 @@ class MarketHomePreview extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              context.tr('Lihat'),
+              context.l10n.view,
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 
@@ -17,11 +17,9 @@ class PrinciplesSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: context.tr('Cara saya bekerja'),
-          title: context.tr('Prinsip yang saya pegang'),
-          subtitle: context.tr(
-            'Ini bukan aturan kaku—cuma cara saya mengambil keputusan.',
-          ),
+          eyebrow: context.l10n.howIWork,
+          title: context.l10n.principlesTitle,
+          subtitle: context.l10n.principlesBody,
         ),
         const SizedBox(height: 22),
         AdaptiveColumns(

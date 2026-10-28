@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/adaptive_layouts.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 
 class EducationSection extends StatelessWidget {
@@ -21,11 +21,9 @@ class EducationSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: context.tr('Pendidikan & organisasi'),
-          title: context.tr('Tempat saya belajar dan tumbuh'),
-          subtitle: context.tr(
-            'Dari SMK sampai kuliah, plus pengalaman organisasi.',
-          ),
+          eyebrow: context.l10n.educationTitle,
+          title: context.l10n.educationSubtitle,
+          subtitle: context.l10n.educationBody,
         ),
         const SizedBox(height: 24),
         AdaptiveTwoPane(
@@ -33,7 +31,7 @@ class EducationSection extends StatelessWidget {
           gap: 28,
           compactGap: 22,
           start: _Column(
-            label: context.tr('PENDIDIKAN'),
+            label: context.l10n.educationLabel,
             children: [
               for (var i = 0; i < education.length; i++)
                 _EducationCard(
@@ -43,7 +41,7 @@ class EducationSection extends StatelessWidget {
             ],
           ),
           end: _Column(
-            label: context.tr('ORGANISASI'),
+            label: context.l10n.organizationsLabel,
             children: [
               for (var i = 0; i < organizations.length; i++)
                 _OrganizationCard(

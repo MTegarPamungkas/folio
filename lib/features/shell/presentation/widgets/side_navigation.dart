@@ -4,7 +4,7 @@ import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:folio/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:folio/features/shell/presentation/widgets/shell_destinations.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/brand/developer_avatar.dart';
 import 'package:folio/shared/presentation/widgets/brand/folio_wordmark.dart';
 import 'package:folio/shared/presentation/widgets/navigation/language_toggle.dart';
@@ -53,7 +53,7 @@ class SideNavigation extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 4),
                 child: Text(
-                  context.tr('PORTOFOLIO'),
+                  context.l10n.portfolio,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     fontSize: 9,
                     letterSpacing: 1.3,
@@ -173,7 +173,7 @@ class _ContactCard extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            context.tr('Punya ide\nyang ingin dibuat?'),
+            context.l10n.ideaPrompt,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
               color: colors.background,
               height: 1.25,
@@ -182,7 +182,7 @@ class _ContactCard extends StatelessWidget {
           ),
           const SizedBox(height: 7),
           Text(
-            context.tr('Mari bicara soal produk, alur, dan detailnya.'),
+            context.l10n.collaboratePrompt,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: colors.background.withValues(alpha: 0.62),
               fontSize: 11,
@@ -199,7 +199,7 @@ class _ContactCard extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      context.tr('Ajak kolaborasi'),
+                      context.l10n.collaborateCta,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
@@ -287,7 +287,7 @@ class _SideNavItemState extends State<_SideNavItem> {
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        context.tr(widget.destination.label),
+                        shellDestinationLabel(context.l10n, widget.destination),
                         style: Theme.of(context).textTheme.labelLarge?.copyWith(
                           fontWeight: widget.selected
                               ? FontWeight.w700

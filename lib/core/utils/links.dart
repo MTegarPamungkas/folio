@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/common/app_feedback.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -9,9 +9,8 @@ Future<void> openExternalLink(
   String url, {
   String? fallbackMessage,
 }) async {
-  final message =
-      fallbackMessage ?? context.readTr('Tautannya belum bisa dibuka.');
-  final copyLabel = context.readTr('Salin tautan');
+  final message = fallbackMessage ?? context.l10n.linkOpenFailedGeneric;
+  final copyLabel = context.l10n.copyLink;
   final uri = Uri.tryParse(url);
   if (uri == null) {
     if (context.mounted) {
@@ -47,7 +46,7 @@ Future<void> copyToClipboard(
   String value, {
   String? message,
 }) async {
-  final text = message ?? context.readTr('Sudah disalin.');
+  final text = message ?? context.l10n.copied;
   await Clipboard.setData(ClipboardData(text: value));
   if (context.mounted) {
     showFolioSnackBar(context, message: text);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/core/responsive/app_breakpoints.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/developer.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 
 class ExperienceSection extends StatelessWidget {
@@ -16,11 +16,9 @@ class ExperienceSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SectionHeading(
-          eyebrow: context.tr('Perjalanan'),
-          title: context.tr('Belajar sambil membangun'),
-          subtitle: context.tr(
-            'Dari magang dan Bangkit Academy sampai aplikasi enterprise yang dipakai di lapangan.',
-          ),
+          eyebrow: context.l10n.journey,
+          title: context.l10n.journeyTitle,
+          subtitle: context.l10n.journeyBody,
         ),
         const SizedBox(height: 28),
         for (var i = 0; i < items.length; i++)
@@ -73,7 +71,7 @@ class _TimelineItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
-                  context.tr('SEKARANG'),
+                  context.l10n.now,
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 7.5,
                     letterSpacing: 0.7,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/common/app_surfaces.dart';
 import 'package:folio/shared/presentation/widgets/project/project_cover.dart';
 
@@ -73,8 +73,8 @@ class ProjectGridCard extends StatelessWidget {
                                 child: IconButton(
                                   padding: EdgeInsets.zero,
                                   tooltip: saved
-                                      ? context.tr('Hapus dari tersimpan')
-                                      : context.tr('Simpan proyek'),
+                                      ? context.l10n.removeFromSaved
+                                      : context.l10n.saveProject,
                                   onPressed: onToggleSaved,
                                   iconSize: 18,
                                   icon: Icon(

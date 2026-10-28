@@ -7,7 +7,7 @@ import 'package:folio/domain/entities/app_theme_mode.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_event.dart';
 import 'package:folio/features/settings/presentation/bloc/settings_state.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class PreferencesContactSection extends StatelessWidget {
@@ -59,7 +59,7 @@ class PreferencesCard extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  context.tr('Preferensi tampilan'),
+                  context.l10n.displayPreferences,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ),
@@ -67,9 +67,7 @@ class PreferencesCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            context.tr(
-              'Pilih tema yang paling nyaman. Pilihanmu disimpan di perangkat ini.',
-            ),
+            context.l10n.displayPreferencesBody,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontSize: 11,
               height: 1.5,
@@ -100,7 +98,7 @@ class PreferencesCard extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            context.tr('Bahasa'),
+            context.l10n.language,
             style: Theme.of(context).textTheme.titleSmall,
           ),
           const SizedBox(height: 8),
@@ -208,10 +206,10 @@ class ThemeChoice extends StatelessWidget {
     final (icon, label) = switch (mode) {
       AppThemeMode.system => (
         Icons.brightness_auto_rounded,
-        context.tr('Sistem'),
+        context.l10n.system,
       ),
-      AppThemeMode.light => (Icons.light_mode_outlined, context.tr('Terang')),
-      AppThemeMode.dark => (Icons.dark_mode_outlined, context.tr('Gelap')),
+      AppThemeMode.light => (Icons.light_mode_outlined, context.l10n.light),
+      AppThemeMode.dark => (Icons.dark_mode_outlined, context.l10n.dark),
     };
     return Semantics(
       button: true,
@@ -284,7 +282,7 @@ class ContactInvite extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                context.tr('ADA YANG INGIN DIBANGUN?'),
+                context.l10n.somethingToBuild,
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: ink.withValues(alpha: 0.64),
                   fontSize: 8.5,
@@ -293,7 +291,7 @@ class ContactInvite extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                context.tr('Ceritakan idemu.'),
+                context.l10n.tellMeYourIdea,
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   color: ink,
                   fontSize: 30,
@@ -302,9 +300,7 @@ class ContactInvite extends StatelessWidget {
               ),
               const SizedBox(height: 6),
               Text(
-                context.tr(
-                  'Saya terbuka untuk proyek produk, aplikasi, dan kolaborasi jangka panjang.',
-                ),
+                context.l10n.contactCtaBody,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: ink.withValues(alpha: 0.72),
                   fontSize: 11,
@@ -320,7 +316,7 @@ class ContactInvite extends StatelessWidget {
                   minimumSize: const Size(0, 46),
                 ),
                 icon: const Icon(Icons.arrow_outward_rounded, size: 16),
-                label: Text(context.tr('Mulai percakapan')),
+                label: Text(context.l10n.startConversation),
               ),
             ],
           ),

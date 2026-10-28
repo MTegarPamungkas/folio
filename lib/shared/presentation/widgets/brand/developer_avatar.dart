@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 
 class DeveloperAvatar extends StatelessWidget {
   const DeveloperAvatar({
@@ -53,10 +53,10 @@ class DeveloperAvatar extends StatelessWidget {
     );
 
     return Semantics(
-      label: context.tr('Buka profil'),
+      label: context.l10n.openProfile,
       button: onTap != null,
       child: Tooltip(
-        message: context.tr('Buka profil'),
+        message: context.l10n.openProfile,
         child: InkResponse(
           onTap: onTap,
           radius: size,

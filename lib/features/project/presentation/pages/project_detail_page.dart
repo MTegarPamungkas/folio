@@ -13,7 +13,7 @@ import 'package:folio/features/project/presentation/widgets/related_projects.dar
 import 'package:folio/features/project/presentation/widgets/screens_section.dart';
 import 'package:folio/features/project/presentation/widgets/website_preview_section.dart';
 import 'package:folio/features/project/presentation/widgets/website_screens_section.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/common/app_controls.dart';
 import 'package:folio/shared/presentation/widgets/footer/folio_footer.dart';
@@ -46,9 +46,7 @@ class ProjectDetailPage extends StatelessWidget {
               children: [
                 const FolioPageBar(),
                 Expanded(
-                  child: Center(
-                    child: Text(context.tr('Proyek tidak ditemukan.')),
-                  ),
+                  child: Center(child: Text(context.l10n.projectNotFound)),
                 ),
               ],
             ),
@@ -63,7 +61,7 @@ class ProjectDetailPage extends StatelessWidget {
                 actions: [
                   CircularIconButton(
                     icon: Icons.share_outlined,
-                    tooltip: context.tr('Bagikan proyek'),
+                    tooltip: context.l10n.shareProject,
                     onPressed: () => _share(context, project),
                   ),
                   const SizedBox(width: 7),
@@ -96,7 +94,7 @@ class ProjectDetailPage extends StatelessWidget {
                         const SizedBox(height: 26),
                         WebsitePreviewSection(
                           project: project,
-                          heading: context.tr('Versi web'),
+                          heading: context.l10n.webVersion,
                         ),
                       ],
                     ],
@@ -123,10 +121,6 @@ class ProjectDetailPage extends StatelessWidget {
               .replace(fragment: '/project/${project.id}', query: '')
               .toString()
         : '${project.name} — Folio';
-    copyToClipboard(
-      context,
-      link,
-      message: context.readTr('Tautan proyek disalin.'),
-    );
+    copyToClipboard(context, link, message: context.l10n.projectLinkCopied);
   }
 }

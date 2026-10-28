@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 import 'package:folio/shared/presentation/widgets/phone/preview_common.dart';
 
@@ -19,7 +19,7 @@ class TravelHomePreview extends StatelessWidget {
         PreviewHeader(project: project),
         const SizedBox(height: 11),
         Text(
-          context.tr('Ke mana minggu ini?'),
+          context.l10n.whereToThisWeek,
           style: TextStyle(
             fontFamily: FolioTypography.sans,
             fontSize: 18,
@@ -42,7 +42,7 @@ class TravelHomePreview extends StatelessWidget {
               Icon(Icons.search_rounded, size: 11, color: p.screenMuted),
               const SizedBox(width: 5),
               Text(
-                context.tr('Cari destinasi'),
+                context.l10n.searchDestinations,
                 style: TextStyle(
                   fontFamily: FolioTypography.sans,
                   fontSize: 8,
@@ -164,7 +164,7 @@ class TravelHomePreview extends StatelessWidget {
             ),
             const SizedBox(width: 6),
             Text(
-              context.tr('Lihat semua'),
+              context.l10n.seeAll,
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 7,

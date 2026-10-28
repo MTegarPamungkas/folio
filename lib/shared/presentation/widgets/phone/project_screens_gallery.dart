@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/phone/phone_mockup.dart';
 
 class ProjectScreensGallery extends StatelessWidget {
@@ -43,7 +43,11 @@ class ProjectScreensGallery extends StatelessWidget {
                   const SizedBox(height: 11),
                   Text(
                     project.screenshotAt(i)?.labelIn(context.language) ??
-                        context.tr(const ['Utama', 'Detail', 'Ringkasan'][i]),
+                        [
+                          context.l10n.mainScreen,
+                          context.l10n.detailScreen,
+                          context.l10n.summaryScreen,
+                        ][i],
                     style: captionStyle,
                     textAlign: TextAlign.center,
                   ),
@@ -82,19 +86,11 @@ class ProjectScreensGallery extends StatelessWidget {
                   child: Text(
                     project.hasScreenshots
                         ? (fits
-                              ? context.trArgs(
-                                  '{count} tangkapan layar asli dari aplikasi.',
-                                  {'count': '$count'},
-                                )
-                              : context.trArgs(
-                                  '{count} tangkapan layar asli—geser untuk lihat semua.',
-                                  {'count': '$count'},
-                                ))
+                              ? context.l10n.galleryRealCaptures('$count')
+                              : context.l10n.galleryCapturesSwipe('$count'))
                         : (fits
-                              ? context.tr(
-                                  'Tiga layar utama, dari alur sampai ringkasan.',
-                                )
-                              : context.tr('Geser untuk melihat pratinjau')),
+                              ? context.l10n.galleryThreeScreens
+                              : context.l10n.swipeToPreview),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:folio/core/theme/folio_theme.dart';
 import 'package:folio/domain/entities/project.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
+import 'package:folio/core/localization/entity_labels.dart';
 import 'package:folio/shared/presentation/theme/project_visuals.dart';
 
 class ProjectDetailPreview extends StatelessWidget {
@@ -149,7 +150,7 @@ class ProjectDetailPreview extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text(
-                context.tr(project.category.label),
+                projectCategoryLabel(context.l10n, project.category),
                 style: TextStyle(
                   fontFamily: FolioTypography.sans,
                   fontSize: 7,
@@ -206,7 +207,7 @@ class ProjectDetailPreview extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
-              context.tr('Mulai jelajah'),
+              context.l10n.startExploring,
               style: TextStyle(
                 fontFamily: FolioTypography.sans,
                 fontSize: 8.5,

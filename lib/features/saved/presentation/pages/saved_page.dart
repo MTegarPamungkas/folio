@@ -7,7 +7,7 @@ import 'package:folio/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:folio/features/explore/presentation/bloc/explore_event.dart';
 import 'package:folio/features/saved/presentation/bloc/saved_bloc.dart';
 import 'package:folio/features/saved/presentation/bloc/saved_state.dart';
-import 'package:folio/shared/presentation/l10n/app_strings.dart';
+import 'package:folio/core/localization/app_localizations.dart';
 import 'package:folio/shared/presentation/widgets/actions/favorite_actions.dart';
 import 'package:folio/shared/presentation/widgets/common/app_section.dart';
 import 'package:folio/shared/presentation/widgets/common/app_surfaces.dart';
@@ -30,7 +30,7 @@ class SavedPage extends StatelessWidget {
           bottomPadding: 24,
           children: [
             PageIntro(
-              eyebrow: context.tr('Koleksi pribadi'),
+              eyebrow: context.l10n.savedTitle,
               title: Text.rich(
                 TextSpan(
                   style: theme.textTheme.displaySmall?.copyWith(
@@ -42,9 +42,9 @@ class SavedPage extends StatelessWidget {
                     letterSpacing: -1.7,
                   ),
                   children: [
-                    TextSpan(text: context.tr('Karya yang\nkamu ')),
+                    TextSpan(text: context.l10n.savedHeadlineLead),
                     TextSpan(
-                      text: context.tr('simpan.'),
+                      text: context.l10n.savedHeadlineAccent,
                       style: FolioTypography.serif(
                         fontSize: context.responsive<double>(
                           compact: 43,
@@ -71,7 +71,7 @@ class SavedPage extends StatelessWidget {
                 const SizedBox(width: 6),
                 Expanded(
                   child: Text(
-                    context.tr('Hanya tersimpan di perangkat ini.'),
+                    context.l10n.savedSubtitle,
                     style: theme.textTheme.bodySmall?.copyWith(
                       fontSize: 11.5,
                       color: colors.inkMuted,
@@ -84,11 +84,8 @@ class SavedPage extends StatelessWidget {
             if (state.isEmpty)
               EmptyCollection(
                 icon: Icons.bookmark_border_rounded,
-                title: context.tr('Belum ada karya tersimpan'),
-                message: context.tr(
-                  'Ketuk ikon simpan di proyek buat menyimpannya di sini. '
-                  'Koleksimu tetap ada saat kamu kembali.',
-                ),
+                title: context.l10n.savedEmptyTitle,
+                message: context.l10n.savedEmptyBody,
                 action: FilledButton.icon(
                   onPressed: () {
                     context.read<ExploreBloc>().add(
@@ -97,21 +94,19 @@ class SavedPage extends StatelessWidget {
                     context.go('/explore');
                   },
                   icon: const Icon(Icons.explore_outlined, size: 18),
-                  label: Text(context.tr('Mulai jelajah')),
+                  label: Text(context.l10n.startExploring),
                 ),
               )
             else ...[
               Row(
                 children: [
                   Text(
-                    context.trArgs('{count} karya tersimpan', {
-                      'count': '${state.projects.length}',
-                    }),
+                    context.l10n.savedCount('${state.projects.length}'),
                     style: theme.textTheme.titleSmall?.copyWith(fontSize: 13),
                   ),
                   const Spacer(),
                   ArrowAction(
-                    label: context.tr('Tambah karya'),
+                    label: context.l10n.addWork,
                     onPressed: () => context.go('/explore'),
                   ),
                 ],
