@@ -484,6 +484,28 @@
       "editorialTitle": "Operasi lapangan,\ntanpa drama.",
       "highlight": "3 klien enterprise",
       "featured": true,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/mis-msa/login.jpg",
+          "label": "Masuk"
+        },
+        {
+          "asset": "assets/screenshots/mis-msa/home.jpg",
+          "label": "Beranda"
+        },
+        {
+          "asset": "assets/screenshots/mis-msa/patrol.jpg",
+          "label": "Detail tiket"
+        },
+        {
+          "asset": "assets/screenshots/mis-msa/attendance.jpg",
+          "label": "Form absensi"
+        },
+        {
+          "asset": "assets/screenshots/mis-msa/settings.jpg",
+          "label": "Pengaturan"
+        }
+      ],
       "githubUrl": null,
       "liveUrl": null
     },

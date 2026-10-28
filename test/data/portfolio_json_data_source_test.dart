@@ -56,6 +56,7 @@ void main() {
       'dompetektif': 6,
       'bagi-fair': 6,
       'lbh-apik': 6,
+      'mis-msa': 5,
       'movie-finder': 4,
       'story-app': 6,
       'custom-fit': 6,
@@ -85,22 +86,18 @@ void main() {
     expect(project.platformLabel, 'Android');
   });
 
-  test('projects without screenshots keep the generated previews', () {
-    const withScreenshots = {
-      'dompetektif',
-      'bagi-fair',
-      'lbh-apik',
-      'movie-finder',
-      'story-app',
-      'custom-fit',
-      'team-intelligence',
-      'tomboati',
-      'getcrew',
-    };
-    final others = content.projects.where(
-      (project) => !withScreenshots.contains(project.id),
+  test('every project ships real screenshots and keeps the fallback safe', () {
+    expect(
+      content.projects.every((project) => project.hasScreenshots),
+      isTrue,
     );
-    expect(others.every((project) => !project.hasScreenshots), isTrue);
-    expect(others.first.screenshotAt(0), isNull);
+    for (final project in content.projects) {
+      expect(project.screenshotAt(0), isNotNull, reason: project.id);
+      expect(
+        project.screenshotAt(project.screenshots.length),
+        isNull,
+        reason: project.id,
+      );
+    }
   });
 }

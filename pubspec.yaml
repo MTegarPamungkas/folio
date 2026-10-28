@@ -39,6 +39,7 @@ flutter:
     - assets/screenshots/team-intelligence/
     - assets/screenshots/tomboati/
     - assets/screenshots/getcrew/
+    - assets/screenshots/mis-msa/
 
   fonts:
     - family: PlusJakartaSans
