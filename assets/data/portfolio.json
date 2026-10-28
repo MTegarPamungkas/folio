@@ -27,12 +27,30 @@
     "skillGroups": [
       {
         "kind": "fullStack",
-        "skills": ["Flutter", "Dart", "Kotlin", "Java", "PHP", "REST APIs"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "Kotlin",
+          "Java",
+          "PHP",
+          "Laravel",
+          "JavaScript",
+          "React.js",
+          "REST APIs"
+        ]
       },
       {
         "kind": "backend",
         "skills": [
-          "Backend services",
+          "Node.js",
+          "Express.js",
+          "WebSocket",
+          "MySQL",
+          "MongoDB",
+          "Redis",
+          "Supabase",
+          "Firebase",
+          "SQLite",
           "Database design",
           "API integration",
           "Offline sync",
@@ -54,6 +72,7 @@
         "skills": [
           "Requirements gathering",
           "Field operations",
+          "ERP modules",
           "Geofencing",
           "B2B ticketing",
           "Technical documentation"
