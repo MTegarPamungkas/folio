@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:folio/data/datasources/portfolio_json_data_source.dart';
 import 'package:folio/domain/entities/portfolio_content.dart';
 import 'package:folio/domain/entities/project.dart';
+import 'package:folio/shared/presentation/theme/project_visuals.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -51,12 +52,18 @@ void main() {
   });
 
   test('ships real screenshots for the showcased projects', () async {
-    for (final id in ['dompetektif', 'bagi-fair', 'lbh-apik']) {
+    const expectedCounts = {
+      'dompetektif': 6,
+      'bagi-fair': 6,
+      'lbh-apik': 6,
+      'movie-finder': 4,
+    };
+    for (final entry in expectedCounts.entries) {
       final project = content.projects.singleWhere(
-        (project) => project.id == id,
+        (project) => project.id == entry.key,
       );
-      expect(project.hasScreenshots, isTrue, reason: id);
-      expect(project.screenshots, hasLength(6), reason: id);
+      expect(project.hasScreenshots, isTrue, reason: entry.key);
+      expect(project.screenshots, hasLength(entry.value), reason: entry.key);
       for (final screenshot in project.screenshots) {
         expect(screenshot.label, isNotEmpty);
         expect(screenshot.asset, startsWith('assets/screenshots/'));
@@ -66,8 +73,20 @@ void main() {
     }
   });
 
+  test('labels the Kotlin app as Android-only', () {
+    final project = content.projects.singleWhere(
+      (project) => project.id == 'movie-finder',
+    );
+    expect(project.platformLabel, 'Android');
+  });
+
   test('projects without screenshots keep the generated previews', () {
-    const withScreenshots = {'dompetektif', 'bagi-fair', 'lbh-apik'};
+    const withScreenshots = {
+      'dompetektif',
+      'bagi-fair',
+      'lbh-apik',
+      'movie-finder',
+    };
     final others = content.projects.where(
       (project) => !withScreenshots.contains(project.id),
     );

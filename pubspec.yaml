@@ -33,6 +33,7 @@ flutter:
     - assets/screenshots/dompetektif/
     - assets/screenshots/bagi-fair/
     - assets/screenshots/lbh-apik/
+    - assets/screenshots/movie-finder/
 
   fonts:
     - family: PlusJakartaSans

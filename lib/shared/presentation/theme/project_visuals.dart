@@ -249,9 +249,11 @@ extension ProjectVisuals on Project {
 
   IconData get icon => visual.icon;
 
-  String get platformLabel => isWebsite
-      ? 'Web · Responsif'
-      : (hasLiveUrl ? 'Android · Web' : 'iOS · Android');
+  String get platformLabel {
+    if (isWebsite) return 'Web · Responsif';
+    if (tech.any((item) => item.toLowerCase() == 'kotlin')) return 'Android';
+    return hasLiveUrl ? 'Android · Web' : 'iOS · Android';
+  }
 }
 
 extension ProjectCategoryVisuals on ProjectCategory {

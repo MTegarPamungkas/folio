@@ -502,46 +502,70 @@
     {
       "id": "movie-finder",
       "name": "Movie Finder",
-      "tagline": "Menemukan film tanpa menunggu koneksi.",
-      "description": "Aplikasi Android buat eksplorasi film dengan local caching dan dependency injection.",
-      "story": "Movie Finder saya bangun sebagai bagian dari mobile development track di Bangkit Academy. Saya pakai local caching supaya data yang sudah dimuat tetap bisa dibaca, dan dependency injection supaya dependensi tetap rapi saat fitur bertambah.\n\nProyek ini jadi latihan buat menyambungkan konsumsi API, penyimpanan lokal, dan arsitektur aplikasi dalam satu alur.",
+      "tagline": "Katalog film harian, plus favorit yang tersimpan.",
+      "description": "Aplikasi Android untuk menjelajah film trending, mencari judul, dan menyimpan favorit—dibangun dengan Jetpack Compose, Hilt, Retrofit, dan Room.",
+      "story": "Movie Finder saya bangun untuk latihan menerapkan arsitektur Android yang rapi di satu aplikasi kecil: daftar film, pencarian, detail, dan favorit. Datanya dari TMDB—trending harian, search, dan detail per film—lalu dipetakan ke model yang dipakai UI.\n\nDi sisi tampilan saya pakai Jetpack Compose dengan Material 3. Grid poster menyesuaikan orientasi: dua kolom saat tegak, empat kolom saat lanskap. Setiap layar membaca satu UiState yang sama, jadi keadaan loading, kosong, dan gagal tampil konsisten tanpa logika bercabang di banyak tempat.\n\nFavorit disimpan di Room, jadi judul yang disimpan tetap ada saat aplikasi dibuka lagi. Hilt merapikan dependensi antara repository, database, dan Retrofit. Untuk memastikan alurnya tidak rusak, saya menulis tes instrumentasi dengan MockWebServer dan Compose UI test.",
       "category": "eksperimen",
       "type": "mobileApp",
-      "year": "2024",
+      "year": "2023",
       "role": "Android Developer",
-      "timeline": "Agu 2023 — Jan 2024",
-      "status": "Proyek pembelajaran",
-      "version": "1.0.0",
-      "updatedAt": "2024",
+      "timeline": "2023",
+      "status": "Selesai · repo publik",
+      "version": "1.0",
+      "updatedAt": "Nov 2023",
       "tech": [
         "Kotlin",
-        "Android",
-        "Local Caching",
-        "Dependency Injection"
+        "Jetpack Compose",
+        "Hilt",
+        "Retrofit",
+        "Room",
+        "Glide",
+        "TMDB API"
       ],
       "features": [
-        "Eksplorasi film dari API",
-        "Local caching untuk data yang sudah dimuat",
-        "Dependency injection buat pengelolaan dependensi",
-        "Arsitektur aplikasi Android dengan Kotlin"
+        "Daftar film trending harian dari TMDB dalam grid poster",
+        "Grid menyesuaikan orientasi: 2 kolom tegak, 4 kolom lanskap",
+        "Pencarian judul lewat endpoint search/movie",
+        "Detail film: poster, genre, rating, tahun, durasi, dan badge usia",
+        "Favorit tersimpan di Room dan tetap ada setelah aplikasi ditutup",
+        "Keadaan loading, kosong, dan gagal ditangani lewat satu UiState",
+        "Tes instrumentasi dengan MockWebServer dan Compose UI test"
       ],
       "releaseNotes": [
-        "Halaman eksplorasi film.",
-        "Penyimpanan lokal untuk data film.",
-        "Perapian dependensi aplikasi."
+        "Rilis 1.0 dengan daftar trending, pencarian, dan halaman detail film.",
+        "Favorit disimpan lokal lewat Room.",
+        "Tes instrumentasi dengan MockWebServer dan Compose UI test."
       ],
-      "previewTitle": "Film pilihan",
-      "previewSubtitle": "Tersimpan untuk dibaca offline",
-      "previewMetric": "120",
-      "previewMetricLabel": "film tersimpan",
+      "previewTitle": "Trending hari ini",
+      "previewSubtitle": "Grid poster dari TMDB",
+      "previewMetric": "20",
+      "previewMetricLabel": "film per halaman",
       "previewItems": [
         "Trending",
         "Favorit"
       ],
-      "editorialTitle": "Tontonan,\ntanpa jeda.",
-      "highlight": "Bangkit Academy",
+      "editorialTitle": "Film harian,\ndi satu grid.",
+      "highlight": "Jetpack Compose",
       "featured": false,
-      "githubUrl": null,
+      "screenshots": [
+        {
+          "asset": "assets/screenshots/movie-finder/home.jpg",
+          "label": "Home"
+        },
+        {
+          "asset": "assets/screenshots/movie-finder/detail.jpg",
+          "label": "Detail"
+        },
+        {
+          "asset": "assets/screenshots/movie-finder/favorite.jpg",
+          "label": "Favorite"
+        },
+        {
+          "asset": "assets/screenshots/movie-finder/about.jpg",
+          "label": "About"
+        }
+      ],
+      "githubUrl": "https://github.com/MTegarPamungkas/movie_finder_kotlin",
       "liveUrl": null
     },
     {
