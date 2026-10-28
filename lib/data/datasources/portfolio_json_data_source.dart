@@ -26,6 +26,7 @@ class PortfolioJsonDataSource {
     final root = _map(jsonDecode(source), 'root');
     return PortfolioContent(
       developer: _developer(_map(root['developer'], 'developer')),
+      latestProjectIds: _strings(root['latestProjectIds'], 'latestProjectIds'),
       projects: [
         for (final item in _list(root['projects'], 'projects'))
           _project(_map(item, 'project')),

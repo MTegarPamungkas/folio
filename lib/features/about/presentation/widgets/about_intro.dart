@@ -43,7 +43,7 @@ class AboutIntro extends StatelessWidget {
               TextSpan(text: 'Halo, saya ${developer.shortName}.\n'),
               const TextSpan(text: 'Saya bikin produk\nyang '),
               TextSpan(
-                text: 'enak dipakai.',
+                text: 'siap dipakai.',
                 style: FolioTypography.serif(
                   fontSize: headingSize * 1.06,
                   color: colors.accent,

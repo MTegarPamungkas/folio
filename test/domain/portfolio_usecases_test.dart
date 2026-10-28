@@ -47,6 +47,12 @@ void main() {
       final content = GetHomeContent(repository)();
       expect(content.featuredProjects, hasLength(6));
       expect(content.latestProjects, hasLength(4));
+      expect(content.latestProjects.map((project) => project.id), [
+        'bagi-fair',
+        'dompetektif',
+        'team-intelligence',
+        'mis-msa',
+      ]);
       expect(content.totalProjects, 10);
       expect(content.categoryCounts[ProjectCategory.enterprise], 1);
       expect(content.categoryCounts[ProjectCategory.finance], 2);

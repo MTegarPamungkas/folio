@@ -135,6 +135,12 @@
       }
     ]
   },
+  "latestProjectIds": [
+    "bagi-fair",
+    "dompetektif",
+    "team-intelligence",
+    "mis-msa"
+  ],
   "projects": [
     {
       "id": "custom-fit",

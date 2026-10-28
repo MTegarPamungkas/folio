@@ -3,10 +3,17 @@ import 'package:folio/domain/entities/developer.dart';
 import 'package:folio/domain/entities/project.dart';
 
 class PortfolioContent extends Equatable {
-  const PortfolioContent({required this.developer, required this.projects});
+  const PortfolioContent({
+    required this.developer,
+    required this.projects,
+    required this.latestProjectIds,
+  });
 
   final Developer developer;
   final List<Project> projects;
+
+  /// Project ids shown in the "Rilis terbaru" section, in display order.
+  final List<String> latestProjectIds;
 
   Project? projectById(String id) {
     for (final project in projects) {
@@ -18,7 +25,10 @@ class PortfolioContent extends Equatable {
   List<Project> get featuredProjects =>
       projects.where((project) => project.featured).toList(growable: false);
 
-  List<Project> get latestProjects => projects.take(4).toList(growable: false);
+  List<Project> get latestProjects => latestProjectIds
+      .map(projectById)
+      .whereType<Project>()
+      .toList(growable: false);
 
   Map<ProjectCategory, int> get categoryCounts => {
     for (final category in ProjectCategory.values)
@@ -28,7 +38,7 @@ class PortfolioContent extends Equatable {
   };
 
   @override
-  List<Object?> get props => [developer, projects];
+  List<Object?> get props => [developer, projects, latestProjectIds];
 }
 
 class HomeContent extends Equatable {

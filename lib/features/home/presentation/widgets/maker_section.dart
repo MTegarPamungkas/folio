@@ -183,7 +183,7 @@ class MakerPortrait extends StatelessWidget {
               top: 12,
               right: compact ? 14 : 8,
               child: _FloatingPill(
-                label: 'Flutter',
+                label: 'Mobile Developer',
                 icon: Icons.phone_iphone_rounded,
                 background: colors.background,
                 foreground: colors.ink,
@@ -194,8 +194,8 @@ class MakerPortrait extends StatelessWidget {
               bottom: 0,
               left: compact ? 14 : 0,
               child: _FloatingPill(
-                label: 'UI / UX',
-                icon: Icons.draw_outlined,
+                label: 'Full Stack',
+                icon: Icons.code_rounded,
                 background: colors.surface,
                 foreground: colors.ink,
                 angle: 0.04,
